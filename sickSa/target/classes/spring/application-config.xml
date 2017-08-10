@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- Uncomment and add your base-package here:
+         <context:component-scan
+            base-package="org.springframework.samples.service"/>  -->
+	
+	
+	<import resource="datasource-config.xml"/>
+	<!-- MyBatis -->
+	<bean id="sqlSessionFactory"
+		  class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
+		<property name="dataSource" ref="apacheDataSource"/>
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:com/itwill/guest/mapper/GuestMapper.xml</value>
+			</list>
+		</property>	  
+    </bean>
+    
+    <!-- SqlSessionTemplate[MyBatis]-->
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref="sqlSessionFactory"/>
+	</bean>
+	
+	
+	
+	<!-- Dao 
+	<bean 	id="helloDao" 
+			class="com.itwill.hello.dao.HelloDaoImpl">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	Service 
+	<bean 	id="helloService" 
+			class="com.itwill.hello.service.HelloServiceImpl">
+		<property name="helloDao" ref="helloDao"></property>
+	</bean>
+	
+	-->
+	
+		
+		
+		
+	
+</beans>
