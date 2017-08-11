@@ -52,7 +52,7 @@
               <height>-1</height>
               <width>-1</width>
               <x>353</x>
-              <y>277</y>
+              <y>321</y>
             </constraint>
             <sourceConnections>
               <net.java.amateras.db.visual.model.ForeignKeyModel>
@@ -80,7 +80,7 @@
                     <height>-1</height>
                     <width>-1</width>
                     <x>377</x>
-                    <y>536</y>
+                    <y>580</y>
                   </constraint>
                   <sourceConnections/>
                   <targetConnections>
@@ -190,8 +190,8 @@
                         <constraint>
                           <height>-1</height>
                           <width>-1</width>
-                          <x>693</x>
-                          <y>277</y>
+                          <x>683</x>
+                          <y>321</y>
                         </constraint>
                         <sourceConnections/>
                         <targetConnections>
@@ -248,7 +248,7 @@
                                       <height>-1</height>
                                       <width>-1</width>
                                       <x>979</x>
-                                      <y>277</y>
+                                      <y>321</y>
                                     </constraint>
                                     <sourceConnections/>
                                     <targetConnections>
@@ -636,7 +636,7 @@
               <height>-1</height>
               <width>-1</width>
               <x>92</x>
-              <y>277</y>
+              <y>321</y>
             </constraint>
             <sourceConnections/>
             <targetConnections>
@@ -777,6 +777,25 @@
           <defaultValue>SYSDATE</defaultValue>
         </net.java.amateras.db.visual.model.ColumnModel>
         <net.java.amateras.db.visual.model.ColumnModel>
+          <columnName>ORD_STATE</columnName>
+          <logicalName>주문상태</logicalName>
+          <columnType class="net.java.amateras.db.dialect.ColumnType">
+            <name>CHAR</name>
+            <logicalName>Character</logicalName>
+            <supportSize>true</supportSize>
+            <type>1</type>
+          </columnType>
+          <size>1</size>
+          <notNull>true</notNull>
+          <primaryKey>false</primaryKey>
+          <description>B, C, S&#xd;
+B: 주문완료&#xd;
+C: 조리완료&#xd;
+S: 서빙완료</description>
+          <autoIncrement>false</autoIncrement>
+          <defaultValue>&apos;B&apos;</defaultValue>
+        </net.java.amateras.db.visual.model.ColumnModel>
+        <net.java.amateras.db.visual.model.ColumnModel>
           <columnName>TBL_ID</columnName>
           <logicalName>테이블번호</logicalName>
           <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/columns/net.java.amateras.db.visual.model.ColumnModel/columnType"/>
@@ -898,7 +917,7 @@
         <height>-1</height>
         <width>-1</width>
         <x>1251</x>
-        <y>277</y>
+        <y>321</y>
       </constraint>
       <sourceConnections/>
       <targetConnections>
