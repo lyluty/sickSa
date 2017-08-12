@@ -16,11 +16,11 @@
 		  class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
 		<property name="dataSource" ref="apacheDataSource"/>
-		<property name="mapperLocations">
-			<list>
-				<value>classpath:sickSa/mapper/GuestMapper.xml</value>
+		<property name="mapperLocations" value="classpath:sickSa/**/*.xml"/>
+			<!-- list>
+				<value>classpath:sickSa/**/*.xml</value>
 			</list>
-		</property>	  
+		</property-->	  
     </bean>
     
     <!-- SqlSessionTemplate[MyBatis]-->
