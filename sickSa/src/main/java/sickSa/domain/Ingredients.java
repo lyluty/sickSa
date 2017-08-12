@@ -22,15 +22,16 @@ ALTER TABLE INGREDIENTS ADD CONSTRAINT IDX_INGREDIENTS_PK PRIMARY KEY (ING_ID);
 */
 
 
-public class Ingerdients {
+public class Ingredients {
 	/* Variable */
 	private int ing_id;
 	private String ing_name;
 	private int ing_stock;
 	private String ing_measure;
 	
+	
 	/* Construcotr */
-	public Ingerdients(int ing_id, String ing_name, int ing_stock, String ing_measure) {
+	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure) {
 		super();
 		this.ing_id = ing_id;
 		this.ing_name = ing_name;
