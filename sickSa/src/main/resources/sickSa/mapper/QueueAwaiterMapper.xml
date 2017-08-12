@@ -1,1 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sickSa.dao.QueueAwaiterDao">
+	<resultMap type="sickSa.domain.QueueAwaiter" id="QueueAwaiterResultMap">
+	<result property="qwat_id" column="QWAT_ID" />
+	<result property="qwat_contact" column="QWAT_CONTACT" />
+	</resultMap>
+
+    <select id="selectAllQueueAwaiters" resultType="sickSa.domain.QueueAwaiter">
+    	SELECT
+    		QAWT_ID as ID,
+        	QAWT_CONTACT as CONTACT
+        FROM
+        	QUEUE_AWAITERS
+    </select>
+    
+	<insert id="insertQueueAwaiter" parameterType="sickSa.domain.QueueAwaiter">
+		INSERT INTO
+			QUEUE_AWAITERS(QAWT_ID, QAWT_CONTACT)
+			values(#{qawt_id}, #{qawt_contact})
+	</insert>
+	
+	<update id="updateQueueAwaiter" parameterType="sickSa.domain.QueueAwaiter">
+		UPDATE
+			QUEUE_AWAITERS
+		SET
+			QAWT_CONTACT = #{qawt_contact}
+		WHERE
+			QAWT_ID = #{qawt_id}
+	</update>
+	
+	<delete id="deleteQueueAwaiter" parameterMap="sickSa.domain.QueueAwaiter">
+		DELETE FROM
+			QUEUE_AWAITERS
+		WHERE
+			QAWT_ID = #{qawt_id}
+	</delete>
+</mapper>

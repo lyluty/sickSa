@@ -651,12 +651,17 @@
               <net.java.amateras.db.visual.model.ColumnModel>
                 <columnName>TBL_ID</columnName>
                 <logicalName>테이블번호</logicalName>
-                <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../../../net.java.amateras.db.visual.model.ForeignKeyModel/target/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/columns/net.java.amateras.db.visual.model.ColumnModel/columnType"/>
+                <columnType class="net.java.amateras.db.dialect.ColumnType">
+                  <name>NUMBER</name>
+                  <logicalName>Numeric</logicalName>
+                  <supportSize>true</supportSize>
+                  <type>2</type>
+                </columnType>
                 <size>3</size>
                 <notNull>false</notNull>
                 <primaryKey>true</primaryKey>
                 <description></description>
-                <autoIncrement>false</autoIncrement>
+                <autoIncrement>true</autoIncrement>
                 <defaultValue></defaultValue>
               </net.java.amateras.db.visual.model.ColumnModel>
               <net.java.amateras.db.visual.model.ColumnModel>
@@ -669,7 +674,7 @@
                   <type>1</type>
                 </columnType>
                 <size>1</size>
-                <notNull>true</notNull>
+                <notNull>false</notNull>
                 <primaryKey>false</primaryKey>
                 <description></description>
                 <autoIncrement>false</autoIncrement>
