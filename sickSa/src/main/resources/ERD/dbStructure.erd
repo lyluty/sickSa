@@ -390,7 +390,7 @@
                         </targetConnections>
                         <error></error>
                         <linkedPath></linkedPath>
-                        <tableName>INGREDIENT</tableName>
+                        <tableName>INGREDIENTS</tableName>
                         <logicalName>재료</logicalName>
                         <description>ALIAS: ING</description>
                         <columns>
