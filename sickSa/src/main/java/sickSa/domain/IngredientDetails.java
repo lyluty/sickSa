@@ -49,6 +49,7 @@ public class IngredientDetails {
 		this.igct_id = igct_id;
 	}
 	
+	
 	/* Method */
 	// Getter, Setter
 	public int getIng_id() {
