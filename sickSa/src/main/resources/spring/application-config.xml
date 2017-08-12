@@ -18,7 +18,7 @@
 		<property name="dataSource" ref="apacheDataSource"/>
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:com/itwill/guest/mapper/GuestMapper.xml</value>
+				<value>classpath:sickSa/mapper/GuestMapper.xml</value>
 			</list>
 		</property>	  
     </bean>
