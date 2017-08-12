@@ -1,0 +1,87 @@
+1.spring-framework,java  version
+
+2.java compiler 설정
+
+3.log4j설정
+  가.dependency설정
+  	<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.12</version>
+  	</dependency>
+  나.log4j.xml,log4j.properties
+4.설정파일의분리
+   - spring/db.properties  
+   - datasource-config.xml  --> DataSource 
+   - application-config.xml --> UserService,UserDao
+   - mvc-config.xml         --> Controller,View,ViewResolver
+5.web.xml 
+   - ContextLoaderListener --> datasource-config.xml,application-config.xml
+   - DispatcherServlet     --> mvc-config.xml
+   - DispatcherServlet     --> url-pattern설정
+       <servlet-mapping>
+        	<servlet-name>dispatcherServlet</servlet-name>
+        	<url-pattern>*.do</url-pattern>
+       </servlet-mapping>
+   
+6-1.데이타베이스 드라이버(local jar파일) maven 의존성추가
+   
+6-2. datasource-config.xml DataSource 설정
+   가. DriverManagerDataSource--> spring-jdbc dependency설정 
+   		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.2.3.RELEASE</version>
+		</dependency>
+   나. ApacheBasicDataSource  --> spring-jdbc dependency설정
+   		<!-- tomcat dbcp -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-dbcp</artifactId>
+			<version>8.5.8</version>
+		</dependency>  
+   
+7. messages에  i18n 에관련된 *.properties파일 넣기    
+8. MyBatis 설정
+    가. dependency 설정
+        <!-- MyBatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+    나. spring/mvc-config.xml
+    다. com/itwill/guest/mapper/GuestMapper.xml
+    라. application-config.xml
+        <!-- SqlSessionFactoryBean[MyBatis]-->
+		<bean id="sqlSessionFactory"
+			  class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
+			<property name="dataSource" ref="apacheDataSource"/>
+			<property name="mapperLocations">
+				<list>
+					<value>classpath:com/itwill/guest/mapper/GuestMapper.xml</value>
+				</list>
+			</property>	  
+	    </bean>
+	    <!-- SqlSessionTemplate[MyBatis]-->
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref="sqlSessionFactory"/>
+		</bean>
+    
+9.mvc-confic.xml
+    가. component-scan --> @Controller
+    <context:component-scan
+            base-package="com.itwill.hello.controller"/> 
+    
+    
+    
+    
+    
+    
+    
