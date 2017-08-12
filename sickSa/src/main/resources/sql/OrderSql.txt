@@ -16,8 +16,8 @@ delete from orders where ORD_ID=1  and PDT_ID=2 and TBL_ID=3;
 
 
 --TABLES
-
 create sequence TABLES_TBL_ID_SEQ;
+
 --(TBL_ID,TBL_IS_EMPTY)
 insert into TABLES values (1,'N');
 insert into TABLES values (2,'Y');
