@@ -1,11 +1,21 @@
 package sickSa.dao;
 
-import java.util.ArrayList;
+
+
+import java.util.List;
+import java.util.Map;
 
 
 import sickSa.domain.Product;
 
 public interface ProductDao {
-	 
-	public ArrayList<Product> list();
+
+	int insertProduct(Product product);
+	Product findProductById(int pdt_id);
+	List<Map> findAllProductsMap();
+	int updateProduct(Product updateProduct);
+	int deleteProduct(Product product);
+
+
+
 }

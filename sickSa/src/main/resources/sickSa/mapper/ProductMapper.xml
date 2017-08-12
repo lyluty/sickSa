@@ -42,6 +42,5 @@
 		WHERE
 		PDT_ID = #{pdt_id} 
 	</delete>	
-	<!--  "delete from products where PDT_ID=? and pdct_id=?"; -->
 
 </mapper>
