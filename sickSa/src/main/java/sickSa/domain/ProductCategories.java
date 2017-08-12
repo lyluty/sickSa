@@ -18,6 +18,7 @@ ALTER TABLE PRODUCT_CATEGORIES ADD CONSTRAINT IDX_PRODUCT_CATEGORIES_PK PRIMARY 
 */
 
 public class ProductCategories {
+	
 	/* Variable */
 	private int pdct_id;
 	private String pdct_name;
