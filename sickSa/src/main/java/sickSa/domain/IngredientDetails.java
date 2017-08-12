@@ -50,6 +50,7 @@ public class IngredientDetails {
 	}
 	
 	
+	
 	/* Method */
 	// Getter, Setter
 	public int getIng_id() {

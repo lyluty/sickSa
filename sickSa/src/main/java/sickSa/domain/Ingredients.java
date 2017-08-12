@@ -54,6 +54,7 @@ public class Ingredients {
 	public String getIng_name() {
 		return ing_name;
 	}
+	
 
 
 	public void setIng_name(String ing_name) {
