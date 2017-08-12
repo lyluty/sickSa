@@ -1,39 +1,30 @@
---product
+--ORDERS
+create sequence ORDERS_ORD_ID_SEQ;
 
-insert into product values (1,'dd',1000,1,789,901,111,11);
+--(ORD_ID, ORD_PDT_AMOUNT,ORD_PAYMENT_METHOD,ORD_DATE,PDT_ID,TBL_ID)
+insert into ORDERS values (1,6,'현금',sysdate,1,1);
+insert into ORDERS values (2,2,'카드',sysdate,2,2);
+insert into ORDERS values (3,1,'현금',sysdate,1,3);
+insert into ORDERS values (5,4,'카드',sysdate,2,4);
+insert into ORDERS values (7,1,'현금',sysdate,2,5);
 
-update product set pr_no=2,pr_name='ss',pr_price=2000,pr_cate=22,pr_imageL=123,pr_imageS=456,pr_description=222,or_no=22 where pr_no=1;
+select*from ORDERS where ORD_ID=1 and PDT_ID=1 and TBL_ID=1;
 
-delete from product where pr_no=1;
+update ORDERS set ORD_PDT_AMOUNT=2,ORD_PAYMENT_METHOD='카드',ORD_DATE=sysdate where ORD_ID=3 and PDT_ID=1 and TBL_ID=3 ;
 
-select * from product where pr_no=1;
+delete from orders where ORD_ID=1  and PDT_ID=2 and TBL_ID=3;
 
---product cate
 
-insert into product_category values (1,'aa',1);
+--TABLES
 
-update product_category set pc_no=1,pc_name='bb' where pr_no=1;
+create sequence TABLES_TBL_ID_SEQ;
+--(TBL_ID,TBL_IS_EMPTY)
+insert into TABLES values (1,'N');
+insert into TABLES values (2,'Y');
+insert into TABLES values (3,'N');
 
-delete from product_category where pc_no=1;
+update TABLES set TBL_IS_EMPTY='N' where TBL_ID=3;
 
-select * from product_category where pr_no=1;
+select*from TABLES where TBL_ID=3;
 
-public class OrderSQL{
-
-public final static String Order_INSERT= 
-"insert into Order (or_no,or_qty,or_payment,or_date, pr_no,tr_no)"
-+"values (Order_or_no_seq.nextval,?,?,sysdate,?,?)";
-
-public final static String Order_SELECTBY_OR_NO=
-"select Order set or_no,or_qty,or_payment,or_date, pr_no,tr_no where or_no=? and pr_no=? and tr_no=?";
-
-public final static String Order_SELECT_ALL=
-"select or_no,or_qty,or_payment,or_date, pr_no,tr_no from Order";
-
-public final static String Order_UPDATEBY_OR_NO=
-"update Order set or_qty,or_payment,or_date where or_no=? and pr_no=? and tr_no=?";
-
-public final static String Order_DELETEBY_OR_NO=
-"delete from Order where or_no=? and pr_no=? and tr_no=?"
-
-}
+delete from TABLES where TBL_ID=1;
