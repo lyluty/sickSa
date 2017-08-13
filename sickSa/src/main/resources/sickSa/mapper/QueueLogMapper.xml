@@ -3,41 +3,17 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="sickSa.dao.QueueLogDao">
-	<resultMap type="sickSa.domain.QueueLog" id="QueueLogResultMap">
-	<result property="qlog_id" column="QLOG_ID" />
-	<result property="qlog_record" column="QLOG_RECORD" />
-	<result property="qawt_id" column="QAWT_ID"/>
-	</resultMap>
-
-    <select id="selectAllQueueLogs" resultType="sickSa.domain.QueueLog">
-    	SELECT
-    		QLOG_ID,
-        	QLOG_RECORD,
-        	QAWT_ID
-        FROM
-        	QUEUE_LOGS
-    </select>
-    
-	<insert id="insertQueueLog" parameterType="sickSa.domain.QueueLog">
+	<insert id="insert" parameterType="sickSa.domain.QueueLog">
 		INSERT INTO
-			QUEUE_LOGS(QLOG_ID, QLOG_RECORD, QAWT_ID)
-			values(#{qlog_id}, #{qlog_record}, #{qawt_id})
+			QUEUE_LOGS(QLOGS_ID, QLOGS_NUMBER, QLOGS_CONTACT, QLOGS_DATE)
+			values(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, #{qlog_number}, #{qlog_contact}, SYSDATE)
 	</insert>
 	
-	<update id="updateQueueLog" parameterType="sickSa.domain.QueueLog">
-		UPDATE
+	<select id="selectNumber" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		SELECT
+			COUNT(*)
+		FROM
 			QUEUE_LOGS
-		SET
-			QLOG_RECORD = #{qlog_record},
-			QAWT_ID = #{qawt_id}
-		WHERE
-			QLOG_ID = #{qlog_id}
-	</update>
-	
-	<delete id="deleteQueueLog" parameterMap="sickSa.domain.QueueLog">
-		DELETE FROM
-			QUEUE_LOGS
-		WHERE
-			QLOG_ID = #{qawt_id}
-	</delete>
+		WHERE #{qstd_id}
+	</select>
 </mapper>
