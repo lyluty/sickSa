@@ -16,9 +16,9 @@
 		  class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
 		<property name="dataSource" ref="apacheDataSource"/>
-		<property name="mapperLocations" value="classpath:sickSa/**/*.xml"/>
+		<property name="mapperLocations" value="classpath:sickSa/mapper/*.xml"/>
 			<!-- list>
-				<value>classpath:sickSa/**/*.xml</value>
+				<value>classpath:sickSa/mapper/*.xml</value>
 			</list>
 		</property-->	  
     </bean>
@@ -30,21 +30,14 @@
 	
 	
 	
-	<!-- Dao 
-	<bean 	id="helloDao" 
-			class="com.itwill.hello.dao.HelloDaoImpl">
-		<property name="sqlSession" ref="sqlSession"></property>
-	</bean>
-	Service 
-	<bean 	id="helloService" 
-			class="com.itwill.hello.service.HelloServiceImpl">
-		<property name="helloDao" ref="helloDao"></property>
+	<!-- Dao --> 
+	<bean id="queueAwaiterDao" class="sickSa.dao.QueueAwaiterDaoImpl">
+		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
 	
-	-->
-	
-		
-		
-		
+	<!-- Service --> 
+	<bean id="queueService" class="sickSa.service.QueueServiceImpl">
+		<property name="queueAwaiterDao" ref="queueAwaiterDao"/>
+	</bean>
 	
 </beans>
