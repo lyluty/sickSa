@@ -22,7 +22,8 @@ public class QueueAwaiter {
 	private String qawt_contact;
 	
 	/* Constructor */
-	public QueueAwaiter(int qawt_id, String qawt_contact) {
+	public QueueAwaiter() {}
+	public QueueAwaiter(Integer qawt_id, String qawt_contact) {
 		this.qawt_id = qawt_id;
 		this.qawt_contact = qawt_contact;
 	}
