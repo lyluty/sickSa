@@ -12,7 +12,8 @@ public class Orders {
 	private char ord_state;
 	private int tbl_id;
 
-
+	
+	
 	public Orders(){
 		
 	}

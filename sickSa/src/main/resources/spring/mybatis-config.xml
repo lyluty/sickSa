@@ -8,6 +8,7 @@
 		<typeAlias alias="Product" type="sickSa.domain.Product"/>
 		<typeAlias alias="Orders" type="sickSa.domain.Orders"/>
 		<typeAlias alias="QueueLog" type="sickSa.domain.QueueLog"/>
+		<typeAlias alias="Tables"  type="sickSa.domain.Tables"/>
 	</typeAliases>	
 	<mappers>
 	</mappers>
