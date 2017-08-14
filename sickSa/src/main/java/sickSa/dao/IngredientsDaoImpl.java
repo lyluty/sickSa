@@ -13,6 +13,10 @@ public class IngredientsDaoImpl implements IngredientsDao{
 	public IngredientsDaoImpl() {
 		System.out.println("IngredientsDaoImpl Constructor():"+this);
 	}
+	
+	public void setSqlSession(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 
 	@Override
 	public Ingredients selectAllIngredient() {
