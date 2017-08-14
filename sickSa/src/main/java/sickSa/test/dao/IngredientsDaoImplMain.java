@@ -10,6 +10,7 @@ public class IngredientsDaoImplMain {
 		IngredientsDaoImpl test = new IngredientsDaoImpl();
 		
 		List<Ingredients> list = test.selectAllIngredient();
+		
 		for (Ingredients ingredients : list) {
 			System.out.println(ingredients);
 		}

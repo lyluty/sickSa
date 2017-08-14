@@ -20,7 +20,7 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
-				<value>classpath:sickSa/mapper/IngredientMapper.xml</value>
+				<value>classpath:sickSa/mapper/IngredientsMapper.xml</value>
 				<value>classpath:sickSa/mapper/IngredientDetailsMapper.xml</value>
 				<value>classpath:sickSa/mapper/IngredientCategoriesMapper.xml</value>
 			</list>
@@ -30,6 +30,7 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
+				<value>classpath:sickSa/mapper/IngredientsMapper.xml</value>
 			</list>
 		</property>
     </bean>
@@ -45,6 +46,10 @@
 	</bean>
 	
 	<bean id="queueLogDao" class="sickSa.dao.QueueLogDaoImpl">
+		<property name="sqlSession" ref="sqlSession"/>
+	</bean>
+	
+	<bean id="ingredientsDao" class="sickSa.dao.IngredientsDaoImpl">
 		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
 	

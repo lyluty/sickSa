@@ -6,6 +6,8 @@
 	<typeAliases>
 	</typeAliases>	
 	<mappers>
+		<mapper class="sickSa.dao.IngredientsDao"/>
+		<mapper resource="sickSa/mapper/IngredientsMapper.xml"/>
 	</mappers>
 </configuration>
 
