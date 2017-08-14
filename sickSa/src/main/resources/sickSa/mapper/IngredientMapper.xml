@@ -2,16 +2,20 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="sickSa.mapper.IngredientMapper">
+<mapper namespace="sickSa.mapper.IngredientDao">
 	
 	<select id="selectAllIngredient" resultType="sickSa.domain.Ingredient">
-		SELECT 
-			ING_ID,
-			ING_NAME,
-			ING_STOCKNUMBER
-		FROM
-			INGREDIENT
+		SELECT ING_ID,ING_NAME,ING_STOCKNUMBER
+		FROM INGREDIENT
 	</select>
 	
+	<select 
+		id="selectIngredientById" 
+		parameterType="java.lang.Integer" 
+		resultType="sickSa.domain.Ingredient">
+		SELECT ING_ID,ING_NAME,ING_STOCKNUMBER
+		FROM INGREDIENT
+		WHERE ING_ID=#{ING_ID}
+	</select>
 	
 </mapper>

@@ -1,5 +1,7 @@
 package sickSa.dao;
 
+import sickSa.domain.Ingredient;
+
 public interface IngredientDao {
 	/*
 	 메쏘드 이름은 StudentMapper.xml파일의 id 와일치
@@ -24,4 +26,6 @@ public interface IngredientDao {
 		-재료 입출고 기록 추가
 		
 	 */
+	public Ingredient selectAllIngredient();
+	public Ingredient selectIngredientById(Integer ING_ID);
 }

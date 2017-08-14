@@ -3,10 +3,10 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="sickSa.dao.QueueAwaiterDao">
-<!-- --> 
+	<!-- --> 
 	<resultMap id="queueAwaiter" type="sickSa.domain.QueueAwaiter">
-		<result column="QAWT_ID" property="qawtId"/>
-		<result column="QAWT_CONTACT" property="qawtContact"/>
+		<result column="QAWT_ID" property="qawt_id"/>
+		<result column="QAWT_CONTACT" property="qawt_contact"/>
 	</resultMap>
 	<!-- 
     <select id="selectAllQueueAwaiters" resultType="sickSa.domain.QueueAwaiter">
