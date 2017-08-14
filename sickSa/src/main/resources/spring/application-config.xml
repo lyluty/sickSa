@@ -20,7 +20,7 @@
 			<list>
 				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
 				<value>classpath:sickSa/mapper/IngredientMapper.xml</value>
-				<value>classpath:sickSa/mapper/IngredientDetails.xml</value>
+				<value>classpath:sickSa/mapper/IngredientDetailsMapper.xml</value>
 				<value>classpath:sickSa/mapper/IngredientCategories.xml</value>
 			</list>
 		</property>
@@ -33,7 +33,7 @@
     </bean>
     
     <!-- SqlSessionTemplate[MyBatis]-->
-		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 			<constructor-arg ref="sqlSessionFactory"/>
 	</bean>
 	
