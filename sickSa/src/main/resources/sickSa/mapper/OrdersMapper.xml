@@ -35,6 +35,11 @@ CREATE TABLE ORDERS(
 
 <select id="getOrders"  parameterType= "java.lang.Integer"  resultMap="OrdersResultMap">
 	select * from ORDERS 
+</select>
+
+
+<select id="selectOrders"  parameterType= "java.lang.Integer"  resultMap="OrdersResultMap">
+	select * from ORDERS 
 			where ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
 </select>
 

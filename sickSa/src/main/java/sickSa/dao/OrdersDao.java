@@ -1,13 +1,14 @@
 package sickSa.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import sickSa.domain.Orders;
 
 public interface OrdersDao {
 
-	ArrayList<Orders> getOrders();
+	List<Orders> getOrders();
+	void selectOrders(Orders order);
 	void insertOrders(Orders order);
 	void updateOrders(Orders order);
-	void deleteOrders(int ord_no);
+	void deleteOrders(Orders ord_no);
 }

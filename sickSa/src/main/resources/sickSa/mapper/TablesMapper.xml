@@ -13,6 +13,10 @@
 	</resultMap>
 
 <select id="getTables"  parameterType= "java.lang.Integer"  resultMap="TablesResultMap">
+	select * from TABLES;
+</select>
+
+<select id="selectTables"  parameterType= "java.lang.Integer"  resultMap="TablesResultMap">
 	select * from TABLES where TBL_ID=#{tbl_id}
 </select>
 

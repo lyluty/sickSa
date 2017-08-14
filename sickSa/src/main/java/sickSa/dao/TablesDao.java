@@ -1,12 +1,13 @@
 package sickSa.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import sickSa.domain.Tables;
 
 public interface TablesDao{
 	
-ArrayList<Tables> getTables();
+List<Tables> getTables();
+void selectTables(Tables table);
 void insertTables(Tables table);
 void updateTables(int tbl_no);
 void deleteTables(int tbl_no);
