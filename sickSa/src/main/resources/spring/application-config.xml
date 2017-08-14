@@ -21,7 +21,7 @@
 				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
 				<value>classpath:sickSa/mapper/IngredientMapper.xml</value>
 				<value>classpath:sickSa/mapper/IngredientDetailsMapper.xml</value>
-				<value>classpath:sickSa/mapper/IngredientCategories.xml</value>
+				<value>classpath:sickSa/mapper/IngredientCategoriesMapper.xml</value>
 			</list>
 		</property>
 		
@@ -36,8 +36,6 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 			<constructor-arg ref="sqlSessionFactory"/>
 	</bean>
-	
-	
 	
 	<!-- Dao --> 
 	<bean id="queueAwaiterDao" class="sickSa.dao.QueueAwaiterDaoImpl">
