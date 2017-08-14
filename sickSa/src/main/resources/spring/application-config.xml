@@ -17,7 +17,6 @@
 		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
 		<property name="dataSource" ref="apacheDataSource"/>
 		<property name="mapperLocations" value="classpath:sickSa/mapper/QueueLogMapper.xml"/>
-		
 		<!-- property name="mapperLocations" value="classpath:sickSa/mapper/*.xml"/> -->
 			<!-- list>
 				<value>classpath:sickSa/mapper/*.xml</value>
