@@ -39,6 +39,11 @@ public class Ingredients {
 		this.ing_measure = ing_measure;
 	}
 	
+	@Override
+	public String toString() {
+		return "["+ing_id+"]"+ing_name+","+ing_stocknumber+","+ing_measure;
+	}
+	
 	/* Method */
 	// Getter, Setter
 	public int getIng_id() {
