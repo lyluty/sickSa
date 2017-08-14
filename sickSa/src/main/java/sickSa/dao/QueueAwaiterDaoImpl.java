@@ -39,8 +39,8 @@ public class QueueAwaiterDaoImpl implements QueueAwaiterDao {
 
 	@Override
 	public void deleteQueueAwaiter(QueueAwaiter awaiter) {
-		int qwatId = awaiter.getQawt_id();
-		sqlSession.delete("deleteQueueAwaiter", qwatId);
+//		int qwatId = awaiter.getQawt_id();
+//		sqlSession.delete("deleteQueueAwaiter", qwatId);
 	}
 
 }

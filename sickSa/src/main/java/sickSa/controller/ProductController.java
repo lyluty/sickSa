@@ -23,7 +23,7 @@ public class ProductController {
 	public String test(Model model, @PathVariable Integer qawtId) {
 //		model.addAttribute("queueAwaiterList", queueService.getQueueAwaiterList());
 //		model.addAttribute("queueAwaiter", queueService.getQueueAwaiterById(qawtId));
-		model.addAttribute("nextAwaiter", queueService.callAwaiter());
+//		model.addAttribute("nextAwaiter", queueService.callAwaiter());
 		return "test/queue.jsp";
 	}
 	
