@@ -3,9 +3,32 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="sickSa.dao.QueueLogDao">
-	<insert id="insert" parameterType="java.lang.String">
+	<insert id="insertQueueLog" parameterType="sickSa.domain.QueueLog">
 		INSERT INTO
 			QUEUE_LOGS(QLOG_ID, QLOG_CONTACT, QLOG_DATE, QLST_CODE)
-			values(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, #{qlog_contact}, SYSDATE, 10)
+			values(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, #{qlog_contact}, SYSDATE, #{qlst_code)
 	</insert>
+	
+	<select id="selectQueueLog" parameterType="java.lang.Integer" resultType="sickSa.domain.QueueLog">
+		SELECT
+			QLOG_ID,
+			QLOG_CONTACT,
+			QLOG_DATE,
+			QLST_CODE
+		FROM
+			QUEUE_LOGS
+		WHERE
+			QLOG_ID = #{qlog_id}
+	</select>
+	
+	<update id="updateQueueLog" parameterType="sickSa.domain.QueueLog">
+		UPDATE
+			QUEUE_LOGS
+		SET
+			QLOG_CONTACT = #{qlog_contact},
+			QLOG_DATE = #{qlog_date},
+			QLST_CODE = #{qlst_code}
+		WHERE
+			QLOG_ID = #{qlog_id}
+	</update>
 </mapper>

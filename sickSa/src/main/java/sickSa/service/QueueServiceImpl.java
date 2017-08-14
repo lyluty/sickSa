@@ -1,10 +1,5 @@
 package sickSa.service;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sickSa.dao.QueueAwaiterDao;
@@ -15,7 +10,6 @@ import sickSa.domain.QueueLog;
 @Service("queueService")
 public class QueueServiceImpl implements QueueService {
 	
-	@Autowired
 	private QueueAwaiterDao queueAwaiterDao;
 	private QueueLogDao queueLogDao;
 	
@@ -24,21 +18,33 @@ public class QueueServiceImpl implements QueueService {
 	}
 	
 	@Override
-	public void queueUp(String contact) {
+	public void queueUp(String qlog_contact) {
 		QueueLog queueLog = new QueueLog();
-		queueLog.setQlog_contact(contact);
-		queueLogDao.insert(queueLog);
+		queueLog.setQlog_contact(qlog_contact);
+		queueLog.setQlst_code(QueueLog.STATE_PROGRESS);
+		queueLogDao.insertQueueLog(queueLog);
 	}
 	
 	@Override
-	public List<QueueAwaiter> getQueueAwaiterList() {
-		return queueAwaiterDao.selectQueueAwaiterList();
+	public void enter(Integer qlog_id) {
+		QueueLog queueLog = queueLogDao.selectQueueLog(qlog_id);
+		queueLog.setQlst_code(QueueLog.STATE_COMPLETE);
+		queueLogDao.updateQueueLog(queueLog);
 	}
-
+	
 	@Override
-	public QueueAwaiter getQueueAwaiterById(Integer qawtId) {
-		return queueAwaiterDao.selectQueueAwaiterById(qawtId);
+	public void leave(Integer qlog_id) {
 	}
+	
+//	@Override
+//	public List<QueueAwaiter> getQueueAwaiterList() {
+//		return queueAwaiterDao.selectQueueAwaiterList();
+//	}
+//
+//	@Override
+//	public QueueAwaiter getQueueAwaiterById(Integer qawtId) {
+//		return queueAwaiterDao.selectQueueAwaiterById(qawtId);
+//	}
 
 	@Override
 	public QueueAwaiter callAwaiter() {
@@ -49,4 +55,10 @@ public class QueueServiceImpl implements QueueService {
 		}
 		return awaiter;
 	}
+
+	public void setQueueLogDao(QueueLogDao queueLogDao) {
+		System.out.println("QueueLogDao Setter");
+		this.queueLogDao = queueLogDao;
+	}
+
 }

@@ -26,7 +26,7 @@ public class Ingredients {
 	/* Variable */
 	private int ing_id;
 	private String ing_name;
-	private int ing_stock;
+	private int ing_stocknumber;
 	private String ing_measure;
 	
 	
@@ -35,7 +35,7 @@ public class Ingredients {
 		super();
 		this.ing_id = ing_id;
 		this.ing_name = ing_name;
-		this.ing_stock = ing_stock;
+		this.ing_stocknumber = ing_stock;
 		this.ing_measure = ing_measure;
 	}
 	
@@ -63,12 +63,12 @@ public class Ingredients {
 
 
 	public int getIng_stock() {
-		return ing_stock;
+		return ing_stocknumber;
 	}
 
 
 	public void setIng_stock(int ing_stock) {
-		this.ing_stock = ing_stock;
+		this.ing_stocknumber = ing_stock;
 	}
 
 
