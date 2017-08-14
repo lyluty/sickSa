@@ -15,6 +15,7 @@ public class ProductController {
 	
 	@RequestMapping("/productMain")
 	public String productMain(){
+		System.out.println("1");
 		return "index";
 	}
 	
