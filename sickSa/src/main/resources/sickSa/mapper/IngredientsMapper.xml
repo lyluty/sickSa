@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sickSa.mapper.IngredientDao">
+	
+	<select id="selectAllIngredient" resultType="sickSa.domain.Ingredients">
+		SELECT ING_ID,ING_NAME,ING_STOCKNUMBER
+		FROM INGREDIENTS
+	</select>
+	
+	<select 
+		id="selectIngredientById" 
+		parameterType="java.lang.Integer" 
+		resultType="sickSa.domain.Ingredients">
+		SELECT ING_ID,ING_NAME,ING_STOCKNUMBER,ING_MEASURE
+		FROM INGREDIENTS
+		WHERE ING_ID=#{ING_ID}
+	</select>
+	
+	<insert 
+		id="insertIngredient">
+		INSERT INTO INGREDIENTS(ING_ID,ING_NAME,ING_STOCKNUMBER,ING_MEASURE)
+		VALUES (#{ING_ID},#{ING_NAME},#{ING_STOCKNUMBER}.#{ING_MEASURE})
+	</insert>
+	
+	<delete id="deleteIngredient">
+		DELETE FROM INGREDIENTS
+		WHERE ING_ID=#{ING_ID}
+	</delete>
+	
+</mapper>

@@ -1,6 +1,6 @@
 package sickSa.dao;
 
-import sickSa.domain.Ingredient;
+import sickSa.domain.Ingredients;
 
 public interface IngredientDao {
 	/*
@@ -24,7 +24,7 @@ public interface IngredientDao {
 		-재료 입출고 기록 추가
 		
 	 */
-	public Ingredient selectAllIngredient();
-	public Ingredient selectIngredientById(Integer ING_ID);
-	public Integer insertIngredient(Ingredient ingredient);
+	public Ingredients selectAllIngredient();
+	public Ingredients selectIngredientById(Integer ING_ID);
+	public Integer insertIngredient(Ingredients ingredient);
 }
