@@ -1,38 +1,15 @@
 package sickSa.dao;
 
+import java.util.ArrayList;
 
+import sickSa.domain.Tables;
 
-import org.apache.ibatis.session.SqlSessionFactory;
-
-
-public class TablesDao{
+public interface TablesDao{
 	
-
-	public static final String namespace ="TablesMapper.";
-	private SqlSessionFactory sessionFactory;
-	public TablesDao(){
-		//this.sessionFactory=;
-		
-	}
-	
-
-	
-
-	// getList
-		  
-	
-		  
-	
-	// insert
-	
-	
-	// update
-	
-	
-	// select
-		  
-	// delete
-		  
+ArrayList<Tables> getTables();
+void insertTables(Tables table);
+void updateTables(int tbl_no);
+void deleteTables(int tbl_no);
 		  
 	
 }
