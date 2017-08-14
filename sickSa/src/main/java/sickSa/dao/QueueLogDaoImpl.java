@@ -14,11 +14,4 @@ public class QueueLogDaoImpl implements QueueLogDao {
 	public void insert(QueueLog queueLog) {
 		sqlSession.insert("insert", queueLog);
 	}
-
-	@Override
-	public Integer getStateCount(Integer qstd_id) {
-		int res = sqlSession.selectOne("selectNumber", qstd_id);
-		System.out.println(res);
-		return res;
-	}
 }

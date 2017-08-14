@@ -27,7 +27,6 @@ public class QueueServiceImpl implements QueueService {
 	public void queueUp(String contact) {
 		QueueLog queueLog = new QueueLog();
 		queueLog.setQlog_contact(contact);
-		queueLog.setQlog_number(queueLogDao.getStateCount(QueueLog.STATE_PROGRESS));
 		queueLogDao.insert(queueLog);
 	}
 	

@@ -26,5 +26,4 @@ ALTER TABLE QUEUE_LOGS ADD CONSTRAINT IDX_QUEUE_LOGS_PK PRIMARY KEY (QLOG_ID);
 */
 public interface QueueLogDao {
 	public void insert(QueueLog queueLog);
-	public Integer getStateCount(Integer qstd_id);
 }
