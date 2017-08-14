@@ -958,13 +958,13 @@ S: 서빙완료</description>
             </targetConnections>
             <error></error>
             <linkedPath></linkedPath>
-            <tableName>QUEUE_STATE_DATA</tableName>
-            <logicalName>대기상태</logicalName>
-            <description>ALAIS: QSTD</description>
+            <tableName>QUEUE_LOG_STATES</tableName>
+            <logicalName>대기상태표</logicalName>
+            <description>ALAIS: QLST</description>
             <columns>
               <net.java.amateras.db.visual.model.ColumnModel>
-                <columnName>QSTD_ID</columnName>
-                <logicalName>대기상태ID</logicalName>
+                <columnName>QLST_CODE</columnName>
+                <logicalName>대기상태코드</logicalName>
                 <columnType class="net.java.amateras.db.dialect.ColumnType">
                   <name>NUMBER</name>
                   <logicalName>Numeric</logicalName>
@@ -979,7 +979,7 @@ S: 서빙완료</description>
                 <defaultValue></defaultValue>
               </net.java.amateras.db.visual.model.ColumnModel>
               <net.java.amateras.db.visual.model.ColumnModel>
-                <columnName>QSTD_NAME</columnName>
+                <columnName>QLST_NAME</columnName>
                 <logicalName>대기상태이름</logicalName>
                 <columnType class="net.java.amateras.db.dialect.ColumnType">
                   <name>VARCHAR2</name>
@@ -1031,22 +1031,6 @@ S: 서빙완료</description>
           <defaultValue></defaultValue>
         </net.java.amateras.db.visual.model.ColumnModel>
         <net.java.amateras.db.visual.model.ColumnModel>
-          <columnName>QLOG_NUMBER</columnName>
-          <logicalName>대기순번</logicalName>
-          <columnType class="net.java.amateras.db.dialect.ColumnType">
-            <name>NUMBER</name>
-            <logicalName>Numeric</logicalName>
-            <supportSize>true</supportSize>
-            <type>2</type>
-          </columnType>
-          <size>2</size>
-          <notNull>true</notNull>
-          <primaryKey>false</primaryKey>
-          <description></description>
-          <autoIncrement>false</autoIncrement>
-          <defaultValue></defaultValue>
-        </net.java.amateras.db.visual.model.ColumnModel>
-        <net.java.amateras.db.visual.model.ColumnModel>
           <columnName>QLOG_CONTACT</columnName>
           <logicalName>대기자연락처</logicalName>
           <columnType class="net.java.amateras.db.dialect.ColumnType">
@@ -1079,15 +1063,15 @@ S: 서빙완료</description>
           <defaultValue>SYSDATE</defaultValue>
         </net.java.amateras.db.visual.model.ColumnModel>
         <net.java.amateras.db.visual.model.ColumnModel>
-          <columnName>QSTD_ID</columnName>
-          <logicalName>대기상태ID</logicalName>
+          <columnName>QLST_CODE</columnName>
+          <logicalName>대기상태코드</logicalName>
           <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/columns/net.java.amateras.db.visual.model.ColumnModel/columnType"/>
           <size>2</size>
           <notNull>false</notNull>
           <primaryKey>false</primaryKey>
           <description></description>
           <autoIncrement>false</autoIncrement>
-          <defaultValue></defaultValue>
+          <defaultValue>10</defaultValue>
         </net.java.amateras.db.visual.model.ColumnModel>
       </columns>
       <indices/>

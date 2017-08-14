@@ -28,7 +28,7 @@ public class QueueLog {
 	/* Variable */
 	public static final int STATE_PROGRESS = 10;
 	public static final int STATE_COMPLETE = 20;
-	public static final int STATE_CANCELED = 30;
+	public static final int STATE_CANCELED = 90;
 	
 	private int qlog_id;
 	private int qlog_number;
