@@ -12,17 +12,19 @@ public class IngredientsDaoImpl implements IngredientsDao{
 	@Autowired
 	private SqlSession sqlSession;
 	
+	public void setSqlSession(SqlSession sqlSession) {
+		System.out.println("sqlSession: " + sqlSession);
+		this.sqlSession = sqlSession;
+	}
+	
 	public IngredientsDaoImpl() {
 		System.out.println("IngredientsDaoImpl Constructor():"+this);
 	}
 	
-	public void setSqlSession(SqlSession sqlSession) {
-		this.sqlSession = sqlSession;
-	}
 	
 	//
 	@Override
-	public List<Ingredients> selectAllIngredient() {
+	public List<Ingredients> selectIngredientList() {
 		return sqlSession.selectList("selectAllIngredient");
 	}
 

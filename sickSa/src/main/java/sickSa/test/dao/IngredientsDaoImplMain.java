@@ -9,7 +9,7 @@ public class IngredientsDaoImplMain {
 	public static void main(String[] args) {
 		IngredientsDaoImpl test = new IngredientsDaoImpl();
 		
-		List<Ingredients> list = test.selectAllIngredient();
+		List<Ingredients> list = test.selectIngredientList();
 		
 		for (Ingredients ingredients : list) {
 			System.out.println(ingredients);
