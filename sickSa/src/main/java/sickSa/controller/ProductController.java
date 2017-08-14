@@ -21,8 +21,8 @@ public class ProductController {
 	
 	@RequestMapping("/test/queue/{qawtId}")
 	public String test(Model model, @PathVariable Integer qawtId) {
-		model.addAttribute("queueAwaiterList", queueService.getQueueAwaiterList());
-		model.addAttribute("queueAwaiter", queueService.getQueueAwaiterById(qawtId));
+//		model.addAttribute("queueAwaiterList", queueService.getQueueAwaiterList());
+//		model.addAttribute("queueAwaiter", queueService.getQueueAwaiterById(qawtId));
 		model.addAttribute("nextAwaiter", queueService.callAwaiter());
 		return "test/queue.jsp";
 	}

@@ -1,10 +1,5 @@
 package sickSa.dao;
 
-public interface IngredientCategoriesDao {
-
-}
-package sickSa.dao;
-
 import java.util.List;
 
 import sickSa.domain.IngredientCategories;
