@@ -4,11 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="ProductCategories" type="sickSa.domain.ProductCategories"/>
-		<typeAlias alias="Product" type="sickSa.domain.Product"/>
-		<typeAlias alias="Orders" type="sickSa.domain.Orders"/>
-		<typeAlias alias="QueueLog" type="sickSa.domain.QueueLog"/>
-		<typeAlias alias="Tables"  type="sickSa.domain.Tables"/>
 	</typeAliases>	
 	<mappers>
 	</mappers>
