@@ -1,5 +1,7 @@
 package sickSa.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,35 +19,31 @@ public class IngredientsDaoImpl implements IngredientsDao{
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-
+	
+	//
 	@Override
-	public Ingredients selectAllIngredient() {
-		
-		return null;
+	public List<Ingredients> selectAllIngredient() {
+		return sqlSession.selectList("selectAllIngredient");
 	}
 
 	@Override
 	public Ingredients selectIngredientById(Integer ING_ID) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("selectIngredientById",ING_ID);
 	}
 
 	@Override
 	public Integer insertIngredient(Ingredients ingredient) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.insert("insertIngredient",ingredient);
 	}
 
 	@Override
 	public Integer deleteIngredient(Integer ING_ID) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.delete("deleteIngredient",ING_ID);
 	}
 
 	@Override
 	public Integer updateIngredient(Ingredients ingredient) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.update("updateIngredient",ingredient);
 	}
 
 }
