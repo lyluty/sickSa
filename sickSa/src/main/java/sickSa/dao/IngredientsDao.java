@@ -1,5 +1,7 @@
 package sickSa.dao;
 
+import java.util.List;
+
 import sickSa.domain.Ingredients;
 
 public interface IngredientsDao {
@@ -22,7 +24,7 @@ public interface IngredientsDao {
 		-재료 추가/삭제
 		
 	 */
-	public Ingredients selectAllIngredient();
+	public List<Ingredients> selectAllIngredient();
 	public Ingredients selectIngredientById(Integer ING_ID);
 	public Integer insertIngredient(Ingredients ingredient);
 	public Integer deleteIngredient(Integer ING_ID);
