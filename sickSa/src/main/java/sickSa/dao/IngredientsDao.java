@@ -2,7 +2,7 @@ package sickSa.dao;
 
 import sickSa.domain.Ingredients;
 
-public interface IngredientDao {
+public interface IngredientsDao {
 	/*
 	 메쏘드 이름은 StudentMapper.xml파일의 id 와일치
 	 인자타입은 StudentMapper.xml 의  parameterType과일치
@@ -21,10 +21,10 @@ public interface IngredientDao {
  		
 		-재료 추가/삭제
 		
-		-재료 입출고 기록 추가
-		
 	 */
 	public Ingredients selectAllIngredient();
 	public Ingredients selectIngredientById(Integer ING_ID);
 	public Integer insertIngredient(Ingredients ingredient);
+	public Integer deleteIngredient(Integer ING_ID);
+	public Integer updateIngredient(Ingredients ingredient);
 }
