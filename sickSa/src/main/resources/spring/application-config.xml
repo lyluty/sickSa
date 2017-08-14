@@ -16,6 +16,7 @@
 		  class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
 		<property name="dataSource" ref="apacheDataSource"/>
+		<!-- 
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
@@ -24,12 +25,13 @@
 				<value>classpath:sickSa/mapper/IngredientCategoriesMapper.xml</value>
 			</list>
 		</property>
-		
-		<!-- property name="mapperLocations" value="classpath:sickSa/mapper/*.xml"/> -->
-			<!-- list>
-				<value>classpath:sickSa/mapper/*.xml</value>
+		<property name="mapperLocations" value="classpath:sickSa/mapper/*.xml"/>
+		 -->
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
 			</list>
-		</property-->	  
+		</property>
     </bean>
     
     <!-- SqlSessionTemplate[MyBatis]-->
@@ -41,13 +43,14 @@
 	<bean id="queueAwaiterDao" class="sickSa.dao.QueueAwaiterDaoImpl">
 		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
-	<bean id="ingredientsDao" class="sickSa.dao.IngredientsDaoImpl">
+	
+	<bean id="queueLogDao" class="sickSa.dao.QueueLogDaoImpl">
 		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
 	
 	<!-- Service --> 
 	<bean id="queueService" class="sickSa.service.QueueServiceImpl">
-		<property name="queueAwaiterDao" ref="queueAwaiterDao"/>
+		<property name="queueLogDao" ref="queueLogDao"/>
 	</bean>
 	
 </beans>

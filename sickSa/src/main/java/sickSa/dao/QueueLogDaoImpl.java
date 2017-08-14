@@ -7,11 +7,24 @@ import sickSa.domain.QueueLog;
 
 public class QueueLogDaoImpl implements QueueLogDao {
 	
-	@Autowired
 	SqlSession sqlSession;
 
 	@Override
-	public void insert(QueueLog queueLog) {
-		sqlSession.insert("insert", queueLog);
+	public Integer insertQueueLog(QueueLog queueLog) {
+		return sqlSession.insert("insertQueueLog", queueLog);
+	}
+	
+	@Override
+	public QueueLog selectQueueLog(Integer qlog_id) {
+		return sqlSession.selectOne("selectQueueLog", qlog_id);
+	}
+	
+	@Override
+	public Integer updateQueueLog(QueueLog qlst_code) {
+		return sqlSession.update("updateQueueLog", qlst_code);
+	}
+	
+	public void setSqlSession(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
 	}
 }

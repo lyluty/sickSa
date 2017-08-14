@@ -25,5 +25,7 @@ COMMENT ON COLUMN QUEUE_LOGS.QLOG_DATE is '대기발생일시';
 ALTER TABLE QUEUE_LOGS ADD CONSTRAINT IDX_QUEUE_LOGS_PK PRIMARY KEY (QLOG_ID);
 */
 public interface QueueLogDao {
-	public void insert(QueueLog queueLog);
+	public Integer insertQueueLog(QueueLog qlog_contact);
+	public QueueLog selectQueueLog(Integer qlog_id);
+	public Integer updateQueueLog(QueueLog queueLog);
 }
