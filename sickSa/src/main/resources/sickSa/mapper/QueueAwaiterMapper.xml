@@ -5,8 +5,8 @@
 <mapper namespace="sickSa.dao.QueueAwaiterDao">
 <!-- --> 
 	<resultMap id="queueAwaiter" type="sickSa.domain.QueueAwaiter">
-		<result column="QAWT_ID" property="qawt_id"/>
-		<result column="QAWT_CONTACT" property="qawt_contact"/>
+		<result column="QAWT_ID" property="qawtId"/>
+		<result column="QAWT_CONTACT" property="qawtContact"/>
 	</resultMap>
 	<!-- 
     <select id="selectAllQueueAwaiters" resultType="sickSa.domain.QueueAwaiter">
