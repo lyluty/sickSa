@@ -4,9 +4,16 @@ CREATE SEQUENCE INGREDIENT_ING_ID_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 insert into INGREDIENT values (1,'popoto',99);
 insert into INGREDIENT values (2,'caraka',99);
 insert into INGREDIENT values (3,'바람신어',99);
+insert into INGREDIENT values (4,'복순이',99);
+insert into INGREDIENT values (5,'짱짱',99);
+insert into INGREDIENT values (6,'나는',99);
+insert into INGREDIENT values (7,'재료',99);
+insert into INGREDIENT values (8,'임니다',99);
 
 update INGREDIENT set ING_NAME='포포토',ING_STOCK='45' where ING_ID=1;
 update INGREDIENT set ING_NAME='카락카',ING_STOCK='45' where ING_ID=2;
+update INGREDIENT set ING_NAME='점례',ING_STOCK='45' where ING_ID=4;
+update INGREDIENT set ING_NAME='치킨',ING_STOCK='45' where ING_ID=5;
 
 delete from INGREDIENT where ING_ID=3;
 
@@ -18,14 +25,21 @@ CREATE SEQUENCE INGREDIENT_CATEGORIES_IGCT_ID_SEQ NOMAXVALUE NOCACHE NOORDER NOC
 insert into INGREDIENT_CATEGORIES values (1,'땅');
 insert into INGREDIENT_CATEGORIES values (2,'물');
 insert into INGREDIENT_CATEGORIES values (3,'하늘');
+insert into INGREDIENT_CATEGORIES values (4,'별');
+insert into INGREDIENT_CATEGORIES values (5,'햄토리');
+insert into INGREDIENT_CATEGORIES values (6,'방가방가');
 
 update INGREDIENT_CATEGORIES set IGCT_NAME='어스' where IGCT_ID=1;
+update INGREDIENT_CATEGORIES set IGCT_NAME='밤톨이' where IGCT_ID=5;
+update INGREDIENT_CATEGORIES set IGCT_NAME='안녕' where IGCT_ID=6;
 
 delete from INGREDIENT_CATEGORIES where IGCT_ID=1;
 
 select * from INGREDIENT_CATEGORIES where IGCT_ID=1;
 
 --재료 설명
+insert into INGREDIENT_DETAILS values (1,SYSDATE,SYSDATE,9850,'010-8888-8888',1);
+insert into INGREDIENT_DETAILS values (1,SYSDATE,SYSDATE,9850,'010-8888-8888',1);
 insert into INGREDIENT_DETAILS values (1,SYSDATE,SYSDATE,9850,'010-8888-8888',1);
 
 update INGREDIENT_DETAILS set IGDT_IN='2017/07/07',IGDT_OUT='2017/08/08',IGDT_PRICE=9000,IGDT_CONTACT='010-7777-7777' where ING_ID=1;
