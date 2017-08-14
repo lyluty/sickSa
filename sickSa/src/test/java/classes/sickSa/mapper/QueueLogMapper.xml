@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sickSa.dao.QueueLogDao">
+	<insert id="insert" parameterType="java.lang.String">
+		INSERT INTO
+			QUEUE_LOGS(QLOG_ID, QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+			values(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, #{qlog_contact}, SYSDATE, 10)
+	</insert>
+</mapper>

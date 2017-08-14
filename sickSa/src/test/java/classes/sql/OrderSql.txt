@@ -1,0 +1,30 @@
+--ORDERS
+create sequence ORDERS_ORD_ID_SEQ;
+
+--(ORD_ID, ORD_PDT_AMOUNT,ORD_PAYMENT_METHOD,ORD_DATE,PDT_ID,TBL_ID)
+insert into ORDERS values (1,6,'현금',sysdate,1,1);
+insert into ORDERS values (2,2,'카드',sysdate,2,2);
+insert into ORDERS values (3,1,'현금',sysdate,1,3);
+insert into ORDERS values (5,4,'카드',sysdate,2,4);
+insert into ORDERS values (7,1,'현금',sysdate,2,5);
+
+select*from ORDERS where ORD_ID=1 and PDT_ID=1 and TBL_ID=1;
+
+update ORDERS set ORD_PDT_AMOUNT=2,ORD_PAYMENT_METHOD='카드',ORD_DATE=sysdate where ORD_ID=3 and PDT_ID=1 and TBL_ID=3 ;
+
+delete from orders where ORD_ID=1  and PDT_ID=2 and TBL_ID=3;
+
+
+--TABLES
+create sequence TABLES_TBL_ID_SEQ;
+
+--(TBL_ID,TBL_IS_EMPTY)
+insert into TABLES values (1,'N');
+insert into TABLES values (2,'Y');
+insert into TABLES values (3,'N');
+
+update TABLES set TBL_IS_EMPTY='N' where TBL_ID=3;
+
+select*from TABLES where TBL_ID=3;
+
+delete from TABLES where TBL_ID=1;
