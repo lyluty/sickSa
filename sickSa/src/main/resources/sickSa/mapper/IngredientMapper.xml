@@ -18,4 +18,10 @@
 		WHERE ING_ID=#{ING_ID}
 	</select>
 	
+	<insert 
+		id="insertIngredient">
+		INSERT INTO INGREDIENT(ING_ID,ING_NAME,ING_STOCKNUMBER)
+		VALUES (#{ING_ID},#{ING_NAME},#{ING_STOCKNUMBER})
+	</insert>
+	
 </mapper>

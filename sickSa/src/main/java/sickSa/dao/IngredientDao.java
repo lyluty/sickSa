@@ -19,8 +19,6 @@ public interface IngredientDao {
 		-재료 카테고리와 하위 재료재고정보 조회
 		 (재료명, 단위, 단가, 거래처연락처)
  		
- 		-재료 카테고리 추가/삭제
-		
 		-재료 추가/삭제
 		
 		-재료 입출고 기록 추가
@@ -28,4 +26,5 @@ public interface IngredientDao {
 	 */
 	public Ingredient selectAllIngredient();
 	public Ingredient selectIngredientById(Integer ING_ID);
+	public Integer insertIngredient(Ingredient ingredient);
 }
