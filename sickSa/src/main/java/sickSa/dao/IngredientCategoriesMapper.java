@@ -4,7 +4,7 @@ import java.util.List;
 
 import sickSa.domain.IngredientCategories;
 
-public interface IngredientCategoriesDao {
+public interface IngredientCategoriesMapper {
 	/*
 	 메쏘드 이름은 StudentMapper.xml파일의 id 와일치
 	 인자타입은 StudentMapper.xml 의  parameterType과일치

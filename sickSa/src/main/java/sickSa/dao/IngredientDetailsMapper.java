@@ -1,6 +1,6 @@
 package sickSa.dao;
 
-public interface IngredientDetailsDao {
+public interface IngredientDetailsMapper {
 	/*
 	 메쏘드 이름은 StudentMapper.xml파일의 id 와일치
 	 인자타입은 StudentMapper.xml 의  parameterType과일치

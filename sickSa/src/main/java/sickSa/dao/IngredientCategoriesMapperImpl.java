@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import sickSa.domain.IngredientCategories;
 
-public class IngredientCategoriesDaoImpl implements IngredientCategoriesDao {
+public class IngredientCategoriesMapperImpl implements IngredientCategoriesMapper {
 
 	
 	@Autowired
@@ -18,7 +18,7 @@ public class IngredientCategoriesDaoImpl implements IngredientCategoriesDao {
 		this.sqlSession = sqlSession;
 	}
 	
-	public IngredientCategoriesDaoImpl() {
+	public IngredientCategoriesMapperImpl() {
 		System.out.println("IngredientCategoriesDaoImpl Constructor(): "+ this);
 	}
 	
