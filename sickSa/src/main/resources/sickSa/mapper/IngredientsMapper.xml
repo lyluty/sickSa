@@ -55,7 +55,7 @@
 		FROM INGREDIENTS
 	</select>
 	
-	<!-- <select 
+	<select 
 		id="selectIngredientById" 
 		parameterType="java.lang.Integer" 
 		resultType="sickSa.domain.Ingredients">
@@ -91,6 +91,6 @@
 		SET ING_NAME=#{ING_NAME},ING_STOCKNUMBER=#{ING_STOCKNUMBER},
 			ING_MEASURE=#{ING_MEASURE}
 		WHERE ING_ID = #{ING_ID}
-	</update> -->
+	</update> 
 	
 </mapper>
