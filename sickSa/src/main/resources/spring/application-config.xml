@@ -25,6 +25,7 @@
 				<value>classpath:sickSa/mapper/IngredientCategoriesMapper.xml</value>
 			</list>
 		</property>
+		
 		<property name="mapperLocations" value="classpath:sickSa/mapper/*.xml"/>
 		 -->
     </bean>
@@ -44,6 +45,10 @@
 	</bean>
 	
 	<bean id="ingredientsDao" class="sickSa.dao.IngredientsMapperImpl">
+		<property name="sqlSession" ref="sqlSession"/>
+	</bean>
+	
+	<bean id="ingredientCategoriesDao" class="sickSa.dao.IngredientCategoriesMapperImpl">
 		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
 	

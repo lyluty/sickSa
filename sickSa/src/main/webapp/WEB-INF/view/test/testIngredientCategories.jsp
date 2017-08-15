@@ -8,48 +8,40 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>IngredientsMapper test</title>
+		<title>IngredientsCategoriesMapper test</title>
 	</head>
 	<body>
-		<h1>IngredientsMapper test</h1>
+		<h1>IngredientsCategoriesMapper test</h1>
 		<hr style="border: solid 2px black;"/>
 		<div>
-			<h4>IngredientsMapper.ingredientList()</h4>
+			<h4>ingredientCategoriesMapper.ingredientCategoriesList()</h4>
 			<table border="1">
 				<tr align="center">
-					<td>ING_ID</td>
-					<td>ING_NAME</td>
-					<td>ING_STOCK</td>
-					<td>ING_MEASURE</td>
+					<td>IGCT_ID</td>
+					<td>IGCT_NAME</td>
 				</tr>
-				<c:forEach var="ingredient" items="${ingredientList}">
+				<c:forEach var="ingredientCategory" items="${ingredientCategoryList}">
 					<tr align="center">
-						<td>${ingredient.ing_id}</td>
-						<td>${ingredient.ing_name}</td>
-						<td>${ingredient.ing_stock}</td>
-						<td>${ingredient.ing_measure}</td>
+						<td>${ingredientCategory.igct_id}</td>
+						<td>${ingredientCategory.igct_name}</td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 		<hr/>
 		<div>
-			<h4>ingredientsMapper.selectIngredientById(ing_id)</h4>
+			<h4>ingredientCategoriesMapper.selectIngredientById(igct_id)</h4>
 			<table border="1">
 				<tr align="center">
-					<td>ING_ID</td>
-					<td>ING_NAME</td>
-					<td>ING_STOCK</td>
-					<td>ING_MEASURE</td>
+					<td>IGCT_ID</td>
+					<td>IGCT_NAME</td>
 				</tr>
 				<tr align="center">
-					<td>${ingredient.ing_id}</td>
-					<td>${ingredient.ing_name}</td>
-					<td>${ingredient.ing_stock}</td>
-					<td>${ingredient.ing_measure}</td>
+					<td>${ingredientCategory.igct_id}</td>
+					<td>${ingredientCategory.igct_name}</td>
 				</tr>
 			</table>
-		</div>
+		</div> 
 		<%-- <hr/>
 		<div>
 			<h4>ingredientsDao.selectIngredientById(ing_id)</h4>

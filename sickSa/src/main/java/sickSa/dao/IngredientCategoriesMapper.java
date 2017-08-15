@@ -18,7 +18,7 @@ public interface IngredientCategoriesMapper {
 	  
 	 */
 	
-	public List<IngredientCategories> selectIngredientCategoriesList();
+	public List<IngredientCategories> ingredientCategoriesList();
 	// list 한개 반환
 	public IngredientCategories selectIngredientCategoriesById(Integer igct_id);
 	// id로 카테고리 검색

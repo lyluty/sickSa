@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import sickSa.domain.IngredientCategories;
 
 public class IngredientCategoriesMapperImpl implements IngredientCategoriesMapper {
-
 	
 	@Autowired
 	private SqlSession sqlSession;
@@ -23,8 +22,8 @@ public class IngredientCategoriesMapperImpl implements IngredientCategoriesMappe
 	}
 	
 	@Override
-	public List<IngredientCategories> selectIngredientCategoriesList() {
-		return sqlSession.selectList("selectIngredientCategoriesList");
+	public List<IngredientCategories> ingredientCategoriesList() {
+		return sqlSession.selectList("ingredientCategoriesList");
 	}
 
 	@Override

@@ -7,8 +7,10 @@
 	</typeAliases>	
 	<mappers>
 		<mapper class="sickSa.dao.IngredientsMapper"/>
+		<mapper class="sickSa.dao.IngredientCategoriesMapper"/>
 		<mapper class="sickSa.dao.QueueLogDao"/>
 		<mapper resource="sickSa/mapper/IngredientsMapper.xml"/> 
+		<mapper resource="sickSa/mapper/IngredientCategoriesMapper.xml"/> 
 		<mapper resource="sickSa/mapper/QueueLogMapper.xml"/> 
 	</mappers>
 </configuration>
