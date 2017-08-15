@@ -14,7 +14,7 @@
 		<h1>IngredientsDaoDao test</h1>
 		<hr style="border: solid 2px black;"/>
 		<div>
-			<h4>IngredientsDao.selectIngredientList()</h4>
+			<h4>IngredientsDao.ingredientList()</h4>
 			<table border="1">
 				<tr align="center">
 					<td>ING_ID</td>

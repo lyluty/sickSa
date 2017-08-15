@@ -21,11 +21,10 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 		System.out.println("IngredientsDaoImpl Constructor():"+this);
 	}
 	
-	
 	//
 	@Override
-	public List<Ingredients> selectIngredientList() {
-		return sqlSession.selectList("selectAllIngredient");
+	public List<Ingredients> ingredientList() {
+		return sqlSession.selectList("ingredientList");
 	}
 
 	@Override

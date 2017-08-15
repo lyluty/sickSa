@@ -16,9 +16,9 @@ public class IngredientsController {
 	 
 	@RequestMapping("/test/ingredients/{ing_id}")
 	public String testMybatis(Model model,@PathVariable("ing_id") Integer ing_id) {
-		model.addAttribute("ingredientList", ingredientsDao.selectIngredientList());
+		model.addAttribute("ingredientList", ingredientsDao.ingredientList());
 		model.addAttribute("ingredient", ingredientsDao.selectIngredientById(ing_id));
-	    return "test/testIngredients.jsp";
+	    return "test/testIngredients";
 	}
 	
 	@Autowired

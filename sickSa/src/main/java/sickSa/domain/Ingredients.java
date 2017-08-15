@@ -31,6 +31,10 @@ public class Ingredients {
 	
 	
 	/* Construcotr */
+	public Ingredients() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure) {
 		super();
 		this.ing_id = ing_id;
