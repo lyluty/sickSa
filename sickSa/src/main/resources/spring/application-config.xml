@@ -16,7 +16,7 @@
 		  class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
 		<property name="dataSource" ref="apacheDataSource"/>
-		<!-- 
+		<!-- mybatis-config.xml 로 옮김 
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
