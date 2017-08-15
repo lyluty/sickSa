@@ -1,14 +1,14 @@
 -- 재료
 CREATE SEQUENCE INGREDIENT_ING_ID_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-insert into INGREDIENTS values (1,'popoto',99);
-insert into INGREDIENTS values (2,'caraka',99);
-insert into INGREDIENTS values (3,'바람신어',99);
-insert into INGREDIENTS values (4,'복순이',99);
-insert into INGREDIENTS values (5,'짱짱',99);
-insert into INGREDIENTS values (6,'나는',99);
-insert into INGREDIENTS values (7,'재료',99);
-insert into INGREDIENTS values (8,'임니다',99);
+insert into INGREDIENTS values (1,'popoto',99,'m');
+insert into INGREDIENTS values (2,'caraka',99,'m');
+insert into INGREDIENTS values (3,'바람신어',99,'m');
+insert into INGREDIENTS values (4,'복순이',99,'m');
+insert into INGREDIENTS values (5,'짱짱',99,'m');
+insert into INGREDIENTS values (6,'나는',99,'m');
+insert into INGREDIENTS values (7,'재료',99,'m');
+insert into INGREDIENTS values (8,'임니다',99,'m');
 
 update INGREDIENT set ING_NAME='포포토',ING_STOCK='45' where ING_ID=1;
 update INGREDIENT set ING_NAME='카락카',ING_STOCK='45' where ING_ID=2;
