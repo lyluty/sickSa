@@ -17,24 +17,25 @@
 			<h4>ingredientCategoriesMapper.ingredientCategoriesList()</h4>
 			<table border="1">
 				<tr align="center">
-					<td>IGCT_ID</td>
-					<td>IGCT_NAME</td>
+					<th>IGCT_ID</th>
+					<th>IGCT_NAME</th>
 				</tr>
-				<c:forEach var="ingredientCategory" items="${ingredientCategoryList}">
+				<c:forEach var="ingredientCategory1" items="${ingredientCategoryList}">
 					<tr align="center">
-						<td>${ingredientCategory.igct_id}</td>
-						<td>${ingredientCategory.igct_name}</td>
+						<td>${ingredientCategory1.igct_id}</td>
+						<td>${ingredientCategory1.igct_name}</td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 		<hr/>
+		
 		<div>
 			<h4>ingredientCategoriesMapper.selectIngredientById(igct_id)</h4>
 			<table border="1">
 				<tr align="center">
-					<td>IGCT_ID</td>
-					<td>IGCT_NAME</td>
+					<th>IGCT_ID</th>
+					<th>IGCT_NAME</th>
 				</tr>
 				<tr align="center">
 					<td>${ingredientCategory.igct_id}</td>

@@ -17,10 +17,10 @@
 			<h4>IngredientsMapper.ingredientList()</h4>
 			<table border="1">
 				<tr align="center">
-					<td>ING_ID</td>
-					<td>ING_NAME</td>
-					<td>ING_STOCK</td>
-					<td>ING_MEASURE</td>
+					<th>ING_ID</th>
+					<th>ING_NAME</th>
+					<th>ING_STOCK</th>
+					<th>ING_MEASURE</th>
 				</tr>
 				<c:forEach var="ingredient" items="${ingredientList}">
 					<tr align="center">
@@ -37,10 +37,10 @@
 			<h4>ingredientsMapper.selectIngredientById(ing_id)</h4>
 			<table border="1">
 				<tr align="center">
-					<td>ING_ID</td>
-					<td>ING_NAME</td>
-					<td>ING_STOCK</td>
-					<td>ING_MEASURE</td>
+					<th>ING_ID</th>
+					<th>ING_NAME</th>
+					<th>ING_STOCK</th>
+					<th>ING_MEASURE</th>
 				</tr>
 				<tr align="center">
 					<td>${ingredient.ing_id}</td>

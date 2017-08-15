@@ -24,17 +24,21 @@
 		FROM
 			ingredient_categories
 		WHERE 
-		    igct_id = #{igct_id}
+		    igct_id = #{igct_id, jdbcType=INTEGER}
 	</select>
 	
-	<insert id="insertIngredientCategories" parameterType="java.lang.String">
+	<insert 
+		id="insertIngredientCategories" 
+		parameterType="java.lang.String">
 		INSERT INTO
 			ingredient_categories(igct_id, igct_name)
 		VALUES
 			(ingredient_categories_igct_id_seq.nextval, #{igct_name})
 	</insert>
 	
-	<delete id="deleteIngredientCategories" parameterType="java.lang.Integer">
+	<delete 
+		id="deleteIngredientCategories" 
+		parameterType="java.lang.Integer">
 		DELETE
 		FROM
 			ingredient_categories
@@ -42,7 +46,9 @@
 			igct_id = #{igct_id}
 	</delete>
 	
-	<update id="updateIngredientCategories" parameterType="sickSa.domain.IngredientCategories">
+	<update 
+		id="updateIngredientCategories" 
+		parameterType="sickSa.domain.IngredientCategories">
 		UPDATE
 			ingredient_categories
 		SET
