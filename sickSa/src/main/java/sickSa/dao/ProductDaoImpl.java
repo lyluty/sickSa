@@ -10,7 +10,7 @@ import sickSa.domain.Product;
 
 
 public  class ProductDaoImpl implements ProductDao {
-	public static final String namespace = "com.mybatis3.mapper.ProductMapper";
+	public static final String namespace = "com.mybatis3.mapper.ProductMapper.";
 	private SqlSession sqlSession;
 	
 	public ProductDaoImpl(){
@@ -18,7 +18,7 @@ public  class ProductDaoImpl implements ProductDao {
 	}
 	
 	public void setSqlSession(SqlSession sqlSession) {
-		System.out.println("2.### HelloDaoImpl.setSqlSession("+sqlSession+")");
+		System.out.println("2.### ProductDaoImpl.setSqlSession("+sqlSession+")");
 		this.sqlSession = sqlSession;
 	}
 
@@ -42,18 +42,24 @@ public  class ProductDaoImpl implements ProductDao {
 		return updateRow;
 		
 	}
+	@Override
+	public int deleteProductById(int pdt_id) {
+		int deletRow = sqlSession.delete(namespace+"deleteProduct",pdt_id);
+		return deletRow;
+	}
 	
 	@Override
 	public Product findProductById(int pdt_id){
 
 		
 		Product findProduct=sqlSession
-				.selectOne(namespace+"findStudentById",pdt_id);
+				.selectOne(namespace+"findProductById",pdt_id);
 		
 		
 		return findProduct;
 		
 	}
+	
 	
 	/*********************LIST*************************/
 	
@@ -63,12 +69,11 @@ public  class ProductDaoImpl implements ProductDao {
 				.selectList(namespace+"findAllProductsMap");
 		return mapList;
 	}
-
 	@Override
-	public int deleteProduct(Product product) {
-		int deletRow = sqlSession.delete(namespace+"deleteProduct",product);
-		return deletRow;
+	public List<Product> findAllProducts(){
+		List<Product> ProductList=sqlSession
+				.selectList(namespace+"findAllProducts");
+		return ProductList;
 	}
-	
 
 }
