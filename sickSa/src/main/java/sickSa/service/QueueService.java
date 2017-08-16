@@ -1,12 +1,10 @@
 package sickSa.service;
 
-import sickSa.domain.QueueAwaiter;
-
 public interface QueueService {
 	public void queueUp(String qlog_contact);
 	public void enter(Integer qlog_id);
 	public void leave(Integer qlog_id);
-	public QueueAwaiter callAwaiter();
+	public void callAwaiter(Integer qlog_id);
 	
 	/*
 	 * 대기자 리스트 조회

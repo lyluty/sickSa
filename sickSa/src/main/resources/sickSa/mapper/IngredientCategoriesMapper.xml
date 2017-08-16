@@ -2,30 +2,43 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="sickSa.dao.IngredientCategoriesDao">
+<mapper namespace="sickSa.dao.IngredientCategoriesMapper">
 	
-	<select id="selectIngredientCategoriesList" resultType="sickSa.domain.IngredientCategories">
-		SELECT igct_id,
-			   igct_name
-		FROM ingredient_categories
-	</select>
-	
-	<select id="selectIngredientCategoriesById" parameterType="java.lang.Integer" resultType="sickSa.domain.IngredientCategories" >
-		SELECT igct_id,
-			   igct_name
+	<select 
+		id="ingredientCategoriesList" 
+		resultType="sickSa.domain.IngredientCategories">
+		SELECT 
+			igct_id,
+			igct_name
 		FROM 
-			   ingredient_categories
-		WHERE 
-		       igct_id = #{igct_id}
+			ingredient_categories
 	</select>
 	
-	<insert id="insertIngredientCategories" parameterType="java.lang.String">
+	<select 
+		id="selectIngredientCategoriesById" 
+		parameterType="java.lang.Integer" 
+		resultType="sickSa.domain.IngredientCategories" >
+		SELECT 
+			igct_id,
+			igct_name
+		FROM
+			ingredient_categories
+		WHERE 
+		    igct_id = #{igct_id, jdbcType=INTEGER}
+	</select>
+	
+	<insert 
+		id="insertIngredientCategories" 
+		parameterType="java.lang.String">
 		INSERT INTO
 			ingredient_categories(igct_id, igct_name)
-			values(ingredient_categories_igct_id_seq.nextval, #{igct_name})
+		VALUES
+			(ingredient_categories_igct_id_seq.nextval, #{igct_name})
 	</insert>
 	
-	<delete id="deleteIngredientCategories" parameterType="java.lang.Integer">
+	<delete 
+		id="deleteIngredientCategories" 
+		parameterType="java.lang.Integer">
 		DELETE
 		FROM
 			ingredient_categories
@@ -33,7 +46,9 @@
 			igct_id = #{igct_id}
 	</delete>
 	
-	<update id="updateIngredientCategories" parameterType="sickSa.domain.IngredientCategories">
+	<update 
+		id="updateIngredientCategories" 
+		parameterType="sickSa.domain.IngredientCategories">
 		UPDATE
 			ingredient_categories
 		SET

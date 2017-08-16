@@ -26,17 +26,26 @@ public class Ingredients {
 	/* Variable */
 	private int ing_id;
 	private String ing_name;
-	private int ing_stocknumber;
+	private int ing_stock;
 	private String ing_measure;
 	
 	
 	/* Construcotr */
+	public Ingredients() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure) {
 		super();
 		this.ing_id = ing_id;
 		this.ing_name = ing_name;
-		this.ing_stocknumber = ing_stock;
+		this.ing_stock = ing_stock;
 		this.ing_measure = ing_measure;
+	}
+	
+	@Override
+	public String toString() {
+		return "["+ing_id+"]"+ing_name+","+ing_stock+","+ing_measure;
 	}
 	
 	/* Method */
@@ -63,12 +72,12 @@ public class Ingredients {
 
 
 	public int getIng_stock() {
-		return ing_stocknumber;
+		return ing_stock;
 	}
 
 
 	public void setIng_stock(int ing_stock) {
-		this.ing_stocknumber = ing_stock;
+		this.ing_stock = ing_stock;
 	}
 
 

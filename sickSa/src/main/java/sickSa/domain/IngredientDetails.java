@@ -38,6 +38,10 @@ public class IngredientDetails {
 	private int igct_id;
 
 	/* Constructor */
+	public IngredientDetails() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public IngredientDetails(int ing_id, Date igdt_in, Date igdt_out, int igdt_price, String igdt_contact,
 			int igct_id) {
 		super();
@@ -48,7 +52,6 @@ public class IngredientDetails {
 		this.igdt_contact = igdt_contact;
 		this.igct_id = igct_id;
 	}
-	
 	
 	
 	/* Method */

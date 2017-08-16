@@ -7,7 +7,7 @@ public class IngredientCategories {
 	public IngredientCategories() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	public IngredientCategories(int igct_id, String igct_name) {
 		super();
 		this.igct_id = igct_id;

@@ -1,51 +1,50 @@
 package sickSa.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import sickSa.domain.Ingredients;
 
-public class IngredientsDaoImpl implements IngredientsDao{
+public class IngredientsMapperImpl implements IngredientsMapper{
 	
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public IngredientsDaoImpl() {
+	public void setSqlSession(SqlSession sqlSession) {
+		System.out.println("sqlSession: " + sqlSession);
+		this.sqlSession = sqlSession;
+	}
+	
+	public IngredientsMapperImpl() {
 		System.out.println("IngredientsDaoImpl Constructor():"+this);
 	}
 	
-	public void setSqlSession(SqlSession sqlSession) {
-		this.sqlSession = sqlSession;
-	}
-
+	//
 	@Override
-	public Ingredients selectAllIngredient() {
-		
-		return null;
+	public List<Ingredients> ingredientList() {
+		return sqlSession.selectList("ingredientList");
 	}
 
 	@Override
 	public Ingredients selectIngredientById(Integer ING_ID) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("selectIngredientById",ING_ID);
 	}
 
 	@Override
 	public Integer insertIngredient(Ingredients ingredient) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.insert("insertIngredient",ingredient);
 	}
 
 	@Override
 	public Integer deleteIngredient(Integer ING_ID) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.delete("deleteIngredient",ING_ID);
 	}
 
 	@Override
 	public Integer updateIngredient(Ingredients ingredient) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.update("updateIngredient",ingredient);
 	}
 
 }

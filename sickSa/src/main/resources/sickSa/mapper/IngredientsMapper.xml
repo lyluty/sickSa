@@ -2,10 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="sickSa.dao.IngredientsDao">
+<mapper namespace="sickSa.dao.IngredientsMapper">
 	
-	<select id="selectAllIngredient" resultType="sickSa.domain.Ingredients">
-		SELECT ING_ID,ING_NAME,ING_STOCKNUMBER
+	<select 
+		id="ingredientList" 
+		resultType="sickSa.domain.Ingredients">
+		SELECT ING_ID,ING_NAME,ING_STOCK,ING_MEASURE
 		FROM INGREDIENTS
 	</select>
 	
@@ -13,7 +15,7 @@
 		id="selectIngredientById" 
 		parameterType="java.lang.Integer" 
 		resultType="sickSa.domain.Ingredients">
-		SELECT ING_ID,ING_NAME,ING_STOCKNUMBER,ING_MEASURE
+		SELECT ING_ID,ING_NAME,ING_STOCK,ING_MEASURE
 		FROM INGREDIENTS
 		WHERE ING_ID=#{ING_ID}
 	</select>
@@ -21,8 +23,14 @@
 	<insert 
 		id="insertIngredient"
 		parameterType="sickSa.domain.Ingredients">
-		INSERT INTO INGREDIENTS(ING_ID,ING_NAME,ING_STOCKNUMBER,ING_MEASURE)
-		VALUES (#{ING_ID},#{ING_NAME},#{ING_STOCKNUMBER}.#{ING_MEASURE})
+		<selectKey 
+			keyProperty="ING_ID" 
+			resultType="int"
+			order="BEFORE">
+			SELECT INGREDIENTS_ING_ID_SEQ.nextval FROM DUAL
+		</selectKey>
+		INSERT INTO INGREDIENTS(ING_ID,ING_NAME,ING_STOCK,ING_MEASURE)
+		VALUES (#{ING_ID},#{ING_NAME},#{ING_STOCK}.#{ING_MEASURE})
 	</insert>
 	
 	<delete 
@@ -36,9 +44,9 @@
 		id="updateIngredient"
 		parameterType="sickSa.domain.Ingredients">
 		UPDATE INGREDIENTS
-		SET ING_NAME=#{ING_NAME},ING_STOCKNUMBER=#{ING_STOCKNUMBER},
+		SET ING_NAME=#{ING_NAME},ING_STOCK=#{ING_STOCK},
 			ING_MEASURE=#{ING_MEASURE}
 		WHERE ING_ID = #{ING_ID}
-	</update>
+	</update> 
 	
 </mapper>
