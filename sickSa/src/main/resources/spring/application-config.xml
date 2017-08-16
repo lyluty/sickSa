@@ -51,10 +51,16 @@
 	<bean id="ingredientCategoriesDao" class="sickSa.dao.IngredientCategoriesMapperImpl">
 		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
+	<bean id="productDao" class="sickSa.dao.ProductDaoImpl">
+		<property name="sqlSession" ref="sqlSession"/>
+	</bean>
 	
 	<!-- Service --> 
 	<bean id="queueService" class="sickSa.service.QueueServiceImpl">
 		<property name="queueLogDao" ref="queueLogDao"/>
 	</bean>
 	
+	<bean id="productService" class="sickSa.service.ProductServiceImpl">
+		<property name="productDao" ref="productDao"/>
+	</bean>	
 </beans>
