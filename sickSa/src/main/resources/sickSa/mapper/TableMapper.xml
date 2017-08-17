@@ -5,7 +5,7 @@
 
   
   
-<mapper namespace="sickSa.dao.TablesDao">
+<mapper namespace="sickSa.dao.TableDao">
 
 	<resultMap id="TableResultMap"  type="sickSa.domain.Table">
 		<result property="tbl_id"  column="TBL_ID" />
