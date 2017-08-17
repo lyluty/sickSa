@@ -21,6 +21,7 @@ COMMENT ON COLUMN PRODUCT_CATEGORIES.PDCT_NAME is '상품카테고리명';
 ALTER TABLE PRODUCT_CATEGORIES ADD CONSTRAINT IDX_PRODUCT_CATEGORIES_PK PRIMARY KEY (PDCT_ID);
 */
 public interface ProductCategoriesDao {
+	int insertCategories(ProductCategories addPC);
+	int updateCategories(ProductCategories updatePC);
 	public List<ProductCategories> selectAllProductCategories();
-	public ProductCategories selectProductCategoriesById(Integer pdct_id);
 }

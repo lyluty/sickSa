@@ -10,13 +10,11 @@ select * from product where pr_no=1;
 
 --product cate
 
-insert into product_category values (1,'aa',1);
+insert into product_categories values (1,'aa');
 
-update product_category set pc_no=1,pc_name='bb' where pr_no=1;
+update product_categories set pdct_name='bb' where pdct_id=1;
 
-delete from product_category where pc_no=1;
-
-select * from product_category where pr_no=1;
+select * from product_categories where pdct_id=1;
 
 public class OrderSQL{
 

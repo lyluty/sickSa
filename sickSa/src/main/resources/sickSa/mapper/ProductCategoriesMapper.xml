@@ -3,22 +3,28 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sickSa.dao.ProductCategoriesDao">
-	<select id="selectAllProductCategories" resultType="sickSa.domain.ProductCategories">
-		SELECT
-			PDCT_ID,
-			PDCT_NAME
-		FROM
-			PRODUCT_CATEGORIES
+	
+	<insert id="insertCategories" parameterType="sickSa.domain.ProductCategories">
+		INSERT INTO
+		PRODUCT_CATEGORIES(PDCT_ID,PDCT_NAME)
+		VALUES
+		(#{pdct_id},#{pdct_name})
+	</insert>
+	
+	
+	<update id="updateCategories"
+			parameterType="sickSa.domain.ProductCategories">
+		UPDATE PRODUCT_CATEGORIES
+		SET
+		PDCT_ID=#{pdct_id},
+		PDCT_NAME=#{pdct_name}
+		WHERE PDCT_ID=#{pdct_id}
+	</update> 
+	
+	<!-- resultType:ProductCategories(Dto) -->
+	<select id="selectAllProductCategories" 
+		resultType="sickSa.domain.ProductCategories">
+		SELECT PDCT_ID,PDCT_NAME FROM PRODUCT_CATEGORIES
 	</select>
 	
-	<select id="selectProductCategoriesById" parameterType="java.lang.Integer" resultType="sickSa.domain.ProductCategories">
-	<bind name="pdct_id" value=""/>
-		SELECT
-			PDCT_ID,
-			PDCT_NAME
-		FROM
-			PRODUCT_CATEGORIES
-		WHERE
-			PDCT_ID=#{pdct_id}
-	</select>
 </mapper>

@@ -43,6 +43,10 @@
 	<bean id="productDao" class="sickSa.dao.ProductDaoImpl">
 		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
+	<bean id="productCategoriesDao" class="sickSa.dao.ProductCategoriesDaoImpl">
+		<property name="sqlSession" ref="sqlSession"/>
+	</bean>
+	
 	
 	<!-- Service --> 
 	<bean id="queueService" class="sickSa.service.QueueServiceImpl">
@@ -53,5 +57,5 @@
 		<property name="productDao" ref="productDao"/>
 	</bean>	
 	
-	
+
 </beans>
