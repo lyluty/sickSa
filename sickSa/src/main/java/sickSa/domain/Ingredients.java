@@ -24,10 +24,10 @@ ALTER TABLE INGREDIENTS ADD CONSTRAINT IDX_INGREDIENTS_PK PRIMARY KEY (ING_ID);
 
 public class Ingredients {
 	/* Variable */
-	private int ing_id;
-	private String ing_name;
-	private int ing_stock;
-	private String ing_measure;
+	private int ING_ID;
+	private String ING_NAME;
+	private int ING_STOCK;
+	private String ING_MEASURE;
 	
 	
 	/* Construcotr */
@@ -35,59 +35,59 @@ public class Ingredients {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure) {
+	public Ingredients(int ING_ID, String ING_NAME, int ING_STOCK, String ING_MEASURE) {
 		super();
-		this.ing_id = ing_id;
-		this.ing_name = ing_name;
-		this.ing_stock = ing_stock;
-		this.ing_measure = ing_measure;
+		this.ING_ID = ING_ID;
+		this.ING_NAME = ING_NAME;
+		this.ING_STOCK = ING_STOCK;
+		this.ING_MEASURE = ING_MEASURE;
 	}
 	
 	@Override
 	public String toString() {
-		return "["+ing_id+"]"+ing_name+","+ing_stock+","+ing_measure;
+		return "["+ING_ID+"]"+ING_NAME+","+ING_STOCK+","+ING_MEASURE;
 	}
 	
 	/* Method */
 	// Getter, Setter
 	public int getIng_id() {
-		return ing_id;
+		return ING_ID;
 	}
 
 
-	public void setIng_id(int ing_id) {
-		this.ing_id = ing_id;
+	public void setIng_id(int ING_ID) {
+		this.ING_ID = ING_ID;
 	}
 
 
 	public String getIng_name() {
-		return ing_name;
+		return ING_NAME;
 	}
 	
 
 
-	public void setIng_name(String ing_name) {
-		this.ing_name = ing_name;
+	public void setIng_name(String ING_NAME) {
+		this.ING_NAME = ING_NAME;
 	}
 
 
 	public int getIng_stock() {
-		return ing_stock;
+		return ING_STOCK;
 	}
 
 
-	public void setIng_stock(int ing_stock) {
-		this.ing_stock = ing_stock;
+	public void setIng_stock(int ING_STOCK) {
+		this.ING_STOCK = ING_STOCK;
 	}
 
 
 	public String getIng_measure() {
-		return ing_measure;
+		return ING_MEASURE;
 	}
 
 
-	public void setIng_measure(String ing_measure) {
-		this.ing_measure = ing_measure;
+	public void setIng_measure(String ING_MEASURE) {
+		this.ING_MEASURE = ING_MEASURE;
 	}
 	
 }

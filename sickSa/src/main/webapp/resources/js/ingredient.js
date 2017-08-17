@@ -4,7 +4,7 @@
  */
 
 function ingredientCreate() {
-	document.f.action = 'ing_write_form.do';
+	document.f.action = '/SinsertActionIngredients';
 	document.f.submit();
 }
 function ingredientModifyAction() {
