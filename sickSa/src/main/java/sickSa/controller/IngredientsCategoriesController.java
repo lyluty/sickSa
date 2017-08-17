@@ -17,7 +17,7 @@ public class IngredientsCategoriesController {
 	private IngredientCategoriesMapper ingredientCategoriesMapper; 
 	 
 	
-	// 카테고리 한개 반환 테스트 OK
+	// 재료 카테고리 한개 반환 OK
 	@RequestMapping("/test/IGCTList")
 	public String ingredientCategoriesListTest(Model model){
 		
@@ -26,7 +26,7 @@ public class IngredientsCategoriesController {
 		return "test/ingredientCategoriesSelect";
 	}
 	
-	// 카테고리 번호로 카테고리 반환 테스트 OK
+	// 재료 카테고리 아이디로 찾기 OK
 	@RequestMapping("/test/IGCTID/{igct_id}")
 	public String selectIngredientCategoriesByIdTest(Model model,  @PathVariable("igct_id") Integer igct_id){
 			
@@ -35,7 +35,7 @@ public class IngredientsCategoriesController {
 		return "test/ingredientCategoriesById";
 	}
 	
-	// 카테고리 삽입 테스트 안됨.
+	// 재료 카테고리 삽입 X
 	
 	// INSERT FORM
 	@RequestMapping("/test/IGCTINSERTFORM")
