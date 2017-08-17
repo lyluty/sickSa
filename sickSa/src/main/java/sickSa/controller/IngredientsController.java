@@ -39,7 +39,25 @@ public class IngredientsController {
 		return "forward:/selectIngredients/"+ingredients.getIng_id();
 	}
 	
+	@RequestMapping("/updateFormIngredients")
+	public String updateFormIngredientTest(){
+		
+		return "ingredientsUpdateForm";
+	}
 	
+	@RequestMapping("/updateActionIngredients")
+	public String updateActionIngredientTest(
+			Model model,@ModelAttribute("ingredient") Ingredients ingredients){
+		
+		return "forward:/selectIngredients/"+ingredients.getIng_id();
+	}
+	
+	@RequestMapping("deleteActionIngredients")
+	public String deleteActionIngredientTest(
+			Model model,@PathVariable("ing_id") Integer ing_id){
+	
+		return "forward:/selectIngredients/"+ing_id;
+	}
 	
 	@Autowired
 	public void setIngredientsDao(IngredientsMapper ingredientsDao) {

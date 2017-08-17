@@ -26,7 +26,7 @@
 				</tr>
 				<c:forEach var="ingredient" items="${ingredientList}">
 					<tr align="center">
-						<td>${ingredient.ing_id}</td>
+						<td onclick="">${ingredient.ing_id}</td>
 						<td>${ingredient.ing_name}</td>
 						<td>${ingredient.ing_stock}</td>
 						<td>${ingredient.ing_measure}</td>
