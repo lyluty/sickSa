@@ -55,7 +55,7 @@ CREATE TABLE ORDERS(
 	update ORDERS 
 			set PDT_ID=#{pdt_id}, ORD_PDT_AMOUNT=#{ord_pdtAmount},
 					ORD_TOTAL=#{ord_total},ORD_PAYMENT_METHOD=#{ord_paymentMethod},
-					ORD_DATE=#{ord_date},ORD_STATE=#{ord_state}
+					ORD_DATE=#{ord_date},ORD_STATE=#{ord_state}, TBL_ID=#{tbl_id}
 			where ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}			
 </update>
 

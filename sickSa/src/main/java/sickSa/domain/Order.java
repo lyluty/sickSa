@@ -18,7 +18,7 @@ public class Order {
 		
 	}
 	
-public Order(int ord_id, int pdt_id, int ord_pdtAmount, int ord_total, String ord_paymentMethod, Date ord_date,  char ord_state, int tbl_id){
+	public Order(int ord_id, int pdt_id, int ord_pdtAmount, int ord_total, String ord_paymentMethod, Date ord_date,  char ord_state, int tbl_id){
 		
 	this.ord_id=ord_id;
 	this.pdt_id=pdt_id;
