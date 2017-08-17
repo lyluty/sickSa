@@ -2,67 +2,52 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- 
-  /**********************************/
-/* Table Name: 주문정보 */
-/**********************************/
-CREATE TABLE ORDERS(
-		ORD_ID                        		NUMBER(6)		 NULL ,
-		PDT_ID                        		NUMBER(6)		 NOT NULL,
-		ORD_PDT_AMOUNT                		NUMBER(2)		 DEFAULT 1		 NOT NULL,
-		ORD_TOTAL                     		NUMBER(6)		 NOT NULL,
-		ORD_PAYMENT_METHOD            		VARCHAR2(20)		 NOT NULL,
-		ORD_DATE                      		DATE		 DEFAULT SYSDATE		 NOT NULL,
-		ORD_STATE                     		CHAR(1)		 DEFAULT 'B'		 NOT NULL,
-		TBL_ID                        		NUMBER(3)		 NULL 
-);  
- -->
- 
- 
- <mapper namespace="sickSa.dao.OrderDao">
 
-	<resultMap id="OrdersResultMap"  type="sickSa.domain.Order">
-		<result property="ord_id"  column="ORD_ID" />
-		<result property="pdt_id"  column="PDT_ID" />
-		<result property="ord_pdtAmount"   column="ORD_PDT_AMOUNT" />
-		<result property="ord_total"  column="ORD_TOTAL" />
-		<result property="ord_paymentMethod"  column="ORD_PAYMENT_METHOD" />
-		<result property="ord_date"  column="ORD_DATE" />
-		<result property="ord_state"  column="ORD_STATE" />
-		<result property="tbl_id"  column="TBL_ID" />
+<mapper namespace="sickSa.mapper.OrderDao">
 
-	</resultMap>
+	<!-- <resultMap id="OrdersResultMap" type="sickSa.domain.Order"> <result 
+		property="ord_id" column="ORD_ID" /> <result property="pdt_id" column="PDT_ID" 
+		/> <result property="ord_pdtAmount" column="ORD_PDT_AMOUNT" /> <result property="ord_total" 
+		column="ORD_TOTAL" /> <result property="ord_paymentMethod" column="ORD_PAYMENT_METHOD" 
+		/> <result property="ord_date" column="ORD_DATE" /> <result property="ord_state" 
+		column="ORD_STATE" /> <result property="tbl_id" column="TBL_ID" /> </resultMap> -->
 
-<select id="getOrders"  parameterType= "java.lang.Integer"  resultMap="OrdersResultMap">
-	select * from ORDERS 
-</select>
+	<select id="selectList" parameterType="int" resultType="sickSa.domain.Order">
+		select *
+		from ORDERS
+	</select>
 
+	<select id="selectOne" parameterType="int" resultMap="sickSa.domain.Order">
+		select *
+		from ORDERS
+		where ORD_ID=#{ord_id} and
+		PDT_ID=#{pdt_id} and
+		TBL_ID=#{tbl_id}
+	</select>
 
-<select id="selectOrder"  parameterType= "java.lang.Integer"  resultMap="OrdersResultMap">
-	select * from ORDERS 
-			where ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
-</select>
+	<insert id="insert" parameterType="sickSa.domain.Order">
+		insert into TABLES
+		(ORD_ID,
+		PDT_ID,ORD_PDT_AMOUNT,ORD_TOTAL,ORD_PAYMENT_METHOD,
+		ORD_DATE,ORD_STATE,TBL_ID)
+		values(#{ord_id},#{pdt_id},#{ord_pdtAmount},#{ord_total},#{ord_paymentMethod},#{ord_date},
+		#{ord_state},#{tbl_id})
+	</insert>
 
-<insert id="insertOrder"  parameterType= "sickSa.domain.Order" >
-	insert into TABLES (ORD_ID, PDT_ID,ORD_PDT_AMOUNT,ORD_TOTAL,ORD_PAYMENT_METHOD,
-												ORD_DATE,ORD_STATE,TBL_ID)
-				values(#{ord_id},#{pdt_id},#{ord_pdtAmount},#{ord_total},#{ord_paymentMethod},#{ord_date},
-								#{ord_state},#{tbl_id})
-</insert>
+	<update id="update" parameterType="sickSa.domain.Order">
+		update ORDERS
+		set
+		PDT_ID=#{pdt_id}, ORD_PDT_AMOUNT=#{ord_pdtAmount},
+		ORD_TOTAL=#{ord_total},ORD_PAYMENT_METHOD=#{ord_paymentMethod},
+		ORD_DATE=#{ord_date},ORD_STATE=#{ord_state}, TBL_ID=#{tbl_id}
+		where
+		ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
+	</update>
 
-
-<update id="updateOrder" parameterType="sickSa.domain.Order">
-	update ORDERS 
-			set PDT_ID=#{pdt_id}, ORD_PDT_AMOUNT=#{ord_pdtAmount},
-					ORD_TOTAL=#{ord_total},ORD_PAYMENT_METHOD=#{ord_paymentMethod},
-					ORD_DATE=#{ord_date},ORD_STATE=#{ord_state}, TBL_ID=#{tbl_id}
-			where ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}			
-</update>
-
-
-<delete id="deleteOrder" parameterType="sickSa.domain.Order">
-	delete ORDERS
-			where ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
-</delete>
+	<delete id="delete" parameterType="sickSa.domain.Order">
+		delete ORDERS
+		where
+		ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
+	</delete>
 
 </mapper>

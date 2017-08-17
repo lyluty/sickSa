@@ -2,8 +2,11 @@ package sickSa.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import sickSa.domain.Table;
 
+@Mapper
 public interface TableDao {
 
 	List<Table> selectList();
