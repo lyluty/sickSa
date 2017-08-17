@@ -46,7 +46,7 @@ CREATE TABLE ORDERS(
 <insert id="insertOrder"  parameterType= "sickSa.domain.Order" >
 	insert into TABLES (ORD_ID, PDT_ID,ORD_PDT_AMOUNT,ORD_TOTAL,ORD_PAYMENT_METHOD,
 												ORD_DATE,ORD_STATE,TBL_ID)
-				values(#{ord_id},#{pdt_id},#{ord_pdtAmount),#{ord_total},#{ord_paymentMethod},#{ord_date},
+				values(#{ord_id},#{pdt_id},#{ord_pdtAmount},#{ord_total},#{ord_paymentMethod},#{ord_date},
 								#{ord_state},#{tbl_id})
 </insert>
 
