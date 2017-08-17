@@ -26,6 +26,7 @@ public class IngredientsController {
 	    return "ingredientsSelect";
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping("/insertFormIngredients")
 	public String insertFormIngredientsTest(){
 		
@@ -37,11 +38,28 @@ public class IngredientsController {
 			Model model,@ModelAttribute("ingredient") Ingredients ingredients){
 		ingredientsMapper.insertIngredient(ingredients);
 		return "forward:/selectIngredients/"+ingredients.getIng_id();
+=======
+	@RequestMapping("/test/ingredientCategories/{igct_id}")
+	public String ingredientCategoriesListTest(
+			Model model,@PathVariable("igct_name") Integer igct_id){
+		
+		/*
+		model.addAttribute(
+				"ingredientCategoryList", ingredientCategoriesMapper.ingredientCategoriesList());
+		model.addAttribute(
+				"ingredientCategory", ingredientCategoriesMapper.selectIngredientCategoriesById(igct_id));
+		*/
+		return "test/testIngredientCategories";
+>>>>>>> branch 'master' of https://github.com/lyluty/sickSa
 	}
+	
+	
 	
 	@Autowired
 	public void setIngredientsDao(IngredientsMapper ingredientsDao) {
 		System.out.println("@Autowired => IngredientsDao: "+ingredientsDao);
+		
+		
 		this.ingredientsMapper = ingredientsDao;
 	}
 	
