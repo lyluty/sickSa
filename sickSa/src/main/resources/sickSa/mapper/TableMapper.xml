@@ -12,7 +12,7 @@
 		<result  property="tbl_isEmpty"  column="TBL_IS_EMPTY"/>
 	</resultMap>
 
-<select id="getTable"  parameterType= "java.lang.Integer"  resultMap="TableResultMap">
+<select id="getTables"  parameterType= "java.lang.Integer"  resultMap="TableResultMap">
 	select * from TABLES;
 </select>
 
