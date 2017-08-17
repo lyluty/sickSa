@@ -1,16 +1,16 @@
 package sickSa.domain;
 
-public class Tables {
+public class Table {
 
 	private  int tbl_id;
 	private char tbl_isEmpty;
 	
 	
-	public Tables(){
+	public Table(){
 		
 	}
 	
-  public Tables(int tbl_id, char tbl_isEmpty){
+  public Table(int tbl_id, char tbl_isEmpty){
 		this.tbl_id=tbl_id;
 		this.tbl_isEmpty=tbl_isEmpty;
 	}

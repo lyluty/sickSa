@@ -7,33 +7,33 @@
   
 <mapper namespace="sickSa.dao.TablesDao">
 
-	<resultMap id="TablesResultMap"  type="sickSa.domain.Tables">
+	<resultMap id="TableResultMap"  type="sickSa.domain.Table">
 		<result property="tbl_id"  column="TBL_ID" />
 		<result  property="tbl_isEmpty"  column="TBL_IS_EMPTY"/>
 	</resultMap>
 
-<select id="getTables"  parameterType= "java.lang.Integer"  resultMap="TablesResultMap">
+<select id="getTable"  parameterType= "java.lang.Integer"  resultMap="TableResultMap">
 	select * from TABLES;
 </select>
 
-<select id="selectTables"  parameterType= "java.lang.Integer"  resultMap="TablesResultMap">
+<select id="selectTable"  parameterType= "java.lang.Integer"  resultMap="TableResultMap">
 	select * from TABLES where TBL_ID=#{tbl_id}
 </select>
 
-<insert id="insertTables"  parameterType= "sickSa.domain.Tables" >
+<insert id="insertTable"  parameterType= "sickSa.domain.Table" >
 	insert into TABLES (TBL_ID,TBL_IS_EMPTY)
 				values(#{tbl_id},#{tbl_isEmpty})
 </insert>
 
 
-<update id="updateTables" parameterType="sickSa.domain.Tables">
+<update id="updateTable" parameterType="sickSa.domain.Table">
 	update TABLES 
 			set 	TBL_IS_EMPTY=#{tbl_isEmpty}
 			where TBL_ID=#{tbl_id}
 </update>
 
 
-<delete id="deleteTables" parameterType="sickSa.domain.Tables">
+<delete id="deleteTable" parameterType="sickSa.domain.Table">
 	delete from TABLES
 			where TBL_ID=#{tbl_id} 
 </delete>

@@ -19,9 +19,9 @@ CREATE TABLE ORDERS(
  -->
  
  
- <mapper namespace="sickSa.dao.OrdersDao">
+ <mapper namespace="sickSa.dao.OrderDao">
 
-	<resultMap id="OrdersResultMap"  type="sickSa.domain.Orders">
+	<resultMap id="OrdersResultMap"  type="sickSa.domain.Order">
 		<result property="ord_id"  column="ORD_ID" />
 		<result property="pdt_id"  column="PDT_ID" />
 		<result property="ord_pdtAmount"   column="ORD_PDT_AMOUNT" />
@@ -38,12 +38,12 @@ CREATE TABLE ORDERS(
 </select>
 
 
-<select id="selectOrders"  parameterType= "java.lang.Integer"  resultMap="OrdersResultMap">
+<select id="selectOrder"  parameterType= "java.lang.Integer"  resultMap="OrdersResultMap">
 	select * from ORDERS 
 			where ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
 </select>
 
-<insert id="insertOrders"  parameterType= "sickSa.domain.Orders" >
+<insert id="insertOrder"  parameterType= "sickSa.domain.Order" >
 	insert into TABLES (ORD_ID, PDT_ID,ORD_PDT_AMOUNT,ORD_TOTAL,ORD_PAYMENT_METHOD,
 												ORD_DATE,ORD_STATE,TBL_ID)
 				values(#{ord_id},#{pdt_id},#{ord_pdtAmount),#{ord_total},#{ord_paymentMethod},#{ord_date},
@@ -51,7 +51,7 @@ CREATE TABLE ORDERS(
 </insert>
 
 
-<update id="updateOrders" parameterType="sickSa.domain.Orders">
+<update id="updateOrder" parameterType="sickSa.domain.Order">
 	update ORDERS 
 			set PDT_ID=#{pdt_id}, ORD_PDT_AMOUNT=#{ord_pdtAmount},
 					ORD_TOTAL=#{ord_total},ORD_PAYMENT_METHOD=#{ord_paymentMethod},
@@ -60,7 +60,7 @@ CREATE TABLE ORDERS(
 </update>
 
 
-<delete id="deleteOrders" parameterType="sickSa.domain.Orders">
+<delete id="deleteOrder" parameterType="sickSa.domain.Order">
 	delete ORDERS
 			where ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
 </delete>
