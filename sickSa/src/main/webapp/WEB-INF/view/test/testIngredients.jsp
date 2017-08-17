@@ -9,6 +9,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>IngredientsMapper test</title>
+		<script src="js/ingredient.js"></script>
 	</head>
 	<body>
 		<h1>IngredientsMapper test</h1>
@@ -50,19 +51,32 @@
 				</tr>
 			</table>
 		</div>
-		<%-- <hr/>
+		<hr/>
 		<div>
-			<h4>ingredientsDao.selectIngredientById(ing_id)</h4>
-			<table border="1">
-				<tr align="center">
-					<td>QAWT_ID</td>
-					<td>QAWT_CONTACT</td>
-				</tr>
-				<tr align="center">
-					<td>${nextAwaiter.qawt_id}</td>
-					<td>${nextAwaiter.qawt_contact}</td>
-				</tr>
-			</table>
-		</div> --%>
+			<h4></h4>
+			<form name="f">
+				<table border="1">
+					<tr align="center">
+						<th>ING_ID</th>
+						<th>ING_NAME</th>
+						<th>ING_STOCK</th>
+						<th>ING_MEASURE</th>
+					</tr>
+					<tr align="center">
+						<td><input type="text" name="ing_id" value="${ingredient.ing_id}"></td>
+						<td><input type="text" name="ing_name" value="${ingredient.ing_name}"></td>
+						<td><input type="text" name="ing_id" value="${ingredient.ing_stock}"></td>
+						<td><input type="text" name="ing_id" value="${ingredient.ing_measure}"></td>
+					</tr>
+				</table>
+			</form>
+		<table border=0 cellpadding=0 cellspacing=1>
+			<tr>
+				<td align=center>
+					<input type="button" value="입고" onclick="ingredientCreate();"> &nbsp; 
+				</td>
+			</tr>
+		</table>
+	</div> 
 	</body>
 </html>
