@@ -33,7 +33,7 @@
 		INSERT INTO
 			ingredient_categories(igct_id, igct_name)
 		VALUES
-			(ingredient_categories_igct_id_seq.nextval, #{igct_name})
+			(igct_id_seq.nextval, #{igct_name})
 	</insert>
 	
 	<delete 

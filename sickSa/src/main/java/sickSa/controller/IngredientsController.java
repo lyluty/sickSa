@@ -30,22 +30,25 @@ public class IngredientsController {
 	}
 	
 	@RequestMapping("/test/ingredientCategories/{igct_id}")
-	public String testIngredientCategories(
-			Model model,@PathVariable("igct_id") Integer igct_id){
-		if (igct_id == null)
-			System.out.println("null");
-		else
-			System.out.println(igct_id);
+	public String ingredientCategoriesListTest(
+			Model model,@PathVariable("igct_name") Integer igct_id){
+		
+		/*
 		model.addAttribute(
 				"ingredientCategoryList", ingredientCategoriesMapper.ingredientCategoriesList());
 		model.addAttribute(
 				"ingredientCategory", ingredientCategoriesMapper.selectIngredientCategoriesById(igct_id));
+		*/
 		return "test/testIngredientCategories";
 	}
+	
+	
 	
 	@Autowired
 	public void setIngredientsDao(IngredientsMapper ingredientsDao) {
 		System.out.println("@Autowired => IngredientsDao: "+ingredientsDao);
+		
+		
 		this.ingredientsMapper = ingredientsDao;
 	}
 	

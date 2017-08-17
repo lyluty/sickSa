@@ -16,7 +16,7 @@ public class IngredientCategoriesMapperImpl implements IngredientCategoriesMappe
 		System.out.println("sqlSession: " + sqlSession);
 		this.sqlSession = sqlSession;
 	}
-	
+		
 	public IngredientCategoriesMapperImpl() {
 		System.out.println("IngredientCategoriesDaoImpl Constructor(): "+ this);
 	}
