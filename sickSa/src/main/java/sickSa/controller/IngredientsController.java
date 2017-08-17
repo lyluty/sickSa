@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import sickSa.dao.IngredientCategoriesMapper;
 import sickSa.dao.IngredientsMapper;
+import sickSa.domain.Ingredients;
 
 @Controller
 public class IngredientsController {
@@ -18,9 +19,13 @@ public class IngredientsController {
 	private IngredientCategoriesMapper ingredientCategoriesMapper; 
 	 
 	@RequestMapping("/test/ingredients/{ing_id}")
-	public String testIngredients(Model model,@PathVariable("ing_id") Integer ing_id) {
-		model.addAttribute("ingredientList", ingredientsMapper.ingredientList());
-		model.addAttribute("ingredient", ingredientsMapper.selectIngredientById(ing_id));
+	public String testIngredients(Model model,@PathVariable("ing_id") Ingredients ingredients) {
+//		model.addAttribute(
+//				"ingredientList", ingredientsMapper.ingredientList());
+//		model.addAttribute(
+//				"ingredient", ingredientsMapper.selectIngredientById(ing_id));
+		model.addAttribute("insertIngredient", ingredientsMapper.insertIngredient(ingredients));
+		
 	    return "test/testIngredients";
 	}
 	
