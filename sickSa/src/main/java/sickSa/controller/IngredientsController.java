@@ -27,6 +27,10 @@ public class IngredientsController {
 	@RequestMapping("/test/ingredientCategories/{igct_id}")
 	public String testIngredientCategories(
 			Model model,@PathVariable("igct_id") Integer igct_id){
+		if (igct_id == null)
+			System.out.println("null");
+		else
+			System.out.println(igct_id);
 		model.addAttribute(
 				"ingredientCategoryList", ingredientCategoriesMapper.ingredientCategoriesList());
 		model.addAttribute(

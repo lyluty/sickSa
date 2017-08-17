@@ -8,7 +8,7 @@
 		INSERT INTO
 		PRODUCTS(PDT_ID,PDT_NAME,PDT_PRICE,PDT_IMGSRC_L,PDT_IMGSRC_S,PDT_DESCRIPTION,PDCT_ID)
 		VALUES
-		(#{pdt_id},#{pdt_name},#{pdt_price},#{pdt_imgsrc_l},#{pdt_imgsrc_s},#{pdt_description},#{pdct_id})
+		(#{pdt_id},#{pdt_name},#{pdt_price},#{pdt_imgsrc_L},#{pdt_imgsrc_S},#{pdt_description},#{pdct_id})
 	</insert>
 
 	<!-- Product객체 1개반환 -->
@@ -22,7 +22,13 @@
 
 	<!-- resultType:Map -->
 	<select id="findAllProductsMap" resultType="java.util.Map">
-		SELECT PDT_ID,PDT_NAME,PDT_PRICE,PDT_IMGSRC_L,PDT_IMGSRC_S,PDT_DESCRIPTION,PDCT_ID FROM PRODRUCTS
+		SELECT PDT_ID,PDT_NAME,PDT_PRICE,PDT_IMGSRC_L,PDT_IMGSRC_S,PDT_DESCRIPTION,PDCT_ID FROM PRODUCTS
+	</select>
+	<!-- Product객체 여러개반환 -->
+	<!-- resultType:Product(Dto) -->
+	<select id="findAllProducts" 
+			resultType="sickSa.domain.Product">
+		SELECT PDT_ID,PDT_NAME,PDT_PRICE,PDT_IMGSRC_L,PDT_IMGSRC_S,PDT_DESCRIPTION,PDCT_ID FROM PRODUCTS
 	</select>
 	
 	<update id="updateProduct"
@@ -31,8 +37,8 @@
 		SET
 		PDT_NAME=#{pdt_name},
 		PDT_PRICE=#{pdt_price},
-		PDT_IMGSRC_L=#{pdt_imgsrc_l},
-		PDT_IMGSRC_S=#{pdt_imgsrc_s},
+		PDT_IMGSRC_L=#{pdt_imgsrc_L},
+		PDT_IMGSRC_S=#{pdt_imgsrc_S},
 		PDT_DESCRIPTION=#{pdt_description},
 		PDCT_ID=#{pdct_id} 
 		WHERE PDT_ID=#{pdt_id}

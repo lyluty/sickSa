@@ -14,7 +14,8 @@ public interface ProductDao {
 	Product findProductById(int pdt_id);
 	List<Map> findAllProductsMap();
 	int updateProduct(Product updateProduct);
-	int deleteProduct(Product product);
+	int deleteProductById(int pdt_id);
+	List<Product> findAllProducts();
 
 
 

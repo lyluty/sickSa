@@ -109,6 +109,13 @@ public class Product {
 			this.pdct_id = pdct_id;
 		}
 
+		@Override
+		public String toString() {
+			return "Product [pdt_id=" + pdt_id + ", pdt_name=" + pdt_name + ", pdt_price=" + pdt_price
+					+ ", pdt_imgsrc_L=" + pdt_imgsrc_L + ", pdt_imgsrc_S=" + pdt_imgsrc_S + ", pdt_description="
+					+ pdt_description + ", pdct_id=" + pdct_id + "]";
+		}
+
 		
 	}
 

@@ -24,7 +24,7 @@
 		FROM
 			ingredient_categories
 		WHERE 
-		    igct_id = #{igct_id, jdbcType=INTEGER}
+		    igct_id = #{igct_id}
 	</select>
 	
 	<insert 

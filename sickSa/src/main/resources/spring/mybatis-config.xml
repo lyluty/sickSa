@@ -3,12 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<typeAliases>
-	</typeAliases>	
+	<!--  oracle null 처리  -->
+    <settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
 	<mappers>
 		<mapper class="sickSa.dao.IngredientsMapper"/>
 		<mapper class="sickSa.dao.IngredientCategoriesMapper"/>
 		<mapper class="sickSa.dao.QueueLogDao"/>
+		<mapper class="sickSa.dao.ProductDao"/>
+		<mapper resource="sickSa/mapper/ProductMapper.xml"/> 
 		<mapper resource="sickSa/mapper/IngredientsMapper.xml"/> 
 		<mapper resource="sickSa/mapper/IngredientCategoriesMapper.xml"/> 
 		<mapper resource="sickSa/mapper/QueueLogMapper.xml"/> 
