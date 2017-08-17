@@ -10,14 +10,14 @@
     </settings>
     
 	<mappers>
+	<!-- 
 		<mapper class="sickSa.dao.IngredientsMapper"/>
 		<mapper class="sickSa.dao.IngredientCategoriesMapper"/>
-		<mapper class="sickSa.dao.QueueLogDao"/>
 		<mapper class="sickSa.dao.ProductDao"/>
 		<mapper resource="sickSa/mapper/ProductMapper.xml"/> 
 		<mapper resource="sickSa/mapper/IngredientsMapper.xml"/> 
-		<mapper resource="sickSa/mapper/IngredientCategoriesMapper.xml"/> 
-		<mapper resource="sickSa/mapper/QueueLogMapper.xml"/> 
+		<mapper resource="sickSa/mapper/IngredientCategoriesMapper.xml"/>
+	 -->
 	</mappers>
 </configuration>
 
