@@ -58,50 +58,5 @@
 		</div>
 		<hr />
 	</form>
-	<!-- 
-		<div>
-			<h4>QueueAwaiterDao.selectQueueAwaiterList()</h4>
-			<table border="1">
-				<tr align="center">
-					<td>QAWT_ID</td>
-					<td>QAWT_CONTACT</td>
-				</tr>
-				<c:forEach var="queueAwaiter" items="${queueAwaiterList}">
-					<tr align="center">
-						<td>${queueAwaiter.qawt_id}</td>
-						<td>${queueAwaiter.qawt_contact}</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</div>
-		<hr/>
-		<div>
-			<h4>QueueAwaiterDao.selectQueueAwaiterById(Integer qawtId)</h4>
-			<table border="1">
-				<tr align="center">
-					<td>QAWT_ID</td>
-					<td>QAWT_CONTACT</td>
-				</tr>
-				<tr align="center">
-					<td>${queueAwaiter.qawt_id}</td>
-					<td>${queueAwaiter.qawt_contact}</td>
-				</tr>
-			</table>
-		</div>
-		<hr/>
-		<div>
-			<h4>QueueAwaiterDao.selectNextAwaiter()</h4>
-			<table border="1">
-				<tr align="center">
-					<td>QAWT_ID</td>
-					<td>QAWT_CONTACT</td>
-				</tr>
-				<tr align="center">
-					<td>${nextAwaiter.qawt_id}</td>
-					<td>${nextAwaiter.qawt_contact}</td>
-				</tr>
-			</table>
-		</div>
-	 	-->
 </body>
 </html>
