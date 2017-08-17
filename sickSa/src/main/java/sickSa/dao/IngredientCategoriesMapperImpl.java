@@ -28,7 +28,7 @@ public class IngredientCategoriesMapperImpl implements IngredientCategoriesMappe
 
 	@Override
 	public IngredientCategories selectIngredientCategoriesById(Integer igct_id) {
-		return sqlSession.selectOne("selectIngredientCategoriesById");
+		return sqlSession.selectOne("selectIngredientCategoriesById", igct_id);
 	}
 
 	@Override
