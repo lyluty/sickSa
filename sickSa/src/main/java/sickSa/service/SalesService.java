@@ -7,4 +7,7 @@ package sickSa.service;
  */
 public interface SalesService {
 
+	
+	
+	
 }
