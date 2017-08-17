@@ -20,7 +20,7 @@ public class OrderDaoImpl implements OrderDao{
 	}
 	
 	@Override
-	public int selectOrder(Order order) {
+	public Order selectOrder(Integer ord_no) {
 		return sqlSession.selectOne("selectOrder");
 	}
 	
@@ -36,7 +36,7 @@ public class OrderDaoImpl implements OrderDao{
 	}
 
 	@Override
-	public int deleteOrder(Order ord_no) {
+	public int deleteOrder(Integer ord_no) {
 		return sqlSession.delete("deleteOrder",ord_no);
 		
 	}

@@ -18,7 +18,7 @@ public class TableDaoImpl implements TableDao{
 	}
 	
 	@Override
-	public int selectTable(Table table) {
+	public int selectTable(int tbl_no) {
 	return sqlSession.selectOne("selectTable");
 	}
 

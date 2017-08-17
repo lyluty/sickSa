@@ -6,14 +6,13 @@ import org.springframework.stereotype.Service;
 import sickSa.dao.OrderDao;
 import sickSa.domain.Order;
 
-/*
- * 결제 완료 - 레코드 생성
- * 테이블번호 수정
- */
+
 @Service("OrderService")
 public class OrderService {
 	
 	private OrderDao orderDao;
+	
+	/* 결제 완료 - 레코드 생성 */
 	
 	public void createOrder(Order order){
 		
@@ -21,19 +20,11 @@ public class OrderService {
 
 	}
 	
-	public void changeTblNo(Order order, int tbl_id){
+	/* 테이블 번호 수정 */
 	
-		Order tmpOrder=new Order();
-		
-		orderDao.selectOrder(order);
+	public void changeTblNo(Integer ord_no, int tbl_id){
 	
-		tmpOrder.setOrd_id(order.getOrd_id());
-		tmpOrder.setPdt_id(order.getPdt_id());
-		tmpOrder.setOrd_pdtAmount(order.getOrd_pdtAmount());
-		tmpOrder.setOrd_total(order.getOrd_total());
-		tmpOrder.setOrd_paymentMethod(order.getOrd_paymentMethod());
-		tmpOrder.setOrd_date(order.getOrd_date());
-		tmpOrder.setOrd_state(order.getOrd_state());
+		Order tmpOrder=	orderDao.selectOrder(ord_no);
 		tmpOrder.setTbl_id(tbl_id);
 		
 		orderDao.updateOrder(tmpOrder);
