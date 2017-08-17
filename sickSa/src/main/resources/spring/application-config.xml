@@ -11,23 +11,12 @@
 	
 	
 	<import resource="datasource-config.xml"/>
+	
 	<!-- MyBatis -->
 	<bean id="sqlSessionFactory"
 		  class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
 		<property name="dataSource" ref="apacheDataSource"/>
-		<!-- mybatis-config.xml 로 옮김 
-		<property name="mapperLocations">
-			<list>
-				<value>classpath:sickSa/mapper/QueueLogMapper.xml</value>
-				<value>classpath:sickSa/mapper/IngredientsMapper.xml</value>
-				<value>classpath:sickSa/mapper/IngredientDetailsMapper.xml</value>
-				<value>classpath:sickSa/mapper/IngredientCategoriesMapper.xml</value>
-			</list>
-		</property>
-		
-		<property name="mapperLocations" value="classpath:sickSa/mapper/*.xml"/>
-		 -->
     </bean>
     
     <!-- SqlSessionTemplate[MyBatis]-->
@@ -63,4 +52,6 @@
 	<bean id="productService" class="sickSa.service.ProductServiceImpl">
 		<property name="productDao" ref="productDao"/>
 	</bean>	
+	
+	
 </beans>
