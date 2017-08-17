@@ -17,17 +17,7 @@ public class OrderService {
 	
 	public void createOrder(Order order){
 		
-		Order tmpOrder=new Order();
-		tmpOrder.setOrd_id(order.getOrd_id());
-		tmpOrder.setPdt_id(order.getPdt_id());
-		tmpOrder.setOrd_pdtAmount(order.getOrd_pdtAmount());
-		tmpOrder.setOrd_total(order.getOrd_total());
-		tmpOrder.setOrd_paymentMethod(order.getOrd_paymentMethod());
-		tmpOrder.setOrd_date(order.getOrd_date());
-		tmpOrder.setOrd_state(order.getOrd_state());
-		tmpOrder.setTbl_id(order.getTbl_id());
-		
-		orderDao.insertOrder(tmpOrder);
+		orderDao.insertOrder(order);
 
 	}
 	
@@ -44,8 +34,7 @@ public class OrderService {
 		tmpOrder.setOrd_paymentMethod(order.getOrd_paymentMethod());
 		tmpOrder.setOrd_date(order.getOrd_date());
 		tmpOrder.setOrd_state(order.getOrd_state());
-		tmpOrder.setTbl_id(order.getTbl_id());
-		
+		tmpOrder.setTbl_id(tbl_id);
 		
 		orderDao.updateOrder(tmpOrder);
 		
