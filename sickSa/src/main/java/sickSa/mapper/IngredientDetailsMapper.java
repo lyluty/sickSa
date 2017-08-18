@@ -1,4 +1,4 @@
-package sickSa.dao;
+package sickSa.mapper;
 
 public interface IngredientDetailsMapper {
 	/*

@@ -11,8 +11,8 @@
     
 	<mappers>
 	<!-- 
-		<mapper class="sickSa.dao.IngredientsMapper"/>
-		<mapper class="sickSa.dao.IngredientCategoriesMapper"/>
+		<mapper class="sickSa.mapper.IngredientsMapper"/>
+		<mapper class="sickSa.mapper.IngredientCategoriesMapper"/>
 		<mapper class="sickSa.dao.ProductDao"/>
 		<mapper resource="sickSa/mapper/ProductMapper.xml"/> 
 		<mapper resource="sickSa/mapper/IngredientsMapper.xml"/> 
