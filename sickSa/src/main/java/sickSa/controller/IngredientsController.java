@@ -17,10 +17,16 @@ public class IngredientsController {
 	@Autowired
 	private IngredientsMapper ingredientsMapper;
 	 
-	@RequestMapping("/selectIngredients/{ing_id}")
-	public String selectIngredientsTest(Model model,@PathVariable("ing_id") Integer ing_id) {
+	@RequestMapping("/selectAllIngredients")
+	public String selectAllIngredientsTest(Model model) {
 		model.addAttribute(
 				"ingredientList", ingredientsMapper.ingredientList());
+		return "ingredientsSelectAll";
+	}
+	
+	@RequestMapping("/selectIngredients/{ing_id}")
+	public String selectIngredientsTest(
+			Model model,@PathVariable("ing_id") Integer ing_id) {
 		model.addAttribute(
 				"ingredient", ingredientsMapper.selectIngredientById(ing_id));
 	    return "ingredientsSelect";
@@ -28,7 +34,6 @@ public class IngredientsController {
 	
 	@RequestMapping("/insertFormIngredients")
 	public String insertFormIngredientsTest(){
-		
 		return "ingredientsInsertForm";
 	}
 	
@@ -39,30 +44,31 @@ public class IngredientsController {
 		return "forward:/selectIngredients/"+ingredients.getIng_id();
 	}
 	
-	@RequestMapping("/updateFormIngredients")
-	public String updateFormIngredientTest(){
-		
+	@RequestMapping("/updateFormIngredients/{ing_id}")
+	public String updateFormIngredientTest(
+			Model model,@PathVariable("ing_id") Integer ing_id){
+		model.addAttribute(
+				"ingredient", ingredientsMapper.selectIngredientById(ing_id));
 		return "ingredientsUpdateForm";
 	}
 	
 	@RequestMapping("/updateActionIngredients")
 	public String updateActionIngredientTest(
 			Model model,@ModelAttribute("ingredient") Ingredients ingredients){
-		
+		ingredientsMapper.updateIngredient(ingredients);
 		return "forward:/selectIngredients/"+ingredients.getIng_id();
 	}
 	
-	@RequestMapping("deleteActionIngredients")
+	@RequestMapping("/deleteActionIngredients/{ing_id}")
 	public String deleteActionIngredientTest(
 			Model model,@PathVariable("ing_id") Integer ing_id){
-	
-		return "forward:/selectIngredients/"+ing_id;
+		ingredientsMapper.deleteIngredient(ing_id);
+		return "forward:/selectAllIngredients";
 	}
 	
 	@Autowired
 	public void setIngredientsDao(IngredientsMapper ingredientsDao) {
 		System.out.println("@Autowired => IngredientsDao: "+ingredientsDao);
-		
 		
 		this.ingredientsMapper = ingredientsDao;
 	}

@@ -20,23 +20,33 @@ ALTER TABLE PRODUCT_CATEGORIES ADD CONSTRAINT IDX_PRODUCT_CATEGORIES_PK PRIMARY 
 public class ProductCategories {
 	
 	/* Variable */
-	private int pdct_id;
+	private Integer pdct_id;
 	private String pdct_name;
 	
 	/* Constructor */
-	public ProductCategories(int pdct_id, String pdct_name) {
+	public ProductCategories() {
+		
+	}
+	
+	
+	public ProductCategories(Integer pdct_id, String pdct_name) {
 		this.pdct_id = pdct_id;
 		this.pdct_name = pdct_name;
 	}
-
+	
+	@Override
+	public String toString() {
+	return pdct_id+":"+pdct_name;
+	}
+	
 	/* Method */
 	// Getter, Setter
 	
-	public int getPdct_id() {
+	public Integer getPdct_id() {
 		return pdct_id;
 	}
 	
-	public void setPdct_id(int pdct_id) {
+	public void setPdct_id(Integer pdct_id) {
 		this.pdct_id = pdct_id;
 	}
 	

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sickSa.mapper.StoreDataDao">
+
+	<select id="select" resultType="sickSa.domain.StoreData">
+		SELECT
+			STDT_ADMIN_PIN,
+			STDT_CAPACITY,
+			STDT_REST,
+			STDT_WAITING
+		FROM
+			STORE_DATA
+	</select>
+
+	<update id="update" parameterType="sickSa.domain.Order">
+		UPDATE STORE_DATA
+		SET
+			STDT_ADMIN_PIN = ${stdt_admin_pin},
+			STDT_CAPACITY = ${stdt_capacity},
+			STDT_REST = ${stdt_rest},
+			STDT_WAITING = ${stdt_waiting}
+	</update>
+
+</mapper>

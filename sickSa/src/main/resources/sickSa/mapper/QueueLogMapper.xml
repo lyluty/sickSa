@@ -2,14 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="sickSa.dao.QueueLogDao">
-	<insert id="insertQueueLog" parameterType="sickSa.domain.QueueLog">
-		INSERT INTO
-			QUEUE_LOGS(QLOG_ID, QLOG_CONTACT, QLOG_DATE, QLST_CODE)
-			values(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, #{qlog_contact}, SYSDATE, #{qlst_code)
-	</insert>
+<mapper namespace="sickSa.mapper.QueueLogDao">
 	
-	<select id="selectQueueLog" parameterType="java.lang.Integer" resultType="sickSa.domain.QueueLog">
+	<select id="selectList" resultType="sickSa.domain.QueueLog">
+		SELECT
+			QLOG_ID,
+			QLOG_CONTACT,
+			QLOG_DATE,
+			QLST_CODE
+		FROM
+			QUEUE_LOGS
+	</select>
+	
+	<select id="selectOne" parameterType="int" resultType="sickSa.domain.QueueLog">
 		SELECT
 			QLOG_ID,
 			QLOG_CONTACT,
@@ -21,7 +26,13 @@
 			QLOG_ID = #{qlog_id}
 	</select>
 	
-	<update id="updateQueueLog" parameterType="sickSa.domain.QueueLog">
+	<insert id="insert" parameterType="sickSa.domain.QueueLog">
+		INSERT INTO
+			QUEUE_LOGS(QLOG_ID, QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+			values(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, #{qlog_contact}, SYSDATE, #{qlst_code)
+	</insert>
+	
+	<update id="update" parameterType="sickSa.domain.QueueLog">
 		UPDATE
 			QUEUE_LOGS
 		SET
@@ -31,4 +42,12 @@
 		WHERE
 			QLOG_ID = #{qlog_id}
 	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM
+			QUEUE_LOGS
+		WHERE
+			QLOG_ID = ${qlog_id}
+	</delete>
+	
 </mapper>

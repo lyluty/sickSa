@@ -11,8 +11,8 @@
 		<meta charset="utf-8">
 		<title>IngredientsMapper test</title>
 		<script type="text/javascript">
-			function ingredientCreate() {
-				document.f.action = 'insertActionIngredients';
+			function ingredientUpdateAction() {
+				document.f.action = '/SICKSA/updateActionIngredients';
 				document.f.submit();
 			}
 		</script>
@@ -31,17 +31,17 @@
 						<th>ING_MEASURE</th>
 					</tr>
 					<tr align="center">
-						<td><input type="text" name="ing_id"></td>
-						<td><input type="text" name="ing_name"></td>
-						<td><input type="text" name="ing_stock"></td>
-						<td><input type="text" name="ing_measure"></td>
+						<td><input type="text" name="ing_id" value="${ingredient.ing_id}"></td>
+						<td><input type="text" name="ing_name" value="${ingredient.ing_name}"></td>
+						<td><input type="text" name="ing_stock" value="${ingredient.ing_stock}"></td>
+						<td><input type="text" name="ing_measure" value="${ingredient.ing_measure}"></td>
 					</tr>
 				</table>
 			</form>
 		<table border=0 cellpadding=0 cellspacing=1>
 			<tr>
 				<td align=center>
-					<input type="button" value="입고" onclick="ingredientCreate();"> &nbsp; 
+					<input type="button" value="수정완료" onclick="ingredientUpdateAction();"> &nbsp; 
 				</td>
 			</tr>
 		</table>

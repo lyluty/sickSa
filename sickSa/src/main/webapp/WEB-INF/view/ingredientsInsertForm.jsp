@@ -11,7 +11,7 @@
 		<meta charset="utf-8">
 		<title>IngredientsMapper test</title>
 		<script type="text/javascript">
-			function ingredientCreate() {
+			function ingredientCreateAction() {
 				document.f.action = 'insertActionIngredients';
 				document.f.submit();
 			}
@@ -41,7 +41,7 @@
 		<table border=0 cellpadding=0 cellspacing=1>
 			<tr>
 				<td align=center>
-					<input type="button" value="입고" onclick="ingredientCreate();"> &nbsp; 
+					<input type="button" value="입고" onclick="ingredientCreateAction();"> &nbsp; 
 				</td>
 			</tr>
 		</table>
