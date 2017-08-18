@@ -17,7 +17,7 @@
 		from ORDERS
 	</select>
 
-	<select id="selectOne" parameterType="int" resultMap="sickSa.domain.Order">
+	<select id="selectOne" parameterType="int" resultType="sickSa.domain.Order">
 		select *
 		from ORDERS
 		where ORD_ID=#{ord_id} and

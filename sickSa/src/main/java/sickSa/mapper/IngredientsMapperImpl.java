@@ -23,7 +23,7 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 	
 	//
 	@Override
-	public List<Ingredients> ingredientList() {
+	public List<Ingredients> listIngredient() {
 		return sqlSession.selectList("ingredientList");
 	}
 

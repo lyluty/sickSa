@@ -24,7 +24,7 @@ public interface IngredientsMapper {
 		-재료 추가/삭제
 		
 	 */
-	public List<Ingredients> ingredientList();
+	public List<Ingredients> listIngredient();
 	public Ingredients selectIngredientById(Integer ING_ID);
 	public Integer insertIngredient(Ingredients ingredient);
 	public Integer deleteIngredient(Integer ING_ID);

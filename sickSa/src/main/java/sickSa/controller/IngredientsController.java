@@ -20,7 +20,7 @@ public class IngredientsController {
 	@RequestMapping("/selectAllIngredients")
 	public String selectAllIngredientsTest(Model model) {
 		model.addAttribute(
-				"ingredientList", ingredientsMapper.ingredientList());
+				"ingredientList", ingredientsMapper.listIngredient());
 		return "ingredientsSelectAll";
 	}
 	

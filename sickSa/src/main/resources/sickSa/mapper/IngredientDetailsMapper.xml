@@ -2,6 +2,61 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="sickSa.dao.IngredientDetailsDao">
+<mapper namespace="sickSa.mapper.IngredientDetailsMapper">
+	
+	<select 
+		id="listIngDetail" 
+		resultType="sickSa.domain.IngredientDetails">
+		SELECT 
+			ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID
+		FROM 
+			INGREDIENT_DETAIL
+	</select>
+	
+	<select 
+		id="selectIngredientDetailById" 
+		parameterType="java.lang.Integer" 
+		resultType="sickSa.domain.IngredientDetails">
+		SELECT 
+			ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID
+		FROM 
+			INGREDIENT_DETAIL
+		WHERE 
+			ING_ID=#{ING_ID}
+	</select>
+	
+	<insert 
+		id="insertIngDetail"
+		parameterType="sickSa.domain.IngredientDetails">
+		<selectKey 
+			keyProperty="ING_ID" 
+			resultType="java.lang.Integer"
+			order="BEFORE">
+			SELECT INGREDIENTS_ING_ID_SEQ.nextval FROM DUAL
+		</selectKey>
+		INSERT INTO 
+			INGREDIENT_DETAIL(ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID)
+		VALUES 
+			(#{ING_ID},#{IGDT_IN},#{IGDT_OUT},#{IGDT_PRICE},#{IGDT_CONTACT},#{IGCT_ID})
+	</insert>
+	
+	<delete 
+		id="deleteIngDetail"
+		parameterType="java.lang.Integer">
+		DELETE FROM INGREDIENT_DETAIL
+		WHERE ING_ID=#{ING_ID}
+	</delete>
+	
+	<update 
+		id="updateIngDetail"
+		parameterType="sickSa.domain.IngredientDetails">
+		UPDATE 
+			INGREDIENT_DETAIL
+		SET 
+			IGDT_IN=#{IGDT_IN},IGDT_OUT=#{IGDT_OUT},
+			IGDT_PRICE=#{IGDT_PRICE},IGDT_CONTACT=#{IGDT_CONTACT}
+		WHERE 
+			ING_ID = #{ING_ID}
+	</update> 
 	
 </mapper>
