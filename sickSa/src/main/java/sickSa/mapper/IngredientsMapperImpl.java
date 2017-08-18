@@ -24,7 +24,7 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 	//
 	@Override
 	public List<Ingredients> listIngredient() {
-		return sqlSession.selectList("ingredientList");
+		return sqlSession.selectList("listIngredient");
 	}
 
 	@Override

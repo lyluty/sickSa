@@ -27,7 +27,7 @@ public interface IngredientDetailsMapper {
 
 	 */
 	public List<IngredientDetails> listIngDetail();
-	public IngredientDetails selectIngredientDetailById(Integer ing_id);
+	public IngredientDetails selectIngDetailById(Integer ing_id);
 	public Integer insertIngDetail(IngredientDetails ingredientDetails);
 	public Integer deleteIngDetail(Integer ing_id);
 	public Integer updateIngDetail(IngredientDetails ingredientDetails);
