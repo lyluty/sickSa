@@ -46,7 +46,7 @@ public class IngredientDetailController {
 		return "forward:/selectIngDetails/"+ingredientDetails.getIng_id();
 	}
 	
-	@RequestMapping("/updateFormIngredients/{ing_id}")
+	@RequestMapping("/updateFormIngDetails/{ing_id}")
 	public String updateFormIngDetailsTest(
 			Model model,@PathVariable("ing_id") Integer ING_ID){
 		model.addAttribute(
@@ -54,14 +54,14 @@ public class IngredientDetailController {
 		return "ingredientsUpdateForm";
 	}
 	
-	@RequestMapping("/updateActionIngredients")
+	@RequestMapping("/updateActionIngDetails")
 	public String updateActionIngDetailsTest(
 			Model model,@ModelAttribute("ingDetail") IngredientDetails ingredientDetails){
 		ingredientDetailsMapper.updateIngDetail(ingredientDetails);
 		return "forward:/selectIngDetails/"+ingredientDetails.getIng_id();
 	}
 	
-	@RequestMapping("/deleteActionIngredients/{ing_id}")
+	@RequestMapping("/deleteActionIngDetails/{ing_id}")
 	public String deleteActionIngDetailsTest(
 			Model model,@PathVariable("ing_id") Integer ING_ID){
 		ingredientDetailsMapper.deleteIngDetail(ING_ID);
