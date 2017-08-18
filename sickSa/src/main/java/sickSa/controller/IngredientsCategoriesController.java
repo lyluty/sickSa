@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sickSa.dao.IngredientCategoriesMapper;
 import sickSa.domain.IngredientCategories;
+import sickSa.mapper.IngredientCategoriesMapper;
 
 @Controller
 public class IngredientsCategoriesController {

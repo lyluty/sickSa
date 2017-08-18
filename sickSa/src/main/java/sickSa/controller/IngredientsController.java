@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sickSa.dao.IngredientCategoriesMapper;
-import sickSa.dao.IngredientsMapper;
 import sickSa.domain.Ingredients;
+import sickSa.mapper.IngredientCategoriesMapper;
+import sickSa.mapper.IngredientsMapper;
 
 @Controller
 public class IngredientsController {
@@ -20,7 +20,7 @@ public class IngredientsController {
 	@RequestMapping("/selectAllIngredients")
 	public String selectAllIngredientsTest(Model model) {
 		model.addAttribute(
-				"ingredientList", ingredientsMapper.ingredientList());
+				"ingredientList", ingredientsMapper.listIngredient());
 		return "ingredientsSelectAll";
 	}
 	

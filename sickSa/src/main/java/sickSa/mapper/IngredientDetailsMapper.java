@@ -1,4 +1,9 @@
-package sickSa.dao;
+package sickSa.mapper;
+
+import java.util.List;
+
+import sickSa.domain.IngredientDetails;
+import sickSa.domain.Ingredients;
 
 public interface IngredientDetailsMapper {
 	/*
@@ -21,4 +26,9 @@ public interface IngredientDetailsMapper {
 		(재료명, 단위, 단가, 거래처연락처)
 
 	 */
+	public List<IngredientDetails> listIngDetail();
+	public IngredientDetails selectIngredientDetailById(Integer ing_id);
+	public Integer insertIngDetail(IngredientDetails ingredientDetails);
+	public Integer deleteIngDetail(Integer ing_id);
+	public Integer updateIngDetail(IngredientDetails ingredientDetails);
 }
