@@ -39,7 +39,7 @@ public class IngredientDetailController {
 		return "ingredientsInsertForm";
 	}
 	
-	@RequestMapping("/insertActionIngredients")
+	@RequestMapping("/insertActionIngDetails")
 	public String insertActionIngDetailsTest(
 			Model model,@ModelAttribute("ingDetail") IngredientDetails ingredientDetails){
 		ingredientDetailsMapper.insertIngDetail(ingredientDetails);
