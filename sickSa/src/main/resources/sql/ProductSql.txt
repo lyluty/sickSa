@@ -8,7 +8,7 @@ delete from product where pr_no=1;
 
 select * from product where pr_no=1;
 
---product cate
+--product categories
 
 insert into product_categories values (1,'aa');
 

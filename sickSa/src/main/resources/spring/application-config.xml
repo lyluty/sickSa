@@ -29,13 +29,6 @@
 	</bean>
 	
 	<!-- Dao --> 
-	<bean id="ingredientsDao" class="sickSa.mapper.IngredientsMapperImpl">
-		<property name="sqlSession" ref="sqlSession"/>
-	</bean>
-	
-	<bean id="ingredientCategoriesDao" class="sickSa.mapper.IngredientCategoriesMapperImpl">
-		<property name="sqlSession" ref="sqlSession"/>
-	</bean>
 	<bean id="productDao" class="sickSa.dao.ProductDaoImpl">
 		<property name="sqlSession" ref="sqlSession"/>
 	</bean>
