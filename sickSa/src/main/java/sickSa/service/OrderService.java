@@ -18,9 +18,18 @@ public class OrderService {
 	}
 
 	/* 테이블 번호 수정 */
-	public void changeTblNo(Integer ord_no, int tbl_id) {
+	public void changeTblNo(Integer ord_no, Integer tbl_id) {
 		Order tmpOrder = orderDao.selectOne(ord_no);
 		tmpOrder.setTbl_id(tbl_id);
 		orderDao.update(tmpOrder);
 	}
+	/* find List by id */
+	public void getById(Integer ord_id){
+		orderDao.selectOne(ord_id);
+	}
+	/* 전체목록 불러오기 */
+	public void getList(){
+		orderDao.selectList();
+	}
+	
 }
