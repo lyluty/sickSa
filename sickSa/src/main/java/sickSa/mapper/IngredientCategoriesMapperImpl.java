@@ -27,13 +27,13 @@ public class IngredientCategoriesMapperImpl implements IngredientCategoriesMappe
 	}
 
 	@Override
-	public IngredientCategories selectIngredientCategoriesById(Integer igct_id) {
-		return sqlSession.selectOne("selectIngredientCategoriesById", igct_id);
+	public IngredientCategories selectIngredientCategoriesById(String igct_name) {
+		return sqlSession.selectOne("selectIngredientCategoriesById", igct_name);
 	}
 
 	@Override
-	public Integer insertIngredientCategories(String igct_name) {
-		return sqlSession.insert("insertIngredientCategories",igct_name);
+	public Integer insertIngredientCategories(IngredientCategories ingredientCategories) {
+		return sqlSession.insert("insertIngredientCategories",ingredientCategories);
 	}
 
 	@Override

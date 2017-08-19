@@ -10,9 +10,7 @@
 <head>
 <meta charset="utf-8">
 <title>IngredientCategoriesByIdMapper test</title>
-<script src="<c:url value='/resources/js/ingredient.js'/>"> </script>
-
-
+<script src="js/ingredientCategories.js"> </script>
 </head>
 <body>
 	<h1>IngredientCategoriesByIdMapper test</h1>
@@ -29,17 +27,19 @@
 				</tr>
 
 				<tr align="center">
-					<td><input type="hidden" name="igct_id"></td>
+					<td><input type="text" name="igct_id"></td>
 					<td><input type="text" name="igct_name"></td>
 				</tr>
 				
-				<tr align="center">
-					<td><input type="submit" class="ingredientCreate()" ></td>
-				</tr>
+				
 				
 			</table>
 		</form>
-
+		<table border=0 cellpadding=0 cellspacing=1>
+				<tr align="center">
+					<td><input type="submit" onclick="igctCreate();" ></td>
+				</tr>
+		</table>
 	</div>
 	<hr />
 

@@ -4,7 +4,7 @@
  */
 
 function ingredientCreate() {
-	document.f.action = '/SinsertActionIngredients';
+	document.f.action = '/insertActionIngredients';
 	document.f.submit();
 }
 function ingredientModifyAction() {
