@@ -18,42 +18,49 @@ public class IngredientsCategoriesController {
 	 
 	
 	// 재료 카테고리 한개 반환 OK
-	@RequestMapping("/IGCTList")
+	//@RequestMapping("/IGCTList")
 	public String ingredientCategoriesListTest(Model model){
-		
-		model.addAttribute("ingredientCategoriesList", ingredientCategoriesMapper.ingredientCategoriesList());
+		model.addAttribute(
+				"ingredientCategoriesList", 
+				ingredientCategoriesMapper.ingredientCategoriesList());
 		return "ingredientCategoriesSelect";
 	}
 	
 	// 재료 카테고리 아이디로 찾기 OK
-	@RequestMapping("/IGCTID/{igct_id}")
-	public String selectIngredientCategoriesByIdTest(Model model,  @PathVariable("igct_id") Integer igct_id){
-			
-		model.addAttribute("selectIngredientCategoriesById", ingredientCategoriesMapper.selectIngredientCategoriesById(igct_id));
+	@RequestMapping("/IGCTSelect/{igct_name}")
+	public String selectIngredientCategoriesByIdTest(
+			Model model,  @PathVariable("igct_name") String igct_name){
+		model.addAttribute(
+				"selectIngredientCategoriesById", 
+				ingredientCategoriesMapper.selectIngredientCategoriesById(igct_name));
 		return "ingredientCategoriesById";
 	}
 	
-	// 재료 카테고리 삽입 X
-	
 	// INSERT FORM
-	@RequestMapping("/IGCTINSERTFORM")
+	//@RequestMapping("/IGCTINSERTFORM")
 	public String insertFormIngredientCategoriesTest(){
-		return "ingredientInsertForm";
+		return "ingredientCategoriesInsertForm";
 	}
 	
 	// ACTION FORM
-	@RequestMapping("/IGCTACTIONFORM")
-	public String actionFormIngredientCategoriesTest(Model model, @PathVariable("igct_name") String igct_name){
-		model.addAttribute("insertIngredientCategories", ingredientCategoriesMapper.insertIngredientCategories(igct_name));
-		return "ingredientActionForm";
+	@RequestMapping("/IGCTINSERTACTION")
+	public String actionFormIngredientCategoriesTest(
+			Model model, 
+			@ModelAttribute("ingredientCategory") IngredientCategories ingredientCategories){
+		model.addAttribute(
+				"insertIngredientCategories", 
+				ingredientCategoriesMapper.insertIngredientCategories(ingredientCategories));
+		return "forward:/IGCTSelect/"+ingredientCategories.getIgct_name();
 	}
 	
 	
 	// 재료 카테고리 삭제 OK 지워지긴 함.
 	@RequestMapping("/IGCTDELETE/{igct_id}")
-	public String deleteIngredientCategoriesTest(Model model, @PathVariable("igct_id") Integer igct_id){
-		
-		model.addAttribute("deleteIngredientCategories", ingredientCategoriesMapper.deleteIngredientCategories(igct_id));
+	public String deleteIngredientCategoriesTest(
+			Model model, @PathVariable("igct_id") Integer igct_id){
+		model.addAttribute(
+				"deleteIngredientCategories", 
+				ingredientCategoriesMapper.deleteIngredientCategories(igct_id));
 		return "ingredientCategoriesSelect";
 	}
 	
@@ -64,10 +71,13 @@ public class IngredientsCategoriesController {
 	}
 	
 	@RequestMapping("/IGCTUPDATEACTION")
-	public String updateIngredientCategoriesActionTest(Model model, @ModelAttribute("ingredientCategories") IngredientCategories ingredientCategories){
+	public String updateIngredientCategoriesActionTest(
+			Model model, @ModelAttribute("ingredientCategories") IngredientCategories ingredientCategories){
 		System.out.println("sipal");
 		ingredientCategoriesMapper.updateIngredientCategories(ingredientCategories);
-		model.addAttribute("ingredientCategoriesList", ingredientCategoriesMapper.ingredientCategoriesList());
+		model.addAttribute(
+				"ingredientCategoriesList", 
+				ingredientCategoriesMapper.ingredientCategoriesList());
 		return "ingredientCategoriesSelect";
 	}
 	
