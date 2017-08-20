@@ -28,8 +28,14 @@ public class IngredientDetailsMapperImpl implements IngredientDetailsMapper {
 
 	@Override
 	public IngredientDetails selectIngDetailById(Integer ING_ID) {
-		return sqlSession.selectOne("selectIngredientDetailById",ING_ID);
+		return sqlSession.selectOne("selectIngDetailById",ING_ID);
 	}
+	
+	@Override
+	public List<IngredientDetails> selectIngDetailByCt(Integer IGCT_ID) {
+		return sqlSession.selectList("selectIngDetailByCt", IGCT_ID);
+	}
+	
 
 	@Override
 	public Integer insertIngDetail(IngredientDetails ingredientDetails) {
@@ -45,5 +51,6 @@ public class IngredientDetailsMapperImpl implements IngredientDetailsMapper {
 	public Integer updateIngDetail(IngredientDetails ingredientDetails) {
 		return sqlSession.update("updateIngDetail",ingredientDetails);
 	}
+
 
 }

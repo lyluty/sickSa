@@ -28,25 +28,57 @@ public class Ingredients {
 	private String ING_NAME;
 	private int ING_STOCK;
 	private String ING_MEASURE;
-	
+	private IngredientDetails ingredientDetails;
+	private IngredientCategories ingredientCategories;
 	
 	/* Construcotr */
 	public Ingredients() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Ingredients(int ING_ID, String ING_NAME, int ING_STOCK, String ING_MEASURE) {
+	public Ingredients(int iNG_ID, String iNG_NAME, int iNG_STOCK, String iNG_MEASURE) {
 		super();
-		this.ING_ID = ING_ID;
-		this.ING_NAME = ING_NAME;
-		this.ING_STOCK = ING_STOCK;
-		this.ING_MEASURE = ING_MEASURE;
+		ING_ID = iNG_ID;
+		ING_NAME = iNG_NAME;
+		ING_STOCK = iNG_STOCK;
+		ING_MEASURE = iNG_MEASURE;
+	}
+
+	public Ingredients(
+			int iNG_ID, String iNG_NAME, int iNG_STOCK, String iNG_MEASURE,
+			IngredientDetails ingredientDetails, IngredientCategories ingredientCategories) {
+		super();
+		ING_ID = iNG_ID;
+		ING_NAME = iNG_NAME;
+		ING_STOCK = iNG_STOCK;
+		ING_MEASURE = iNG_MEASURE;
+		this.ingredientDetails = ingredientDetails;
+		this.ingredientCategories = ingredientCategories;
 	}
 	
+	
+	/* toString */
 	@Override
 	public String toString() {
 		return "["+ING_ID+"]"+ING_NAME+","+ING_STOCK+","+ING_MEASURE;
 	}
+	
+	public IngredientDetails getIngredientDetails() {
+		return ingredientDetails;
+	}
+
+	public void setIngredientDetails(IngredientDetails ingredientDetails) {
+		this.ingredientDetails = ingredientDetails;
+	}
+
+	public IngredientCategories getIngredientCategories() {
+		return ingredientCategories;
+	}
+
+	public void setIngredientCategories(IngredientCategories ingredientCategories) {
+		this.ingredientCategories = ingredientCategories;
+	}
+
 	
 	/* Method */
 	// Getter, Setter
@@ -63,7 +95,6 @@ public class Ingredients {
 	public String getIng_name() {
 		return ING_NAME;
 	}
-	
 
 
 	public void setIng_name(String ING_NAME) {

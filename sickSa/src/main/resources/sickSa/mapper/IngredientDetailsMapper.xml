@@ -3,6 +3,22 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sickSa.mapper.IngredientDetailsMapper">
+
+	<resultMap id="INGREDIENT_CATEGORIES" type="sickSa.domain.IngredientCategories">
+		<result column="IGCT_ID" property="igct_id"/>
+		<result column="IGCT_NAME" property="igct_name"/>
+	</resultMap>
+	
+	<resultMap id="INGREDIENT_DETAILS" type="sickSa.domain.IngredientDetails">
+		<result column="ING_ID" property="ing_id"/>
+		<result column="IGDT_IN" property="igdt_in"/>
+		<result column="IGDT_OUT" property="igdt_out"/>
+		<result column="IGDT_PRICE" property="igdt_price"/>
+		<result column="IGDT_CONTACT" property="igdt_contact"/>
+		<association resultMap="INGREDIENT_CATEGORIES"
+					 property="igct_id" 
+					 select="sickSa.mapper.IngredientCategoriesMapper.selectIngredientCategoriesById"/>
+	</resultMap>
 	
 	<select 
 		id="listIngDetail" 
@@ -14,7 +30,7 @@
 	</select>
 	
 	<select 
-		id="selectIngredientDetailById" 
+		id="selectIngDetailById" 
 		parameterType="java.lang.Integer" 
 		resultType="sickSa.domain.IngredientDetails">
 		SELECT 
@@ -23,6 +39,18 @@
 			INGREDIENT_DETAIL
 		WHERE 
 			ING_ID=#{ING_ID}
+	</select>
+	
+	<select 
+		id="selectIngDetailByCt" 
+		parameterType="java.lang.Integer" 
+		resultType="sickSa.domain.IngredientDetails">
+		SELECT 
+			ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID
+		FROM 
+			INGREDIENT_DETAIL
+		WHERE 
+			IGCT_ID=#{IGCT_ID}
 	</select>
 	
 	<insert 

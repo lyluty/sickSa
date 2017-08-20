@@ -30,7 +30,7 @@ public class IngredientDetailController {
 	public String selectIngDetailsTest(
 			Model model,@PathVariable("ing_id") Integer ING_ID) {
 		model.addAttribute(
-				"ingredient", ingredientDetailsMapper.selectIngDetailById(ING_ID));
+				"ingredient", ingredientDetailsMapper.selectIngDetailByCt(ING_ID));
 	    return "ingredientsSelect";
 	}
 	
@@ -50,7 +50,7 @@ public class IngredientDetailController {
 	public String updateFormIngDetailsTest(
 			Model model,@PathVariable("ing_id") Integer ING_ID){
 		model.addAttribute(
-				"ingDetail", ingredientDetailsMapper.selectIngDetailById(ING_ID));
+				"ingDetail", ingredientDetailsMapper.selectIngDetailByCt(ING_ID));
 		return "ingredientsUpdateForm";
 	}
 	
