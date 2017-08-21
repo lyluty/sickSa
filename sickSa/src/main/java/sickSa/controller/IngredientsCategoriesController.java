@@ -27,7 +27,7 @@ public class IngredientsCategoriesController {
 	}
 	
 	// 재료 카테고리 아이디로 찾기 OK
-	@RequestMapping("/IGCTSelect/{igct_name}")
+	//@RequestMapping("/IGCTSelect/{igct_name}")
 	public String selectIngredientCategoriesByIdTest(
 			Model model,  @PathVariable("igct_name") String igct_name){
 		model.addAttribute(

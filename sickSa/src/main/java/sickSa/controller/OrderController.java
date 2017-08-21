@@ -16,6 +16,16 @@ public class OrderController {
 	@Autowired
 	 OrderService orderService;		
 	
+	@RequestMapping("/orderList")
+	public String orderList() {
+		return "static/orderList";
+	}
+	
+	@RequestMapping("/orderTest")
+	public String orderTest() {
+		return "static/orderTest";
+	}
+	
 	@RequestMapping("/test/order")
 	public String test(){
 		return "test/order";
