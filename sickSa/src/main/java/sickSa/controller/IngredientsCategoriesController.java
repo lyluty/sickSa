@@ -55,7 +55,7 @@ public class IngredientsCategoriesController {
 	
 	
 	// 재료 카테고리 삭제 OK 지워지긴 함.
-	//@RequestMapping("/IGCTDELETE/{igct_id}")
+	@RequestMapping("/IGCTDELETE/{igct_id}")
 	public String deleteIngredientCategoriesTest(
 			Model model, @PathVariable("igct_id") Integer igct_id){
 		model.addAttribute(
@@ -65,12 +65,12 @@ public class IngredientsCategoriesController {
 	}
 	
 	// 재료 카테고리 수정
-	//@RequestMapping("/IGCTUPDATEFORM")
+	@RequestMapping("/IGCTUPDATEFORM")
 	public String updateIngredientCategoriesTest(){
 		return "ingredientCategoriesUpdateForm";
 	}
 	
-	//@RequestMapping("/IGCTUPDATEACTION")
+	@RequestMapping("/IGCTUPDATEACTION")
 	public String updateIngredientCategoriesActionTest(
 			Model model, @ModelAttribute("ingredientCategories") IngredientCategories ingredientCategories){
 		System.out.println("sipal");

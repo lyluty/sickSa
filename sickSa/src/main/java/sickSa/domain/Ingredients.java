@@ -43,6 +43,17 @@ public class Ingredients {
 		ING_STOCK = iNG_STOCK;
 		ING_MEASURE = iNG_MEASURE;
 	}
+	
+	public Ingredients(
+			int iNG_ID, String iNG_NAME, int iNG_STOCK, 
+			String iNG_MEASURE, IngredientDetails ingredientDetails) {
+		super();
+		ING_ID = iNG_ID;
+		ING_NAME = iNG_NAME;
+		ING_STOCK = iNG_STOCK;
+		ING_MEASURE = iNG_MEASURE;
+		this.ingredientDetails = ingredientDetails;
+	}
 
 	public Ingredients(
 			int iNG_ID, String iNG_NAME, int iNG_STOCK, String iNG_MEASURE,

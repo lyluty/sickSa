@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sickSa.mapper.IngredientDetailsMapper">
 
+	<!-- 
 	<resultMap id="INGREDIENT_CATEGORIES" type="sickSa.domain.IngredientCategories">
 		<result column="IGCT_ID" property="igct_id"/>
 		<result column="IGCT_NAME" property="igct_name"/>
@@ -18,7 +19,8 @@
 		<association resultMap="INGREDIENT_CATEGORIES"
 					 property="igct_id" 
 					 select="sickSa.mapper.IngredientCategoriesMapper.selectIngredientCategoriesById"/>
-	</resultMap>
+	</resultMap> 
+	-->
 	
 	<select 
 		id="listIngDetail" 

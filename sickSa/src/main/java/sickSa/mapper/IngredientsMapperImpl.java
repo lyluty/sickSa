@@ -26,6 +26,11 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 	public List<Ingredients> listIngredient() {
 		return sqlSession.selectList("listIngredient");
 	}
+	
+	public List<Ingredients> cateIngList() {
+		return sqlSession.selectList("cateIngList");
+	}
+	
 
 	@Override
 	public Ingredients selectIngredientById(Integer ING_ID) {
