@@ -1,11 +1,10 @@
 <!DOCTYPE html>
- <!-- 
+<!--  
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
- -->
-
+-->
 
 <html lang="en">
 <head>
@@ -27,6 +26,37 @@
 <link href="../include/css/magnific-popup.css" rel="stylesheet" type="text/css">
 <link href="../include/css/style.css" rel="stylesheet" type="text/css">
 <script src="../include/js/modernizr-custom.js"></script>
+
+<link rel='stylesheet' href='include/css/calendar/fullcalendar.css' />
+<script src='include/css/calendar/jquery.min.js'></script>
+
+<script src='include/css/calendar/moment.min.js'></script>
+<script src='include/css/calendar/fullcalendar.js'></script>
+<script>
+		$(document).ready(function() {
+		
+		    // page is now ready, initialize the calendar...
+		
+		    $('#calendar').fullCalendar({
+		    	height: 800,
+		        selectable: true,
+		        select: function(start, end, jsEvent, view) {
+		            // start contains the date you have selected
+		            // end contains the end date. 
+		            // Caution: the end date is exclusive (new since v2).
+		            var allDay = !start.hasTime() && !end.hasTime();
+		            alert(["Event Start date: " + moment(start).format(),
+		                   "Event End date: " + moment(end).format(),
+		                   "AllDay: " + allDay].join("\n"));
+		       }
+
+		    	// put your options and callbacks here
+		    });
+
+		});
+ 
+</script>
+
 
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -147,10 +177,12 @@
         
         <!-- 내용 기재  -->
         
+        <div id='calendar' style="width: 60%; display: inline-block;"></div>
+        
         <h1>Order Service getList</h1>
 <hr style="border: solid 2px black;"/>
 		<div>
-		<table border="1" width= "1100">
+		<table border="1" width= "1100px">
 				<tr align="center">
 					<td>ord_id</td>
 					<td>pdt_id</td>
@@ -179,8 +211,18 @@
 		<hr/>
         
         
+        <!--  
+        <div style="float:center; width:700px;" id="calendar"></div>
         
+        $(document).ready(function(){
+        	$("#calendar").fullCalendar({
+        		
+        		defaultDate: "sysdate"
+        		, editable: true
         
+      		  });
+    	 });
+        -->
         
    
           <div class="pagination-container">

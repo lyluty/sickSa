@@ -31,7 +31,7 @@ public class Ingredients {
 	private IngredientDetails ingredientDetails;
 	private IngredientCategories ingredientCategories;
 	
-	/* Construcotr */
+	/* Constructor */
 	public Ingredients() {
 		// TODO Auto-generated constructor stub
 	}

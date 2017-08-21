@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sickSa.mapper.ProductIngredientMapper">
+	
+	<select 
+		id="passAmount" 
+		parameterType="int" 
+		resultType="sickSa.domain.ProductIngredients">
+		SELECT PDT_ID,ING_ID,PDIG_AMOUNT
+		FROM PRODUCT_INGREDIENTS
+		WHERE PDT_ID=#{PDT_ID}
+	</select>
+</mapper>

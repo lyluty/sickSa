@@ -33,6 +33,10 @@
 				resultMap="INGREDIENT_DETAILS"
 				property="ingredientDetails"
 				/>
+		<association 
+				resultMap="INGREDIENT_CATEGORIES"
+				property="ingredientCategories"
+				/>
 	</resultMap>
 	
 	<select 
@@ -46,9 +50,16 @@
 		id="cateIngList" 
 		parameterType="java.lang.Integer" 
 		resultMap="INGREDIENTS">
-		SELECT ING_ID,ING_NAME,ING_STOCK,ING_MEASURE
-		FROM INGREDIENTS 
+		SELECT 
+			ING_ID,ING_NAME,ING_STOCK,ING_MEASURE,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID,IGCT_NAME
+		FROM 
+			INGREDIENTS ing
 		NATURAL JOIN 
+			INGREDIENT_DETAILS igdt
+		NATURAL JOIN 
+			INGREDIENT_CATEGORIES igct
+		WHERE 
+			igct.IGCT_NAME = #{IGCT_NAME};
 	</select>
 	
 	<select 
@@ -87,6 +98,21 @@
 		SET ING_NAME=#{ING_NAME},ING_STOCK=#{ING_STOCK},
 			ING_MEASURE=#{ING_MEASURE}
 		WHERE ING_ID = #{ING_ID}
+	</update> 
+	
+	<update 
+		id="changeStock"
+		parameterType="sickSa.domain.ProductIngredients">
+		<!-- 
+		UPDATE INGREDIENTS
+		SET ING_STOCK=#{ING_STOCK}
+		WHERE ING_ID = #{ING_ID} 
+		-->
+		UPDATE INGREDIENTS
+		SET ING_STOCK= (SELECT ING_STOCK
+		                FROM INGREDIENTS
+		                WHERE ING_ID= #{ING_ID}) - #{PDIG_AMOUNT}
+		WHERE ING_ID = #{ING_ID};
 	</update> 
 	
 </mapper>

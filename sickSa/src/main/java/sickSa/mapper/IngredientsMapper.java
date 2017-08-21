@@ -3,6 +3,7 @@ package sickSa.mapper;
 import java.util.List;
 
 import sickSa.domain.Ingredients;
+import sickSa.domain.ProductIngredients;
 
 public interface IngredientsMapper {
 	/*
@@ -25,9 +26,10 @@ public interface IngredientsMapper {
 		
 	 */
 	public List<Ingredients> listIngredient();
-	public List<Ingredients> cateIngList();
+	public List<Ingredients> cateIngList(Integer IGCT_NAME);
 	public Ingredients selectIngredientById(Integer ING_ID);
 	public Integer insertIngredient(Ingredients ingredient);
 	public Integer deleteIngredient(Integer ING_ID);
 	public Integer updateIngredient(Ingredients ingredient);
+	public Integer changeStock(ProductIngredients productIngredients);
 }

@@ -29,6 +29,7 @@
 	<select id="findAllProducts" 
 			resultType="sickSa.domain.Product">
 		SELECT PDT_ID,PDT_NAME,PDT_PRICE,PDT_IMGSRC_L,PDT_IMGSRC_S,PDT_DESCRIPTION,PDCT_ID FROM PRODUCTS
+		ORDER BY PDT_ID ASC
 	</select>
 	
 	<update id="updateProduct"

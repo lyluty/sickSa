@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import sickSa.domain.Ingredients;
+import sickSa.domain.ProductIngredients;
 
 public class IngredientsMapperImpl implements IngredientsMapper{
 	
@@ -27,10 +28,10 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 		return sqlSession.selectList("listIngredient");
 	}
 	
-	public List<Ingredients> cateIngList() {
-		return sqlSession.selectList("cateIngList");
+	@Override
+	public List<Ingredients> cateIngList(Integer IGCT_NAME) {
+		return sqlSession.selectList("cateIngList", IGCT_NAME);
 	}
-	
 
 	@Override
 	public Ingredients selectIngredientById(Integer ING_ID) {
@@ -50,6 +51,11 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 	@Override
 	public Integer updateIngredient(Ingredients ingredient) {
 		return sqlSession.update("updateIngredient",ingredient);
+	}
+
+	@Override
+	public Integer changeStock(ProductIngredients productIngredients) {
+		return sqlSession.update("changeStock", productIngredients);
 	}
 
 }

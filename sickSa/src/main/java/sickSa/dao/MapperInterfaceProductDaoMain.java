@@ -19,11 +19,12 @@ public class MapperInterfaceProductDaoMain {
       
       ProductDao productDao=(ProductDao)applicationContext.getBean("productDao");
             
-      
-      //System.out.println(productDao.insertProduct(new Product(1111,"돼닭",565653,"7","8","1",2222)));
-      //System.out.println(productDao.insertProduct(new Product(3333,"닭",1234,"1","1","1",2222)));
-      //System.out.println(productDao.insertProduct(new Product(4444,"꼬닥",34534,"2","2","2",1)));
-      //System.out.println(productDao.insertProduct(new Product(5555,"파닥",4564,"3","3","3",3)));
+      //System.out.println(productDao.insertProduct(new Product(1,"스시",15000,"7","8","1",2222)));
+      //System.out.println(productDao.insertProduct(new Product(2,"돈까스",7000,"1","1","1",1111)));
+      //System.out.println(productDao.insertProduct(new Product(3,"카레",6000,"2","2","2",3333)));
+      //System.out.println(productDao.insertProduct(new Product(4,"규동",7000,"3","3","3",4444)));
+      //System.out.println(productDao.insertProduct(new Product(5,"함바그",20000,"3","3","3",5555)));
+      //System.out.println(productDao.insertProduct(new Product(6,"소바",7600,"3","3","3",6666)));
       //Product p=productDao.findProductById(3333)  ;
       //System.out.println(p);
       //Product updateProduct=new Product(1111, "소딱",12345, "6","6","6",3333);
