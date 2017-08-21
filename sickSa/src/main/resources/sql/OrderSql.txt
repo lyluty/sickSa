@@ -6,15 +6,15 @@ create sequence ORDERS_ORD_ID_SEQ;
 --ORD_ID, PDT_ID, ORD_PDT_AMOUNT, ORD_TOTAL, ORD_PAYMENT_METHOD, ORD_DATE, ORD_STATE, TBL_ID
 
 insert into ORDERS values (1,2,6,40000,'카드',sysdate,'B',1);
-insert into ORDERS values (2,1,2,'카드',14000,sysdate,'B',2);
-insert into ORDERS values (3,3,1,'현금',15200,sysdate,'C',3);
-insert into ORDERS values (5,1,4,'카드',32000,sysdate,'B',4);
-insert into ORDERS values (6,2,1,'현금',31700,sysdate,'C',5);
-insert into ORDERS values (7,1,4,'현금',7000,sysdate,'B',6);
-insert into ORDERS values (8,2,3,'카드',21000,sysdate,'S',7);
-insert into ORDERS values (9,1,5,'카드',52000,sysdate,'C',8);
-insert into ORDERS values (10,4, 1,'현금',15000,sysdate,'B',9);
-insert into ORDERS values (11,3,3,'카드',12700,sysdate,'B',10);
+insert into ORDERS values (2,1,2,14000,'카드',sysdate,'B',2);
+insert into ORDERS values (3,3,1,15200,'현금',sysdate,'C',3);
+insert into ORDERS values (5,1,4,32000,'카드',sysdate,'B',4);
+insert into ORDERS values (6,2,1,31700,'현금',sysdate,'C',5);
+insert into ORDERS values (7,1,4,7000,'현금',sysdate,'B',6);
+insert into ORDERS values (8,2,3,21000,'카드',sysdate,'S',7);
+insert into ORDERS values (9,1,5,52000,'카드',sysdate,'C',8);
+insert into ORDERS values (10,4, 1,15000,'현금',sysdate,'B',9);
+insert into ORDERS values (11,3,3,12700,'카드',sysdate,'B',10);
 
 select*from ORDERS where ORD_ID=1 and PDT_ID=1 and TBL_ID=1;
 
