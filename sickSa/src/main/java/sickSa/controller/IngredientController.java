@@ -22,8 +22,6 @@ public class IngredientController {
 		return "ingredientCategoriesSelect";
 	}
 	
-	
-	
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
 		return "ingredientCategoriesInsertForm";
@@ -37,6 +35,4 @@ public class IngredientController {
 		return "forward:/IGCTSelect/"+ingredientCategories.getIgct_name();
 	}
 	
-	
-
 }
