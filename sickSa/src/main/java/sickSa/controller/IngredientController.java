@@ -14,13 +14,14 @@ public class IngredientController {
 	
 	@Autowired
 	private IngredientService ingredientService;
-	
+	/*
 	@RequestMapping("/igctList")
 	public String loadListIgct(Model model){
 		model.addAttribute(
 				"ingredientCategoriesList", ingredientService.loadListIgct());
 		return "ingredientCategoriesSelect";
 	}
+	*/
 	
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
@@ -33,6 +34,14 @@ public class IngredientController {
 					IngredientCategories ingredientCategories){
 		model.addAttribute("insertIngredientCategories",ingredientService.addIgct(ingredientCategories));
 		return "forward:/IGCTSelect/"+ingredientCategories.getIgct_name();
+	}
+	
+	// Test
+	@RequestMapping("/igctList")
+	public String loadListIgct(Model model){
+		model.addAttribute(
+				"ingredientCategoriesList", ingredientService.loadListIgct());
+		return "/jsp/index";
 	}
 	
 }
