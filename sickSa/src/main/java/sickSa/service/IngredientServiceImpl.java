@@ -50,24 +50,23 @@ public class IngredientServiceImpl implements IngredientService{
 				.insertIngredientCategories(ingredientCategories);
 	}
 	
-	//재료 카테고리에 속한 재료들을 로딩한다.
-	
-	
 	//재료 카테고리를 삭제한다
 	@Override
 	public Integer deleteIgct(Integer IGCT_ID) {
-		
-		return null;
+		return ingredientCategoriesMapper
+				.deleteIngredientCategories(IGCT_ID);
 	}
+	
 	//재료 카테고리를 수정한다
 	@Override
 	public Integer updateIgct(IngredientCategories ingredientCategories) {
-		
-		return null;
+		return ingredientCategoriesMapper
+				.updateIngredientCategories(ingredientCategories);
 	}
+	
 	//재료 카테고리에 따른 재료를 리스트로 불러온다
 	@Override
-	public List<Ingredients> loadListIng() {
+	public List<Ingredients> loadListIng(Integer IGCT_ID) {
 		
 		return null;
 	}

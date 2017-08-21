@@ -19,49 +19,49 @@ public class IngredientDetailController {
 	@Autowired
 	private IngredientDetailsMapper ingredientDetailsMapper;
 	 
-	@RequestMapping("/selectAllIngDetails")
+	//@RequestMapping("/selectAllIngDetails")
 	public String selectAllIngDetailsTest(Model model) {
 		model.addAttribute(
 				"ingredientList", ingredientDetailsMapper.listIngDetail());
 		return "ingredientsSelectAll";
 	}
 	
-	@RequestMapping("/selectIngDetails/{ing_id}")
+	//@RequestMapping("/selectIngDetails/{ing_id}")
 	public String selectIngDetailsTest(
 			Model model,@PathVariable("ing_id") Integer ING_ID) {
 		model.addAttribute(
-				"ingredient", ingredientDetailsMapper.selectIngDetailById(ING_ID));
+				"ingredient", ingredientDetailsMapper.selectIngDetailByCt(ING_ID));
 	    return "ingredientsSelect";
 	}
 	
-	@RequestMapping("/insertFormIngDetails")
+	//@RequestMapping("/insertFormIngDetails")
 	public String insertFormIngDetailsTest(){
 		return "ingredientsInsertForm";
 	}
 	
-	@RequestMapping("/insertActionIngDetails")
+	//@RequestMapping("/insertActionIngDetails")
 	public String insertActionIngDetailsTest(
 			Model model,@ModelAttribute("ingDetail") IngredientDetails ingredientDetails){
 		ingredientDetailsMapper.insertIngDetail(ingredientDetails);
 		return "forward:/selectIngDetails/"+ingredientDetails.getIng_id();
 	}
 	
-	@RequestMapping("/updateFormIngDetails/{ing_id}")
+	//@RequestMapping("/updateFormIngDetails/{ing_id}")
 	public String updateFormIngDetailsTest(
 			Model model,@PathVariable("ing_id") Integer ING_ID){
 		model.addAttribute(
-				"ingDetail", ingredientDetailsMapper.selectIngDetailById(ING_ID));
+				"ingDetail", ingredientDetailsMapper.selectIngDetailByCt(ING_ID));
 		return "ingredientsUpdateForm";
 	}
 	
-	@RequestMapping("/updateActionIngDetails")
+	//@RequestMapping("/updateActionIngDetails")
 	public String updateActionIngDetailsTest(
 			Model model,@ModelAttribute("ingDetail") IngredientDetails ingredientDetails){
 		ingredientDetailsMapper.updateIngDetail(ingredientDetails);
 		return "forward:/selectIngDetails/"+ingredientDetails.getIng_id();
 	}
 	
-	@RequestMapping("/deleteActionIngDetails/{ing_id}")
+	//@RequestMapping("/deleteActionIngDetails/{ing_id}")
 	public String deleteActionIngDetailsTest(
 			Model model,@PathVariable("ing_id") Integer ING_ID){
 		ingredientDetailsMapper.deleteIngDetail(ING_ID);
