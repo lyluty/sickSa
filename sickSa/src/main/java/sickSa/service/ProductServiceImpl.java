@@ -13,12 +13,15 @@ public class ProductServiceImpl implements ProductService {
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}
-
+	
 	@Override
 	public List<Map> getProductList() {
 		return productDao.findAllProductsMap();
 	}
-
+	@Override
+	public List<Product> getAllProductList(){
+		return productDao.findAllProducts();
+	}
 	@Override
 	public Product getProductById(Integer pdt_id) {
 		return productDao.findProductById(pdt_id);

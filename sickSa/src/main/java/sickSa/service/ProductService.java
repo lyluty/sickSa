@@ -7,11 +7,12 @@ import sickSa.domain.Product;
 
 public interface ProductService {
 
-	List<Map> getProductList();
-	Product getProductById(Integer pdt_id);
-	int deleteProductById(Integer pdt_id);
-	int updateProductById(Product product);
 	int insertProduct(Product product);
+	List<Map> getProductList();
+	List<Product> getAllProductList();
+	Product getProductById(Integer pdt_id);
+	int updateProductById(Product product);
+	int deleteProductById(Integer pdt_id);
 
 	
 	
