@@ -14,6 +14,8 @@ public class IngredientController {
 	
 	@Autowired
 	private IngredientService ingredientService;
+	
+	
 	/*
 	@RequestMapping("/igctList")
 	public String loadListIgct(Model model){
@@ -41,6 +43,7 @@ public class IngredientController {
 	public String loadListIgct(Model model){
 		model.addAttribute(
 				"ingredientCategoriesList", ingredientService.loadListIgct());
+		
 		return "/jsp/index";
 	}
 	
