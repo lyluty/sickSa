@@ -2,6 +2,7 @@ package sickSa.domain;
 
 /***************************************
   STDT_ADMIN_PIN ====> VARCHAR2로 바꿔야 함
+  추후 ERD & Table 수정..
  ***************************************/
 
 /*
@@ -25,7 +26,7 @@ COMMENT ON COLUMN STORE_DATA.STDT_WAITING is '대기인원수';
 public class StoreData {
 
 	/* Variable */
-	private int stdt_admin_pin;
+	private String stdt_admin_pin;
 	private int stdt_capacity;
 	private int stdt_rest;
 	private int stdt_waiting;
@@ -34,7 +35,7 @@ public class StoreData {
 	public StoreData() {
 	}
 
-	public StoreData(int stdt_admin_pin, int stdt_capacity, int stdt_rest, int stdt_waiting) {
+	public StoreData(String stdt_admin_pin, int stdt_capacity, int stdt_rest, int stdt_waiting) {
 		this.stdt_admin_pin = stdt_admin_pin;
 		this.stdt_capacity = stdt_capacity;
 		this.stdt_rest = stdt_rest;
@@ -42,11 +43,11 @@ public class StoreData {
 	}
 
 	/* Getter, Setter */
-	public int getStdt_adminPin() {
+	public String getStdt_adminPin() {
 		return stdt_admin_pin;
 	}
 
-	public void setStdt_adminPin(int stdt_admin_pin) {
+	public void setStdt_adminPin(String stdt_admin_pin) {
 		this.stdt_admin_pin = stdt_admin_pin;
 	}
 
