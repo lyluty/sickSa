@@ -25,8 +25,8 @@
 				 
 				<c:forEach var="ingredientCategory1" items="${ingredientCategoriesList}">
 					<tr align="center">
-						<td>${ingredientCategory1.igct_id}</td>
-						<td>${ingredientCategory1.igct_name}</td>
+						<td>${ingredientCategory1.IGCT_ID}</td>
+						<td>${ingredientCategory1.IGCT_NAME}</td>
 					</tr>
 				</c:forEach>
 			</table>

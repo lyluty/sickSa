@@ -18,15 +18,15 @@ public interface IngredientCategoriesMapper {
 	  
 	 */
 	
-	public List<IngredientCategories> ingredientCategoriesList();
 	// list 한개 반환
-	public IngredientCategories selectIngredientCategoriesById(Integer igct_id);
+	public List<IngredientCategories> ingredientCategoriesList();
 	// id로 카테고리 검색
-	public Integer insertIngredientCategories(String igct_name);
+	public IngredientCategories selectIngredientCategoriesById(String igct_name);
 	// 카테고리 추가
-	public Integer deleteIngredientCategories(Integer igct_id);
+	public Integer insertIngredientCategories(IngredientCategories ingredientCategories);
 	// id로 카테고리 삭제
-	public Integer updateIngredientCategories(IngredientCategories ingredientCategories);
+	public Integer deleteIngredientCategories(Integer igct_id);
 	// 카테고리 수정
+	public Integer updateIngredientCategories(IngredientCategories ingredientCategories);
 	
 }
