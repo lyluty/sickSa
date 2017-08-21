@@ -5,6 +5,7 @@ import java.util.Map;
 
 import sickSa.dao.ProductDao;
 import sickSa.domain.Product;
+import sickSa.domain.ProductIngredients;
 
 public class ProductServiceImpl implements ProductService {
 
@@ -40,6 +41,5 @@ public class ProductServiceImpl implements ProductService {
 	public int insertProduct(Product product){
 		return productDao.insertProduct(product); 
 	}
-
 
 }

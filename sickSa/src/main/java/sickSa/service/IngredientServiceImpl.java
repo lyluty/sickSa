@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import sickSa.domain.IngredientCategories;
 import sickSa.domain.IngredientDetails;
 import sickSa.domain.Ingredients;
+import sickSa.domain.ProductIngredients;
 import sickSa.mapper.IngredientCategoriesMapper;
 import sickSa.mapper.IngredientDetailsMapper;
 import sickSa.mapper.IngredientsMapper;
@@ -66,45 +67,34 @@ public class IngredientServiceImpl implements IngredientService{
 	
 	//재료 카테고리에 따른 재료를 리스트로 불러온다
 	@Override
-	public List<Ingredients> loadListIng(Integer IGCT_ID) {
-		
-		return null;
+	public List<Ingredients> loadListIng(Integer IGCT_NAME) {
+		return ingredientsMapper.cateIngList(IGCT_NAME);
 	}
 	//재료를 추가한다
 	@Override
-	public Integer addIng(Ingredients ingredients) {
-		
-		return null;
-	}
-	//재료의 정보를 추가한다
-	@Override
-	public Integer addIngDetail(IngredientDetails ingredientDetails) {
-		
-		return null;
+	public Integer addIng(Ingredients ing,IngredientDetails igdt,IngredientCategories igct) {
+		ingredientDetailsMapper.insertIngDetail(igdt);
+		return ingredientsMapper.insertIngredient(ing);
 	}
 	//재료의 정보를 확인한다
 	@Override
 	public IngredientDetails openIngDetail(Integer ING_ID) {
-		
-		return null;
+		return ingredientDetailsMapper.selectIngDetailById(ING_ID);
 	}
 	//재료의 정보(단위,입고일시,출고일시,재료단가,연락처)를 수정한다
 	@Override
 	public Integer updateIngDetail(IngredientDetails ingredientDetails) {
-		
-		return null;
+		return ingredientDetailsMapper.updateIngDetail(ingredientDetails);
 	}
 	//재료를 입고하여,출고하여 재고를 변경한다
 	@Override
-	public Integer changeStock(Integer ING_STOCK) {
-		
-		return null;
+	public Integer changeStock(ProductIngredients productIngredients) {
+		return ingredientsMapper.changeStock(productIngredients);
 	}
 	//재료를 삭제한다
 	@Override
 	public Integer expireStock(Integer ING_ID) {
-		
-		return null;
+		return ingredientDetailsMapper.deleteIngDetail(ING_ID);
 	}
 
 }
