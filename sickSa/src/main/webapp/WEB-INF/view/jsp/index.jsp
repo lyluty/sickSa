@@ -138,8 +138,6 @@
 			<!-- SLIDER 1 end -->
 
 
-
-
 			<!-- hero-container end -->
 			<!-- footer start -->
 			<footer>
