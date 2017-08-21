@@ -38,13 +38,13 @@
 					</tr>
 				</table>
 			</form>
-		<table border=0 cellpadding=0 cellspacing=1>
-			<tr>
-				<td align=center>
-					<input type="button" value="입고" onclick="ingredientCreateAction();"> &nbsp; 
-				</td>
-			</tr>
-		</table>
+			<table border=0 cellpadding=0 cellspacing=1>
+				<tr>
+					<td align=center>
+						<input type="button" value="입고" onclick="ingredientCreateAction();"> &nbsp; 
+					</td>
+				</tr>
+			</table>
 	</div> 
 	</body>
 </html>

@@ -4,11 +4,51 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sickSa.mapper.IngredientsMapper">
 	
+	<resultMap id="INGREDIENT_CATEGORIES" type="sickSa.domain.IngredientCategories">
+		<result column="IGCT_ID" property="igct_id"/>
+		<result column="IGCT_NAME" property="igct_name"/>
+	</resultMap>
+	
+	<resultMap id="INGREDIENT_DETAILS" type="sickSa.domain.IngredientDetails">
+		<result column="ING_ID" property="ing_id"/>
+		<result column="IGDT_IN" property="igdt_in"/>
+		<result column="IGDT_OUT" property="igdt_out"/>
+		<result column="IGDT_PRICE" property="igdt_price"/>
+		<result column="IGDT_CONTACT" property="igdt_contact"/>
+		<result column="IGCT_ID" property="igct_id"/>
+		<!-- 
+		<association 
+				resultMap="INGREDIENT_CATEGORIES"
+				property="igct_id" 
+				select="sickSa.mapper.IngredientCategoriesMapper.selectIngredientCategoriesById"/> 
+		-->
+	</resultMap>
+	
+	<resultMap id="INGREDIENTS" type="sickSa.domain.Ingredients">
+		<result column="ING_ID" property="ing_id"/>
+		<result column="ING_NAME" property="ing_name"/>
+		<result column="ING_STOCK" property="ing_stock"/>
+		<result column="ING_MEASURE" property="ing_measure"/>
+		<association 
+				resultMap="INGREDIENT_DETAILS"
+				property="ingredientDetails"
+				/>
+	</resultMap>
+	
 	<select 
 		id="listIngredient" 
 		resultType="sickSa.domain.Ingredients">
 		SELECT ING_ID,ING_NAME,ING_STOCK,ING_MEASURE
 		FROM INGREDIENTS
+	</select>
+	
+	<select 
+		id="cateIngList" 
+		parameterType="java.lang.Integer" 
+		resultMap="INGREDIENTS">
+		SELECT ING_ID,ING_NAME,ING_STOCK,ING_MEASURE
+		FROM INGREDIENTS 
+		NATURAL JOIN 
 	</select>
 	
 	<select 

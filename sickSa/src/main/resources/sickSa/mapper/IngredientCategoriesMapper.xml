@@ -16,7 +16,7 @@
 	
 	<select 
 		id="selectIngredientCategoriesById" 
-		parameterType="java.lang.Integer" 
+		parameterType="java.lang.String" 
 		resultType="sickSa.domain.IngredientCategories" >
 		SELECT 
 			igct_id,
@@ -24,16 +24,22 @@
 		FROM
 			ingredient_categories
 		WHERE 
-		    igct_id = #{igct_id}
+		    igct_name = #{igct_name}
 	</select>
 	
 	<insert 
 		id="insertIngredientCategories" 
-		parameterType="java.lang.String">
+		parameterType="sickSa.domain.IngredientCategories">
+		<selectKey 
+			keyProperty="igct_id" 
+			resultType="java.lang.Integer"
+			order="BEFORE">
+			SELECT igct_id_seq.nextval FROM DUAL
+		</selectKey>
 		INSERT INTO
 			ingredient_categories(igct_id, igct_name)
 		VALUES
-			(igct_id_seq.nextval, #{igct_name})
+			(#{igct_id}, #{igct_name})
 	</insert>
 	
 	<delete 

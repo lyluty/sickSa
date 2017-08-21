@@ -25,6 +25,7 @@ public interface IngredientsMapper {
 		
 	 */
 	public List<Ingredients> listIngredient();
+	public List<Ingredients> cateIngList();
 	public Ingredients selectIngredientById(Integer ING_ID);
 	public Integer insertIngredient(Ingredients ingredient);
 	public Integer deleteIngredient(Integer ING_ID);

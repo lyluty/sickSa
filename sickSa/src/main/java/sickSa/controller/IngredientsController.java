@@ -17,14 +17,14 @@ public class IngredientsController {
 	@Autowired
 	private IngredientsMapper ingredientsMapper;
 	 
-	@RequestMapping("/selectAllIngredients")
+	//@RequestMapping("/selectAllIngredients")
 	public String selectAllIngredientsTest(Model model) {
 		model.addAttribute(
 				"ingredientList", ingredientsMapper.listIngredient());
 		return "ingredientsSelectAll";
 	}
 	
-	@RequestMapping("/selectIngredients/{ing_id}")
+	//@RequestMapping("/selectIngredients/{ing_id}")
 	public String selectIngredientsTest(
 			Model model,@PathVariable("ing_id") Integer ing_id) {
 		model.addAttribute(
@@ -32,19 +32,19 @@ public class IngredientsController {
 	    return "ingredientsSelect";
 	}
 	
-	@RequestMapping("/insertFormIngredients")
+	//@RequestMapping("/insertFormIngredients")
 	public String insertFormIngredientsTest(){
 		return "ingredientsInsertForm";
 	}
 	
-	@RequestMapping("/insertActionIngredients")
+	//@RequestMapping("/insertActionIngredients")
 	public String insertActionIngredientsTest(
 			Model model,@ModelAttribute("ingredient") Ingredients ingredients){
 		ingredientsMapper.insertIngredient(ingredients);
 		return "forward:/selectIngredients/"+ingredients.getIng_id();
 	}
 	
-	@RequestMapping("/updateFormIngredients/{ing_id}")
+	//@RequestMapping("/updateFormIngredients/{ing_id}")
 	public String updateFormIngredientTest(
 			Model model,@PathVariable("ing_id") Integer ing_id){
 		model.addAttribute(
@@ -52,14 +52,14 @@ public class IngredientsController {
 		return "ingredientsUpdateForm";
 	}
 	
-	@RequestMapping("/updateActionIngredients")
+	//@RequestMapping("/updateActionIngredients")
 	public String updateActionIngredientTest(
 			Model model,@ModelAttribute("ingredient") Ingredients ingredients){
 		ingredientsMapper.updateIngredient(ingredients);
 		return "forward:/selectIngredients/"+ingredients.getIng_id();
 	}
 	
-	@RequestMapping("/deleteActionIngredients/{ing_id}")
+	//@RequestMapping("/deleteActionIngredients/{ing_id}")
 	public String deleteActionIngredientTest(
 			Model model,@PathVariable("ing_id") Integer ing_id){
 		ingredientsMapper.deleteIngredient(ing_id);

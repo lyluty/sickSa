@@ -19,7 +19,7 @@ public interface IngredientService {
 	public Integer updateIgct(IngredientCategories ingredientCategories);
 	
 	//재료 카테고리에 따른 재료를 리스트로 불러온다
-	public List<Ingredients> loadListIng();
+	public List<Ingredients> loadListIng(Integer IGCT_ID);
 	//재료를 추가한다
 	public Integer addIng(Ingredients ingredients);
 	//재료의 정보를 추가한다

@@ -53,6 +53,10 @@ public class IngredientDetails {
 		this.igct_id = igct_id;
 	}
 	
+	@Override
+	public String toString() {
+		return "["+ing_id+"]"+igdt_in+"-"+igdt_out+":"+igdt_price+"$ :"+igdt_contact;
+	}
 	
 	/* Method */
 	// Getter, Setter

@@ -3,10 +3,11 @@
  * ing java script
  */
 
-function ingredientCreate() {
-	document.f.action = 'ing_write_form.do';
+function igctCreate() {
+	document.f.action = 'IGCTINSERTACTION';
 	document.f.submit();
 }
+
 function ingredientModifyAction() {
 	if (f.ing_name.value == "") {
 		alert("이름을 입력하십시요.");

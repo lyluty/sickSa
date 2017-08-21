@@ -29,8 +29,8 @@
 				</tr>
 
 				<tr align="center">
-					<td><${selectIngredientCategoriesById.igct_id}></td>
-					<td><${selectIngredientCategoriesById.igct_name}></td>
+					<td>${selectIngredientCategoriesById.igct_id}</td>
+					<td>${selectIngredientCategoriesById.igct_name}</td>
 				</tr>
 				
 			</table>
