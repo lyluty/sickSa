@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sickSa.mapper.OrderDao;
+import sickSa.service.OrderService;
 
 
 @Controller
 public class OrderController {
 
 	@Autowired
-	OrderDao orderDao;
-	// OrderService orderService;
+	 OrderService orderService;		
 	
 	@RequestMapping("/test/order")
 	public String test(){
@@ -23,17 +23,15 @@ public class OrderController {
 	
 	@RequestMapping("/test/order/list")
 	public String testPage(Model model){
-	model.addAttribute("orderList", orderDao.selectList());
+	model.addAttribute("orderList",orderService.getList());
 	return "test/order/list";
 	}
 	
 	@RequestMapping("test/order/get/{ord_id}")
 	public String testGet(Model model,@PathVariable("ord_id")Integer ord_id){
-		model.addAttribute("order",orderDao.selectOne(ord_id));
+		model.addAttribute("order",orderService.getById(ord_id));
 		
 		return "test/order/get";
 	}
-	
-	
 }
 
