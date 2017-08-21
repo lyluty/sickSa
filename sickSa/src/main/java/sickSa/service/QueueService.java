@@ -15,6 +15,7 @@ public class QueueService {
 	private QueueLogDao queueLogDao;
 	
 	public List<QueueLog> list() {
+		System.out.println(queueLogDao.selectList());
 		return queueLogDao.selectList();
 	}
 	
