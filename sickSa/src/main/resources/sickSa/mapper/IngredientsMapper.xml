@@ -39,6 +39,16 @@
 				/>
 	</resultMap>
 	
+	
+	
+	<resultMap id="PDIG" type="sickSa.domain.ProductIngredients">
+		<result column="PDT_ID" property="PDT_ID"/>
+		<association property="PDIG_AMOUNTS" javaType="java.util.Map">
+			<result property="key" column="ING_ID"/>
+			<result property="value" column="PDIG_AMOUNT"/>
+		</association>
+	</resultMap>
+	
 	<select 
 		id="listIngredient" 
 		resultType="sickSa.domain.Ingredients">
@@ -102,12 +112,7 @@
 	
 	<update 
 		id="changeStock"
-		parameterType="sickSa.domain.ProductIngredients">
-		<!-- 
-		UPDATE INGREDIENTS
-		SET ING_STOCK=#{ING_STOCK}
-		WHERE ING_ID = #{ING_ID} 
-		-->
+		parameterMap="PDIG">
 		UPDATE INGREDIENTS
 		SET ING_STOCK= (SELECT ING_STOCK
 		                FROM INGREDIENTS

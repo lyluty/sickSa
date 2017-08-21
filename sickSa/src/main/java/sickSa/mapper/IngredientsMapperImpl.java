@@ -2,12 +2,13 @@ package sickSa.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import sickSa.domain.Ingredients;
 import sickSa.domain.ProductIngredients;
-
+@Mapper
 public class IngredientsMapperImpl implements IngredientsMapper{
 	
 	@Autowired
