@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import sickSa.domain.Product;
+import sickSa.domain.ProductIngredients;
 
 public interface ProductService {
 
@@ -13,7 +14,6 @@ public interface ProductService {
 	Product getProductById(Integer pdt_id);
 	int updateProductById(Product product);
 	int deleteProductById(Integer pdt_id);
-
-	
+	ProductIngredients passAmount(Integer PDT_ID);
 	
 }
