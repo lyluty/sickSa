@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import sickSa.domain.Ingredients;
 import sickSa.domain.ProductIngredients;
+
 @Mapper
 public class IngredientsMapperImpl implements IngredientsMapper{
 	
@@ -54,9 +55,9 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 		return sqlSession.update("updateIngredient",ingredient);
 	}
 
-	@Override
-	public Integer changeStock(ProductIngredients productIngredients) {
-		return sqlSession.update("changeStock", productIngredients);
-	}
+//	@Override
+//	public Integer changeStock(ProductIngredients productIngredients) {
+//		return sqlSession.update("changeStock", productIngredients);
+//	}
 
 }

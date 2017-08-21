@@ -2,6 +2,8 @@ package sickSa.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import sickSa.domain.IngredientCategories;
 
 public interface IngredientCategoriesMapper {

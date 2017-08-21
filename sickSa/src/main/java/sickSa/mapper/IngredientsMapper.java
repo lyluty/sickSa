@@ -2,6 +2,7 @@ package sickSa.mapper;
 
 import java.util.List;
 
+
 import sickSa.domain.Ingredients;
 import sickSa.domain.ProductIngredients;
 
@@ -31,5 +32,5 @@ public interface IngredientsMapper {
 	public Integer insertIngredient(Ingredients ingredient);
 	public Integer deleteIngredient(Integer ING_ID);
 	public Integer updateIngredient(Ingredients ingredient);
-	public Integer changeStock(ProductIngredients productIngredients);
+//	public Integer changeStock(ProductIngredients productIngredients);
 }

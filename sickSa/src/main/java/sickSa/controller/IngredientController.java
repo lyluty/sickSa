@@ -15,6 +15,9 @@ public class IngredientController {
 	@Autowired
 	private IngredientService ingredientService;
 	
+	public void setIngredientService(IngredientService ingredientService) {
+		this.ingredientService = ingredientService;
+	}
 	
 	/*
 	@RequestMapping("/igctList")
@@ -24,7 +27,7 @@ public class IngredientController {
 		return "ingredientCategoriesSelect";
 	}
 	*/
-	
+
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
 		return "ingredientCategoriesInsertForm";
