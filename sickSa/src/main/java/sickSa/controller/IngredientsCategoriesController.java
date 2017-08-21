@@ -43,7 +43,7 @@ public class IngredientsCategoriesController {
 	}
 	
 	// ACTION FORM
-	@RequestMapping("/IGCTINSERTACTION")
+	//@RequestMapping("/IGCTINSERTACTION")
 	public String actionFormIngredientCategoriesTest(
 			Model model, 
 			@ModelAttribute("ingredientCategory") IngredientCategories ingredientCategories){
