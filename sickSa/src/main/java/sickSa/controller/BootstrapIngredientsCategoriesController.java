@@ -2,6 +2,7 @@ package sickSa.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sickSa.mapper.IngredientCategoriesMapper;
@@ -11,6 +12,7 @@ public class BootstrapIngredientsCategoriesController {
 	
 	@Autowired
 	private IngredientCategoriesMapper ingredientCategoriesMapper;
+	
 	
 	
 	public void setIngredientCategoriesMapper(IngredientCategoriesMapper ingredientCategoriesMapper) {
