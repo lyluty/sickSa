@@ -12,14 +12,32 @@
 		/> <result property="ord_date" column="ORD_DATE" /> <result property="ord_state" 
 		column="ORD_STATE" /> <result property="tbl_id" column="TBL_ID" /> </resultMap> -->
 
-	<select id="selectList" parameterType="int" resultType="sickSa.domain.Order">
-		select *
-		from ORDERS
+	<select id="selectList" resultType="sickSa.domain.Order">
+		SELECT
+			ORD_ID,
+			PDT_ID,
+			ORD_PDT_AMOUNT,
+			ORD_TOTAL,
+			ORD_PAYMENT_METHOD,
+			ORD_DATE,
+			ORD_STATE,
+			TBL_ID
+		FROM
+			ORDERS
 	</select>
 
 	<select id="selectOne" parameterType="int" resultType="sickSa.domain.Order">
-		select *
-		from ORDERS
+		SELECT
+			ORD_ID,
+			PDT_ID,
+			ORD_PDT_AMOUNT,
+			ORD_TOTAL,
+			ORD_PAYMENT_METHOD,
+			ORD_DATE,
+			ORD_STATE,
+			TBL_ID
+		FROM
+			ORDERS
 		where ORD_ID=#{ord_id} and
 		PDT_ID=#{pdt_id} and
 		TBL_ID=#{tbl_id}

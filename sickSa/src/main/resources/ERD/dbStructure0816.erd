@@ -563,8 +563,13 @@
               <net.java.amateras.db.visual.model.ColumnModel>
                 <columnName>PDT_IMGSRC_L</columnName>
                 <logicalName>상품큰이미지경로</logicalName>
-                <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/columns/net.java.amateras.db.visual.model.ColumnModel[2]/columnType"/>
-                <size>30</size>
+                <columnType class="net.java.amateras.db.dialect.ColumnType">
+                  <name>VARCHAR2</name>
+                  <logicalName>String</logicalName>
+                  <supportSize>true</supportSize>
+                  <type>12</type>
+                </columnType>
+                <size>80</size>
                 <notNull>false</notNull>
                 <primaryKey>false</primaryKey>
                 <description></description>
@@ -574,8 +579,8 @@
               <net.java.amateras.db.visual.model.ColumnModel>
                 <columnName>PDT_IMGSRC_S</columnName>
                 <logicalName>상품작은이미지경로</logicalName>
-                <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/columns/net.java.amateras.db.visual.model.ColumnModel[2]/columnType"/>
-                <size>30</size>
+                <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../net.java.amateras.db.visual.model.ColumnModel[4]/columnType"/>
+                <size>80</size>
                 <notNull>false</notNull>
                 <primaryKey>false</primaryKey>
                 <description></description>
