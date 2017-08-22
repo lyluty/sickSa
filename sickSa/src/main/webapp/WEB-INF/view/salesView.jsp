@@ -127,19 +127,19 @@
 		<table class="table table-striped">
 			<thead>
 			<tr>
-				<th>주문번호</td>
-				<th>상품번호</td>
-				<th>주문상품개수</td>
-				<th>금액</td>
-				<th>결제수단</td>
-				<th>결제일시</td>
-				<th>테이블번호</td>
+				<th>주문번호</th>
+				<th>상품번호</th>
+				<th>주문상품개수</th>
+				<th>금액</th>
+				<th>결제수단</th>
+				<th>결제일시</th>
+				<th>테이블번호</th>
 			</tr>
 			</thead>
 			<tbody>
 			<c:forEach var="order" items="${orderList}">
 				<tr>
-					<th scope="row">${order.ord_id}</td>
+					<th scope="row">${order.ord_id}</th>
 					<td>${order.pdt_id}</td>
 					<td>${order.ord_pdt_amount}</td>
 					<td>${order.ord_total}</td>
