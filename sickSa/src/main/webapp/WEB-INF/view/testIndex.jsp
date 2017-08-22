@@ -35,7 +35,7 @@
 	function storeManager() {
 
 	}
-	functino testSalesView() {
+	function testSalesView() {
 		location.href = 'salesView';
 	}
 </script>
