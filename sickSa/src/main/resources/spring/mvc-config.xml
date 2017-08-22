@@ -21,7 +21,6 @@
 	<!-- ㅇㅋ '/'붙이기 ㄴㄴ -->
 	<mvc:resources mapping="/static/**" location="/WEB-INF/view/static/"/>
 	<!-- .jsp -->
-	<mvc:resources mapping="/jsp/**.jsp" location="/WEB-INF/view/jsp"/>
 	<mvc:resources mapping="include/css/**" location="include/css/"/>
 	<mvc:resources mapping="include/fonts/**" location="/include/fonts/"/> 
 	<mvc:resources mapping="include/images/**" location="/include/images/"/>
