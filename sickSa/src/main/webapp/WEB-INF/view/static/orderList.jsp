@@ -1,69 +1,99 @@
-<!DOCTYPE html>
-<!--  
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
--->
 
-<html lang="en">
+<html>
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> orderList </title>
-<meta name="author" content="">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<link rel="icon" href="../include/images/favicon.png" sizes="32x32"/>
-<link href="../include/css/bootstrap.css" rel="stylesheet" type="text/css">
+<title>Order List </title>
+
+<link rel="icon" href="include/images/favicon.png" sizes="32x32"/>
+<link href="include/css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href="../include/css/ionicons.min.css" rel="stylesheet" type="text/css">
-<link href="../include/css/slick.css" rel="stylesheet" type="text/css">
-<link href="../include/css/animate.css" rel="stylesheet" type="text/css">
-<link href="../include/css/animsition.min.css" rel="stylesheet" type="text/css">
-<link href="../include/css/magnific-popup.css" rel="stylesheet" type="text/css">
-<link href="../include/css/style.css" rel="stylesheet" type="text/css">
-<script src="../include/js/modernizr-custom.js"></script>
+<link href="include/css/ionicons.min.css" rel="stylesheet" type="text/css">
+<link href="include/css/slick.css" rel="stylesheet" type="text/css">
+<link href="include/css/animate.css" rel="stylesheet" type="text/css">
+<link href="include/css/animsition.min.css" rel="stylesheet" type="text/css">
+<link href="include/css/magnific-popup.css" rel="stylesheet" type="text/css">
+<link href="include/css/style.css" rel="stylesheet" type="text/css">
+<script src="include/js/modernizr-custom.js"></script>
 
 <link rel='stylesheet' href='include/css/calendar/fullcalendar.css' />
 <script src='include/css/calendar/jquery.min.js'></script>
 
 <script src='include/css/calendar/moment.min.js'></script>
 <script src='include/css/calendar/fullcalendar.js'></script>
+
+
+
+
 <script>
+
 		$(document).ready(function() {
 		
 		    // page is now ready, initialize the calendar...
 		
 		    $('#calendar').fullCalendar({
-		    	height: 800,
+		    	 header: {
+		    		    left: '',
+		    		    center: 'prev ,title, next',
+		    		    right: 'today'
+		    		   },    // hearder 노출 메뉴
+
+    		  	 height: "auto",
+
 		        selectable: true,
 		        select: function(start, end, jsEvent, view) {
 		            // start contains the date you have selected
 		            // end contains the end date. 
 		            // Caution: the end date is exclusive (new since v2).
-		            var allDay = !start.hasTime() && !end.hasTime();
-		            alert(["Event Start date: " + moment(start).format(),
-		                   "Event End date: " + moment(end).format(),
-		                   "AllDay: " + allDay].join("\n"));
+		          
+		            var dt_start = moment(start).format('YYYY-MM-DD');
+			        var dt_end = moment(end).format('YYYY-MM-DD');
+		    		   
+		            alert(["Event Start date: " + dt_start,
+		                   "Event End date: " + dt_end].join("\n"));
+		            
+		            /*
+			    
+
+		            $.ajax({
+		             type:"post",
+		             url:"viewList",
+		             dataType:"json",
+		             data:{"start_date":dt_start,"end_date":dt_end},
+		             success: reqPostResponse,
+		             error: errorNoti
+		             
+		     		*/
+
 		       }
 
 		    	// put your options and callbacks here
 		    });
+			      
+	
 
 		});
- 
+		
+
+	
+		 
+		 
 </script>
 
 
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+<title>Insert title here</title>
 </head>
 <body>
+
 <div class="animsition"> 
   <!-- nav start -->
   <button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
@@ -124,14 +154,14 @@
   <!-- nav end --> 
   <!-- header start -->
   <header>
-    <div class="header-upper"><a class="logo" href="index.html"><img src="../include/images/logo.png" alt="" /></a> </div>
+    <div class="header-upper"><a class="logo" href="index.html"><img src="include/images/logo.png" alt="" /></a> </div>
     <div class="header-lower">
       <ul class="quick-contact">
         <li><b>EMAIL :</b> <a href="mailto:#"><i class="ion ion-email visible-xs"></i><span>service@your-domain.com</span></a></li>
         <li><b>PHONE :</b> <a href="tel:#"><i class="ion ion-android-call visible-xs"></i><span>+91 9876 543 210</span></a></li>
         <li class="social-links"><b>GET SOCIAL :</b> <a href="#" target="_blank"><i class="ion ion-social-facebook"></i></a><a href="#" target="_blank"><i class="ion ion-social-twitter"></i></a><a href="#" target="_blank"><i class="ion ion-social-googleplus"></i></a><a href="#" target="_blank"><i class="ion ion-social-instagram"></i></a></li>
       </ul>
-      <p class="copyright">&copy; 2017. All right reserved.</p>
+      <p class="copyright">&copy; 2016. All right reserved.</p>
     </div>
   </header>
   <!-- header end --> 
@@ -160,86 +190,32 @@
         </div>
       </div>
       <div class="main-container">
-        <div class="inner-banner parallax" data-parallax-speed="5"  style="background-image:url(../include/images/project-slide1.jpg);">
-          <h2>Blog</h2>
+        <div class="inner-banner parallax" data-parallax-speed="5"  style="background-image:url(include/images/project-slide1.jpg);">
+          <h2>Order List</h2>
         </div>
         
-        <!-- Content Holder Start -->
-        <div class="content-holder">
-          <h3 class="content-title">Order List</h3>
-          <p class="large-para"> 뭐라 쓸지 고민좀.. </p>
-          <p> 두줄은 아니라도 괜찮겠지</p>
-        </div>
-        <!-- Content Holder End --> 
-        
-        <!-- Content Holder Start -->
-        <div class="content-holder">
-        
-        <!-- 내용 기재  -->
-        
-        <div id='calendar' style="width: 60%; display: inline-block;"></div>
-        
-        <h1>Order Service getList</h1>
-<hr style="border: solid 2px black;"/>
-		<div>
-		<table border="1" width= "1100px">
-				<tr align="center">
-					<td>ord_id</td>
-					<td>pdt_id</td>
-					<td>ord_pdtAmount</td>
-					<td>ord_total</td>
-					<td>ord_paymentMethod</td>
-					<td>ord_date</td>
-					<td>ord_state</td>
-					<td>tbl_id</td>
-				</tr>
-				
-		<c:forEach var="order"  items="${orderList}">
-					<tr align="center">
-						<td>${order.ord_id}</td>
-						<td>${order.pdt_id}</td>
-						<td>${order.ord_pdtAmount}</td>
-						<td>${order.ord_total}</td>
-						<td>${order.ord_paymentMethod}</td>
-						<td>${order.ord_date}</td>
-						<td>${order.ord_state}</td>
-						<td>${order.tbl_id}</td>
-					</tr>
-		</c:forEach>
-			</table>
-		</div>
-		<hr/>
-        
-        
-        <!--  
-        <div style="float:center; width:700px;" id="calendar"></div>
-        
-        $(document).ready(function(){
-        	$("#calendar").fullCalendar({
-        		
-        		defaultDate: "sysdate"
-        		, editable: true
-        
-      		  });
-    	 });
-        -->
-        
-   
-          <div class="pagination-container">
-            <ul class="pagination">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- Content Holder End -->
-        
-        <div class="quote-box">
-          <h6>Want to discuss with  Employee ?</h6>
-          <a href="contact-us.html" class="btn btn-default">LET'S TALK</a> </div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div id='calendar' style="width: 70%; display: block; margin: auto;"></div>
+
+<br>
+<br>
+<br>
+
+<a href="viewList"  class="btn btn-default" style="float: right; margin: 20px"> List view </a> 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
       </div>
     </div>
   </div>
@@ -250,30 +226,42 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="social-links"> <a href="#" target="_blank"><i class="ion ion-social-facebook"></i></a><a href="#" target="_blank"><i class="ion ion-social-twitter"></i></a><a href="#" target="_blank"><i class="ion ion-social-googleplus"></i></a><a href="#" target="_blank"><i class="ion ion-social-instagram"></i></a></div>
-          <p class="copyright">&copy; 2017. All right reserved.</p>
+          <p class="copyright">&copy; 2016. All right reserved.</p>
         </div>
       </div>
     </div>
   </footer>
   <!-- footer end --> 
 </div>
-<script type="text/javascript" src="../include/js/jquery-2.2.2.min.js"></script> 
-<script type="text/javascript" src="../include/js/bootstrap.min.js"></script> 
-<script type="text/javascript" src="../include/js/animsition.min.js"></script> 
-<script type="text/javascript" src="../include/js/jquery.validate.js"></script> 
-<script type="text/javascript" src="../include/js/classie.js"></script> 
-<script type="text/javascript" src="../include/js/main.js"></script> 
-<script type="text/javascript" src="../include/js/waypoint.js"></script> 
-<script type="text/javascript" src="../include/js/slick.min.js"></script> 
-<script type="text/javascript" src="../include/js/jquery.countTo.js"></script> 
-<script type="text/javascript" src="../include/js/imagesloaded.js"></script> 
-<script type="text/javascript" src="../include/js/masonry-3.1.4.js"></script> 
-<script type="text/javascript" src="../include/js/masonry.filter.js"></script> 
-<script type="text/javascript" src="../include/js/jquery.magnific-popup.min.js"></script> 
-<script type="text/javascript" src="../include/js/jquery.vide.js"></script> 
-<script type="text/javascript" src="../include/js/simple.parallax.js"></script>
-<script type="text/javascript" src="../include/js/custom.js"></script> 
+
+
+
+
+<script type="text/javascript" src="include/js/jquery-2.2.2.min.js"></script> 
+<script type="text/javascript" src="include/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="include/js/animsition.min.js"></script> 
+<script type="text/javascript" src="include/js/jquery.validate.js"></script> 
+<script type="text/javascript" src="include/js/classie.js"></script> 
+<script type="text/javascript" src="include/js/main.js"></script> 
+<script type="text/javascript" src="include/js/waypoint.js"></script> 
+<script type="text/javascript" src="include/js/slick.min.js"></script> 
+<script type="text/javascript" src="include/js/jquery.countTo.js"></script> 
+<script type="text/javascript" src="include/js/imagesloaded.js"></script> 
+<script type="text/javascript" src="include/js/masonry-3.1.4.js"></script> 
+<script type="text/javascript" src="include/js/masonry.filter.js"></script> 
+<script type="text/javascript" src="include/js/jquery.magnific-popup.min.js"></script> 
+<script type="text/javascript" src="include/js/jquery.vide.js"></script> 
+<script type="text/javascript" src="include/js/simple.parallax.js"></script>
+<script type="text/javascript" src="include/js/custom.js"></script> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-576b8f979487378e"></script>
+
+
+<script src='include/css/calendar/jquery.min.js'></script>
+
+<script src='include/css/calendar/moment.min.js'></script>
+<script src='include/css/calendar/fullcalendar.js'></script>
+
+
 </body>
 </html>
