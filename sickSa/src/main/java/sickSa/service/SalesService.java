@@ -1,7 +1,10 @@
 package sickSa.service;
 
+import java.text.ParseException;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +23,15 @@ public class SalesService {
 		List<Order> ORDList = orderDao.selectList();
 		Collections.reverse(ORDList);
 		return ORDList;
+	}
+	
+	/* 기간별 조회 */
+	public List<Order> list(String startDate, String endDate) throws ParseException {
+		Map<String, String> dateMap = new HashMap<>();
+		dateMap.put("startDate", startDate);
+		dateMap.put("endDate", endDate);
+		System.out.println(dateMap);
+		return orderDao.selectListByDate(dateMap);
 	}
 
 	/* 주문번호로 주문정보 조회 */

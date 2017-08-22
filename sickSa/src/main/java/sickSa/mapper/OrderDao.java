@@ -1,6 +1,7 @@
 package sickSa.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,6 +11,8 @@ import sickSa.domain.Order;
 public interface OrderDao {
 
 	List<Order> selectList();
+	
+	List<Order> selectListByDate(Map<String, String> dateMap);
 
 	Order selectOne(int ord_id);
 

@@ -25,6 +25,26 @@
 		FROM
 			ORDERS
 	</select>
+	
+	<select id="selectListByDate" parameterType="hashmap" resultType="sickSa.domain.Order">
+		<![CDATA[
+		SELECT
+			ORD_ID,
+			PDT_ID,
+			ORD_PDT_AMOUNT,
+			ORD_TOTAL,
+			ORD_PAYMENT_METHOD,
+			ORD_DATE,
+			ORD_STATE,
+			TBL_ID
+		FROM
+			ORDERS
+		WHERE
+			TO_DATE('${startDate}', 'YYYY/MM/DD') <= ORD_DATE
+			AND ORD_DATE < TO_DATE('${endDate}', 'YYYY/MM/DD')
+		]]>
+
+	</select>
 
 	<select id="selectOne" parameterType="int" resultType="sickSa.domain.Order">
 		SELECT

@@ -30,13 +30,18 @@
 
 <script type="text/javascript">
 	function orderMachine() {
-		
+
 	}
 	function storeManager() {
 
 	}
 	function testSalesView() {
-		location.href = 'salesView';
+		sf.action = 'salesView';
+		sf.submit();
+	}
+	function testOrderList() {
+		sf.action = 'orderList';
+		sf.submit();
 	}
 </script>
 </head>
@@ -45,7 +50,11 @@
   <div>
     <button type="button" class="btn btn-default" onclick="orderMachine()">판매기</button>
     <button type="button" class="btn btn-default" onclick="storeManager()">매장관리</button>
+    <form name="sf" method="post">
+      <input type="hidden" name="startDate" value="2017-08-20" /> <input type="hidden" name="endDate" value="2017-08-23" />
+    </form>
     <button type="button" class="btn btn-default" onclick="testSalesView()">판매기록test</button>
+    <button type="button" class="btn btn-default" onclick="testOrderList()">Order List</button>
   </div>
 
   <script type="text/javascript" src="include/js/jquery-2.2.2.min.js"></script>

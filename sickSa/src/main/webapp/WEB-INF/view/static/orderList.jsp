@@ -61,7 +61,15 @@
 		                   "Event End date: " + dt_end].join("\n"));
 		            
 		            /*
+		            salesView로 시작날짜, 종료날짜 보내줌
+		            */
+		        	cf.startDate.value = moment(start).format('YYYY-MM-DD');
+		        	cf.endDate.value = moment(end).format('YYYY-MM-DD');
+		        	cf.action = 'salesView';
+		        	cf.submit();
+		            /*
 			    
+		            
 
 		            $.ajax({
 		             type:"post",
@@ -87,7 +95,15 @@
 		 
 		 
 </script>
-
+<script type="text/javascript">
+function salesView() {
+	alert('dkdkdkdkdk');
+	cf.startDate = moment(start).format('YYYY-MM-DD');
+	cf.endDate = moment(end).format('YYYY-MM-DD');
+	cf.action = 'salesView';
+	cf.submit();
+}
+</script>
 
 
 <title>Insert title here</title>
@@ -207,7 +223,11 @@
 <br>
 <br>
 
-<a href="viewList"  class="btn btn-default" style="float: right; margin: 20px"> List view </a> 
+<form name="cf" method="post">
+<input type="hidden" name="startDate" value="1"/>
+<input type="hidden" name="endDate" value="2"/>
+<button class="btn btn-default" style="float: right; margin: 20px" onclick="salesView()"> List view </button> 
+</form>
 
 <br>
 <br>

@@ -451,176 +451,201 @@ insert into ORDERS values (11,3,3,12700,'카드',sysdate,'B',10);
  * Table Name: INGREDIENTS
  */
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(1, '불고기', 8, 'kg');
---kg(kg당)
+values(1, '불고기', 8000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(2, '돼지불고기', 10, 'kg');
---kg(kg당)
+values(2, '돼지불고기', 10000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(3, '돈가스', 7, 'kg');
---kg(kg당)
+values(3, '돈가스', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(4, '치즈돈가스', 7, 'kg');
---kg(kg당)
+values(4, '치즈돈가스', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(5, '갈비', 3, 'kg');
---kg(kg당)
+values(5, '갈비', 3000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(6, '닭고기', 10, 'kg');
---kg(kg당)
+values(6, '닭고기', 10000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(7, '스팸', 8, 'kg');
---kg(kg당)
+values(7, '스팸', 8000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(8, '멸치', 6, 'kg');
---kg(kg당)
+values(8, '멸치', 6000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(9, '어묵', 9, 'kg');
---kg(kg당)
+values(9, '어묵', 9000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(10, '막대어묵', 7, 'kg');
---kg(kg당)
+values(10, '막대어묵', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(11, '게살', 5, 'kg');
---kg(kg당)
+values(11, '게살', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(12, '오징어', 3, 'kg');
---kg(kg당)
+values(12, '오징어', 3000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(13, '참치', 8, 'kg');
---kg(kg당)
+values(13, '참치', 8000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(14, '가쓰오부시', 5, 'kg');
---kg(kg당)
+values(14, '가쓰오부시', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(15, '장어구이', 4, 'kg');
---kg(kg당
+values(15, '장어구이', 4000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(16, '해물모둠', 5, 'kg');
---kg(kg당)
+values(16, '해물모둠', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(17, '날치알', 3, 'kg');
---kg(kg당)
+values(17, '날치알', 3000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(18, '김치', 10, 'kg');
---kg(kg당)
+values(18, '김치', 10000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(19, '당근', 3, 'kg');
---kg(kg당)
+values(19, '당근', 3000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(20, '마늘', 5, 'kg');
---kg(kg당
+values(20, '마늘', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(21, '대파', 5, 'kg');
---kg(kg당)
+values(21, '대파', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(22, '양파', 7, 'kg');
---kg(kg당)
+values(22, '양파', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(23, '감자', 10, 'kg');
---kg(kg당)
+values(23, '감자', 10000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(24, '다진생강', 8, 'kg');
---kg(kg당)
+values(24, '다진생강', 8000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(25, '잡채', 6, 'kg');
---kg(kg당)
+values(25, '잡채', 6000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(26, '다시마', 3, 'kg');
---kg(kg당)
+values(26, '다시마', 3000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(27, '열무', 3, 'kg');
---kg(kg당)
+values(27, '열무', 3000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(28, '야채튀김', 4, 'kg');
---kg(kg당)
+values(28, '야채튀김', 4000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(29, '김', 7, 'kg');
---kg(kg당)
+values(29, '김', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(30, '후리카케', 4, 'kg');
---kg(kg당)
+values(30, '후리카케', 4000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(31, '맛술', 4, 'kg');
---kg(kg당)
+values(31, '맛술', 4000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(32, '나가사키소스', 5, 'kg');
---kg(kg당)
+values(32, '나가사키소스', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(33, '야키소스', 5, 'kg');
---kg(kg당)
+values(33, '야키소스', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(34, '간장', 5, 'kg');
---kg(kg당)
+values(34, '간장', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(35, '참기름', 5, 'kg');
---kg(kg당)
+values(35, '참기름', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(36, '설탕', 12, 'kg');
---kg(kg당)
+values(36, '쯔유소스', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(37, '고춧가루', 7, 'kg');
---kg(kg당)
+values(37, '마요네즈', 3000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(38, '카레가루', 7, 'kg');
---kg(kg당)
+values(38, '데리야끼소스', 5000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(39, '계란흰자', 4, 'kg');
---kg(kg당)
+values(39, '특제소스', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(40, '우동사리', 7, 'kg');
---kg(kg당)
+values(40, '설탕', 12000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(41, '소바면', 4, 'kg');
---kg(kg당)
+values(41, '고춧가루', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(42, '소금', 9, 'kg');
---kg(kg당)
+values(42, '카레가루', 7000, 'g');
+--g(g당)
 
 insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
-values(43, '쌀', 15, 'kg');
---kg(kg당)
+values(43, '계란흰자', 4000, 'g');
+--g(g당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(44, '우동사리', 7000, 'g');
+--g(g당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(45, '소바면', 4000, 'g');
+--g(g당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(46, '소금', 9000, 'g');
+--g(g당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(47, '쌀', 15000, 'g');
+--g(g당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(48, '치즈', 6000, 'g');
+--g(g당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(49, '고추장', 4000, 'g');
+--g(g당)
+
 
 /*
  * Table Name: PRODUCT_INGREDIENTS
@@ -752,28 +777,46 @@ insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_conta
 values(35, sysdate, sysdate, 7000, '010-4444-0000', 4);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(36, sysdate, sysdate, 2300, '010-5555-0000', 5);
+values(36, sysdate, sysdate, 8000, '010-4444-4444', 4);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(37, sysdate, sysdate, 11400, '010-5555-1111', 5);
+values(37, sysdate, sysdate, 7500, '010-4444-4444', 4);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(38, sysdate, sysdate, 11400, '010-5555-1111', 5);
+values(38, sysdate, sysdate, 7500, '010-4444-4444', 4);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(39, sysdate, sysdate, 9000, '010-5555-2222', 5);
+values(39, sysdate, sysdate, 8000, '010-4444-4444', 4);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(40, sysdate, sysdate, 3270, '010-5555-3333', 5);
+values(40, sysdate, sysdate, 2300, '010-5555-0000', 5);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(41, sysdate, sysdate, 6900, '010-5555-3333', 5);
+values(41, sysdate, sysdate, 11400, '010-5555-1111', 5);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(42, sysdate, sysdate, 2600, '010-5555-0000', 5);
+values(42, sysdate, sysdate, 11400, '010-5555-1111', 5);
 
 insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
-values(43, sysdate, sysdate, 10400, '010-5555-4444', 5);
+values(43, sysdate, sysdate, 9000, '010-5555-2222', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(44, sysdate, sysdate, 3270, '010-5555-3333', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(45, sysdate, sysdate, 6900, '010-5555-3333', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(46, sysdate, sysdate, 2600, '010-5555-0000', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(47, sysdate, sysdate, 10400, '010-5555-4444', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(48, sysdate, sysdate, 7900, '010-5555-5555', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(49, sysdate, sysdate, 4700, '010-5555-6666', 5);
 
 
 /*
