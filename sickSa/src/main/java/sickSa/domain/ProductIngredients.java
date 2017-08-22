@@ -17,6 +17,8 @@ public class ProductIngredients {
 		this.PDIG_AMOUNTS = PDIG_AMOUNT;
 	}
 	
+	
+	
 	@Override
 	public String toString() {
 		return PDT_ID+":"+PDIG_AMOUNTS;

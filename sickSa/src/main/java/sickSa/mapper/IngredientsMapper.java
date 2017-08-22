@@ -32,5 +32,5 @@ public interface IngredientsMapper {
 	public Integer insertIngredient(Ingredients ingredient);
 	public Integer deleteIngredient(Integer ING_ID);
 	public Integer updateIngredient(Ingredients ingredient);
-//	public Integer changeStock(ProductIngredients productIngredients);
+	public Integer changeStock(ProductIngredients productIngredients);
 }
