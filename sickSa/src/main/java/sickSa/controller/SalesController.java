@@ -22,6 +22,16 @@ public class SalesController {
 		model.addAttribute("orderList", salesService.list(startDate, endDate));
 		System.out.println("startDate: " + startDate);
 		System.out.println("endDate: " + endDate);
+		System.out.println(salesService.list(startDate, endDate));
 		return "salesView";
+	}
+	
+	@RequestMapping("/salesViewHtml")
+	public String salesViewHtml(Model model, @RequestParam String startDate, @RequestParam String endDate) throws ParseException {
+		model.addAttribute("orderList", salesService.list(startDate, endDate));
+		System.out.println("startDate: " + startDate);
+		System.out.println("endDate: " + endDate);
+		System.out.println(salesService.list(startDate, endDate));
+		return "salesView2";
 	}
 }
