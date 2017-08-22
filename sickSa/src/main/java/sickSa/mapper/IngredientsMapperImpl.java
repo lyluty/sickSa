@@ -55,9 +55,9 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 		return sqlSession.update("updateIngredient",ingredient);
 	}
 
-//	@Override
-//	public Integer changeStock(ProductIngredients productIngredients) {
-//		return sqlSession.update("changeStock", productIngredients);
-//	}
+	@Override
+	public Integer changeStock(ProductIngredients productIngredients) {
+		return sqlSession.update("changeStock", productIngredients);
+	}
 
 }
