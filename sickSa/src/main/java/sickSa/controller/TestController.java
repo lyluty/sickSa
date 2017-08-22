@@ -17,16 +17,4 @@ public class TestController {
 	public String testMain2() {
 		return "testIndex2";
 	}
-	
-	@RequestMapping("sales")
-	public String sales() {
-		return "sales";
-	}
-	
-	@RequestMapping("salesViewHtm")
-	public String salesViewHtml(@RequestParam String startDate, @RequestParam String endDate) {
-		System.out.println("start: " + startDate);
-		System.out.println("end: " + endDate);
-		return "salesView2";
-	}
 }

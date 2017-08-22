@@ -1,13 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script type="text/javascript">
-  function historyBack() {
-    history.go(0);
-  }
-</script>
-<div class="calendar">
+<div id="salesList">
   <h3 class="content-title">매출 기록</h3>
-  <button class="btn btn-default" onclick="historyBack()">&lt; 조회기간 선택</button>
+  <button class="btn btn-default" onclick="timePeriod()">&lt;&nbsp;조회기간 선택</button>
   <div>
     <table class="table table-striped">
       <thead>

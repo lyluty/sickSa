@@ -17,21 +17,19 @@ public class SalesController {
 	@Autowired
 	SalesService salesService;
 
-	@RequestMapping("/salesView")
-	public String salesView(Model model, @RequestParam String startDate, @RequestParam String endDate) throws ParseException {
-		model.addAttribute("orderList", salesService.list(startDate, endDate));
-		System.out.println("startDate: " + startDate);
-		System.out.println("endDate: " + endDate);
-		System.out.println(salesService.list(startDate, endDate));
-		return "salesView";
+	@RequestMapping("/sales")
+	public String salesView() {
+		return "sales/salesView";
 	}
 	
-	@RequestMapping("/salesViewHtml")
-	public String salesViewHtml(Model model, @RequestParam String startDate, @RequestParam String endDate) throws ParseException {
+	@RequestMapping("/salesList.ajax")
+	public String salesListAjax(Model model, @RequestParam String startDate, @RequestParam String endDate) throws ParseException {
 		model.addAttribute("orderList", salesService.list(startDate, endDate));
-		System.out.println("startDate: " + startDate);
-		System.out.println("endDate: " + endDate);
-		System.out.println(salesService.list(startDate, endDate));
-		return "salesView2";
+		return "sales/div/salesList";
+	}
+	
+	@RequestMapping("/selectTimePeriod.ajax")
+	public String selectTimePeriodAjax() {
+		return "sales/div/timePeriod";
 	}
 }
