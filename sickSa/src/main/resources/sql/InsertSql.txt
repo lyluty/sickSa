@@ -436,6 +436,7 @@ insert into TABLES values (10, 'N');
 /*
  * Table Name: ORDERS
  */
+ 
 insert into ORDERS values (1,2,6,40000,'카드',sysdate,'B',1);
 insert into ORDERS values (2,1,2,14000,'카드',sysdate,'B',2);
 insert into ORDERS values (3,3,1,15200,'현금',sysdate,'C',3);
@@ -446,7 +447,7 @@ insert into ORDERS values (8,2,3,21000,'카드',sysdate,'S',7);
 insert into ORDERS values (9,1,5,52000,'카드',sysdate,'C',8);
 insert into ORDERS values (10,4, 1,15000,'현금',sysdate,'B',9);
 insert into ORDERS values (11,3,3,12700,'카드',sysdate,'B',10);
- 
+
 /*
  * Table Name: INGREDIENTS
  */
