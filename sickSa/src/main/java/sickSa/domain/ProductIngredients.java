@@ -2,6 +2,7 @@ package sickSa.domain;
 
 import java.util.Map;
 
+
 public class ProductIngredients {
 	
 	private int PDT_ID;

@@ -1,0 +1,823 @@
+/*
+ * Table Name: PRODUCT_CATEGORIES
+ */
+insert into product_categories values (1,'돈부리');
+insert into product_categories values (2,'면류');
+insert into product_categories values (3,'오니기리');
+insert into product_categories values (4,'신메뉴');
+insert into product_categories values (5,'컵밥');
+insert into product_categories values (6,'세트메뉴');
+ 
+/*
+ * Table Name: PRODUCTS
+ */
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(1, 
+'규동', 7000, 'include/images/menu/donburi/gyudon.jpg', 
+'include/images/menu/donburi/gyudon.jpg', 
+'오니기리와 이규동만의
+특제소스에 최고급 
+우삼겹 부위만을 살짝 데쳐
+상큼한 양파,파를 곁들여 먹는
+소고기 샤브 덮밥', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(2, 
+'보쌈규동', 8000, 'include/images/menu/donburi/bossam_gyudon.jpg', 
+'include/images/menu/donburi/bossam_gyudon.jpg', 
+'일본식 샤브 소불고기와
+상큼하고 아식한 보쌈무를
+함께 즐길 수 있는 규동', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(3, 
+'화끈규동', 7500, 'include/images/menu/donburi/so_hot_gyudon.jpg', 
+'include/images/menu/donburi/so_hot_gyudon.jpg', 
+'화끈한 국물맛이 일품인 
+국물 규동', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(4, 
+'트리플치즈규동', 8500, 'include/images/menu/donburi/triple_cheese_gyudon.jpg', 
+'include/images/menu/donburi/triple_cheese_gyudon.jpg', 
+'일본식 샤브 소불고기와 
+3가지치즈(파마산,
+모짜렐라,체다치즈)로
+맛을 낸 규동', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(5, 
+'갈릭규동', 7500, 'include/images/menu/donburi/garlic_gyudon.jpg', 
+'include/images/menu/donburi/garlic_gyudon.jpg', 
+'고소하게 튀겨진 마늘후레이크가 더해져 고소한 풍미를 느낄수 있는 규동', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(6, 
+'규카레동', 7500, 'include/images/menu/donburi/gyu_curry_don.jpg', 
+'include/images/menu/donburi/gyu_curry_don.jpg', 
+'매콤한 카레와 일본식 규동의 
+맛이 어우러져 
+새로운 맛으로 탄생,
+또한 카레는 다이어트와 
+성인병 예방에도 
+탁월합니다.', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(7, 
+'잡채규동', 7500, 'include/images/menu/donburi/jabche_gyudon.jpg', 
+'include/images/menu/donburi/jabche_gyudon.jpg', 
+'부드럽고 쫄깃한 잡채와
+풍미가 가득한 
+규동의 만남', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(8, 
+'해물돈부리', 8000, 'include/images/menu/donburi/seafood_donburi.jpg', 
+'include/images/menu/donburi/seafood_donburi.jpg', 
+'새우,오징어,홍합,조개살등의
+바다내음이 가득한 
+신선한 해물과 
+매콤한 맛이 
+어우러진 해물덮밥', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(9, 
+'치킨마요동', 8500, 'include/images/menu/donburi/chicken_mayo_don.jpg', 
+'include/images/menu/donburi/chicken_mayo_don.jpg', 
+'누구나 좋아하는 치킨 
+가라아게에 데리야끼소스와 
+고소한 마요네즈를 뿌려 
+상큼한 양파와 함께 
+곁들여 먹는 이색덮밥', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(10, 
+'스팸마요동', 8500, 'include/images/menu/donburi/spam_mayo_rice.jpg', 
+'include/images/menu/donburi/spam_mayo_rice.jpg', 
+'스팸과 짭쪼름하고 
+달콤한 데리야끼 소스와 
+마요네즈가 어울린
+맛있는 메뉴', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(11, 
+'차슈 데리야끼동', 9000, 'include/images/menu/donburi/chashu_teriyaki_don.jpg', 
+'include/images/menu/donburi/chashu_teriyaki_don.jpg', 
+'기름이 쏙~빠진 쫀득쫀득한
+돼지고기에 특제간장소스를 
+세차례 덧입혀 맛을 낸
+일본식 돼지고기 덮밥', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(12, 
+'치킨 데리야끼동', 9000, 'include/images/menu/donburi/chicken_teriyaki_don.jpg', 
+'include/images/menu/donburi/chicken_teriyaki_don.jpg', 
+'달콤한 데리야끼 소스로 
+양념한 닭고기와 
+피망, 브로콜리 등 몸에
+좋은 채소를 듬뿍 올린 덮밥', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(13, 
+'장어덮밥', 8000, 'include/images/menu/donburi/Eel_rice.jpg', 
+'include/images/menu/donburi/Eel_rice.jpg', 
+'몸에 좋은 장어를 달콤향긋한 
+특제 데리야끼소스로 
+맛을 낸 건강 덮밥', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(14, 
+'새위튀김덮밥', 8000, 'include/images/menu/donburi/fried_prawn_rice.jpg', 
+'include/images/menu/donburi/fried_prawn_rice.jpg', 
+'고소하고 담백한 새우튀김을 
+특제 간장소스로 맛을 낸 
+일본식 튀김 덮밥', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(15, 
+'가츠동', 7000, 'include/images/menu/donburi/katsudon.jpg', 
+'include/images/menu/donburi/katsudon.jpg', 
+'바삭한 돈가스 위에
+촉촉하게 스며든 환상의 소스', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(16, 
+'돈가스', 7000, 'include/images/menu/donburi/pork-cutlet.jpg', 
+'include/images/menu/donburi/pork-cutlet.jpg', 
+'돼지고기 순살등심으로 
+만든 바삭바삭한 돈가스', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(17, 
+'카레돈가스', 7500, 'include/images/menu/donburi/curry_pork_cutlet.jpg', 
+'include/images/menu/donburi/curry_pork_cutlet.jpg', 
+'고소한 카레와 
+바삭바삭한 돈가스', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(18, 
+'치즈돈가스', 8000, 'include/images/menu/donburi/cheese_pork-cutlet.jpg', 
+'include/images/menu/donburi/cheese_pork-cutlet.jpg', 
+'바삭바삭 돈가스안에 
+치즈가 듬뿍 들어가서
+더욱 맛있는 치즈돈가스', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(19, 
+'열무비빔규동', 7500, 'include/images/menu/donburi/yulmu_bibim_gyudon.jpg', 
+'include/images/menu/donburi/yulmu_bibim_gyudon.jpg', 
+'여름철 가장 맛있는 열무를 규동과 함께 즐길 수 있는 여름 특별 메뉴', 1);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(20, 
+'얼큰해물짬뽕', 7000, 'include/images/menu/kind of noodle/hot_seafood_jjamppong', 
+'include/images/menu/kind of noodle/hot_seafood_jjamppong.jpg', 
+'얼큰하고 진한 해물맛의 붉은 
+국물이 매력적인 우동', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(21, 
+'사누끼우동', 7500, 'include/images/menu/kind of noodle/sanukki_udon', 
+'include/images/menu/kind of noodle/sanukki_udon.jpg', 
+'감칠맛나는 일본 정통 
+우동소스에 쫄깃한
+최고급 면을 사용.
+빠른시간내에 든든하게 
+끼니를 대신할 수 있는
+초간편메뉴', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(22, 
+'야채튀김우동', 7000, 'include/images/menu/kind of noodle/vegetables_fried_udon', 
+'include/images/menu/kind of noodle/vegetables_fried_udon.jpg', 
+'일본 정통우동에 고소한
+야채튀김을 올려 감칠맛을
+더한 우동', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(23, 
+'냉우동', 7000, 'include/images/menu/kind of noodle/iced_udon', 
+'include/images/menu/kind of noodle/iced_udon.jpg', 
+'살얼음이 동동 뜬 시원한
+메밀육수에 쫄깃한 면이
+일품인 여름철 인기메뉴', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(24, 
+'냉모밀', 7000, 'include/images/menu/kind of noodle/iced_soba', 
+'include/images/menu/kind of noodle/iced_soba.jpg', 
+'살얼음이 동동 뜬 시원한 
+저칼로리 영양식 메밀소바', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(25, 
+'나가사키짬뽕', 7500, 'include/images/menu/kind of noodle/nagassaki_jjamppong', 
+'include/images/menu/kind of noodle/nagassaki_jjamppong.jpg', 
+'정성껏 우린 진한 사골육수에
+해물과 채소를 듬뿍넣어
+맵지 않고 담백하게 만든
+일본식 짬뽕', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(26, 
+'해물야끼우동', 8000, 'include/images/menu/kind of noodle/seafood_yaki_udon', 
+'include/images/menu/kind of noodle/seafood_yaki_udon.jpg', 
+'새우,오징어,홍합,조개살등의
+각종해산물과 신선한 야채에
+쫄깃한 우동면발을 센불에 볶아
+감칠맛이 그대로 느껴지는
+일본식 볶음우동요리', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(27, 
+'꼬치어묵우동', 7500, 'include/images/menu/kind of noodle/stick_fishcake_udon', 
+'include/images/menu/kind of noodle/stick_fishcake_udon.jpg', 
+'진한 사누끼 우동장국과
+다양한 어묵과 함께 
+즐길 수 있는 우동', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(28, 
+'김치어묵우동', 7500, 'include/images/menu/kind of noodle/kimchi_fishcake_udon', 
+'include/images/menu/kind of noodle/kimchi_fishcake_udon.jpg', 
+'진한 사누끼 우동장국과
+숙성김치의 맛을 다양한 어묵과
+함께 즐길 수 있는 우동', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(29, 
+'냉비빔(모밀/우동)', 7000, 'include/images/menu/kind of noodle/iced_bibim(soba or udon)', 
+'include/images/menu/kind of noodle/iced_bibim(soba or udon).jpg', 
+'시원하고 매콤한 비빔장과
+야채가 쫄깃한 면과
+어우러진 메뉴', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(30, 
+'돈가스 김치나베우동', 8000, 'include/images/menu/kind of noodle/porkcutlet_kimchi_nabe_udon', 
+'include/images/menu/kind of noodle/porkcutlet_kimchi_nabe_udon.jpg', 
+'부드러운 돈가스와 
+얼큰한 국물의 
+조화를 이룬 우동', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(31, 
+'열무냉모밀', 7000, 'include/images/menu/kind of noodle/yulmu_iced_soba', 
+'include/images/menu/kind of noodle/yulmu_iced_soba.jpg', 
+'여름철 가장 맛있는 열무를 살얼음 가득한 냉모밀과 함께 즐길 수 있는 여름 특별 메뉴', 2);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(32, 
+'후리가케', 3000, 'include/images/menu/onigiri/furikake', 
+'include/images/menu/onigiri/furikake.jpg', 
+'가다랑어 맛이 나는
+일본식 깨와 김이 어우러진
+담백한 기본 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(33, 
+'소불고기', 3000, 'include/images/menu/onigiri/bulgogi', 
+'include/images/menu/onigiri/bulgogi.jpg', 
+'한국인에게 가장 친숙한
+소불고기 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(34, 
+'보쌈김치', 3000, 'include/images/menu/onigiri/bossam', 
+'include/images/menu/onigiri/bossam.jpg', 
+'상큼하고 아삭한 보쌈 무를 넣은
+개운한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(35, 
+'참치샐러드', 3000, 'include/images/menu/onigiri/tuna_salad', 
+'include/images/menu/onigiri/tuna_salad.jpg', 
+'기름을 제거한 담백한 참치에
+피클과 마요네즈를 함께 버무려
+고소함이 일품인 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(36, 
+'커리치킨', 3000, 'include/images/menu/onigiri/curry_chicken', 
+'include/images/menu/onigiri/curry_chicken.jpg', 
+'고소한 치킨 카라아게에 달콤한
+카레소스를 버무린 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(37, 
+'김치참치', 3000, 'include/images/menu/onigiri/kimchi_tuna', 
+'include/images/menu/onigiri/kimchi_tuna.jpg', 
+'매콤한 소스에 김치와
+참치를 넣고 볶아
+누구나 좋아하는
+개운한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(38, 
+'김치알밥', 3000, 'include/images/menu/onigiri/kimchi_egg', 
+'include/images/menu/onigiri/kimchi_egg.jpg', 
+'개운한 김치볶음과 
+톡톡 터지는
+날치알이 환상의 궁합으로
+만난 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(39, 
+'떡갈비', 3000, 'include/images/menu/onigiri/galbi', 
+'include/images/menu/onigiri/galbi.jpg', 
+'맛있는 떡갈비를 
+간장소스에 재워
+달콤한 맛을 더한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(40, 
+'달콤숯닭', 3000, 'include/images/menu/onigiri/sweet_chicken', 
+'include/images/menu/onigiri/sweet_chicken.jpg', 
+'훈제된 닭고기를
+데리야끼 소스에 재워
+달콤한 맛을 더한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(41, 
+'훈제핫닭', 3000, 'include/images/menu/onigiri/grilled_hot_chicken', 
+'include/images/menu/onigiri/grilled_hot_chicken.jpg', 
+'훈제된 닭고기를 
+불닭소스에 재워
+매콤한 풍미를 더한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(42, 
+'불장난오징어', 3000, 'include/images/menu/onigiri/hot_squid', 
+'include/images/menu/onigiri/hot_squid.jpg', 
+'쫄깃한 오징어와 상큼한
+오이를 고춧가루양념에
+버무린 매운 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(43, 
+'고소한 멸치', 3000, 'include/images/menu/onigiri/tasty_anchovy', 
+'include/images/menu/onigiri/tasty_anchovy.jpg', 
+'오니기리의 원조격인 멸치를
+고소하고 바삭하게 볶아
+남녀노소 누구나 좋아하는
+오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(44, 
+'게살샐러드', 3000, 'include/images/menu/onigiri/crab_salad', 
+'include/images/menu/onigiri/crab_salad.jpg', 
+'기름을 제거한 담백한 게살에
+피클과 마요네즈를 버무려
+고소함이 일품인 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(45, 
+'구운스팸 오니기리', 3000, 'include/images/menu/onigiri/grilled_spam', 
+'include/images/menu/onigiri/grilled_spam.jpg', 
+'스팸을 사용한 짭쪼름하고
+구수한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(46, 
+'매운스팸 오니기리', 3000, 'include/images/menu/onigiri/spicy_spam', 
+'include/images/menu/onigiri/spicy_spam.jpg', 
+'훈제된 닭고기를
+데리야끼 소스에 재워
+달콤한 맛을 더한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(47, 
+'힘쎈장어 오니기리', 3000, 'include/images/menu/onigiri/strong_eel', 
+'include/images/menu/onigiri/strong_eel.jpg', 
+'훈제된 닭고기를
+데리야끼 소스에 재워
+달콤한 맛을 더한 오니기리', 3);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(48, 
+'열무비빔규동', 7500, 'include/images/menu/new_menu/yulmu_bibim_gyudon', 
+'include/images/menu/new_menu/yulmu_bibim_gyudon.jpg', 
+'여름철 가장 맛있는 열무를 규동과 함께 즐길 수 있는 여름 특별 메뉴', 4);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(49, 
+'열무냉모밀', 7000, 'include/images/menu/new_menu/yulmu_iced_soba', 
+'include/images/menu/new_menu/yulmu_iced_soba.jpg', 
+'여름철 가장 맛있는 열무를 살얼음 가득한 냉모밀과 함께 즐길 수 있는 여름 특별 메뉴', 4);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(50, 
+'컵밥', 4000, 'include/images/menu/cup_bob/cup_bob_main', 
+'include/images/menu/cup_bob/cup_bob_main.jpg', 
+'(오니한컵/달콤한컵,화끈한컵,스팸한컵) 맛있는 오니기리 3가지를 동시에 맛볼수 있는
+신개념 휴대용 컵밥', 5);
+
+insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
+values(51, 
+'세트메뉴', 11000, 'include/images/menu/set_menu/set_main', 
+'include/images/menu/set_menu/set_main.jpg', 
+'가족 연인과 함꼐 나눠먹는 즐거움(규동(M)+오니기리2개(참치샐러드,고소한멸치)+사누끼우동', 6);
+ 
+/*
+ * Table Name: TABLES
+ */
+--(TBL_ID,TBL_IS_EMPTY)
+insert into TABLES values (1,'N');
+insert into TABLES values (2,'Y');
+insert into TABLES values (3,'N');
+insert into TABLES values (4,'N');
+insert into TABLES values (5, 'Y');
+insert into TABLES values (6, 'Y');
+insert into TABLES values (7, 'Y');
+insert into TABLES values (8, 'N');
+insert into TABLES values (9, 'Y');
+insert into TABLES values (10, 'N');
+ 
+/*
+ * Table Name: ORDERS
+ */
+insert into ORDERS values (1,2,6,40000,'카드',sysdate,'B',1);
+insert into ORDERS values (2,1,2,14000,'카드',sysdate,'B',2);
+insert into ORDERS values (3,3,1,15200,'현금',sysdate,'C',3);
+insert into ORDERS values (5,1,4,32000,'카드',sysdate,'B',4);
+insert into ORDERS values (6,2,1,31700,'현금',sysdate,'C',5);
+insert into ORDERS values (7,1,4,7000,'현금',sysdate,'B',6);
+insert into ORDERS values (8,2,3,21000,'카드',sysdate,'S',7);
+insert into ORDERS values (9,1,5,52000,'카드',sysdate,'C',8);
+insert into ORDERS values (10,4, 1,15000,'현금',sysdate,'B',9);
+insert into ORDERS values (11,3,3,12700,'카드',sysdate,'B',10);
+ 
+/*
+ * Table Name: INGREDIENTS
+ */
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(1, '불고기', 8, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(2, '돼지불고기', 10, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(3, '돈가스', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(4, '치즈돈가스', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(5, '갈비', 3, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(6, '닭고기', 10, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(7, '스팸', 8, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(8, '멸치', 6, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(9, '어묵', 9, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(10, '막대어묵', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(11, '게살', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(12, '오징어', 3, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(13, '참치', 8, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(14, '가쓰오부시', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(15, '장어구이', 4, 'kg');
+--kg(kg당
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(16, '해물모둠', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(17, '날치알', 3, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(18, '김치', 10, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(19, '당근', 3, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(20, '마늘', 5, 'kg');
+--kg(kg당
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(21, '대파', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(22, '양파', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(23, '감자', 10, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(24, '다진생강', 8, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(25, '잡채', 6, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(26, '다시마', 3, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(27, '열무', 3, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(28, '야채튀김', 4, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(29, '김', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(30, '후리카케', 4, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(31, '맛술', 4, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(32, '나가사키소스', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(33, '야키소스', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(34, '간장', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(35, '참기름', 5, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(36, '설탕', 12, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(37, '고춧가루', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(38, '카레가루', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(39, '계란흰자', 4, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(40, '우동사리', 7, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(41, '소바면', 4, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(42, '소금', 9, 'kg');
+--kg(kg당)
+
+insert into ingredients(ing_id, ing_name, ing_stock, ing_measure)
+values(43, '쌀', 15, 'kg');
+--kg(kg당)
+
+/*
+ * Table Name: PRODUCT_INGREDIENTS
+ */
+ 
+/*
+ * Table Name: STORE_DATA
+ */
+ 
+/*
+ * Table Name: INGREDIENT_CATEGORIES
+ */
+insert into ingredient_categories(igct_id, igct_name)
+values(1, '육류');
+insert into ingredient_categories(igct_id, igct_name)
+values(2, '어류');
+insert into ingredient_categories(igct_id, igct_name)
+values(3, '야채'||chr(38)||'채소');
+insert into ingredient_categories(igct_id, igct_name)
+values(4, '소스');
+insert into ingredient_categories(igct_id, igct_name)
+values(5, '기타식자재');
+/*
+ * Table Name: INGREDIENT_DETAILS
+ */
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(1, sysdate, sysdate, 10000, '010-0000-0000', 1);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(2, sysdate, sysdate, 8000, '010-0000-1111', 1);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(3, sysdate, sysdate, 4750, '010-0000-1111', 1);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(4, sysdate, sysdate, 9000, '010-0000-1111', 1);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(5, sysdate, sysdate, 9000, '010-0000-0000', 1);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(6, sysdate, sysdate, 4000, '010-0000-2222', 1);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(7, sysdate, sysdate, 8000, '010-0000-1111', 1);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(8, sysdate, sysdate, 9000, '010-2222-1111', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(9, sysdate, sysdate, 9500, '010-2222-1221', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(10, sysdate, sysdate, 9000, '010-2222-1221', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(11, sysdate, sysdate, 19000, '010-2222-3333', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(12, sysdate, sysdate, 9900, '010-2222-4444', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(13, sysdate, sysdate, 5900, '010-2222-5555', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(14, sysdate, sysdate, 8900, '010-2222-6666', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(15, sysdate, sysdate, 45000, '010-2222-7777', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(16, sysdate, sysdate, 19590, '010-2222-5555', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(17, sysdate, sysdate, 17000, '010-2222-7777', 2);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(18, sysdate, sysdate, 4400, '010-3333-0000', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(19, sysdate, sysdate, 1250, '010-3333-1111', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(20, sysdate, sysdate, 6100, '010-3333-1111', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(21, sysdate, sysdate, 3500, '010-3333-1111', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(22, sysdate, sysdate, 1300, '010-3333-1111', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(23, sysdate, sysdate, 990, '010-3333-1111', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(24, sysdate, sysdate, 3500, '010-3333-1111', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(25, sysdate, sysdate, 8000, '010-3333-2222', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(26, sysdate, sysdate, 6900, '010-3333-3333', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(27, sysdate, sysdate, 6000, '010-3333-4444', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(28, sysdate, sysdate, 6500, '010-3333-5555', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(29, sysdate, sysdate, 13500, '010-3333-6666', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(30, sysdate, sysdate, 14800, '010-3333-6666', 3);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(31, sysdate, sysdate, 2800, '010-4444-0000', 4);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(32, sysdate, sysdate, 12000, '010-4444-1111', 4);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(33, sysdate, sysdate, 11000, '010-4444-1111', 4);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(34, sysdate, sysdate, 4300, '010-4444-2222', 4);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(35, sysdate, sysdate, 7000, '010-4444-0000', 4);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(36, sysdate, sysdate, 2300, '010-5555-0000', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(37, sysdate, sysdate, 11400, '010-5555-1111', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(38, sysdate, sysdate, 11400, '010-5555-1111', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(39, sysdate, sysdate, 9000, '010-5555-2222', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(40, sysdate, sysdate, 3270, '010-5555-3333', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(41, sysdate, sysdate, 6900, '010-5555-3333', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(42, sysdate, sysdate, 2600, '010-5555-0000', 5);
+
+insert into ingredient_details(ing_id, igdt_in, igdt_out, igdt_price, igdt_contact, igct_id)
+values(43, sysdate, sysdate, 10400, '010-5555-4444', 5);
+
+
+/*
+ * Table Name: QUEUE_LOG_STATES
+ */
+INSERT INTO
+	QUEUE_LOG_STATES(QLST_CODE, QLST_NAME)
+	VALUES(10, 'Progress');
+INSERT INTO
+	QUEUE_LOG_STATES(QLST_CODE, QLST_NAME)
+	VALUES(20, 'Complete');
+INSERT INTO
+	QUEUE_LOG_STATES(QLST_CODE, QLST_NAME)
+	VALUES(90, 'Canceled');
+	
+/*
+ * Table Name: QUEUE_LOGS
+ */
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-1648-4385', TO_DATE('2017/08/13 12:41:13', 'YYYY/MM/DD HH24:MI:SS'), 20);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-4531-1685', TO_DATE('2017/08/13 12:44:28', 'YYYY/MM/DD HH24:MI:SS'), 90);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-1648-4385', TO_DATE('2017/08/13 12:46:54', 'YYYY/MM/DD HH24:MI:SS'), 20);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-3486-1175', TO_DATE('2017/08/14 12:22:15', 'YYYY/MM/DD HH24:MI:SS'), 20);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-5795-3486', TO_DATE('2017/08/14 12:26:11', 'YYYY/MM/DD HH24:MI:SS'), 90);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-1368-4215', TO_DATE('2017/08/14 12:30:43', 'YYYY/MM/DD HH24:MI:SS'), 20);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-1655-2152', TO_DATE('2017/08/15 12:47:59', 'YYYY/MM/DD HH24:MI:SS'), 10);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-1985-4638', TO_DATE('2017/08/15 12:51:22', 'YYYY/MM/DD HH24:MI:SS'), 90);
+INSERT INTO
+	QUEUE_LOGS(QLOG_ID,	QLOG_CONTACT, QLOG_DATE, QLST_CODE)
+	VALUES(QUEUE_LOGS_QLOG_ID_SEQ.NEXTVAL, '010-1522-3352', TO_DATE('2017/08/15 13:13:05', 'YYYY/MM/DD HH24:MI:SS'), 10);
+ 
+commit;

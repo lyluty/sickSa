@@ -2,8 +2,8 @@ package sickSa.mapper;
 
 import java.util.List;
 
+
 import sickSa.domain.IngredientDetails;
-import sickSa.domain.Ingredients;
 
 public interface IngredientDetailsMapper {
 	/*

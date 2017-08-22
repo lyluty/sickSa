@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sickSa.domain.IngredientCategories;
+import sickSa.mapper.IngredientCategoriesMapper;
+import sickSa.mapper.IngredientDetailsMapper;
 import sickSa.service.IngredientService;
 
 @Controller
@@ -14,7 +16,14 @@ public class IngredientController {
 	
 	@Autowired
 	private IngredientService ingredientService;
+	@Autowired
+	private IngredientDetailsMapper ingredientDetailsMapper;
+	@Autowired
+	private IngredientCategoriesMapper ingredientCategoriesMapper;
 	
+	public void setIngredientService(IngredientService ingredientService) {
+		this.ingredientService = ingredientService;
+	}
 	
 	/*
 	@RequestMapping("/igctList")
@@ -24,7 +33,7 @@ public class IngredientController {
 		return "ingredientCategoriesSelect";
 	}
 	*/
-	
+
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
 		return "ingredientCategoriesInsertForm";
@@ -41,6 +50,7 @@ public class IngredientController {
 	// Test
 	@RequestMapping("/igctList")
 	public String loadListIgct(Model model){
+		System.out.println("asdfsdfadf");
 		model.addAttribute(
 				"ingredientCategoriesList", ingredientService.loadListIgct());
 		return "/jsp/index";

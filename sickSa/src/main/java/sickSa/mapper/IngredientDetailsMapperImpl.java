@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import sickSa.domain.IngredientDetails;
+
 @Mapper
 public class IngredientDetailsMapperImpl implements IngredientDetailsMapper {
 	
