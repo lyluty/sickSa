@@ -21,6 +21,19 @@ public class OrderController {
 		return "static/orderList";
 	}
 	
+	/*
+	@RequestMapping("/viewList")
+	public String viewList() {
+		return "static/viewList";
+	}
+	*/
+	
+	@RequestMapping("/viewList")
+	public String getOrderList(Model model){
+	model.addAttribute("orderList",orderService.getList());
+	return "static/viewList";
+	}
+	
 	@RequestMapping("/orderTest")
 	public String orderTest() {
 		return "static/orderTest";
@@ -36,6 +49,7 @@ public class OrderController {
 	model.addAttribute("orderList",orderService.getList());
 	return "test/order/list";
 	}
+	
 	
 	@RequestMapping("test/order/get/{ord_id}")
 	public String testGet(Model model,@PathVariable("ord_id")Integer ord_id){
