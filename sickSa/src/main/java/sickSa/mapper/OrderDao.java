@@ -13,6 +13,8 @@ public interface OrderDao {
 	List<Order> selectList();
 	
 	List<Order> selectListByDate(Map<String, String> dateMap);
+	
+	List<Order> selectListByState(String ord_state);
 
 	Order selectOne(int ord_id);
 
