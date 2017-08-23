@@ -18,7 +18,8 @@
       <li class="menu__item"><a class="menu__link" href="blog.html">Blog</a></li>
       <li class="menu__item"><a class="menu__link" href="testimonials.html">Testimonials</a></li>
       <li class="menu__item"><a class="menu__link" href="contact-us.html">Contact us</a></li>
-      <li class="menu__item"><a class="menu__link" href="sales">매출조회</a></li>
+      <li class="menu__item"><a class="menu__link" href="servingState">서빙 현황</a></li>
+      <li class="menu__item"><a class="menu__link" data-submenu="submenu-5" href="#">매장관리</a></li>
 
 
       <li class="menu__item"><a class="menu__link" data-submenu="submenu-4" href="#">Pages</a></li>
@@ -63,6 +64,12 @@
       <li class="menu__item"><a class="menu__link" href="team-single.html">Team Single</a></li>
       <li class="menu__item"><a class="menu__link" href="portfolio-single.html">Portfolio Single</a></li>
       <li class="menu__item"><a class="menu__link" href="404.html">404</a></li>
+    </ul>
+    
+    <!-- Submenu 5 / 매장관리 -->
+    <ul data-menu="submenu-5" class="menu__level">
+      <li class="menu__item"><a class="menu__link" href="sales">매출조회</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">재고관리</a></li>
     </ul>
   </div>
 </nav>
