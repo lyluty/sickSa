@@ -127,7 +127,7 @@ values(13,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(14, 
-'새위튀김덮밥', 8000, 'include/images/menu/donburi/fried_prawn_rice.jpg', 
+'새우튀김덮밥', 8000, 'include/images/menu/donburi/fried_prawn_rice.jpg', 
 'include/images/menu/donburi/fried_prawn_rice.jpg', 
 '고소하고 담백한 새우튀김을 
 특제 간장소스로 맛을 낸 
