@@ -10,9 +10,15 @@ var calendarInitFunction = function() {
     },
     header : {
       left : '',
-      center : 'prev ,title, next',
+      center : 'title',
       right : 'today'
     }, // hearder 노출 메뉴
+    
+    footer:{
+    	left : 'prev',
+    	center:'',
+    	right : 'next'
+    }, //footer 노출 메뉴
     
     height : "auto",
     

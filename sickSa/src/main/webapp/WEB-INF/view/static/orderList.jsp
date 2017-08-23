@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -34,9 +34,11 @@
 
 
 <script>
+	
+	var dt_start;
+	var dt_end;
 
 		$(document).ready(function() {
-		
 		    // page is now ready, initialize the calendar...
 		
 		    $('#calendar').fullCalendar({
@@ -54,19 +56,39 @@
 		            // end contains the end date. 
 		            // Caution: the end date is exclusive (new since v2).
 		          
-		            var dt_start = moment(start).format('YYYY-MM-DD');
-			        var dt_end = moment(end).format('YYYY-MM-DD');
+		            dt_start = moment(start).format();
+			        dt_end = moment(end).format();
 		    		   
-		            alert(["Event Start date: " + dt_start,
-		                   "Event End date: " + dt_end].join("\n"));
+		          alert(["Event Start date: " + dt_start,
+		        			  "Event End date: " + dt_end].join("\n"));
 		            
 		            /*
 		            salesView로 시작날짜, 종료날짜 보내줌
-		            */
+		          
+		          */
+		          
+
+		        	/*
+		        	
 		        	cf.startDate.value = moment(start).format('YYYY-MM-DD');
 		        	cf.endDate.value = moment(end).format('YYYY-MM-DD');
 		        	cf.action = 'salesView';
 		        	cf.submit();
+		        	
+		        	 
+		        	  
+		        	   $.ajax({
+		        		     type:"post",
+		        		     url:"salesView",
+		        		     data:{"startDate":dt_start,"endDate":dt_end},
+		        		     success:function(data){
+		        		      //calendar.fullCalendar('updateEvent',event);
+		        		      $('#calendar').fullCalendar('unselect');
+		        		     }
+		        		    }); 
+		        	
+		        	   */
+
 		            /*
 			    
 		            
@@ -79,31 +101,32 @@
 		             success: reqPostResponse,
 		             error: errorNoti
 		             
-		     		*/
-
+		     	
 		       }
-
+		        	*/
 		    	// put your options and callbacks here
 		    });
 			      
 	
 
 		});
-		
 
-	
-		 
-		 
-</script>
-<script type="text/javascript">
-function salesView() {
-	alert('dkdkdkdkdk');
-	cf.startDate = moment(start).format('YYYY-MM-DD');
-	cf.endDate = moment(end).format('YYYY-MM-DD');
-	cf.action = 'salesView';
-	cf.submit();
+	}
+		
 }
 </script>
+
+<script type="text/javascript">
+function view(){
+	
+	cf.startDate.value =(String)dt_start;
+	cf.endDate.value =(String)dt_end;
+	cf.action = 'salesView';
+	cf.submit();
+
+}
+</script>
+
 
 
 <title>Insert title here</title>
@@ -224,10 +247,33 @@ function salesView() {
 <br>
 
 <form name="cf" method="post">
-<input type="hidden" name="startDate" value="1"/>
-<input type="hidden" name="endDate" value="2"/>
-<button class="btn btn-default" style="float: right; margin: 20px" onclick="salesView()"> List view </button> 
+
+<button id ="viewButton"  class="btn btn-default" style="float: right; margin: 20px" onclick="view()" > List view </button> 
+
+<!-- 
+<script type="text/javascript">
+
+	$('.viewButton').click(function(){
+			
+			$.ajax({
+			 type:"post",
+		     url:"salesView",
+		     dataType: "json",
+		     data : { "startDate":dt_start, "endDate":dt_end}           
+
+			})
+	});
+		
+
+</script>
+
+ -->
+
+
 </form>
+
+
+
 
 <br>
 <br>
