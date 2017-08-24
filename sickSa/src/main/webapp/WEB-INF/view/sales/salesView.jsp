@@ -48,7 +48,7 @@
         
 		      <div class="content-holder">      
 		          
-		           <div id="content" class="container" ></div>
+		           <div id="content" class="container"  style="margin-bottom:100px"></div>
 			  
 			</div>
 
