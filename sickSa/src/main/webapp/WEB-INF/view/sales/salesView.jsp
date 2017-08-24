@@ -40,10 +40,10 @@
          </div>
       </div>
       <div class="main-container">
-        <div class="inner-banner parallax" data-parallax-speed="5"  style="background-image:url(/include/images/project-slide1.jpg);">
+        <div class="inner-banner parallax" data-parallax-speed="5"  style="background-image:url(include/images/project-slide1.jpg);">
           <h2>Sales</h2>
         </div>
-        
+
         <!-- Content Holder Start -->
         
 		      <div class="content-holder">      
