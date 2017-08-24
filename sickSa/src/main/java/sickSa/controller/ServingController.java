@@ -21,19 +21,18 @@ public class ServingController {
 
 	@RequestMapping("servingList")
 	public String servingList(Model model) {
-		model.addAttribute("servingList", servingService.servingList());
+		model.addAttribute("orderList", servingService.servingList());
 		return "servingList";
 	}
 	
 	@RequestMapping("cookList")
 	public String cookList(Model model) {
-		model.addAttribute("cookList", servingService.cookList());
+		model.addAttribute("orderList", servingService.cookList());
 		return "cookList";
 	}
 
 	@RequestMapping("setServingState")
 	public String setServingState(Model model,@RequestParam int ord_id, @RequestParam int pdt_id, @RequestParam String ord_state) {
-		System.out.println(ord_id + ", " + pdt_id + ", " + ord_state);
 		servingService.setState(ord_id, pdt_id, ord_state);
 		return "servingState-s";
 	}
