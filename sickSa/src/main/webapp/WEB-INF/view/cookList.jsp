@@ -7,16 +7,20 @@
   <caption>조리하세요</caption>
   <thead>
     <tr>
+      <th>주문번호</th>
       <th>상품번호</th>
       <th>수량</th>
     </tr>
   </thead>
   <tbody>
-    <c:forEach var="cook" items="${cookList}">
-      <tr onclick="javascript:setState(${cook.ord_id}, ${cook.pdt_id}, 'C')">
-        <td>${cook.pdt_id}</td>
-        <td>${cook.ord_pdt_amount}</td>
-      </tr>
+    <c:forEach var="order" items="${orderList}">
+      <c:forEach var="orderDetail" items="${order.orderDetailVOList}">
+        <tr onclick="javascript:setState(${order.ord_id}, ${orderDetail.pdt_id}, 'C')">
+          <td>${order.ord_id}</td>
+          <td>${orderDetail.pdt_id}</td>
+          <td>${orderDetail.ordt_amount}</td>
+        </tr>
+      </c:forEach>
     </c:forEach>
   </tbody>
 </table>

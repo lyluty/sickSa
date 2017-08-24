@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sickSa.domain.Order;
+import sickSa.domain.OrderVO;
 import sickSa.mapper.OrderDao;
 
 @Service
@@ -22,12 +23,11 @@ public class ServingService {
 		return 0;
 	}
 	
-	public List<Order> cookList() {
-		System.out.println(orderDao.selectListByState("B"));
-		return orderDao.selectListByState("B");
+	public List<OrderVO> cookList() {
+		return orderDao.selectListByState('B');
 	}
 	
-	public List<Order> servingList() {
-		return orderDao.selectListByState("C");
+	public List<OrderVO> servingList() {
+		return orderDao.selectListByState('C');
 	}
 }
