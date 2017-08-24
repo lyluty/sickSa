@@ -17,7 +17,7 @@
       <li class="menu__item"><a class="menu__link" href="portfolio.html">Portfolio</a></li>
       <li class="menu__item"><a class="menu__link" href="blog.html">Blog</a></li>
       <li class="menu__item"><a class="menu__link" href="testimonials.html">Testimonials</a></li>
-      <li class="menu__item"><a class="menu__link" href="contact-us.html">Contact us</a></li>
+      <li class="menu__item"><a class="menu__link" href="ingredientView">재고 현황</a></li>
       <li class="menu__item"><a class="menu__link" href="servingState">서빙 현황</a></li>
       <li class="menu__item"><a class="menu__link" data-submenu="submenu-5" href="#">매장관리</a></li>
 

@@ -53,7 +53,16 @@ public class IngredientController {
 		System.out.println("asdfsdfadf");
 		model.addAttribute(
 				"ingredientCategoriesList", ingredientService.loadListIgct());
-		return "/jsp/index";
+		return "/ingridentTestMain";
 	}
+	
+	@RequestMapping("/categoriesDetail")
+	public String loadDetail(Model model){
+		System.out.println("detail load success!!");
+		model.addAttribute("ingredientCategoriesList", ingredientService.loadListIgct());
+		
+		return "/ingridentAddView";
+	}
+	
 	
 }
