@@ -1,10 +1,13 @@
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <div id="salesList">
   <h3 class="content-title">매출 기록</h3>
-  <button class="btn btn-default" onclick="timePeriod()">&lt;&nbsp;조회기간 선택</button>
+  <button class="btn btn-default" onclick="timePeriod()" style="margin:auto 0;">&lt;&nbsp;조회기간 선택</button>
   <div>
-    <table class="table table-striped">
+    <table class="table table-striped" style="margin: auto 0;">
       <thead>
         <tr>
           <th>주문번호</th>
@@ -18,15 +21,17 @@
       </thead>
       <tbody>
         <c:forEach var="order" items="${orderList}">
-          <tr>
-            <th>${order.ord_id}</th>
-            <td>${order.pdt_id}</td>
-            <td>${order.ord_pdt_amount}</td>
-            <td>${order.ord_total}</td>
-            <td>${order.ord_payment_method}</td>
-            <td>${order.ord_date}</td>
-            <td>${order.tbl_id}</td>
-          </tr>
+          <c:forEach var="orderDetail" items="${order.orderDetailVOList}">
+            <tr>
+              <th>${order.ord_id}</th>
+              <td>${orderDetail.pdt_id}</td>
+              <td>${orderDetail.ordt_amount}</td>
+              <td>${order.ord_total}</td>
+              <td>${order.ord_payment_method}</td>
+              <td>${order.ord_date}</td>
+              <td>${order.tbl_id}</td>
+            </tr>
+          </c:forEach>
         </c:forEach>
       </tbody>
     </table>

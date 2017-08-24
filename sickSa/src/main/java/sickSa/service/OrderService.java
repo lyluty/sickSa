@@ -6,13 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sickSa.domain.Order;
+import sickSa.domain.OrderDetailVO;
+import sickSa.domain.OrderVO;
 import sickSa.mapper.OrderDao;
+import sickSa.mapper.OrderDetailDao;
 
 @Service
 public class OrderService {
 
 	@Autowired
 	private OrderDao orderDao;
+	@Autowired
+	private OrderDetailDao orderDetailDao;
+	
+	public List<OrderDetailVO> testOrder() {
+		return orderDetailDao.list();
+	}
+	
+	public List<OrderVO> testOrder2() {
+		return orderDao.list();
+	}
 
 	/* 결제 완료 - 레코드 생성 */
 	public int createOrder(Order order) {

@@ -22,7 +22,7 @@ public class SalesController {
 		return "sales/salesView";
 	}
 	
-	@RequestMapping("/salesList.ajax")
+	@RequestMapping("salesList.ajax")
 	public String salesListAjax(Model model, @RequestParam String startDate, @RequestParam String endDate) throws ParseException {
 		model.addAttribute("orderList", salesService.list(startDate, endDate));
 		return "sales/div/salesList";
