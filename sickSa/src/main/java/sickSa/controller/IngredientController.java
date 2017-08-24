@@ -25,14 +25,17 @@ public class IngredientController {
 		this.ingredientService = ingredientService;
 	}
 	
-	/*
-	@RequestMapping("/igctList")
-	public String loadListIgct(Model model){
-		model.addAttribute(
-				"ingredientCategoriesList", ingredientService.loadListIgct());
-		return "ingredientCategoriesSelect";
+	@RequestMapping("/ingredients")
+	public String salesView() {
+		return "ingredientView";
 	}
-	*/
+	
+	//defaultList
+	@RequestMapping("/ingList")
+	public String loadListIgct(Model model) {
+		model.addAttribute("ingredientCategoriesList", ingredientService.loadDefaultList());
+		return "ingredientCateView";
+	}
 
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
@@ -47,13 +50,6 @@ public class IngredientController {
 		return "forward:/IGCTSelect/"+ingredientCategories.getIgct_name();
 	}
 	
-	// Test
-	@RequestMapping("/igctList")
-	public String loadListIgct(Model model){
-		System.out.println("asdfsdfadf");
-		model.addAttribute(
-				"ingredientCategoriesList", ingredientService.loadListIgct());
-		return "/jsp/index";
-	}
+	
 	
 }
