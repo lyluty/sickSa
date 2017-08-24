@@ -1,11 +1,15 @@
 package sickSa.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import sickSa.domain.OrderDetailVO;
+import sickSa.domain.OrderVO;
 import sickSa.mapper.OrderDao;
 import sickSa.service.OrderService;
 
@@ -15,6 +19,14 @@ public class OrderController {
 
 	@Autowired
 	 OrderService orderService;		
+	
+	@RequestMapping("testOrder")
+	public String testOrder() {
+		System.out.println(orderService.testOrder());
+		List<OrderVO> t = orderService.testOrder2();
+		System.out.println(t);
+		return "testIndex2";
+	}
 	
 	@RequestMapping("/orderList")
 	public String orderList() {
