@@ -11,6 +11,9 @@ import sickSa.domain.ProductIngredients;
 
 public interface IngredientService {
 	
+	//모든 재료 카테고리별 모든 재료 리스트를 불러온다
+	public List<Ingredients> loadDefaultList();
+	
 	//재료 카테고리를 리스트로 불러온다
 	public List<IngredientCategories> loadListIgct();
 	//재료 카테고리를 추가한다
@@ -20,7 +23,8 @@ public interface IngredientService {
 	//재료 카테고리를 수정한다
 	public Integer updateIgct(IngredientCategories ingredientCategories);
 	
-	//재료 카테고리에 따른 재료를 리스트로 불러온다
+	
+	//재료 카테고리에 따른 재료를 리스트에 마지막으로 추가된 재료를 가져온다
 	public List<Ingredients> loadListIng(Integer IGCT_ID);
 	//재료를 추가한다
 	public Integer addIng(Ingredients ing,IngredientDetails igdt,IngredientCategories igct);

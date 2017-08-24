@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import sickSa.domain.IngredientCategories;
 import sickSa.domain.IngredientDetails;
@@ -37,6 +38,20 @@ public class IngredientServiceImpl implements IngredientService{
 			IngredientCategoriesMapper ingredientCategoriesMapper) {
 		this.ingredientCategoriesMapper = ingredientCategoriesMapper;
 	}
+	
+	//모든 재료 카테고리별 모든 재료 리스트를 불러온다
+	@Override
+	public @ResponseBody List<Ingredients> loadDefaultList() {
+		List<IngredientDetails> igdtList = ingredientDetailsMapper.listIngDetail();
+		List<Ingredients> ingList = ingredientsMapper.listIngredient();
+		for (Ingredients ing : ingList) {
+			for (IngredientDetails igdt : igdtList) {
+				if(ing.getIng_id()==igdt.getIgct_id())
+					ing.setIngredientDetails(igdt);
+			}
+		}
+		return ingList;
+	}	
 	
 	//재료 카테고리를 리스트로 불러온다
 	@Override
@@ -96,5 +111,6 @@ public class IngredientServiceImpl implements IngredientService{
 	public Integer expireStock(Integer ING_ID) {
 		return ingredientDetailsMapper.deleteIngDetail(ING_ID);
 	}
+	
 
 }
