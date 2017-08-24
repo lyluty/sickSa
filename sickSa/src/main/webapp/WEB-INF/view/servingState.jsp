@@ -20,8 +20,7 @@
   })
   
   function setState(ord_id, pdt_id, ord_state) {
-    alert(pdt_id);
-    alert(ord_state);
+    alert('pdt_id: '+pdt_id+' / ord_state: '+ord_state);
     $.post('setServingState', {
       'ord_id' : ord_id,
       'pdt_id' : pdt_id,
@@ -30,6 +29,9 @@
       $('#hero-container').html(data);
     })
   }
+  
+  
+  
 </script>
 </head>
 <body>

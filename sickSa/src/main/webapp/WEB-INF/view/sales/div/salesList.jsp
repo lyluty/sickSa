@@ -5,9 +5,9 @@
 
 <div id="salesList">
   <h3 class="content-title">매출 기록</h3>
-  <button class="btn btn-default" onclick="timePeriod()">&lt;&nbsp;조회기간 선택</button>
+  <button class="btn btn-default" onclick="timePeriod()" style="margin:auto 0;">&lt;&nbsp;조회기간 선택</button>
   <div>
-    <table class="table table-striped">
+    <table class="table table-striped" style="margin: auto 0;">
       <thead>
         <tr>
           <th>주문번호</th>
