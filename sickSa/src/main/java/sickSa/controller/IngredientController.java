@@ -50,6 +50,26 @@ public class IngredientController {
 		return "forward:/IGCTSelect/"+ingredientCategories.getIgct_name();
 	}
 	
+<<<<<<< HEAD
+	
+=======
+	// Test
+	@RequestMapping("/igctList")
+	public String loadListIgct(Model model){
+		System.out.println("asdfsdfadf");
+		model.addAttribute(
+				"ingredientCategoriesList", ingredientService.loadListIgct());
+		return "/ingridentTestMain";
+	}
+>>>>>>> branch 'master' of https://github.com/lyluty/sickSa
+	
+	@RequestMapping("/categoriesDetail")
+	public String loadDetail(Model model){
+		System.out.println("detail load success!!");
+		model.addAttribute("ingredientCategoriesList", ingredientService.loadListIgct());
+		
+		return "/ingridentAddView";
+	}
 	
 	
 }
