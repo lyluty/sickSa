@@ -24,10 +24,10 @@ public class ServingService {
 	}
 	
 	public List<OrderVO> cookList() {
-		return orderDao.selectListByState('B');
+		return orderDao.selectOrderListByState('B');
 	}
 	
 	public List<OrderVO> servingList() {
-		return orderDao.selectListByState('C');
+		return orderDao.selectOrderListByState('C');
 	}
 }
