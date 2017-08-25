@@ -6,7 +6,6 @@
 <head>
 <!-- head start -->
 <jsp:include page="../include-head.jsp" flush="false" />
-<link rel='stylesheet' href='include/css/calendar/fullcalendar.css' />
 
 <!-- head end -->
 </head>
@@ -55,10 +54,6 @@
 
   <!-- tail start -->
   <jsp:include page="../include-tail.jsp" flush="false" />
-  <script src='include/css/calendar/jquery.min.js'></script>
-  <script src='include/css/calendar/moment.min.js'></script>
-  <script src='include/css/calendar/fullcalendar.js'></script>
-  <script src='include/js/salesView.js'></script>
   <script src='include/css/calendar/jquery.min.js'></script>
   <script src='include/css/calendar/moment.min.js'></script>
   <script src='include/css/calendar/fullcalendar.js'></script>
