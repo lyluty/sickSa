@@ -27,7 +27,7 @@ public class SalesService {
 	}
 	
 	/* 기간별 조회 */
-	public List<OrderVO> list(String startDate, String endDate) throws ParseException {
+	public List<Order> list(String startDate, String endDate) throws ParseException {
 		Map<String, String> dateMap = new HashMap<>();
 		dateMap.put("startDate", startDate);
 		dateMap.put("endDate", endDate);

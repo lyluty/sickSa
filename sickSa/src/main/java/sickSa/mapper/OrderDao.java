@@ -6,16 +6,16 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 import sickSa.domain.Order;
-import sickSa.domain.OrderVO;
+
 
 @Mapper
 public interface OrderDao {
 
 	List<Order> selectList();
 	
-	List<OrderVO> selectListByDate(Map<String, String> dateMap);
+	List<Order> selectListByDate(Map<String, String> dateMap);
 	
-	List<OrderVO> selectListByState(char ord_state);
+	List<Order> selectListByState(char ord_state);
 
 	Order selectOne(int ord_id);
 
@@ -25,5 +25,8 @@ public interface OrderDao {
 
 	int delete(int ord_id);
 	
-	List<OrderVO> list();
+	List<Order> list();
+	
+	int updateState(int ord_id,int pdt_id, String ord_state);
+	
 }

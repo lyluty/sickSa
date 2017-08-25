@@ -12,7 +12,7 @@
 		/> <result property="ord_date" column="ORD_DATE" /> <result property="ord_state" 
 		column="ORD_STATE" /> <result property="tbl_id" column="TBL_ID" /> </resultMap> -->
 
-  <resultMap id="orderResultMap" type="sickSa.domain.OrderVO">
+  <resultMap id="orderResultMap" type="sickSa.domain.Order">
     <id property="ord_id" column="ORD_ID" />
     <result property="ord_total" column="ORD_TOTAL"/>
     <result property="ord_payment_method" column="ORD_PAYMENT_METHOD"/>
@@ -25,7 +25,7 @@
     <result property="ord_id" column="ORD_ID"/>
     <result property="ordt_amount" column="ORDT_AMOUNT"/>
     <result property="pdt_id" column="PDT_ID"/>
-    <result property="ord_state" column="ORD_STATE"/>
+    <result property="ordt_state" column="ORD_STATE"/>
   </resultMap>
   
   <select id="selectList" resultMap="orderResultMap">

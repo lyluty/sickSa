@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import sickSa.domain.Order;
 import sickSa.domain.OrderDetailVO;
-import sickSa.domain.OrderVO;
 import sickSa.mapper.OrderDao;
 import sickSa.mapper.OrderDetailDao;
 
@@ -23,7 +22,7 @@ public class OrderService {
 		return orderDetailDao.list();
 	}
 	
-	public List<OrderVO> testOrder2() {
+	public List<Order> testOrder2() {
 		return orderDao.list();
 	}
 
