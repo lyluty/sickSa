@@ -1,4 +1,4 @@
-var calendarInitFunction = function() {
+var calendarInitFn = function() {
   $('#calendar').fullCalendar({
     customButtons : {
       EventButton : {
@@ -33,8 +33,8 @@ var calendarInitFunction = function() {
 })};
 
 $(document).ready(function() {
-  timePeriod();
-  calendarInitFunction();
+  showTimePeriod();
+  calendarInitFn();
 });
 
 function salesList() {
@@ -42,7 +42,7 @@ function salesList() {
 
   $.ajax({
     type : 'post',
-    url : 'salesList.ajax',
+    url : 'salesListByTimePeriod.ajax',
     data : queryString,
     dataType : 'html',
     success : function(data) {
@@ -51,10 +51,10 @@ function salesList() {
   });
 }
 
-function timePeriod() {
+function showTimePeriod() {
   $.ajax({
     type : 'POST',
-    url : 'selectTimePeriod.ajax',
+    url : 'showTimePeriod.ajax',
     dataType : 'html',
     success : function(data) {
       $("#content").html(data);
