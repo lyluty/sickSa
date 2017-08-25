@@ -67,11 +67,6 @@
 		            values(ORDERS_ORD_ID_SEQ.NEXTVAL, #{ord_total}, #{ord_paymentMethod})
 	</insert>
 	
-	<insert id="insertOrder" parameterType="sickSa.domain.OrderVO">
-		insert into TABLES(ORD_ID, PDT_ID, ORDT_AMOUNT)
-		            values(#{ord_id}, #{pdt_id}, #{ordt_amount})
-	</insert>
-
 	<update id="updateOrder" parameterType="sickSa.domain.Order">
 		update  ORDERS
 		set		  ORD_TOTAL = #{ord_total},
