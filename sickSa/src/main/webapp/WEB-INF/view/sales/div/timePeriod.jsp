@@ -6,4 +6,3 @@
   <input type="hidden" name="startDate" /> <input type="hidden" name="endDate" />
 </form>
 <button class="btn btn-default" style="display: block; margin: 0 auto;  width: 100px; " onclick="salesList()">조회 </button>
-

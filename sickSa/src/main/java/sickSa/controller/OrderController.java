@@ -23,4 +23,9 @@ public class OrderController {
 		model.addAttribute("orderList", orderService.orderList());
 		return "static/viewList";
 	}
+	
+	@RequestMapping("vmMain")
+	public String vmMain() {
+		return "vmIndex";
+	}
 }

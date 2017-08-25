@@ -18,7 +18,16 @@
     <!-- header end -->
 
     <!-- 컨텐츠 영역 start -->
-    <div class="hero-container"></div>
+    <div class="container" style="height: 80%">
+      <!-- top start -->
+      <jsp:include page="include-vm_top.jsp" />
+      <!-- top end -->
+      <div style="height: 80%; display: block; margin: 0 auto">
+       뭔가 사진이나 광고가 들어갔으면 좋겠는 영역이네요</div>
+      <div>
+        <button class="btn btn-default" style="display: block; margin: 0 auto">주문하시죠</button>
+      </div>
+    </div>
     <!-- 컨텐츠 영역 end -->
 
     <!-- footer start -->
