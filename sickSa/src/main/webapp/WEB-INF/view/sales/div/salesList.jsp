@@ -5,7 +5,7 @@
 
 <div id="salesList">
   <h3 class="content-title">매출 기록</h3>
-  <button class="btn btn-default" onclick="timePeriod()" style="margin:auto 0;">&lt;&nbsp;조회기간 선택</button>
+  <button class="btn btn-default" onclick="showTimePeriod()" style="margin:auto 0;">&lt;&nbsp;조회기간 선택</button>
   <div>
     <table class="table table-striped" style="margin: auto 0;">
       <thead>
@@ -21,7 +21,7 @@
       </thead>
       <tbody>
         <c:forEach var="order" items="${orderList}">
-          <c:forEach var="orderDetail" items="${order.orderDetailVOList}">
+          <c:forEach var="orderDetail" items="${order.orderDetailList}">
             <tr>
               <th>${order.ord_id}</th>
               <td>${orderDetail.pdt_id}</td>
