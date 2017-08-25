@@ -21,7 +21,7 @@
       </thead>
       <tbody>
         <c:forEach var="order" items="${orderList}">
-          <c:forEach var="orderDetail" items="${order.orderDetailVOList}">
+          <c:forEach var="orderDetail" items="${order.orderDetailList}">
             <tr>
               <th>${order.ord_id}</th>
               <td>${orderDetail.pdt_id}</td>

@@ -1,6 +1,5 @@
 package sickSa.service;
 
-import java.text.ParseException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -21,23 +20,23 @@ public class SalesService {
 
 	/* 전체 판매내역 조회 (최근순) */
 	public List<Order> list() {
-		List<Order> ORDList = orderDao.selectList();
+		List<Order> ORDList = orderDao.selectOrderList();
 		Collections.reverse(ORDList);
 		return ORDList;
 	}
 	
 	/* 기간별 조회 */
-	public List<OrderVO> list(String startDate, String endDate) throws ParseException {
+	public List<OrderVO> list(String startDate, String endDate) {
 		Map<String, String> dateMap = new HashMap<>();
 		dateMap.put("startDate", startDate);
 		dateMap.put("endDate", endDate);
 		System.out.println(dateMap);
-		return orderDao.selectListByDate(dateMap);
+		return orderDao.selectOrderListByDate(dateMap);
 	}
 
 	/* 주문번호로 주문정보 조회 */
-	public Order getOrdListByNo(int ord_id) {
-		Order resultOrder = orderDao.selectOne(ord_id);
-		return resultOrder;
-	}
+//	public Order getOrdListByNo(int ord_id) {
+//		Order resultOrder = orderDao.selectOrder(ord_id);
+//		return resultOrder;
+//	}
 }
