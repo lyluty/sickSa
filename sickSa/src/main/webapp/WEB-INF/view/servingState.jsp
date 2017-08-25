@@ -45,10 +45,39 @@
     <!-- header end -->
 
     <!-- 컨텐츠 영역 start -->
-    <div class="hero-container">
-      <div id="cookList" style="float: left; width: 48%; margin: auto"></div>
-      <div id="servingList" style="float: right; width: 48%; margin: auto"></div>
+    
+     <div class="main-container-outer">
+	    <div class="container">
+	      <div class="top-bar-container">
+	        <div class="container">
+	          <div class="top-bar">
+	            <ul class="breadcrumb">
+	              <li><a href="index.html">Home</a></li>
+	              <li><span>Order State </span></li>
+	            </ul>
+	          </div>
+         </div>
+      </div>
+      <div class="main-container"  >
+ 			 <div class="inner-banner parallax" data-parallax-speed="5"  style="background-image:url(include/images/project-slide1.jpg); height: auto; min-height: 5px; max-height:15px;">
+			          <h2 style="float:right;  position: relative;  top: -30px;">Order State</h2>
+		       </div>
+
+        <!-- Content Holder Start -->
+        
+		      <div class="content-holder">      
+			      <div class="container" style="padding: auto; margin-bottom: 50px;">
+	    
+			            <div id="cookList" style="float: left; width: 48%; margin: auto;"></div>
+	    				 <div id="servingList" style="float: right; width: 48%; margin: auto;"></div>
+				   </div>
+				</div>
+
+     		</div>
+   		 </div>
     </div>
+    
+    
     <!-- 컨텐츠 영역 end -->
 
     <!-- footer start -->

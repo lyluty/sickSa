@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import sickSa.domain.Order;
 import sickSa.domain.OrderDetailVO;
-import sickSa.domain.OrderVO;
 import sickSa.mapper.OrderDao;
 
 @Service
@@ -15,16 +14,26 @@ public class OrderService {
 
 	@Autowired
 	private OrderDao orderDao;
+	@Autowired
+	private OrderDetailDao orderDetailDao;
+	
+	public List<OrderDetailVO> testOrder() {
+		return orderDetailDao.list();
+	}
+	
+	public List<Order> testOrder2() {
+		return orderDao.list();
+	}
 
 	/* 결제 완료 - 레코드 생성 */
-	public void add(OrderVO order) {
+	public void add(Order order) {
 		orderDao.insertOrder(order);
 		for (OrderDetailVO orderDetail : order.getOrderDetailList()) {
 			orderDao.insertOrderDetail(orderDetail);
 		}
 	}
 
-	public void set(OrderVO order) {
+	public void set(Order order) {
 		orderDao.updateOrder(order);
 	}
 	//
