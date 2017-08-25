@@ -58,7 +58,7 @@ function showTimePeriod() {
     dataType : 'html',
     success : function(data) {
       $("#content").html(data);
-      calendarInitFunction();
+      calendarInitFn();
     }
   })
 }
