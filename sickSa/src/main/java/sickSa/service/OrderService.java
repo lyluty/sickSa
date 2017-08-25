@@ -9,46 +9,32 @@ import sickSa.domain.Order;
 import sickSa.domain.OrderDetailVO;
 import sickSa.domain.OrderVO;
 import sickSa.mapper.OrderDao;
-import sickSa.mapper.OrderDetailDao;
 
 @Service
 public class OrderService {
 
 	@Autowired
 	private OrderDao orderDao;
-	@Autowired
-	private OrderDetailDao orderDetailDao;
-	
-	public List<OrderDetailVO> testOrder() {
-		return orderDetailDao.list();
-	}
-	
-	public List<OrderVO> testOrder2() {
-		return orderDao.list();
-	}
 
 	/* 결제 완료 - 레코드 생성 */
-	public int createOrder(Order order) {
-		return orderDao.insert(order);
+	public void add(OrderVO order) {
+		orderDao.insertOrder(order);
+		for (OrderDetailVO orderDetail : order.getOrderDetailList()) {
+			orderDao.insertOrderDetail(orderDetail);
+		}
 	}
 
-	/* 테이블 번호 수정 */
-	public int updateByTblNo(Integer ord_no, Integer tbl_id) {
-		Order tmpOrder = orderDao.selectOne(ord_no);
-		tmpOrder.setTbl_id(tbl_id);
-		return orderDao.update(tmpOrder);
+	public void set(OrderVO order) {
+		orderDao.updateOrder(order);
 	}
-	/* find List by id */
-	public Order getById(Integer ord_id){
-		return orderDao.selectOne(ord_id);
-	}
+	//
+	// /* find List by id */
+	// public Order getById(Integer ord_id) {
+	// return orderDao.selectOrder(ord_id);
+	// }
+
 	/* 전체목록 불러오기 */
-	public List<Order> getList(){
-		return orderDao.selectList();
+	public List<Order> orderList() {
+		return orderDao.selectOrderList();
 	}
-
-	public OrderDao getOrderDao() {
-		return orderDao;
-	}
-
 }

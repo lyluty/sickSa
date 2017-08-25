@@ -10,20 +10,20 @@ public class OrderVO {
 	private String ord_payment_method;
 	private Date ord_date;
 	private int tbl_id;
-	private List<OrderDetailVO> orderDetailVOList;
+	private List<OrderDetailVO> orderDetailList;
 
 	public OrderVO() {
 	}
 
 	public OrderVO(int ord_id, int ord_total, String ord_payment_method, Date ord_date, int tbl_id,
-	    List<OrderDetailVO> orderDetailVOList) {
+	    List<OrderDetailVO> orderDetailList) {
 		super();
 		this.ord_id = ord_id;
 		this.ord_total = ord_total;
 		this.ord_payment_method = ord_payment_method;
 		this.ord_date = ord_date;
 		this.tbl_id = tbl_id;
-		this.orderDetailVOList = orderDetailVOList;
+		this.orderDetailList = orderDetailList;
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class OrderVO {
 		sb.append("ord_payment_method: ").append(ord_payment_method).append("\n");
 		sb.append("ord_date: ").append(ord_date).append("\n");
 		sb.append("tbl_id: ").append(tbl_id).append("\n");
-		sb.append("orderDetailVOList: ").append(orderDetailVOList).append("\n");
+		sb.append("orderDetailList: ").append(orderDetailList).append("\n");
 		return sb.toString();
 	}
 
@@ -78,12 +78,12 @@ public class OrderVO {
 		this.tbl_id = tbl_id;
 	}
 
-	public List<OrderDetailVO> getOrderDetailVOList() {
-		return orderDetailVOList;
+	public List<OrderDetailVO> getOrderDetailList() {
+		return orderDetailList;
 	}
 
-	public void setOrderDetailVOList(List<OrderDetailVO> orderDetailVOList) {
-		this.orderDetailVOList = orderDetailVOList;
+	public void setOrderDetailVOList(List<OrderDetailVO> orderDetailList) {
+		this.orderDetailList = orderDetailList;
 	}
 
 }
