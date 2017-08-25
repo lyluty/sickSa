@@ -14,7 +14,6 @@ public class OrderService {
 
 	@Autowired
 	private OrderDao orderDao;
-<<<<<<< HEAD
 	@Autowired
 	private OrderDetailDao orderDetailDao;
 	
@@ -25,18 +24,16 @@ public class OrderService {
 	public List<Order> testOrder2() {
 		return orderDao.list();
 	}
-=======
->>>>>>> branch 'master' of https://github.com/lyluty/sickSa.git
 
 	/* 결제 완료 - 레코드 생성 */
-	public void add(OrderVO order) {
+	public void add(Order order) {
 		orderDao.insertOrder(order);
 		for (OrderDetailVO orderDetail : order.getOrderDetailList()) {
 			orderDao.insertOrderDetail(orderDetail);
 		}
 	}
 
-	public void set(OrderVO order) {
+	public void set(Order order) {
 		orderDao.updateOrder(order);
 	}
 	//
