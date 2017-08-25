@@ -5,6 +5,7 @@
 
 <mapper namespace="sickSa.mapper.OrderDao">
 
+  <!-- resultMap -->
 	<resultMap id="orderResultMap" type="sickSa.domain.OrderVO">
 		<id property="ord_id" column="ORD_ID" />
 		<result property="ord_total" column="ORD_TOTAL" />
@@ -21,6 +22,8 @@
 		<result property="pdt_id" column="PDT_ID" />
 		<result property="ord_state" column="ORD_STATE" />
 	</resultMap>
+  <!-- resultMap -->
+
 
 	<select id="selectOrderList" resultMap="orderResultMap">
 		select        *
