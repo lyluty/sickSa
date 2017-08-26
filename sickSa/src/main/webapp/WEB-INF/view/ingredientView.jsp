@@ -3,7 +3,7 @@
 <head>
 <!-- head start -->
 <jsp:include page="include-head.jsp" flush="false" />
-<script src='include/js/ingredient.js'></script>
+
 
 <!-- head end -->
 </head>
@@ -53,7 +53,8 @@
 </div>
 
   <!-- tail start -->
-  <jsp:include page="include-tail.jsp" flush="false" />
+  <jsp:include page="include-tail.jsp" flush="false" />	
+  <script src='include/js/ingredient.js'></script>
   <!-- tail end -->
   
 </body>

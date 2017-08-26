@@ -13,10 +13,10 @@ $(window).load(function() {
 	igct_list_load();
 });
 
-$('#igctListForm igctView a').click(function(){
+/*$('ul#igctList li').click(function(){
 	alert("dd");
-	ing_list_load();
-});
+	$('ul#igctList li').ing_list_load();
+});*/
 
 function igct_list_load() {
 	/*
@@ -29,18 +29,19 @@ function igct_list_load() {
 		dataType : 'html',
 		success : function(data) {
 			$("#contentHolder").html(data);
+			
 		},
 	});
 }
 
-function ing_list_load(){
+function ing_list_load(i){
 	$.ajax({
-		url : 'ingList',
-		type : 'POST',
-		data : queryString,
+		url : 'ingList/'+i,
+		type : 'GET',
+		data : Number,
 		dataType : 'html',
 		success : function(data) {
-			$("#ingList").html(data);
+			$("div#ingList").html(data);
 		},
 	});
 }

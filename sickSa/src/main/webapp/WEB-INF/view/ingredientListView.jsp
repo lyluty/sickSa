@@ -2,9 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div id="ingList" class="panel">
+<jsp:include page="include-tail.jsp" flush="false" />
+<script src='include/js/ingredient.js'></script>
+
+<div id="ingListForm" class="panel">
 	<div class="panel-heading">
-		<!-- Ingredient List Slide start -->
+		<!-- Ingredient List Slide  start -->
 		<div class="service-box">
 			<ul class="sub-service-list">
 				<c:forEach var="ing" items="${ingredientList}">
