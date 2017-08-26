@@ -1,5 +1,6 @@
 package sickSa.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,16 +42,19 @@ public class IngredientServiceImpl implements IngredientService{
 	
 	//모든 재료 카테고리별 모든 재료 리스트를 불러온다
 	@Override
-	public @ResponseBody List<Ingredients> loadDefaultList() {
-		List<IngredientDetails> igdtList = ingredientDetailsMapper.listIngDetail();
+	public @ResponseBody List<Ingredients> loadDefaultList(Integer IGCT_ID) {
+		List<IngredientDetails> igdtList = 
+				ingredientDetailsMapper.selectIngDetailByCt(IGCT_ID);
 		List<Ingredients> ingList = ingredientsMapper.listIngredient();
+		ArrayList<Ingredients> resultIng = new ArrayList<>();
 		for (Ingredients ing : ingList) {
 			for (IngredientDetails igdt : igdtList) {
-				if(ing.getIng_id()==igdt.getIgct_id())
+				if(ing.getIng_id()==igdt.getIng_id())
 					ing.setIngredientDetails(igdt);
+					resultIng.add(ing);
 			}
 		}
-		return ingList;
+		return resultIng;
 	}	
 	
 	//재료 카테고리를 리스트로 불러온다

@@ -10,62 +10,42 @@ function init_ui() {
 /*****전역 로드시 실행******/
 $(window).load(function() {
 	init_ui();
-	igCt_list_function();
+	igct_list_load();
 });
 
-function igCt_list_function() {
+$('#igctListForm igctView a').click(function(){
+	alert("dd");
+	ing_list_load();
+});
+
+function igct_list_load() {
 	/*
 	 * $.get(); Load data from the server using a HTTP GET request.
 	 */
 
 	$.ajax({
-		url : 'ingList',
+		url : 'igctList',
 		type : 'POST',
 		dataType : 'html',
 		success : function(data) {
-			$("#content").html(data);
+			$("#contentHolder").html(data);
 		},
 	});
 }
 
-$(function() {
-	
-	/** *********guest_detail*********** */
-	$('#guest_list').on('click', '.guest_title', function(e) {
-		guest_detail_function(e);
+function ing_list_load(){
+	$.ajax({
+		url : 'ingList',
+		type : 'POST',
+		data : queryString,
+		dataType : 'html',
+		success : function(data) {
+			$("#ingList").html(data);
+		},
 	});
-	/** *************guest_logout_action**************** */
-	$('#guest_logout_form a').click(function(e) {
-		guest_logout_action_function();
-		e.preventDefault();
-	});
-	/** ******************************** */
+}
 
-	/** *********guest_insert_form*********** */
-	$('#menu-d a').click(function(e) {
-		guest_insert_form();
-	});
-	/***************************************************************************
-	 * guest_insert_action*********
-	 * $(document).on('submit','#guest_write_form',function(e){
-	 * guest_insert_action_function(); e.preventDefault(); });
-	 */
-	/** ***********guest_insert_action[validation]****** */
-	$(document).on('DOMNodeInserted', '#guest_write_form', function() {
-		/*
-		 * DOM Node Insert시에 호출
-		 */
-		guest_insert_action_validate_function();
-	});
-	/** *************guest_login_action**************** */
-	$('#guest_login_form').submit(function(e) {
 
-		guest_login_action_function();
-
-		e.preventDefault();
-	});
-
-});
 
 /**
  * ing java script

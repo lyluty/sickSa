@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sickSa.domain.IngredientCategories;
@@ -29,12 +30,17 @@ public class IngredientController {
 	public String salesView() {
 		return "ingredientView";
 	}
+	@RequestMapping("/igctList")
+	public String loadIgctList(Model model){
+		model.addAttribute("ingredientCategoriesList", ingredientCategoriesMapper.ingredientCategoriesList());
+		return "ingredientCateListView";
+	}
 	
 	//defaultList
-	@RequestMapping("/ingList")
-	public String loadListIgct(Model model) {
-		model.addAttribute("ingredientCategoriesList", ingredientService.loadDefaultList());
-		return "ingredientCateView";
+	@RequestMapping("/ingList/{IGCT_ID}")
+	public String loadIngList(Model model, @PathVariable Integer IGCT_ID) {
+		model.addAttribute("ingredientList", ingredientService.loadDefaultList(IGCT_ID));
+		return "ingredientListView";
 	}
 
 	@RequestMapping("/igctInsertForm")

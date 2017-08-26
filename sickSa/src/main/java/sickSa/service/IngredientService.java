@@ -12,7 +12,7 @@ import sickSa.domain.ProductIngredients;
 public interface IngredientService {
 	
 	//모든 재료 카테고리별 모든 재료 리스트를 불러온다
-	public List<Ingredients> loadDefaultList();
+	public List<Ingredients> loadDefaultList(Integer IGCT_ID);
 	
 	//재료 카테고리를 리스트로 불러온다
 	public List<IngredientCategories> loadListIgct();
