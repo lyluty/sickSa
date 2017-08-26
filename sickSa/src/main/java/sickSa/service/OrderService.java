@@ -7,9 +7,8 @@ import org.springframework.stereotype.Service;
 
 import sickSa.dao.ProductCategoriesDao;
 import sickSa.dao.ProductDao;
+import sickSa.domain.OrderDetail;
 import sickSa.domain.Order;
-import sickSa.domain.OrderDetailVO;
-import sickSa.domain.OrderVO;
 import sickSa.domain.Product;
 import sickSa.domain.ProductCategories;
 import sickSa.mapper.OrderDao;
@@ -25,14 +24,14 @@ public class OrderService {
 	private ProductCategoriesDao productCategoriesDao;
 
 	/* 결제 완료 - 레코드 생성 */
-	public void add(OrderVO order) {
+	public void add(Order order) {
 		orderDao.insertOrder(order);
-		for (OrderDetailVO orderDetail : order.getOrderDetailList()) {
+		for (OrderDetail orderDetail : order.getOrderDetailList()) {
 			orderDao.insertOrderDetail(orderDetail);
 		}
 	}
 
-	public void set(OrderVO order) {
+	public void set(Order order) {
 		orderDao.updateOrder(order);
 	}
 

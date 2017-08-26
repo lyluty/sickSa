@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sickSa.domain.Order;
-import sickSa.domain.OrderVO;
 import sickSa.mapper.OrderDao;
 
 @Service
@@ -26,7 +25,7 @@ public class SalesService {
 	}
 	
 	/* 기간별 조회 */
-	public List<OrderVO> list(String startDate, String endDate) {
+	public List<Order> list(String startDate, String endDate) {
 		Map<String, String> dateMap = new HashMap<>();
 		dateMap.put("startDate", startDate);
 		dateMap.put("endDate", endDate);

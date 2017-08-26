@@ -6,7 +6,7 @@
 <mapper namespace="sickSa.mapper.OrderDao">
 
   <!-- resultMap -->
-	<resultMap id="orderResultMap" type="sickSa.domain.OrderVO">
+	<resultMap id="orderResultMap" type="sickSa.domain.Order">
 		<id property="ord_id" column="ORD_ID" />
 		<result property="ord_total" column="ORD_TOTAL" />
 		<result property="ord_payment_method" column="ORD_PAYMENT_METHOD" />
@@ -16,7 +16,7 @@
 			resultMap="orderDetailResultMap" />
 	</resultMap>
 
-	<resultMap id="orderDetailResultMap" type="sickSa.domain.OrderDetailVO">
+	<resultMap id="orderDetailResultMap" type="sickSa.domain.OrderDetail">
 		<result property="ord_id" column="ORD_ID" />
 		<result property="ordt_amount" column="ORDT_AMOUNT" />
 		<result property="pdt_id" column="PDT_ID" />
@@ -65,7 +65,7 @@
 	</select>
 -->
 
-	<insert id="insertOrder" parameterType="sickSa.domain.OrderVO">
+	<insert id="insertOrder" parameterType="sickSa.domain.Order">
 		insert into TABLES(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD)
 		            values(ORDERS_ORD_ID_SEQ.NEXTVAL, #{ord_total}, #{ord_paymentMethod})
 	</insert>
