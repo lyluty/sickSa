@@ -5,22 +5,26 @@
 
 <mapper namespace="sickSa.mapper.OrderDao">
 
-	<!-- <resultMap id="OrdersResultMap" type="sickSa.domain.Order"> <result 
-		property="ord_id" column="ORD_ID" /> <result property="pdt_id" column="PDT_ID" 
-		/> <result property="ord_pdtAmount" column="ORD_PDT_AMOUNT" /> <result property="ord_total" 
-		column="ORD_TOTAL" /> <result property="ord_paymentMethod" column="ORD_PAYMENT_METHOD" 
-		/> <result property="ord_date" column="ORD_DATE" /> <result property="ord_state" 
-		column="ORD_STATE" /> <result property="tbl_id" column="TBL_ID" /> </resultMap> -->
+  <!-- resultMap -->
+	<resultMap id="orderResultMap" type="sickSa.domain.Order">
+		<id property="ord_id" column="ORD_ID" />
+		<result property="ord_total" column="ORD_TOTAL" />
+		<result property="ord_payment_method" column="ORD_PAYMENT_METHOD" />
+		<result property="ord_date" column="ORD_DATE" />
+		<result property="tbl_id" column="TBL_ID" />
+		<collection property="orderDetailList" javaType="java.util.ArrayList"
+			resultMap="orderDetailResultMap" />
+	</resultMap>
 
-  <resultMap id="orderResultMap" type="sickSa.domain.OrderVO">
-    <id property="ord_id" column="ORD_ID" />
-    <result property="ord_total" column="ORD_TOTAL"/>
-    <result property="ord_payment_method" column="ORD_PAYMENT_METHOD"/>
-    <result property="ord_date" column="ORD_DATE"/>
-    <result property="tbl_id" column="TBL_ID"/>
-   <collection property="orderDetailVOList" javaType="java.util.ArrayList" resultMap="orderDetailResultMap"/>
-   </resultMap>
+	<resultMap id="orderDetailResultMap" type="sickSa.domain.OrderDetail">
+		<result property="ord_id" column="ORD_ID" />
+		<result property="ordt_amount" column="ORDT_AMOUNT" />
+		<result property="pdt_id" column="PDT_ID" />
+		<result property="ord_state" column="ORD_STATE" />
+	</resultMap>
+  <!-- resultMap -->
 
+<<<<<<< HEAD
   <resultMap id="orderDetailResultMap" type="sickSa.domain.OrderDetailVO">
     <result property="ord_id" column="ORD_ID"/>
     <result property="ordt_amount" column="ORDT_AMOUNT"/>
@@ -34,68 +38,58 @@
   
 	<select id="selectListByDate" parameterType="hashmap" resultMap="orderResultMap">
 		<![CDATA[
-		select
-		  *
-		from
-		  ORDERS
-		natural join 
-		  ORDER_DETAILS
-		where
-			TO_DATE('${startDate}', 'YYYY/MM/DD') <= ORD_DATE
-			and ORD_DATE < TO_DATE('${endDate}', 'YYYY/MM/DD')
+		select        *
+		from          ORDERS
+		natural join  ORDER_DETAILS
+		where         TO_DATE('${startDate}', 'YYYY/MM/DD') <= ORD_DATE
+		              and ORD_DATE < TO_DATE('${endDate}', 'YYYY/MM/DD')
 		]]>
 	</select>
-	
-	<select id="selectListByState" resultMap="orderResultMap">
-		select
-		  *
-		from
-			ORDERS
-		natural join
-		  ORDER_DETAILS
-		where
-			ORDT_STATE = #{ordt_state}
+
+	<select id="selectOrderListByState" resultMap="orderResultMap">
+		select        *
+		from          ORDERS
+		natural join  ORDER_DETAILS
+		where     		ORDT_STATE = #{ordt_state}
 	</select>
 
-	<select id="selectOne" parameterType="int" resultType="sickSa.domain.Order">
-		SELECT
-			ORD_ID,
-			PDT_ID,
-			ORD_PDT_AMOUNT,
-			ORD_TOTAL,
-			ORD_PAYMENT_METHOD,
-			ORD_DATE,
-			TBL_ID
+<!-- 
+	<select id="selectOrder" parameterType="int" resultType="sickSa.domain.Order">
+		select  ORD_ID,
+		PDT_ID,
+		ORD_PDT_AMOUNT,
+		ORD_TOTAL,
+		ORD_PAYMENT_METHOD,
+		ORD_DATE,
+		TBL_ID
 		FROM
-			ORDERS
+		ORDERS
 		where ORD_ID=#{ord_id} and
 		PDT_ID=#{pdt_id} and
 		TBL_ID=#{tbl_id}
 	</select>
+-->
 
-	<insert id="insert" parameterType="sickSa.domain.Order">
-		insert into TABLES
-		(ORD_ID,
-		PDT_ID,ORD_PDT_AMOUNT,ORD_TOTAL,ORD_PAYMENT_METHOD,
-		ORD_DATE,TBL_ID)
-		values(#{ord_id},#{pdt_id},#{ord_pdtAmount},#{ord_total},#{ord_paymentMethod},#{ord_date},
-		#{tbl_id})
+	<insert id="insertOrder" parameterType="sickSa.domain.Order">
+		insert into TABLES(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD)
+		            values(ORDERS_ORD_ID_SEQ.NEXTVAL, #{ord_total}, #{ord_paymentMethod})
 	</insert>
-
-	<update id="update" parameterType="sickSa.domain.Order">
-		update ORDERS
-		set
-		PDT_ID=#{pdt_id}, ORD_PDT_AMOUNT=#{ord_pdtAmount},
-		ORD_TOTAL=#{ord_total},ORD_PAYMENT_METHOD=#{ord_paymentMethod},
-		ORD_DATE=#{ord_date}, TBL_ID=#{tbl_id}
-		where
-		ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
+	
+	<update id="updateOrder" parameterType="sickSa.domain.Order">
+		update  ORDERS
+		set		  ORD_TOTAL = #{ord_total},
+            ORD_PAYMENT_METHOD = #{ord_payment_method},
+		        ORD_DATE = #{ord_date},
+		        TBL_ID = #{tbl_id}
+		where		ORD_ID = #{ord_id}
 	</update>
 
+<!--
 	<delete id="delete" parameterType="sickSa.domain.Order">
 		delete ORDERS
 		where
 		ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
 	</delete>
-	
+-->
+
 </mapper>

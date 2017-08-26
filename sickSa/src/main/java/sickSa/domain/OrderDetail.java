@@ -1,14 +1,11 @@
 package sickSa.domain;
 
-public class OrderDetailVO {
+public class OrderDetail {
 
 	private int ord_id;
 	private int ordt_amount;
 	private int pdt_id;
 	private char ordt_state;
-
-	public OrderDetailVO() {
-	}
 
 	@Override
 	public String toString() {

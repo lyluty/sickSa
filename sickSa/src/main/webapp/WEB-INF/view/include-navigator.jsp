@@ -19,7 +19,7 @@
       <li class="menu__item"><a class="menu__link" href="testimonials.html">Testimonials</a></li>
       <li class="menu__item"><a class="menu__link" href="ingredientView">재고 현황</a></li>
       <li class="menu__item"><a class="menu__link" href="servingState">서빙 현황</a></li>
-      <li class="menu__item"><a class="menu__link" data-submenu="submenu-5" href="#">매장관리</a></li>
+      <li class="menu__item"><a class="menu__link" data-submenu="submenu-5" href="#">매출관리</a></li>
 
 
       <li class="menu__item"><a class="menu__link" data-submenu="submenu-4" href="#">Pages</a></li>
@@ -66,10 +66,10 @@
       <li class="menu__item"><a class="menu__link" href="404.html">404</a></li>
     </ul>
     
-    <!-- Submenu 5 / 매장관리 -->
+    <!-- Submenu 5: 매출관리 -->
     <ul data-menu="submenu-5" class="menu__level">
-      <li class="menu__item"><a class="menu__link" href="sales">매출조회</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">재고관리</a></li>
+      <li class="menu__item"><a class="menu__link" href="salesViewByTimePeriod">기간별 매출조회</a></li>
+      <li class="menu__item"><a class="menu__link" href="salesViewByProduct">상품별 매출조회</a></li>
     </ul>
   </div>
 </nav>

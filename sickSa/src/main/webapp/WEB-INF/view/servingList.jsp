@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+<h4 class="content-title">serving</h4>
 <table class="table table-striped">
-  <caption>서빙하세요</caption>
   <thead>
     <tr>
       <th>주문번호</th>
-      <th>상품번호</th>
+      <th>상품명</th>
       <th>수량</th>
     </tr>
   </thead>

@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import sickSa.dao.ProductCategoriesDao;
+import sickSa.dao.ProductDao;
+import sickSa.domain.OrderDetail;
 import sickSa.domain.Order;
-import sickSa.domain.OrderDetailVO;
-import sickSa.domain.OrderVO;
+import sickSa.domain.Product;
+import sickSa.domain.ProductCategories;
 import sickSa.mapper.OrderDao;
-import sickSa.mapper.OrderDetailDao;
 
 @Service
 public class OrderService {
@@ -17,38 +19,33 @@ public class OrderService {
 	@Autowired
 	private OrderDao orderDao;
 	@Autowired
-	private OrderDetailDao orderDetailDao;
-	
-	public List<OrderDetailVO> testOrder() {
-		return orderDetailDao.list();
-	}
-	
-	public List<OrderVO> testOrder2() {
-		return orderDao.list();
-	}
+	private ProductDao productDao;
+	@Autowired
+	private ProductCategoriesDao productCategoriesDao;
 
 	/* 결제 완료 - 레코드 생성 */
-	public int createOrder(Order order) {
-		return orderDao.insert(order);
+	public void add(Order order) {
+		orderDao.insertOrder(order);
+		for (OrderDetail orderDetail : order.getOrderDetailList()) {
+			orderDao.insertOrderDetail(orderDetail);
+		}
 	}
 
-	/* 테이블 번호 수정 */
-	public int updateByTblNo(Integer ord_no, Integer tbl_id) {
-		Order tmpOrder = orderDao.selectOne(ord_no);
-		tmpOrder.setTbl_id(tbl_id);
-		return orderDao.update(tmpOrder);
+	public void set(Order order) {
+		orderDao.updateOrder(order);
 	}
-	/* find List by id */
-	public Order getById(Integer ord_id){
-		return orderDao.selectOne(ord_id);
-	}
+
 	/* 전체목록 불러오기 */
-	public List<Order> getList(){
-		return orderDao.selectList();
+	public List<Order> orderList() {
+		return orderDao.selectOrderList();
 	}
-
-	public OrderDao getOrderDao() {
-		return orderDao;
+	
+	public List<ProductCategories> productCategoryList() {
+		return productCategoriesDao.selectAllProductCategories();
 	}
-
+	
+	public List<Product> productListByCategoryId(int categoryId) {
+//		return productDao.selectProductListByCategoryId(categoryId);
+		return null;
+	}
 }
