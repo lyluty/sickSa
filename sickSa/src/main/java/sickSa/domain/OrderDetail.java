@@ -7,6 +7,13 @@ public class OrderDetail {
 	private int pdt_id;
 	private char ordt_state;
 
+	public OrderDetail() {
+	}
+
+	public OrderDetail(int pdt_id) {
+		this.pdt_id = pdt_id;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
