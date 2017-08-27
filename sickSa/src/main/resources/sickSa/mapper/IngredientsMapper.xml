@@ -16,12 +16,6 @@
 		<result column="IGDT_PRICE" property="igdt_price"/>
 		<result column="IGDT_CONTACT" property="igdt_contact"/>
 		<result column="IGCT_ID" property="igct_id"/>
-		<!-- 
-		<association 
-				resultMap="INGREDIENT_CATEGORIES"
-				property="igct_id" 
-				select="sickSa.mapper.IngredientCategoriesMapper.selectIngredientCategoriesById"/> 
-		-->
 	</resultMap>
 	
 	<resultMap id="INGREDIENTS" type="sickSa.domain.Ingredients">

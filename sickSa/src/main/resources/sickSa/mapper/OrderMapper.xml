@@ -16,13 +16,7 @@
 			resultMap="orderDetailResultMap" />
 	</resultMap>
 
-	<resultMap id="orderDetailResultMap" type="sickSa.domain.OrderDetail">
-		<result property="ord_id" column="ORD_ID" />
-		<result property="ordt_amount" column="ORDT_AMOUNT" />
-		<result property="pdt_id" column="PDT_ID" />
-	</resultMap>
   <!-- resultMap -->
-
   <resultMap id="orderDetailResultMap" type="sickSa.domain.OrderDetail">
     <result property="ord_id" column="ORD_ID"/>
     <result property="ordt_amount" column="ORDT_AMOUNT"/>
@@ -30,11 +24,11 @@
     <result property="ordt_state" column="ORD_STATE"/>
   </resultMap>
   
-  <select id="selectList" resultMap="orderResultMap">
+  <select id="selectOrderList" resultMap="orderResultMap">
     select * from ORDERS natural join ORDER_DETAILS
   </select>
   
-	<select id="selectListByDate" parameterType="hashmap" resultMap="orderResultMap">
+	<select id="selectOrderListByDate" parameterType="hashmap" resultMap="orderResultMap">
 		<![CDATA[
 		select        *
 		from          ORDERS
