@@ -40,7 +40,7 @@
           <div class="content-holder">
 
             <!-- 컨텐츠 영역 start -->
-            <div id="content" class="container" style="margin-bottom: 100px"></div>
+            <div id="content" class="container" style="margin-bottom: 100px;"  data-os-animation="fadeInUp" data-os-animation-delay="0s"></div>
             <!-- 컨텐츠 영역 end -->
 
           </div>

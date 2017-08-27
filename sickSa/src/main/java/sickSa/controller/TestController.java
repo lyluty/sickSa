@@ -2,8 +2,7 @@ package sickSa.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 @Controller
 public class TestController {
@@ -17,4 +16,14 @@ public class TestController {
 	public String testMain2() {
 		return "testIndex2";
 	}
+	@RequestMapping("mainIndex")
+	public String mainIndex(){
+		return "mainIndex";		
+	}
+	
+	@RequestMapping("login")
+		public String login(){
+			return "login";
+		}
+		
 }
