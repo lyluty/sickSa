@@ -78,28 +78,10 @@ function ing_insert_form(){
 	'width=700, height=500, left=0, top=0, toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no');
 }
 
-<<<<<<< HEAD
 /*function ing_insert_action(){
 	document.f.action = 'ingInsertAction';
 	document.f.submit();
 }*/
-=======
-    // 뒤 검은 마스크를 클릭시에도 모두 제거하도록 처리합니다.
-    $('.mask').click(function () {
-        $(this).hide();
-        $('.window').hide();
-    });
-    
-    
-    //  재료카테고리 이벤트처리
-   	$('.panel-heading h6').on('click',function(e){
-    	$(this).parent().parent().next().fadeToggle();
-    });
-    	
-  
-    
-});
->>>>>>> branch 'master' of https://github.com/lyluty/sickSa
 
 
 /**
