@@ -9,6 +9,7 @@ public class Product {
 		private String pdt_imgsrc_S;
 		private String pdt_description;
 		private int pdct_id;
+		
 		public Product(){
 			
 		}
