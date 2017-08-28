@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sickSa.domain.IngredientCategories;
+import sickSa.domain.IngredientDetails;
+import sickSa.domain.Ingredients;
 import sickSa.mapper.IngredientCategoriesMapper;
 import sickSa.mapper.IngredientDetailsMapper;
 import sickSa.service.IngredientService;
@@ -52,7 +54,6 @@ public class IngredientController {
 	@RequestMapping("/igctInsertAction")
 	public String addIgctAction( 
 			@ModelAttribute("ingredientCategories") IngredientCategories ingredientCategories){
-		System.out.println(ingredientCategories.toString());
 		ingredientService.addIgct(ingredientCategories);
 		return "forward:/ingredients";
 	}
@@ -64,8 +65,14 @@ public class IngredientController {
 		return "ingredientAddView";
 	}
 	
-	
-	
+	@RequestMapping("/ingInsertAction")
+	public String addIngAction(
+			@ModelAttribute("ingredients") Ingredients ingredients,
+			@ModelAttribute("ingredientDetails") IngredientDetails igdt,
+			@ModelAttribute("ingredientCategories") IngredientCategories igct){
+		ingredientService.addIng(ingredients, igdt, igct);
+		return "forward:/ingredients";
+	}
 	
 	
 }

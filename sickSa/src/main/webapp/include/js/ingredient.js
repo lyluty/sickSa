@@ -67,10 +67,11 @@ function igct_insert_form(){
 			'width=700, height=500, left=0, top=0, toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no');
 }
 
-/*function igct_insert_action(){
-	document.getElementById("igctF").action = 'igctInsertAction';
-	document.getElementById("igctF").submit();
-}*/
+function igct_insert_action(){
+	document.getElementById("igctAddForm").action = 'igctInsertAction';
+	document.getElementById("igctAddForm").method = 'POST';
+	document.getElementById("igctAddForm").submit();
+}
 
 function ing_insert_form(){
 	window.open(
@@ -78,10 +79,11 @@ function ing_insert_form(){
 	'width=700, height=500, left=0, top=0, toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no');
 }
 
-/*function ing_insert_action(){
-	document.f.action = 'ingInsertAction';
-	document.f.submit();
-}*/
+function ing_insert_action(){
+	document.getElementById("ingAddForm").action = 'ingInsertAction';
+	document.getElementById("ingAddForm").method = 'POST';
+	document.getElementById("ingAddForm").submit();
+}
 
 //재료카테고리 이벤트처리
 $('.panel-heading h6').on('click',function(e){

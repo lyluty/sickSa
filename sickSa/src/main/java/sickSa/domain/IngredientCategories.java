@@ -4,38 +4,38 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class IngredientCategories {
-	private int IGCT_ID;
-	private String IGCT_NAME;
+	private int igct_id;
+	private String igct_name;
 	
 	public IngredientCategories() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public IngredientCategories(int IGCT_ID, String IGCT_NAME) {
+	public IngredientCategories(int igct_id, String igct_name) {
 		super();
-		this.IGCT_ID = IGCT_ID;
-		this.IGCT_NAME = IGCT_NAME;
+		this.igct_id = igct_id;
+		this.igct_name = igct_name;
 	}
-	
+
 	@Override
 	public String toString() {
-		return IGCT_ID+":"+IGCT_NAME;
+		return igct_id+":"+igct_name;
 	}
 
 	public int getIgct_id() {
-		return IGCT_ID;
+		return igct_id;
 	}
 
-	public void setIgct_id(int IGCT_ID) {
-		this.IGCT_ID = IGCT_ID;
+	public void setIgct_id(int igct_id) {
+		this.igct_id = igct_id;
 	}
 
 	public String getIgct_name() {
-		return IGCT_NAME;
+		return igct_name;
 	}
 
-	public void setIgct_name(String IGCT_NAME) {
-		this.IGCT_NAME = IGCT_NAME;
+	public void setIgct_name(String igct_name) {
+		this.igct_name = igct_name;
 	}
 	
 }

@@ -26,10 +26,10 @@ ALTER TABLE INGREDIENTS ADD CONSTRAINT IDX_INGREDIENTS_PK PRIMARY KEY (ING_ID);
 @XmlRootElement
 public class Ingredients {
 	/* Variable */
-	private int ING_ID;
-	private String ING_NAME;
-	private int ING_STOCK;
-	private String ING_MEASURE;
+	private int ing_id;
+	private String ing_name;
+	private int ing_stock;
+	private String ing_measure;
 	private IngredientDetails ingredientDetails;
 	private IngredientCategories ingredientCategories;
 	
@@ -38,100 +38,90 @@ public class Ingredients {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Ingredients(int iNG_ID, String iNG_NAME, int iNG_STOCK, String iNG_MEASURE) {
+	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure) {
 		super();
-		ING_ID = iNG_ID;
-		ING_NAME = iNG_NAME;
-		ING_STOCK = iNG_STOCK;
-		ING_MEASURE = iNG_MEASURE;
+		this.ing_id = ing_id;
+		this.ing_name = ing_name;
+		this.ing_stock = ing_stock;
+		this.ing_measure = ing_measure;
 	}
 	
-	public Ingredients(
-			int iNG_ID, String iNG_NAME, int iNG_STOCK, 
-			String iNG_MEASURE, IngredientDetails ingredientDetails) {
+	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure,
+			IngredientDetails ingredientDetails) {
 		super();
-		ING_ID = iNG_ID;
-		ING_NAME = iNG_NAME;
-		ING_STOCK = iNG_STOCK;
-		ING_MEASURE = iNG_MEASURE;
+		this.ing_id = ing_id;
+		this.ing_name = ing_name;
+		this.ing_stock = ing_stock;
+		this.ing_measure = ing_measure;
 		this.ingredientDetails = ingredientDetails;
 	}
-
-	public Ingredients(
-			int iNG_ID, String iNG_NAME, int iNG_STOCK, String iNG_MEASURE,
+	
+	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure,
 			IngredientDetails ingredientDetails, IngredientCategories ingredientCategories) {
 		super();
-		ING_ID = iNG_ID;
-		ING_NAME = iNG_NAME;
-		ING_STOCK = iNG_STOCK;
-		ING_MEASURE = iNG_MEASURE;
+		this.ing_id = ing_id;
+		this.ing_name = ing_name;
+		this.ing_stock = ing_stock;
+		this.ing_measure = ing_measure;
 		this.ingredientDetails = ingredientDetails;
 		this.ingredientCategories = ingredientCategories;
 	}
-	
-	
+
 	/* toString */
 	@Override
 	public String toString() {
-		return "["+ING_ID+"]"+ING_NAME+","+ING_STOCK+","+ING_MEASURE;
-	}
-	
-	public IngredientDetails getIngredientDetails() {
-		return ingredientDetails;
-	}
-
-	public void setIngredientDetails(IngredientDetails ingredientDetails) {
-		this.ingredientDetails = ingredientDetails;
-	}
-
-	public IngredientCategories getIngredientCategories() {
-		return ingredientCategories;
-	}
-
-	public void setIngredientCategories(IngredientCategories ingredientCategories) {
-		this.ingredientCategories = ingredientCategories;
+		return "["+ing_id+"]"+ing_name+","+ing_stock+","+ing_measure;
 	}
 
 	
 	/* Method */
 	// Getter, Setter
 	public int getIng_id() {
-		return ING_ID;
+		return ing_id;
 	}
-
-
-	public void setIng_id(int ING_ID) {
-		this.ING_ID = ING_ID;
+	
+	public void setIng_id(int ing_id) {
+		this.ing_id = ing_id;
 	}
-
-
+	
 	public String getIng_name() {
-		return ING_NAME;
+		return ing_name;
 	}
-
-
-	public void setIng_name(String ING_NAME) {
-		this.ING_NAME = ING_NAME;
+	
+	public void setIng_name(String ing_name) {
+		this.ing_name = ing_name;
 	}
-
-
+	
 	public int getIng_stock() {
-		return ING_STOCK;
+		return ing_stock;
 	}
-
-
-	public void setIng_stock(int ING_STOCK) {
-		this.ING_STOCK = ING_STOCK;
+	
+	public void setIng_stock(int ing_stock) {
+		this.ing_stock = ing_stock;
 	}
-
-
+	
 	public String getIng_measure() {
-		return ING_MEASURE;
+		return ing_measure;
 	}
-
-
-	public void setIng_measure(String ING_MEASURE) {
-		this.ING_MEASURE = ING_MEASURE;
+	
+	public void setIng_measure(String ing_measure) {
+		this.ing_measure = ing_measure;
+	}
+	
+	public IngredientDetails getIngredientDetails() {
+		return ingredientDetails;
+	}
+	
+	public void setIngredientDetails(IngredientDetails ingredientDetails) {
+		this.ingredientDetails = ingredientDetails;
+	}
+	
+	public IngredientCategories getIngredientCategories() {
+		return ingredientCategories;
+	}
+	
+	public void setIngredientCategories(IngredientCategories ingredientCategories) {
+		this.ingredientCategories = ingredientCategories;
 	}
 	
 }

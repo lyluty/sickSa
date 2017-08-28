@@ -10,7 +10,7 @@
 		<result column="IGCT_NAME" property="igct_name"/>
 	</resultMap>
 	
-	<resultMap id="INGREDIENT_DETAILS" type="sickSa.domain.IngredientDetails">
+	<resultMap id="ingredient_details" type="sickSa.domain.IngredientDetails">
 		<result column="ING_ID" property="ing_id"/>
 		<result column="IGDT_IN" property="igdt_in"/>
 		<result column="IGDT_OUT" property="igdt_out"/>
@@ -26,9 +26,9 @@
 		id="listIngDetail" 
 		resultType="sickSa.domain.IngredientDetails">
 		SELECT 
-			ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID
+			ing_id,igdt_in,igdt_out,igdt_price,igdt_contact,igct_id
 		FROM 
-			INGREDIENT_DETAILS
+			ingredient_details
 	</select>
 	
 	<select 
@@ -36,11 +36,11 @@
 		parameterType="java.lang.Integer" 
 		resultType="sickSa.domain.IngredientDetails">
 		SELECT 
-			ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID
+			ing_id,igdt_in,igdt_out,igdt_price,igdt_contact,igct_id
 		FROM 
-			INGREDIENT_DETAILS
+			ingredient_details
 		WHERE 
-			ING_ID=#{ING_ID}
+			ing_id=#{ing_id}
 	</select>
 	
 	<select 
@@ -48,45 +48,45 @@
 		parameterType="java.lang.Integer" 
 		resultType="sickSa.domain.IngredientDetails">
 		SELECT 
-			ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID
+			ing_id,igdt_in,igdt_out,igdt_price,igdt_contact,igct_id
 		FROM 
-			INGREDIENT_DETAILS
+			ingredient_details
 		WHERE 
-			IGCT_ID=#{IGCT_ID}
+			igct_id=#{igct_id}
 	</select>
 	
 	<insert 
 		id="insertIngDetail"
 		parameterType="sickSa.domain.IngredientDetails">
 		<selectKey 
-			keyProperty="ING_ID" 
+			keyProperty="ing_id" 
 			resultType="java.lang.Integer"
 			order="BEFORE">
-			SELECT INGREDIENTS_ING_ID_SEQ.nextval FROM DUAL
+			SELECT ingredients_ing_id_seq.nextval FROM DUAL
 		</selectKey>
 		INSERT INTO 
-			INGREDIENT_DETAILS(ING_ID,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID)
+			ingredient_details(ing_id,igdt_in,igdt_out,igdt_price,igdt_contact,igct_id)
 		VALUES 
-			(#{ING_ID},#{IGDT_IN},#{IGDT_OUT},#{IGDT_PRICE},#{IGDT_CONTACT},#{IGCT_ID})
+			(#{ing_id},#{igdt_in},#{igdt_out},#{igdt_price},#{igdt_contact},#{igct_id})
 	</insert>
 	
 	<delete 
 		id="deleteIngDetail"
 		parameterType="java.lang.Integer">
-		DELETE FROM INGREDIENT_DETAILS
-		WHERE ING_ID=#{ING_ID}
+		DELETE FROM ingredient_details
+		WHERE ing_id=#{ing_id}
 	</delete>
 	
 	<update 
 		id="updateIngDetail"
 		parameterType="sickSa.domain.IngredientDetails">
 		UPDATE 
-			INGREDIENT_DETAILS
+			ingredient_details
 		SET 
-			IGDT_IN=#{IGDT_IN},IGDT_OUT=#{IGDT_OUT},
-			IGDT_PRICE=#{IGDT_PRICE},IGDT_CONTACT=#{IGDT_CONTACT}
+			igdt_in=#{igdt_in},igdt_out=#{igdt_out},
+			igdt_price=#{igdt_price},igdt_contact=#{igdt_contact}
 		WHERE 
-			ING_ID = #{ING_ID}
+			ing_id = #{ing_id}
 	</update> 
 	
 </mapper>
