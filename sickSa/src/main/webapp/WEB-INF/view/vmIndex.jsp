@@ -9,10 +9,6 @@
 </head>
 <body>
   <div class="animsition">
-    <!-- nav start -->
-    <jsp:include page="include-navigator.jsp" flush="false" />
-    <!-- nav end -->
-
     <!-- header start -->
     <jsp:include page="include-header.jsp" flush="false" />
     <!-- header end -->

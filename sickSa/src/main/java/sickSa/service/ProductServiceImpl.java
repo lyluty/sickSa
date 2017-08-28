@@ -3,29 +3,24 @@ package sickSa.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
+import sickSa.dao.ProductCategoriesDao;
 import sickSa.dao.ProductDao;
 import sickSa.domain.Product;
-import sickSa.domain.ProductIngredients;
-import sickSa.mapper.ProductIngredientMapper;
+import sickSa.domain.ProductCategories;
 
 public class ProductServiceImpl implements ProductService {
-	
-	@Autowired
+
 	private ProductDao productDao;
-	@Autowired
-	private ProductIngredientMapper productIngredientMapper;
+	private ProductCategoriesDao productCategoriesDao;
 
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}
 	
-	public void setProductIngredientMapper(
-			ProductIngredientMapper productIngredientMapper) {
-		this.productIngredientMapper = productIngredientMapper;
+	public void setProductCategoriesDao(ProductCategoriesDao productCategoriesDao) {
+		this.productCategoriesDao = productCategoriesDao;
 	}
-
+	
 	@Override
 	public List<Map> getProductList() {
 		return productDao.findAllProductsMap();
@@ -33,6 +28,13 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Product> getAllProductList(){
 		return productDao.findAllProducts();
+	}
+	@Override
+	public List<Product> getAllCategoryProductList(Integer pdt_id) {
+		return productDao.findProductsByCategoryId(pdt_id);
+	}
+	public List<ProductCategories> getAllCategories() {
+		return productCategoriesDao.selectAllProductCategories();
 	}
 	@Override
 	public Product getProductById(Integer pdt_id) {
@@ -56,9 +58,7 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.insertProduct(product); 
 	}
 
-	@Override
-	public ProductIngredients passAmount(Integer PDT_ID) {
-		return productIngredientMapper.passAmount(PDT_ID);
-	}
+	
+
 
 }

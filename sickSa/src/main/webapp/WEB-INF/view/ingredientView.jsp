@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="kr">
 <head>
 <!-- head start -->
@@ -37,9 +37,7 @@
         </div>
         
         <!-- Content Holder Start -->
-        <div id="contentHolder" class="content-holder">
-        	
-        </div>
+        <div id="contentHolder" class="content-holder"></div>
         <!-- Content Holder End -->
       </div>
     </div>
