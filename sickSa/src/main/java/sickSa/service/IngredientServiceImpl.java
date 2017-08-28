@@ -42,18 +42,21 @@ public class IngredientServiceImpl implements IngredientService{
 	
 	//모든 재료 카테고리별 모든 재료 리스트를 불러온다
 	@Override
-	public @ResponseBody List<Ingredients> loadDefaultList(Integer IGCT_ID) {
+	public @ResponseBody ArrayList<Ingredients> loadDefaultList(Integer IGCT_ID) {
 		List<IngredientDetails> igdtList = 
 				ingredientDetailsMapper.selectIngDetailByCt(IGCT_ID);
 		List<Ingredients> ingList = ingredientsMapper.listIngredient();
 		ArrayList<Ingredients> resultIng = new ArrayList<>();
 		for (Ingredients ing : ingList) {
 			for (IngredientDetails igdt : igdtList) {
-				if(ing.getIng_id()==igdt.getIng_id())
+				if(ing.getIng_id()==igdt.getIng_id()){
 					ing.setIngredientDetails(igdt);
 					resultIng.add(ing);
+				}
 			}
 		}
+		System.out.println(IGCT_ID);
+		System.out.println(resultIng.toString());
 		return resultIng;
 	}	
 	

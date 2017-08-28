@@ -4,7 +4,7 @@
 
 /*****전역 초기화함수 로그인 체크******/
 function init_ui() {
-	alert('로그인했삼?');
+	alert('ㅇ?');
 };
 
 /*****전역 로드시 실행******/
@@ -13,9 +13,9 @@ $(window).load(function() {
 	igct_list_load();
 });
 
-/*$('ul#igctList li').click(function(){
+/*$('ul#igctList li').click(function(i){
 	alert("dd");
-	$('ul#igctList li').ing_list_load();
+	ing_list_load(i);
 });*/
 
 function igct_list_load() {
@@ -26,22 +26,38 @@ function igct_list_load() {
 	$.ajax({
 		url : 'igctList',
 		type : 'POST',
-		dataType : 'html',
-		success : function(data) {
-			$("#contentHolder").html(data);
+		success : function(response) {
+			alert(response);
+			/*var json_obj = $.parseJSON(response);
+			var output="<ul>";
+			for(var i = 0;i<json_obj.length;i++){
+				output += 
+					"<li>"
+						+ json_obj[i].ing_id 
+						+ json_obj[i].ing_name 
+						+ json_obj[i].ing_stock 
+						+ json_obj[i].ing_measure
+						+ json_obj[i].ingredientDetails
+						+ json_obj[i].ingredientCategories
+					+"</li>";	
+			}
+			var output="</ul>";*/
+			$("#contentHolder").html(response);
 			
 		},
-	});
+		dataType: "html"//set to JSON
+	});	
 }
 
 function ing_list_load(i){
+	alert(i);
 	$.ajax({
 		url : 'ingList/'+i,
 		type : 'GET',
 		data : Number,
 		dataType : 'html',
 		success : function(data) {
-			$("div#ingList").html(data);
+			$("div#ingList"+i).html(data);
 		},
 	});
 }
