@@ -37,9 +37,7 @@
         </div>
         
         <!-- Content Holder Start -->
-        <div id="contentHolder" class="content-holder">
-        	
-        </div>
+        <div id="contentHolder" class="content-holder"></div>
         <!-- Content Holder End -->
       </div>
     </div>
