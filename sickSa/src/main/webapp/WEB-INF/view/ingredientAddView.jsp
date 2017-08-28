@@ -18,8 +18,26 @@
 				<form id="ingAddForm">
 					<h5>재료 항목 추가</h5>
 					<!-- require는 필수로 들어가야하는 필드. -->
+					<select class="form-control" name="igct_id" required>
+						<option value="">카테고리를 선택하세요.</option>
+						<c:forEach var="igct" items="${igctList}">
+							<option value="${igct.igct_id }">${igct.igct_name}</option>
+						</c:forEach>
+					</select>
 					<div class="form-group">
-						<input type="text" name="igct_name" class="form-control" placeholder="항목 명" required />
+						<input type="text" name="ing_name" class="form-control" placeholder="재료 명" required />
+					</div>
+					<div class="form-group">
+						<input type="text" name="ing_stock" class="form-control" placeholder="재고" required />
+					</div>
+					<div class="form-group">
+						<input type="text" name="ing_measure" class="form-control" placeholder="재료 단위" required />
+					</div>
+					<div class="form-group">
+						<input type="text" name="ingredientDetails.igdt_price" class="form-control" placeholder="단가" required />
+					</div>
+					<div class="form-group">
+						<input type="text" name="ingredientDetails.igdt_contact" class="form-control" placeholder="거래처 번호" required />
 					</div>
 					<div class="form-group">
 						<button onclick="igct_insert_action();" class="btn btn-default">추가하기</button>

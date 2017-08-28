@@ -44,6 +44,13 @@ public class IngredientDetails {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public IngredientDetails(int ing_id, int igdt_price, String igdt_contact) {
+		super();
+		this.ing_id = ing_id;
+		this.igdt_price = igdt_price;
+		this.igdt_contact = igdt_contact;
+	}
+
 	public IngredientDetails(int ing_id, Date igdt_in, Date igdt_out, int igdt_price, String igdt_contact,
 			int igct_id) {
 		super();

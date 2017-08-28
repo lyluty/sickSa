@@ -61,16 +61,15 @@ public class IngredientController {
 	@RequestMapping("/ingInsertForm")
 	public String addIngForm(Model model){
 		model.addAttribute(
-				"ingredientCategoriesList", ingredientService.loadListIgct());
+				"igctList", ingredientService.loadListIgct());
 		return "ingredientAddView";
 	}
 	
 	@RequestMapping("/ingInsertAction")
 	public String addIngAction(
 			@ModelAttribute("ingredients") Ingredients ingredients,
-			@ModelAttribute("ingredientDetails") IngredientDetails igdt,
-			@ModelAttribute("ingredientCategories") IngredientCategories igct){
-		ingredientService.addIng(ingredients, igdt, igct);
+			@ModelAttribute("ingredientDetails") IngredientDetails igdt){
+		ingredientService.addIng(ingredients, igdt);
 		return "forward:/ingredients";
 	}
 	

@@ -38,7 +38,8 @@ public class Ingredients {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure) {
+	public Ingredients(
+			int ing_id, String ing_name, int ing_stock, String ing_measure) {
 		super();
 		this.ing_id = ing_id;
 		this.ing_name = ing_name;
@@ -46,7 +47,8 @@ public class Ingredients {
 		this.ing_measure = ing_measure;
 	}
 	
-	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure,
+	public Ingredients(
+			int ing_id, String ing_name, int ing_stock, String ing_measure,
 			IngredientDetails ingredientDetails) {
 		super();
 		this.ing_id = ing_id;
@@ -56,7 +58,8 @@ public class Ingredients {
 		this.ingredientDetails = ingredientDetails;
 	}
 	
-	public Ingredients(int ing_id, String ing_name, int ing_stock, String ing_measure,
+	public Ingredients(
+			int ing_id, String ing_name, int ing_stock, String ing_measure,
 			IngredientDetails ingredientDetails, IngredientCategories ingredientCategories) {
 		super();
 		this.ing_id = ing_id;
