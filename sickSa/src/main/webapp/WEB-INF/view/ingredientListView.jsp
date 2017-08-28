@@ -21,6 +21,7 @@
 
 <div id="ingListForm" class="panel">
 	<h3 class="content-title">Ingredient</h3>
+	
 	<!-- Ingredient List Slide  start -->
 	<ul class="sub-service-list">
 		<c:forEach var="ing" items="${ingredientList}">
