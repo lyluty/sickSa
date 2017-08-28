@@ -20,6 +20,14 @@
 		WHERE PDT_ID = #{PDT_ID}
 	</select>
 
+  
+   <select id="findProductsByCategoryId" parameterType="java.lang.Integer"
+		resultType="sickSa.domain.Product">
+		SELECT PDT_ID,PDT_NAME,PDT_PRICE,PDT_IMGSRC_L,PDT_IMGSRC_S,PDT_DESCRIPTION,PDCT_ID
+		FROM PRODUCTS
+		WHERE PDCT_ID = #{PDCT_ID}
+	</select>
+	
 	<!-- resultType:Map -->
 	<select id="findAllProductsMap" resultType="java.util.Map">
 		SELECT PDT_ID,PDT_NAME,PDT_PRICE,PDT_IMGSRC_L,PDT_IMGSRC_S,PDT_DESCRIPTION,PDCT_ID FROM PRODUCTS
@@ -49,5 +57,7 @@
 		WHERE
 		PDT_ID = #{pdt_id} 
 	</delete>	
+	
+	
 
 </mapper>
