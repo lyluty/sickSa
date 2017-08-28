@@ -1,4 +1,4 @@
-package sickSa.dao;
+package sickSa.mapper;
 
 import java.util.List;
 import java.util.Map;

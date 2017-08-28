@@ -18,7 +18,7 @@ public class TestController {
 	}
 	@RequestMapping("mainIndex")
 	public String mainIndex(){
-		return "mainIndex";		
+		return "main/mainIndex";		
 	}
 	
 	@RequestMapping("login")
