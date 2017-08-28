@@ -30,4 +30,11 @@ public class QueueController {
 		model.addAttribute("queueLog", queueService.get(qlog_id));
 		return "test/queue/get";
 	}
+	
+	@RequestMapping("")
+	public String getAwaiter(){
+		
+		return "";
+	}
+	
 }
