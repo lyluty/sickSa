@@ -20,6 +20,9 @@
 				</div>
 			</li>
 		</c:forEach>
+		<li>
+			<img id="addImg" alt="plus" src="include/images/addButton.png"/>
+		</li>
 	</ul>
 </div>
 <!-- service list end -->
