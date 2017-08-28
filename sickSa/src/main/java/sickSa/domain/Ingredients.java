@@ -1,5 +1,7 @@
 package sickSa.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /*
 **********************************
 * Table Name: 재료 
@@ -21,7 +23,7 @@ COMMENT ON COLUMN INGREDIENTS.ING_MEASURE is '재료재고단위';
 ALTER TABLE INGREDIENTS ADD CONSTRAINT IDX_INGREDIENTS_PK PRIMARY KEY (ING_ID);
 */
 
-
+@XmlRootElement
 public class Ingredients {
 	/* Variable */
 	private int ING_ID;

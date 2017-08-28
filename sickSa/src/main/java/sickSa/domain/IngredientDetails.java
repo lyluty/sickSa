@@ -28,6 +28,8 @@ ALTER TABLE INGREDIENT_DETAILS ADD CONSTRAINT IDX_INGREDIENT_DETAILS_FK1 FOREIGN
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlRootElement
 public class IngredientDetails {
 	/* Variable */
 	private int ing_id;

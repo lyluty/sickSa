@@ -21,7 +21,7 @@
 			</li>
 		</c:forEach>
 		<li>
-			<img id="addImg" alt="plus" src="include/images/addButton.png"/>
+			<img id="addImg" alt="plus" src="include/images/addButton.png" onclick="igct_insert_form();"/>
 		</li>
 	</ul>
 </div>

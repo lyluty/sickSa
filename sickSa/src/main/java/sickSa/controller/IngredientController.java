@@ -45,16 +45,26 @@ public class IngredientController {
 
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
-		return "ingredientCategoriesInsertForm";
+		
+		return "ingredientCateAddView";
 	}
 	
 	@RequestMapping("/igctInsertAction")
-	public String addIgctAction(Model model, 
-			@ModelAttribute("ingredientCategory") 
-					IngredientCategories ingredientCategories){
-		model.addAttribute("insertIngredientCategories",ingredientService.addIgct(ingredientCategories));
-		return "forward:/IGCTSelect/"+ingredientCategories.getIgct_name();
+	public String addIgctAction( 
+			@ModelAttribute("ingredientCategories") IngredientCategories ingredientCategories){
+		System.out.println(ingredientCategories.toString());
+		ingredientService.addIgct(ingredientCategories);
+		return "forward:/ingredients";
 	}
+	
+	@RequestMapping("/ingInsertForm")
+	public String addIngForm(Model model){
+		model.addAttribute(
+				"ingredientCategoriesList", ingredientService.loadListIgct());
+		return "ingredientAddView";
+	}
+	
+	
 	
 	
 	
