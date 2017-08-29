@@ -85,9 +85,14 @@ function ing_insert_action(){
 	document.getElementById("ingAddForm").submit();
 }
 
-//재료카테고리 이벤트처리
+// 재료카테고리 이벤트처리
 $('.panel-heading h6').on('click',function(e){
 	$(this).parent().parent().next().fadeToggle();
+});
+
+// 카테고리 토글 처리
+$('.panel-heading ingList').on('click',function(e){
+	$(this).parent().parnet().fadeToggle();
 });
 
 
