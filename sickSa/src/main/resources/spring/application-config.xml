@@ -29,18 +29,5 @@
 	</bean>
 	
 	<!-- Dao --> 
-	<bean id="productDao" class="sickSa.dao.ProductDaoImpl">
-		<property name="sqlSession" ref="sqlSession"/>
-	</bean>
-	<bean id="productCategoriesDao" class="sickSa.dao.ProductCategoriesDaoImpl">
-		<property name="sqlSession" ref="sqlSession"/>
-	</bean>
 	
-	
-	<!-- Service --> 
-	<bean id="productService" class="sickSa.service.ProductServiceImpl">
-		<property name="productDao" ref="productDao"/>
-	</bean>	
-	
-
 </beans>
