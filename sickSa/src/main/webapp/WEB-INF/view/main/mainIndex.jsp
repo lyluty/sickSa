@@ -29,23 +29,7 @@
 <link href="include/css/main.css" rel="stylesheet" type="text/css">
 <script src="include/js/modernizr-custom.js"></script>
 <script src="include/js/jquery-2.2.2.min.js"></script>
-
-
-<script>
-
-$(document).ready(function() {
-	$("#toOrder").click(function() {
-		
-		
-		
-		$("#confirmModal").modal();
-
-	});
-});
-	
-</script>
-
-
+<script src="include/js/mainModal.js"></script>
 
 </head>
 <body>
@@ -128,7 +112,7 @@ $(document).ready(function() {
 		<div class="content-holder">
 
 
-			<button class="btn btn-default" id="toOrder"
+			<button class="btn btn-default"  data-toggle="modal" data-target="#confirmModal" id="toOrder"
 				style="display: block; margin: 0 auto;">to Order</button>
 
 

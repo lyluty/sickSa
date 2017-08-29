@@ -4,10 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MobileController {
+public class IndexController {
 
-	@RequestMapping("mobileIndex")
-	public String mobileIndex() {
-		return "mobileIndex";
+	@RequestMapping("mainIndex")
+	public String mainIndex() {
+		return "main/mainIndex";
 	}
+	
 }
