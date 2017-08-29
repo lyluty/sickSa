@@ -35,19 +35,19 @@ public class IngredientController {
 	@RequestMapping("/igctList")
 	public String loadIgctList(Model model){
 		model.addAttribute("ingredientCategoriesList", ingredientCategoriesMapper.ingredientCategoriesList());
-		return "ingredientCateListView";
+		return "ing/ingredientCateListView";
 	}
 	
 	//defaultList
 	@RequestMapping("/ingList/{IGCT_ID}")
 	public String loadIngList(Model model, @PathVariable Integer IGCT_ID) {
 		model.addAttribute("ingredientList", ingredientService.loadDefaultList(IGCT_ID));
-		return "ingredientListView";
+		return "ing/ingredientListView";
 	}
 
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
-		return "ingredientCateAddView";
+		return "ing/ingredientCateAddView";
 	}
 	
 	@RequestMapping("/igctInsertAction")
@@ -61,7 +61,7 @@ public class IngredientController {
 	public String addIngForm(Model model){
 		model.addAttribute(
 				"igctList", ingredientService.loadListIgct());
-		return "ingredientAddView";
+		return "ing/ingredientAddView";
 	}
 	
 	@RequestMapping("/ingInsertAction")
