@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <!-- head start -->
-<jsp:include page="../include-head.jsp" flush="false" />
+<jsp:include page="../common/include-head.jsp" flush="false" />
 <!-- head end -->
 <script type="text/javascript">
 
@@ -34,7 +34,7 @@
 	</div>
 	<!-- 컨텐츠 영역 end -->
 	<!-- tail start -->
-	<jsp:include page="../include-tail.jsp" flush="false" />
+	<jsp:include page="../common/include-tail.jsp" flush="false" />
 	<script src='include/js/ingredient.js'></script>
 	<!-- tail end -->
 </body>

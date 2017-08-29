@@ -36,7 +36,7 @@
 						</div>
 					</div>
 					<div class="panel-body">
-						<p>재고: ${ing.ing_stock}</br>
+						<p>재고: ${ing.ing_stock}<br/>
 						단가: ${ing.ingredientDetails.igdt_price}</p>
 					</div>
 				</div>

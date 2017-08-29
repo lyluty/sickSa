@@ -4,19 +4,19 @@
 <html>
 <head>
 <!-- head start -->
-<jsp:include page="include-head.jsp" flush="false" />
+<jsp:include page="common/include-head.jsp" flush="false" />
 <!-- head end -->
 </head>
 <body>
   <div class="animsition">
     <!-- header start -->
-    <jsp:include page="include-header.jsp" flush="false" />
+    <jsp:include page="common/include-header.jsp" flush="false" />
     <!-- header end -->
 
     <!-- 컨텐츠 영역 start -->
     <div class="container" style="height: 80%">
       <!-- top start -->
-      <jsp:include page="include-vm_top.jsp" />
+      <jsp:include page="common/include-vm_top.jsp" />
       <!-- top end -->
       <div style="height: 80%; display: block; margin: 0 auto">
        뭔가 사진이나 광고가 들어갔으면 좋겠는 영역이네요</div>
@@ -27,12 +27,12 @@
     <!-- 컨텐츠 영역 end -->
 
     <!-- footer start -->
-    <jsp:include page="include-footer.jsp" flush="false" />
+    <jsp:include page="common/include-footer.jsp" flush="false" />
     <!-- footer end -->
   </div>
 
   <!-- tail start -->
-  <jsp:include page="include-tail.jsp" flush="false" />
+  <jsp:include page="common/include-tail.jsp" flush="false" />
   <!-- tail end -->
 </body>
 </html>

@@ -4,30 +4,28 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
-	xsi:schemaLocation=
-		"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	  http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
-    
-	<!-- 컨트롤러에서 Autowire를 하기 위한 service 패키지  등록 -->
-	<context:component-scan base-package="sickSa.service"/>
-	<!-- 서비스에서 Autowire를 하기 위한 mapper 패키지 등록  -->
-	<mybatis:scan base-package="sickSa.mapper"/>
-	
-	<import resource="datasource-config.xml"/>
-	
+
+	<!-- 컨트롤러에서 Autowire를 하기 위한 service 패키지 등록 -->
+	<context:component-scan base-package="sickSa.service" />
+	<!-- 서비스에서 Autowire를 하기 위한 mapper 패키지 등록 -->
+	<mybatis:scan base-package="sickSa.mapper" />
+
+	<import resource="datasource-config.xml" />
+
 	<!-- MyBatis -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
-		<property name="mapperLocations" value="classpath:sickSa/mapper/*.xml"/>
-		<property name="dataSource" ref="apacheDataSource"/>
-    </bean>
-    
-    <!-- SqlSessionTemplate[MyBatis]-->
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-			<constructor-arg ref="sqlSessionFactory"/>
+		<property name="configLocation" value="classpath:spring/mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:sickSa/mapper/*.xml" />
+		<property name="dataSource" ref="apacheDataSource" />
 	</bean>
-	
-	<!-- Dao --> 
-	
+
+	<!-- SqlSessionTemplate[MyBatis] -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
 </beans>

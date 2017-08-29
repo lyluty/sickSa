@@ -1,7 +1,0 @@
-/**********************************/
- * Table Name: 매장정보
- * Author: JMW
-/**********************************/
-INSERT INTO
-	STORE_DATA(STDT_ADMIN_PIN, STDT_CAPACITY, STDT_REST, STDT_WAITING)
-	VALUES('000000', 30, 5, 0);

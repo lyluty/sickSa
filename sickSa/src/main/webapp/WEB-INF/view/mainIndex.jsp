@@ -126,7 +126,7 @@
 
 
 	<!-- tail start -->
-	<jsp:include page="../include-tail.jsp" flush="false" />
+	<jsp:include page="common/include-tail.jsp" flush="false" />
 	<!-- tail end -->
 
 

@@ -6,7 +6,7 @@
 <html>
 <head>
 <!-- head start -->
-<jsp:include page="../include-head.jsp" flush="false" />
+<jsp:include page="../common/include-head.jsp" flush="false" />
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <!-- head end -->
 </head>
@@ -32,14 +32,14 @@
     <!-- nav end -->
 
     <!-- header start -->
-    <jsp:include page="../include-header.jsp" flush="false" />
+    <jsp:include page="../common/include-header.jsp" flush="false" />
     <!-- header end -->
 
     <!-- 컨텐츠 영역 start -->
     <div class="container" style="height: 80%">
 
       <!-- top start -->
-      <jsp:include page="../include-vm_top.jsp" />
+      <jsp:include page="../common/include-vm_top.jsp" />
       <!-- top end -->
       <div id="content" style="height: 80%; display: block; margin: 0 auto">
 
@@ -71,12 +71,12 @@
     <!-- 컨텐츠 영역 end -->
 
     <!-- footer start -->
-    <jsp:include page="../include-footer.jsp" flush="false" />
+    <jsp:include page="../common/include-footer.jsp" flush="false" />
     <!-- footer end -->
   </div>
 
   <!-- tail start -->
-  <jsp:include page="../include-tail.jsp" flush="false" />
+  <jsp:include page="../common/include-tail.jsp" flush="false" />
   <script src='include/js/order.js'></script>
   <!-- tail end -->
 </body>

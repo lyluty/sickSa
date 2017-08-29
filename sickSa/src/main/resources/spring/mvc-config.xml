@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+	  http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-         <context:component-scan
-            base-package="sickSa.controller"/> 
+	<context:component-scan base-package="sickSa.controller" />
 
+	<mvc:annotation-driven />
 
-    <mvc:annotation-driven />
-	
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-	       <!--   Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' --> 
-	        <property name="prefix" value="/WEB-INF/view/"/>
-	        <property name="suffix" value=".jsp"/>
+	<bean	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<!-- ㅇㅋ '/'붙이기 ㄴㄴ -->
+
 	<!-- <mvc:resources mapping="/static/**" location="/WEB-INF/view/static/"/> -->
 	<!-- .jsp -->
-	<mvc:resources mapping="include/css/**" location="include/css/"/>
-	<mvc:resources mapping="include/fonts/**" location="/include/fonts/"/> 
-	<mvc:resources mapping="include/images/**" location="/include/images/"/>
-	<mvc:resources mapping="include/js/**.js" location="/include/js/"/> 
-	<mvc:resources mapping="include/video/**" location="/include/video/"/> 
-	
-	
+	<mvc:resources mapping="include/css/**" location="include/css/" />
+	<mvc:resources mapping="include/fonts/**" location="/include/fonts/" />
+	<mvc:resources mapping="include/images/**" location="/include/images/" />
+	<mvc:resources mapping="include/js/**.js" location="/include/js/" />
+	<mvc:resources mapping="include/video/**" location="/include/video/" />
 
-	
 </beans>

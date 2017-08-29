@@ -3,25 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<!--  oracle null 처리  -->
-    <settings>
-        <setting name="cacheEnabled" value="false" />
-        <setting name="jdbcTypeForNull" value="NULL" />
-    </settings>
-    
-    <typeHandlers>
-		<typeHandler handler="sickSa.handler.CustomDateHandler" javaType="java.util.Date" jdbcType="DATE"/>
-	</typeHandlers>
-    
+	<!-- oracle null 처리 -->
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
 	<mappers>
-	<!-- 
-		<mapper class="sickSa.mapper.IngredientsMapper"/>
-		<mapper class="sickSa.mapper.IngredientCategoriesMapper"/>
-		<mapper class="sickSa.dao.ProductDao"/>
-		<mapper resource="sickSa/mapper/ProductMapper.xml"/> 
-		<mapper resource="sickSa/mapper/IngredientsMapper.xml"/> 
-		<mapper resource="sickSa/mapper/IngredientCategoriesMapper.xml"/>
-	 -->
+		<!-- <mapper class="sickSa.mapper.IngredientsMapper"/> <mapper class="sickSa.mapper.IngredientCategoriesMapper"/> 
+			<mapper class="sickSa.dao.ProductDao"/> <mapper resource="sickSa/mapper/ProductMapper.xml"/> 
+			<mapper resource="sickSa/mapper/IngredientsMapper.xml"/> <mapper resource="sickSa/mapper/IngredientCategoriesMapper.xml"/> -->
 	</mappers>
 </configuration>
 
