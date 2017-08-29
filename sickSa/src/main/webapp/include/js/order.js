@@ -2,14 +2,14 @@ function back() {
   history.back();
 }
 function showProductList(categoryId) {
-//  $.post('productListByCategoryId.ajax', {
-//    categoryId : categoryId
-//  }, function(data) {
-//    $('#content').html(data);
-//  });
-  $.get('_productList?cateNo=' + categoryId, function(data) {
+  $.post('productListByCategoryId.ajax', {
+    categoryId : categoryId
+  }, function(data) {
     $('#content').html(data);
   });
+//  $.get('_productList?cateNo=' + categoryId, function(data) {
+//    $('#content').html(data);
+//  });
 }
 function orderNow(productId) {
   $.post('orderNow.ajax', {
