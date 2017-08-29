@@ -5,8 +5,8 @@
 <mapper namespace="sickSa.mapper.IngredientsMapper">
 	
 	<resultMap id="ingredient_categories" type="sickSa.domain.IngredientCategories">
-		<result column="IGCT_ID" property="igct_id"/>
-		<result column="IGCT_NAME" property="igct_name"/>
+		<result column="igct_id" property="igct_id"/>
+		<result column="igct_name" property="igct_name"/>
 	</resultMap>
 	
 	<resultMap id="ingredient_details" type="sickSa.domain.IngredientDetails">
@@ -77,7 +77,7 @@
 		id="insertIngredient"
 		parameterType="sickSa.domain.Ingredients">
 		<selectKey 
-			keyProperty="ING_ID" 
+			keyProperty="ing_id" 
 			resultType="java.lang.Integer"
 			order="BEFORE">
 			SELECT ingredients_ing_id_seq.nextval FROM DUAL

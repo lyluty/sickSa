@@ -39,9 +39,9 @@
 					<div class="form-group">
 						<input type="text" name="igdt_contact" class="form-control" placeholder="거래처 번호" required />
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<input type="hidden" name="igdt_in" value="" class="form-control"/>
-					</div>
+					</div> -->
 					<div class="form-group">
 						<button onclick="ing_insert_action();" class="btn btn-default">추가하기</button>
 						<div class="loading" style="display: none;">

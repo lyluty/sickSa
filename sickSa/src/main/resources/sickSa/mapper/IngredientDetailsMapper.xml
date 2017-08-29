@@ -62,12 +62,12 @@
 			keyProperty="ing_id" 
 			resultType="java.lang.Integer"
 			order="BEFORE">
-			SELECT ingredients_ing_id_seq.nextval FROM DUAL
+			SELECT ingredients_ing_id_seq.currval FROM DUAL
 		</selectKey>
 		INSERT INTO 
 			ingredient_details(ing_id,igdt_in,igdt_price,igdt_contact,igct_id)
 		VALUES 
-			(#{ing_id},#{igdt_in},#{igdt_price},#{igdt_contact},#{igct_id})
+			(#{ing_id},SYSDATE,#{igdt_price},#{igdt_contact},#{igct_id})
 	</insert>
 	
 	<delete 
