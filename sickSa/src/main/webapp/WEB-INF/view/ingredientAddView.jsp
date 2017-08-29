@@ -34,13 +34,16 @@
 						<input type="text" name="ing_measure" class="form-control" placeholder="재료 단위" required />
 					</div>
 					<div class="form-group">
-						<input type="text" name="ingredientDetails.igdt_price" class="form-control" placeholder="단가" required />
+						<input type="text" name="igdt_price" class="form-control" placeholder="단가" required />
 					</div>
 					<div class="form-group">
-						<input type="text" name="ingredientDetails.igdt_contact" class="form-control" placeholder="거래처 번호" required />
+						<input type="text" name="igdt_contact" class="form-control" placeholder="거래처 번호" required />
 					</div>
 					<div class="form-group">
-						<button onclick="igct_insert_action();" class="btn btn-default">추가하기</button>
+						<input type="hidden" name="igdt_in" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<button onclick="ing_insert_action();" class="btn btn-default">추가하기</button>
 						<div class="loading" style="display: none;">
 							<img src="include/images/ajax-loader.gif" alt="" />
 						</div>

@@ -65,9 +65,9 @@
 			SELECT ingredients_ing_id_seq.nextval FROM DUAL
 		</selectKey>
 		INSERT INTO 
-			ingredient_details(ing_id,igdt_in,igdt_out,igdt_price,igdt_contact,igct_id)
+			ingredient_details(ing_id,igdt_in,igdt_price,igdt_contact,igct_id)
 		VALUES 
-			(#{ing_id},#{igdt_in},#{igdt_out},#{igdt_price},#{igdt_contact},#{igct_id})
+			(#{ing_id},#{igdt_in},#{igdt_price},#{igdt_contact},#{igct_id})
 	</insert>
 	
 	<delete 

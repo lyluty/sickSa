@@ -47,7 +47,6 @@ public class IngredientController {
 
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
-		
 		return "ingredientCateAddView";
 	}
 	
@@ -69,6 +68,8 @@ public class IngredientController {
 	public String addIngAction(
 			@ModelAttribute("ingredients") Ingredients ingredients,
 			@ModelAttribute("ingredientDetails") IngredientDetails igdt){
+		System.out.println(ingredients.toString());
+		System.out.println(igdt.toString());
 		ingredientService.addIng(ingredients, igdt);
 		return "forward:/ingredients";
 	}

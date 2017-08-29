@@ -95,8 +95,8 @@ public class IngredientServiceImpl implements IngredientService{
 	//재료를 추가한다
 	@Override
 	public Integer addIng(Ingredients ing,IngredientDetails igdt) {
-		ing.setIngredientDetails(igdt);
-		return ingredientsMapper.insertIngredient(ing);
+		ingredientsMapper.insertIngredient(ing);
+		return ingredientDetailsMapper.insertIngDetail(igdt); 
 	}
 	//재료의 정보를 확인한다
 	@Override
