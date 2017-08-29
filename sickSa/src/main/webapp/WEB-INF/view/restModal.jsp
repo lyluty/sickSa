@@ -3,9 +3,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<script src="include/js/mainModal.js"></script>
+
 
 	<!-- Modal  start-->
-			<div class="modal"  id="confirmModal" role="dialog" tabindex="-1">
+			<div class="modal"  id="restModal" role="dialog" tabindex="-1"   aria-labelledby="restModal" aria-hidden="true">
 				<div class="modal-dialog">
 
 					<!-- Modal content-->
