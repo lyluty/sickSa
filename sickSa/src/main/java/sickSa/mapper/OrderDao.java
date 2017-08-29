@@ -22,6 +22,8 @@ public interface OrderDao {
 	int insertOrderDetail(OrderDetail orderDetail);
 
 	int updateOrder(Order order);
+	
+	int selectOrderSequence();
 	//
 	// int delete(int ord_id);
 }

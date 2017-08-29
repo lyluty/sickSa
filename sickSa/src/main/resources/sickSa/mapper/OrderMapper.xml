@@ -45,26 +45,14 @@
 		where     		ORDT_STATE = #{ordt_state}
 	</select>
 
-<!-- 
-	<select id="selectOrder" parameterType="int" resultType="sickSa.domain.Order">
-		select  ORD_ID,
-		PDT_ID,
-		ORD_PDT_AMOUNT,
-		ORD_TOTAL,
-		ORD_PAYMENT_METHOD,
-		ORD_DATE,
-		TBL_ID
-		FROM
-		ORDERS
-		where ORD_ID=#{ord_id} and
-		PDT_ID=#{pdt_id} and
-		TBL_ID=#{tbl_id}
-	</select>
--->
-
 	<insert id="insertOrder" parameterType="sickSa.domain.Order">
-		insert into TABLES(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD)
-		            values(ORDERS_ORD_ID_SEQ.NEXTVAL, #{ord_total}, #{ord_paymentMethod})
+		insert into ORDERS(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD)
+		            values(#{ord_id}, #{ord_total}, #{ord_payment_method})
+	</insert>
+	
+	<insert id="insertOrderDetail" parameterType="sickSa.domain.OrderDetail">
+    insert into ORDER_DETAILS(ORD_ID, PDT_ID, ORDT_AMOUNT)
+                values(#{ord_id}, #{pdt_id}, #{ordt_amount})
 	</insert>
 	
 	<update id="updateOrder" parameterType="sickSa.domain.Order">
@@ -75,6 +63,11 @@
 		        TBL_ID = #{tbl_id}
 		where		ORD_ID = #{ord_id}
 	</update>
+	
+	<select id="selectOrderSequence" resultType="int">
+	  select ORDERS_ORD_ID_SEQ.nextval
+	  from   dual
+	</select>
 
 <!--
 	<delete id="delete" parameterType="sickSa.domain.Order">

@@ -12,6 +12,16 @@ public class Order {
 	private int tbl_id;
 	private List<OrderDetail> orderDetailList;
 
+	public Order() {
+	}
+
+	public Order(int ord_id, int ord_total, String ord_payment_method, List<OrderDetail> orderDetailList) {
+		this.ord_id = ord_id;
+		this.ord_total = ord_total;
+		this.ord_payment_method = ord_payment_method;
+		this.orderDetailList = orderDetailList;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();

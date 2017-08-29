@@ -6,12 +6,15 @@ public class OrderDetail {
 	private int ordt_amount;
 	private int pdt_id;
 	private char ordt_state;
+	private Product product;
 
 	public OrderDetail() {
 	}
 
-	public OrderDetail(int pdt_id) {
-		this.pdt_id = pdt_id;
+	public OrderDetail(Product product) {
+		this.ordt_amount = 1;
+		this.pdt_id = product.getPdt_id();
+		this.product = product;
 	}
 
 	@Override
@@ -21,6 +24,7 @@ public class OrderDetail {
 		sb.append("ordt_amount: ").append(ordt_amount).append("\n");
 		sb.append("pdt_id: ").append(pdt_id).append("\n");
 		sb.append("ordt_state: ").append(ordt_state).append("\n");
+		sb.append("product: ").append(product).append("\n");
 		return sb.toString();
 	}
 
@@ -54,5 +58,13 @@ public class OrderDetail {
 
 	public void setOrdt_state(char ordt_state) {
 		this.ordt_state = ordt_state;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 }
