@@ -9,6 +9,10 @@
         <setting name="jdbcTypeForNull" value="NULL" />
     </settings>
     
+    <typeHandlers>
+		<typeHandler handler="sickSa.handler.CustomDateHandler" javaType="java.util.Date" jdbcType="DATE"/>
+	</typeHandlers>
+    
 	<mappers>
 	<!-- 
 		<mapper class="sickSa.mapper.IngredientsMapper"/>

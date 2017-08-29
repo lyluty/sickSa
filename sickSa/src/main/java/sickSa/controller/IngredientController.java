@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sickSa.domain.IngredientCategories;
+import sickSa.domain.IngredientDetails;
+import sickSa.domain.Ingredients;
 import sickSa.mapper.IngredientCategoriesMapper;
 import sickSa.mapper.IngredientDetailsMapper;
 import sickSa.service.IngredientService;
@@ -45,17 +47,32 @@ public class IngredientController {
 
 	@RequestMapping("/igctInsertForm")
 	public String addIgctForm(){
-		return "ingredientCategoriesInsertForm";
+		return "ingredientCateAddView";
 	}
 	
 	@RequestMapping("/igctInsertAction")
-	public String addIgctAction(Model model, 
-			@ModelAttribute("ingredientCategory") 
-					IngredientCategories ingredientCategories){
-		model.addAttribute("insertIngredientCategories",ingredientService.addIgct(ingredientCategories));
-		return "forward:/IGCTSelect/"+ingredientCategories.getIgct_name();
+	public String addIgctAction( 
+			@ModelAttribute("ingredientCategories") IngredientCategories ingredientCategories){
+		ingredientService.addIgct(ingredientCategories);
+		return "forward:/ingredients";
 	}
 	
+	@RequestMapping("/ingInsertForm")
+	public String addIngForm(Model model){
+		model.addAttribute(
+				"igctList", ingredientService.loadListIgct());
+		return "ingredientAddView";
+	}
+	
+	@RequestMapping("/ingInsertAction")
+	public String addIngAction(
+			@ModelAttribute("ingredients") Ingredients ingredients,
+			@ModelAttribute("ingredientDetails") IngredientDetails igdt){
+		System.out.println(ingredients.toString());
+		System.out.println(igdt.toString());
+		ingredientService.addIng(ingredients, igdt);
+		return "forward:/ingredients";
+	}
 	
 	
 }

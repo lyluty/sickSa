@@ -19,7 +19,7 @@
 	</bean>
 	
 	<!-- ㅇㅋ '/'붙이기 ㄴㄴ -->
-	<mvc:resources mapping="/static/**" location="/WEB-INF/view/static/"/>
+	<!-- <mvc:resources mapping="/static/**" location="/WEB-INF/view/static/"/> -->
 	<!-- .jsp -->
 	<mvc:resources mapping="include/css/**" location="include/css/"/>
 	<mvc:resources mapping="include/fonts/**" location="/include/fonts/"/> 

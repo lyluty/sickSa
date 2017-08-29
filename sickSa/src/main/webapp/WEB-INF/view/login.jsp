@@ -37,6 +37,7 @@ div{height:100%; border:1px dotted red}
 					</div>
 
 					<div class="main-container" >
+					 <div class="content-holder">
 					
 						<div class="container"   align="center"  style="padding: 20%; display: block; margin: 0 auto;">
 							
@@ -53,6 +54,7 @@ div{height:100%; border:1px dotted red}
 										<button class="btn btn-default" style="display: block; margin: 0 auto;" onclick="login()">Login </button>	
 						
 							</div>
+						</div>
 						</div>
 				
 				</div>

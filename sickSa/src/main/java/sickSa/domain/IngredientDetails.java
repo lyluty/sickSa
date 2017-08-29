@@ -28,6 +28,8 @@ ALTER TABLE INGREDIENT_DETAILS ADD CONSTRAINT IDX_INGREDIENT_DETAILS_FK1 FOREIGN
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlRootElement
 public class IngredientDetails {
 	/* Variable */
 	private int ing_id;
@@ -42,12 +44,19 @@ public class IngredientDetails {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public IngredientDetails(int ing_id, Date igdt_in, Date igdt_out, int igdt_price, String igdt_contact,
-			int igct_id) {
+	public IngredientDetails(int ing_id, int igdt_price, String igdt_contact) {
+		super();
+		this.ing_id = ing_id;
+		this.igdt_price = igdt_price;
+		this.igdt_contact = igdt_contact;
+	}
+
+	public IngredientDetails(
+			int ing_id, Date igdt_in, int igdt_price, 
+			String igdt_contact, int igct_id) {
 		super();
 		this.ing_id = ing_id;
 		this.igdt_in = igdt_in;
-		this.igdt_out = igdt_out;
 		this.igdt_price = igdt_price;
 		this.igdt_contact = igdt_contact;
 		this.igct_id = igct_id;
@@ -55,7 +64,7 @@ public class IngredientDetails {
 	
 	@Override
 	public String toString() {
-		return "["+ing_id+"]"+igdt_in+"-"+igdt_out+":"+igdt_price+"$ :"+igdt_contact;
+		return "["+ing_id+"]"+igdt_in+":"+igdt_price+"$ :"+igdt_contact;
 	}
 	
 	/* Method */

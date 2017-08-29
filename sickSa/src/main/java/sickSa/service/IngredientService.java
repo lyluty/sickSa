@@ -27,13 +27,15 @@ public interface IngredientService {
 	//재료 카테고리에 따른 재료를 리스트에 마지막으로 추가된 재료를 가져온다
 	public List<Ingredients> loadListIng(Integer IGCT_ID);
 	//재료를 추가한다
-	public Integer addIng(Ingredients ing,IngredientDetails igdt,IngredientCategories igct);
+	public Integer addIng(Ingredients ing,IngredientDetails igdt);
 	//재료의 정보를 확인한다
 	public IngredientDetails openIngDetail(Integer ING_ID);
 	//재료의 정보(단위,입고일시,출고일시,재료단가,연락처)를 수정한다
 	public Integer updateIngDetail(IngredientDetails ingredientDetails);
-	//재료를 입고하여,출고하여 재고를 변경한다
-	public Integer changeStock(ProductIngredients productIngredients);
+	
+	
+	//재료를 출고하면서 출고일시 기록과 재고의 변경을 한다 
+	public Integer changeStock(Integer pdt_id);
 	//재료를 삭제한다
 	public Integer expireStock(Integer ING_ID);
 	

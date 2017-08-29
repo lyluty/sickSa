@@ -1,5 +1,8 @@
 package sickSa.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class IngredientCategories {
 	private int igct_id;
 	private String igct_name;
@@ -13,7 +16,7 @@ public class IngredientCategories {
 		this.igct_id = igct_id;
 		this.igct_name = igct_name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return igct_id+":"+igct_name;

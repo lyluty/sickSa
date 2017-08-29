@@ -32,4 +32,5 @@ public interface IngredientDetailsMapper {
 	public Integer insertIngDetail(IngredientDetails ingredientDetails);
 	public Integer deleteIngDetail(Integer ing_id);
 	public Integer updateIngDetail(IngredientDetails ingredientDetails);
+	public Integer changeIgctOut(IngredientDetails ingredientDetails);
 }

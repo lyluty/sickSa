@@ -26,3 +26,4 @@
 	</ul>
 </div>
 <!-- service list end -->
+</div>

@@ -5,39 +5,37 @@ import java.util.Map;
 
 public class ProductIngredients {
 	
-	private int PDT_ID;
+	private int pdt_id;
 	//Map<ING_ID,PDIG_AMOUNT>
-	private Map<Integer, Integer> PDIG_AMOUNTS;
+	private Map<Integer, Integer> pdig_amount;
 	
 	public ProductIngredients() {}
 	
-	public ProductIngredients(int PDT_ID, Map<Integer, Integer> PDIG_AMOUNT) {
+	public ProductIngredients(int pdt_id, Map<Integer, Integer> pdig_amount) {
 		super();
-		this.PDT_ID = PDT_ID;
-		this.PDIG_AMOUNTS = PDIG_AMOUNT;
+		this.pdt_id = pdt_id;
+		this.pdig_amount = pdig_amount;
 	}
-	
-	
-	
+
 	@Override
 	public String toString() {
-		return PDT_ID+":"+PDIG_AMOUNTS;
+		return pdt_id+":"+pdig_amount;
+	}
+
+	public int getPdt_id() {
+		return pdt_id;
+	}
+
+	public void setPdt_id(int pdt_id) {
+		this.pdt_id = pdt_id;
+	}
+
+	public Map<Integer, Integer> getPdig_amount() {
+		return pdig_amount;
+	}
+
+	public void setPdig_amount(Map<Integer, Integer> pdig_amount) {
+		this.pdig_amount = pdig_amount;
 	}
 	
-	public int getPDT_ID() {
-		return PDT_ID;
-	}
-
-	public void setPDT_ID(int PDT_ID) {
-		this.PDT_ID = PDT_ID;
-	}
-
-	public Map<Integer, Integer> getPDIG_AMOUNT() {
-		return PDIG_AMOUNTS;
-	}
-
-	public void setPDIG_AMOUNT(Map<Integer, Integer> PDIG_AMOUNT) {
-		this.PDIG_AMOUNTS = PDIG_AMOUNT;
-	}
-
 }

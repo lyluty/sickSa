@@ -4,102 +4,102 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sickSa.mapper.IngredientsMapper">
 	
-	<resultMap id="INGREDIENT_CATEGORIES" type="sickSa.domain.IngredientCategories">
-		<result column="IGCT_ID" property="igct_id"/>
-		<result column="IGCT_NAME" property="igct_name"/>
+	<resultMap id="ingredient_categories" type="sickSa.domain.IngredientCategories">
+		<result column="igct_id" property="igct_id"/>
+		<result column="igct_name" property="igct_name"/>
 	</resultMap>
 	
-	<resultMap id="INGREDIENT_DETAILS" type="sickSa.domain.IngredientDetails">
-		<result column="ING_ID" property="ing_id"/>
-		<result column="IGDT_IN" property="igdt_in"/>
-		<result column="IGDT_OUT" property="igdt_out"/>
-		<result column="IGDT_PRICE" property="igdt_price"/>
-		<result column="IGDT_CONTACT" property="igdt_contact"/>
-		<result column="IGCT_ID" property="igct_id"/>
+	<resultMap id="ingredient_details" type="sickSa.domain.IngredientDetails">
+		<result column="ing_id" property="ing_id"/>
+		<result column="igdt_in" property="igdt_in"/>
+		<result column="igdt_out" property="igdt_out"/>
+		<result column="igdt_price" property="igdt_price"/>
+		<result column="igdt_contact" property="igdt_contact"/>
+		<result column="igct_id" property="igct_id"/>
 	</resultMap>
 	
-	<resultMap id="INGREDIENTS" type="sickSa.domain.Ingredients">
-		<result column="ING_ID" property="ing_id"/>
-		<result column="ING_NAME" property="ing_name"/>
-		<result column="ING_STOCK" property="ing_stock"/>
-		<result column="ING_MEASURE" property="ing_measure"/>
+	<resultMap id="ingredients" type="sickSa.domain.Ingredients">
+		<result column="ing_id" property="ing_id"/>
+		<result column="ing_name" property="ing_name"/>
+		<result column="ing_stock" property="ing_stock"/>
+		<result column="ing_measure" property="ing_measure"/>
 		<association 
-				resultMap="INGREDIENT_DETAILS"
+				resultMap="ingredient_details"
 				property="ingredientDetails"
 				/>
 		<association 
-				resultMap="INGREDIENT_CATEGORIES"
+				resultMap="ingredient_categories"
 				property="ingredientCategories"
 				/>
 	</resultMap>
 	
 	<resultMap id="PDIG" type="sickSa.domain.ProductIngredients">
-		<result column="PDT_ID" property="PDT_ID"/>
-		<association property="PDIG_AMOUNTS" javaType="java.util.Map">
-			<result property="key" column="ING_ID"/>
-			<result property="value" column="PDIG_AMOUNT"/>
+		<result column="pdt_id" property="pdt_id"/>
+		<association property="pdig_amount" javaType="java.util.Map">
+			<result property="key" column="ing_id"/>
+			<result property="value" column="pdig_amount"/>
 		</association>
 	</resultMap>
 	
 	<select 
 		id="listIngredient" 
 		resultType="sickSa.domain.Ingredients">
-		SELECT ING_ID,ING_NAME,ING_STOCK,ING_MEASURE
-		FROM INGREDIENTS
+		SELECT ing_id,ing_name,ing_stock,ing_measure
+		FROM ingredients
 	</select>
 	
 	<select 
 		id="cateIngList" 
 		parameterType="java.lang.Integer" 
-		resultMap="INGREDIENTS">
+		resultMap="ingredients">
 		SELECT 
-			ING_ID,ING_NAME,ING_STOCK,ING_MEASURE,IGDT_IN,IGDT_OUT,IGDT_PRICE,IGDT_CONTACT,IGCT_ID,IGCT_NAME
+			ing_id,ing_name,ing_stock,ing_measure,igdt_in,igdt_out,igdt_price,igdt_contact,igct_id,igct_name
 		FROM 
-			INGREDIENTS ing
+			ingredients ing
 		NATURAL JOIN 
-			INGREDIENT_DETAILS igdt
+			ingredient_details igdt
 		NATURAL JOIN 
-			INGREDIENT_CATEGORIES igct
+			ingredient_categories igct
 		WHERE 
-			igct.IGCT_NAME = #{IGCT_NAME};
+			igct.igct_name = #{igct_name};
 	</select>
 	
 	<select 
 		id="selectIngredientById" 
 		parameterType="java.lang.Integer" 
 		resultType="sickSa.domain.Ingredients">
-		SELECT ING_ID,ING_NAME,ING_STOCK,ING_MEASURE
-		FROM INGREDIENTS
-		WHERE ING_ID=#{ING_ID}
+		SELECT ing_id,ing_name,ing_stock,ing_measure
+		FROM ingredients
+		WHERE ing_id=#{ing_id}
 	</select>
 	
 	<insert 
 		id="insertIngredient"
 		parameterType="sickSa.domain.Ingredients">
 		<selectKey 
-			keyProperty="ING_ID" 
+			keyProperty="ing_id" 
 			resultType="java.lang.Integer"
 			order="BEFORE">
-			SELECT INGREDIENTS_ING_ID_SEQ.nextval FROM DUAL
+			SELECT ingredients_ing_id_seq.nextval FROM DUAL
 		</selectKey>
-		INSERT INTO INGREDIENTS(ING_ID,ING_NAME,ING_STOCK,ING_MEASURE)
-		VALUES (#{ING_ID},#{ING_NAME},#{ING_STOCK},#{ING_MEASURE})
+		INSERT INTO ingredients(ing_id,ing_name,ing_stock,ing_measure)
+		VALUES (#{ing_id},#{ing_name},#{ing_stock},#{ing_measure})
 	</insert>
 	
 	<delete 
 		id="deleteIngredient"
 		parameterType="java.lang.Integer">
-		DELETE FROM INGREDIENTS
-		WHERE ING_ID=#{ING_ID}
+		DELETE FROM ingredients
+		WHERE ing_id=#{ing_id}
 	</delete>
 	
 	<update 
 		id="updateIngredient"
 		>
-		UPDATE INGREDIENTS
-		SET ING_NAME=#{ING_NAME},ING_STOCK=#{ING_STOCK},
-			ING_MEASURE=#{ING_MEASURE}
-		WHERE ING_ID = #{ING_ID}
+		UPDATE ingredients
+		SET ing_name=#{ing_name},ing_stock=#{ing_stock},
+			ing_measure=#{ing_measure}
+		WHERE ing_id = #{ing_id}
 	</update> 
 	
 	<!-- 	
@@ -110,29 +110,22 @@
   	Map을 사용할때 index는 key객체가 되고 항목은 value객체가 된다.
 	-->
 	
+	<!-- 수량을 변경 시키는 함수 아직 테스트 안해봄 -->
 	<update 
 		id="changeStock"
 		parameterType="sickSa.domain.ProductIngredients">
-		<bind name="ING_ID" value="_parameter.getPDIG_AMOUNT()"/>
+		<bind name="ing_id" value="_parameter.getPDIG_AMOUNT()"/>
 		<bind name="PDIG_AMOUNT" value="_parameter."/>
-		UPDATE INGREDIENTS
-		<foreach item="item" index="index" collection="list"
-      		open="(" separator="," close=")">
-		SET ING_STOCK= (SELECT ING_STOCK
-		                FROM INGREDIENTS
-		                WHERE ING_ID= #{item) - #{index}
-		WHERE ING_ID = #{item};
+		UPDATE ingredients
+		<foreach item="item" index="index" collection="list">
+		SET ing_stock= (SELECT ing_stock
+		                FROM ingredients
+		                WHERE ing_id= #{item}) - #{index}
+		WHERE ing_id = #{item};
 		</foreach>
 	</update>  
 	
-	<!-- <update 
-		id="changeStock"
-		parameterType="sickSa.domain.ProductIngredients">
-		UPDATE INGREDIENTS
-		SET ING_STOCK= (SELECT ING_STOCK
-		                FROM INGREDIENTS
-		                WHERE ING_ID= #{ING_ID, resultMap=PDIG}) - #{PDIG_AMOUNT, resultMap=PDIG}
-		WHERE ING_ID = #{ING_ID, resultMap=PDIG};
-	</update>  -->
+	
+	
 	
 </mapper>

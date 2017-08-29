@@ -695,7 +695,904 @@ values(49, '고추장', 4000, 'g');
 /*
  * Table Name: PRODUCT_INGREDIENTS
  */
- 
+--규동--------------(1큰술-15g)
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(1, 47, 200);
+
+
+--보쌈규동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 2, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(2, 47, 200);
+
+--화끈규동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(3, 41, 30);
+
+--트리플치즈규동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(4, 48, 45);
+
+--갈릭규동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(5, 20, 30);
+
+--규카레동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(6, 42, 40);
+
+--잡채규동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(7, 25, 30);
+
+--해물돈부리--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(8, 16, 80);
+
+--치킨마요동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 6, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(9, 37, 30);
+
+--스팸마요동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 7, 120);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(10, 37, 30);
+
+--차슈데리야끼동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 2, 180);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(11, 38, 30);
+
+--치킨데리야끼동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 6, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(12, 38, 30);
+
+--장어덮밥--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 15, 90);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(13, 38, 30);
+
+--새위튀김덮밥--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 15, 90);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(14, 38, 30);
+
+--가츠동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(15, 3, 250);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(15, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(15, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(15, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(15, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(15, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(15, 39, 30);
+
+--돈가스--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(16, 3, 300);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(16, 22, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(16, 19, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(16, 47, 100);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(16, 39, 30);
+
+--카레돈가스--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(17, 3, 300);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(17, 22, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(17, 19, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(17, 47, 100);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(17, 42, 30);
+
+--치즈돈가스--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(18, 4, 280);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(18, 22, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(18, 19, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(18, 47, 100);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(18, 39, 30);
+
+--열무비빔규동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 27, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(19, 49, 20);
+
+--얼큰해물짬뽕--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 16, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 19, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 41, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(20, 44, 200);
+
+--사누끼우동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(21, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(21, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(21, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(21, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(21, 36, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(21, 44, 200);
+
+--야채튀김우동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(22, 28, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(22, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(22, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(22, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(22, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(22, 44, 200);
+
+--냉우동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(23, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(23, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(23, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(23, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(23, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(23, 44, 200);
+
+--냉모밀--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(24, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(24, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(24, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(24, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(24, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(24, 45, 200);
+
+--나가사키짬뽕--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 16, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 19, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 32, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(25, 44, 200);
+
+--해물야끼우동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 16, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 19, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 33, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 41, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(26, 44, 200);
+
+--꼬치어묵우동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(27, 10, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(27, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(27, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(27, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(27, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(27, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(27, 44, 200);
+
+--김치어묵우동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 18, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 9, 60);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(28, 44, 200);
+
+--냉비빔--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(29, 19, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(29, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(29, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(29, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(29, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(29, 49, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(29, 45, 200);
+
+--돈가스김치나베우동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 3, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 18, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 31, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 36, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 41, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(30, 44, 200);
+
+--열무냉모밀--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 19, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 49, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 45, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(31, 27, 30);
+
+--후리가케--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(32, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(32, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(32, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(32, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(32, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(32, 30, 20);
+
+--소불고기--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(33, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(33, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(33, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(33, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(33, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(33, 1, 70);
+
+--보쌈김치--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(34, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(34, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(34, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(34, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(34, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(34, 2, 70);
+
+--참치샐러드--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 13, 60);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 23, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(35, 37, 20);
+
+--커리치킨--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(36, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(36, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(36, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(36, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(36, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(36, 6, 60);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(36, 42, 20);
+
+--김치참치--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(37, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(37, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(37, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(37, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(37, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(37, 13, 60);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(37, 18, 40);
+
+--김치알밥--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(38, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(38, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(38, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(38, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(38, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(38, 17, 60);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(38, 18, 40);
+
+--떡갈비--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(39, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(39, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(39, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(39, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(39, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(39, 5, 70);
+
+--달콤숯닭--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(40, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(40, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(40, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(40, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(40, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(40, 6, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(40, 40, 15);
+
+--훈제핫닭--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(41, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(41, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(41, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(41, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(41, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(41, 6, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(41, 41, 15);
+
+--불장난오징어--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(42, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(42, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(42, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(42, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(42, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(42, 12, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(42, 41, 15);
+
+--고소한 멸치--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(43, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(43, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(43, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(43, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(43, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(43, 8, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(43, 39, 15);
+
+--게살샐러드--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 11, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 23, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(44, 37, 20);
+
+--구운스팸오니기리--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(45, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(45, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(45, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(45, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(45, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(45, 7, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(45, 39, 20);
+
+--매운스팸오니기리--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 7, 70);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 39, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(46, 41, 20);
+
+--힘쎈장어오니기리--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(47, 47, 150);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(47, 29, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(47, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(47, 35, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(47, 46, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(47, 15, 80);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(47, 39, 20);
+
+--열무비빔규동--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 1, 160);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 22, 40);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 24, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 31, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 33, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 14, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 43, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 47, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 27, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(48, 49, 20);
+
+--열무냉모밀--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 19, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 20, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 21, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 24, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 36, 50);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 49, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 45, 200);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(49, 27, 30);
+
+--컵밥--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 47, 100);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 29, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 34, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 35, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 38, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 7, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 39, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(50, 41, 10);
+
+--세트메뉴--
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 1, 80);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 21, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 22, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 24, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 31, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 33, 15);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 14, 30);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 43, 10);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 47, 400);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 29, 60);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 34, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 35, 80);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 46, 20);
+insert into product_ingredients(pdt_id, ing_id, pdig_amount)
+values(51, 13, 60); 
 /*
  * Table Name: STORE_DATA
  */
