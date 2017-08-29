@@ -1,28 +1,40 @@
-
 $(document).ready(function() {
 	$("#toOrder").click(function() {
 
-		 $('#confirmModal').modal('show');
+		 $("#restModal").modal('show')
+		 
+	});
+});
+
+/*
+$(document).ready(function() {
+	$("#toOrder").click(function() {
+
+		 $("#restModal").modal({
+			 
+			 
+			 
+		 })
+		 
 	});
 });
 
 
 
-/*
 
-function checkType(){
-	$.ajax({
-	type:'post',
-	url:'checkTypeBtn.jsp',
 
-	contentType : "application/x-www-form-urlencoded; charset=utf-8",
 
-	success : function(data) {
-	    var e = $(data).find('찾으려는요소');
-	    $("content").html(e);
-	},	
-	
-	})
-	
+
+function showModal() {
+	  $.ajax({
+	    type : 'POST',
+	    url : 'checkModal.do',
+	    dataType : 'html',
+	    success : function(data) {
+	      $("#modal").html(data);
+	      initModal();
+	    }
+	  })
+}
 */
 

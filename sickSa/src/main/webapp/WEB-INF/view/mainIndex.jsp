@@ -112,8 +112,36 @@
 		<div class="content-holder">
 
 
-			<button class="btn btn-default"  data-toggle="modal" data-target="#confirmModal" id="toOrder"
+			<button class="btn btn-default"   id="toOrder"
 				style="display: block; margin: 0 auto;">to Order</button>
+
+			<!-- Modal  start-->
+			<div class="modal"  id="restModal" role="dialog" tabindex="-1"   aria-labelledby="restModal" aria-hidden="true">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title"></h4>
+						</div>
+						<div class="modal-body">
+					
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Yes</button>
+						</div>
+					</div>
+					<!-- modal content  end-->
+
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal-content -->
+
 
 
 		</div>
