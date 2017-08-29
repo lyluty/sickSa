@@ -108,9 +108,14 @@ public class IngredientServiceImpl implements IngredientService{
 	public Integer updateIngDetail(IngredientDetails ingredientDetails) {
 		return ingredientDetailsMapper.updateIngDetail(ingredientDetails);
 	}
-	//재료를 입고하여,출고하여 재고를 변경한다
+	//재료를 출고하면서 출고일시 기록과 재고의 변경을 한다 
 	@Override
-	public Integer changeStock(ProductIngredients productIngredients) {
+	public Integer changeStock(
+			ProductIngredients productIngredients,Integer ing_id) {
+		ingredientDetailsMapper
+					.changeIgctOut(
+						(ingredientDetailsMapper
+								.selectIngDetailById(ing_id)));
 		return ingredientsMapper.changeStock(productIngredients);
 	}
 	//재료를 삭제한다

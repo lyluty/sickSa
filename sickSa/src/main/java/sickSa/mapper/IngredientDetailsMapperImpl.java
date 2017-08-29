@@ -54,5 +54,9 @@ public class IngredientDetailsMapperImpl implements IngredientDetailsMapper {
 		return sqlSession.update("updateIngDetail",ingredientDetails);
 	}
 
+	@Override
+	public Integer changeIgctOut(IngredientDetails ingredientDetails) {
+		return sqlSession.update("changeIgctOut",ingredientDetails);
+	}
 
 }

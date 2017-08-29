@@ -89,4 +89,17 @@
 			ing_id = #{ing_id}
 	</update> 
 	
+	<!-- 수량이 변경될 때 igdt_out이 등록되고 --> 
+	<update 
+		id="changeIgctOut"
+		parameterType="sickSa.domain.IngredientDetails">
+		UPDATE 
+			ingredient_details
+		SET 
+			igdt_out=#{igdt_out}
+		WHERE 
+			ing_id = #{ing_id}
+	</update> 
+	
+	
 </mapper>

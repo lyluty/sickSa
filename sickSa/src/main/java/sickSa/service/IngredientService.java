@@ -32,8 +32,10 @@ public interface IngredientService {
 	public IngredientDetails openIngDetail(Integer ING_ID);
 	//재료의 정보(단위,입고일시,출고일시,재료단가,연락처)를 수정한다
 	public Integer updateIngDetail(IngredientDetails ingredientDetails);
-	//재료를 입고하여,출고하여 재고를 변경한다
-	public Integer changeStock(ProductIngredients productIngredients);
+	
+	
+	//재료를 출고하면서 출고일시 기록과 재고의 변경을 한다 
+	public Integer changeStock(ProductIngredients productIngredients,Integer ing_id);
 	//재료를 삭제한다
 	public Integer expireStock(Integer ING_ID);
 	

@@ -34,10 +34,10 @@
 	</resultMap>
 	
 	<resultMap id="PDIG" type="sickSa.domain.ProductIngredients">
-		<result column="PDT_ID" property="PDT_ID"/>
-		<association property="PDIG_AMOUNTS" javaType="java.util.Map">
-			<result property="key" column="ING_ID"/>
-			<result property="value" column="PDIG_AMOUNT"/>
+		<result column="pdt_id" property="pdt_id"/>
+		<association property="pdig_amount" javaType="java.util.Map">
+			<result property="key" column="ing_id"/>
+			<result property="value" column="pdig_amount"/>
 		</association>
 	</resultMap>
 	
@@ -110,29 +110,22 @@
   	Map을 사용할때 index는 key객체가 되고 항목은 value객체가 된다.
 	-->
 	
+	<!-- 수량을 변경 시키는 함수 아직 테스트 안해봄 -->
 	<update 
 		id="changeStock"
 		parameterType="sickSa.domain.ProductIngredients">
-		<bind name="ING_ID" value="_parameter.getPDIG_AMOUNT()"/>
+		<bind name="ing_id" value="_parameter.getPDIG_AMOUNT()"/>
 		<bind name="PDIG_AMOUNT" value="_parameter."/>
 		UPDATE ingredients
-		<foreach item="item" index="index" collection="list"
-      		open="(" separator="," close=")">
-		SET ING_STOCK= (SELECT ING_STOCK
+		<foreach item="item" index="index" collection="list">
+		SET ing_stock= (SELECT ing_stock
 		                FROM ingredients
-		                WHERE ING_ID= #{item}) - #{index}
-		WHERE ING_ID = #{item};
+		                WHERE ing_id= #{item}) - #{index}
+		WHERE ing_id = #{item};
 		</foreach>
 	</update>  
 	
-	<!-- <update 
-		id="changeStock"
-		parameterType="sickSa.domain.ProductIngredients">
-		UPDATE INGREDIENTS
-		SET ING_STOCK= (SELECT ING_STOCK
-		                FROM INGREDIENTS
-		                WHERE ING_ID= #{ING_ID, resultMap=PDIG}) - #{PDIG_AMOUNT, resultMap=PDIG}
-		WHERE ING_ID = #{ING_ID, resultMap=PDIG};
-	</update>  -->
+	
+	
 	
 </mapper>
