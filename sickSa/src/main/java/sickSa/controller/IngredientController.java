@@ -30,7 +30,7 @@ public class IngredientController {
 	
 	@RequestMapping("/ingredients")
 	public String salesView() {
-		return "ingredientView";
+		return "ing/ingredientView";
 	}
 	@RequestMapping("/igctList")
 	public String loadIgctList(Model model){
