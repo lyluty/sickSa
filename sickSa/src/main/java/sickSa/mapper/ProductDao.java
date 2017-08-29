@@ -1,23 +1,24 @@
 package sickSa.mapper;
 
-
-
 import java.util.List;
-import java.util.Map;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import sickSa.domain.Product;
+import sickSa.domain.ProductCategory;
 
+@Repository
+@Mapper
 public interface ProductDao {
 
-	int insertProduct(Product product);
-	int updateProduct(Product updateProduct);
-	int deleteProductById(int pdt_id);
-	Product findProductById(int pdt_id);
-	List<Product> findAllProducts();
-	List<Map> findAllProductsMap();
-	List<Product> findProductsByCategoryId(int pdct_id);
-
-
-
+	@Select("select * from PRODUCT_CATEGORIES order by PDCT_ID")
+	List<ProductCategory> selectProductCategoryList();
+	
+	@Select("select * from PRODUCTS where PDCT_ID = #{categoryId} order by PDT_ID")
+	List<Product> selectProductListByCategoryId(int categoryId);
+	
+	@Select("select * from PRODUCTS where PDT_ID = #{productId}")
+	Product selectProductByProductId(int productId);
 }

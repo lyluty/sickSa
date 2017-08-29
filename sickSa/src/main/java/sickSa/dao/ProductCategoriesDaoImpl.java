@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import sickSa.domain.Product;
-import sickSa.domain.ProductCategories;
+import sickSa.domain.ProductCategory;
 
 
 public  class ProductCategoriesDaoImpl implements ProductCategoriesDao {
@@ -26,22 +26,22 @@ public  class ProductCategoriesDaoImpl implements ProductCategoriesDao {
 
 	
 	@Override
-	public int insertCategories(ProductCategories addPC) {
+	public int insertCategories(ProductCategory addPC) {
 		int insertCate = sqlSession.insert("insertCategories", addPC);
 		return insertCate;
 	}
 
 
 	@Override
-	public int updateCategories(ProductCategories updatePC) {
+	public int updateCategories(ProductCategory updatePC) {
 		int updateCate = sqlSession.update("updateCategories", updatePC);
 		return updateCate;
 	}
 
 
 	@Override
-	public List<ProductCategories> selectAllProductCategories() {
-		List<ProductCategories> categoriesList = sqlSession.
+	public List<ProductCategory> selectAllProductCategories() {
+		List<ProductCategory> categoriesList = sqlSession.
 		selectList("selectAllProductCategories");
 		return categoriesList;
 	}

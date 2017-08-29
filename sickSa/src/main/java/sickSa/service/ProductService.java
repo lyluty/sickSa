@@ -1,22 +1,48 @@
 package sickSa.service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import sickSa.domain.Order;
+import sickSa.domain.OrderDetail;
 import sickSa.domain.Product;
-import sickSa.domain.ProductCategories;
+import sickSa.domain.ProductCategory;
+import sickSa.mapper.ProductDao;
 
-public interface ProductService {
+/*
+ * 내용 전체를 OrderService로 옮기기
+ */
+@Service
+public class ProductService {
 
-	int insertProduct(Product product);
-	List<Map> getProductList();
-	List<Product> getAllProductList();
-	List<Product> getAllCategoryProductList(Integer pdct_id);
-	public List<ProductCategories> getAllCategories();
-	Product getProductById(Integer pdt_id);
-	int updateProductById(Product product);
-	int deleteProductById(Integer pdt_id);
+	@Autowired
+	private ProductDao productDao;
 
-	
-	
+//	public List<OrderDetail> addToCart(List<OrderDetail> sCart, Product product) {
+//		List<OrderDetail> cart = sCart == null ? new ArrayList<OrderDetail>() : sCart;
+//		cart.add(new OrderDetail(product));
+//		return cart;
+//	}
+//
+//	public Order createOrder(List<OrderDetail> cart) {
+//		Order order = new Order();
+//		OrderDetail orderDetail = new OrderDetail();
+//		return null;
+//	}
+//
+//	public List<ProductCategory> productCategoryList() {
+//		List<ProductCategory> productCategoryList = productDao.selectProductCategoryList();
+//		return productCategoryList;
+//	}
+//
+//	public List<Product> productListByCategoryId(int categoryId) {
+//		return productDao.selectProductListByCategoryId(categoryId);
+//	}
+//
+//	public Product getProduct(int productId) {
+//		return productDao.selectProductByProductId(productId);
+//	}
 }
