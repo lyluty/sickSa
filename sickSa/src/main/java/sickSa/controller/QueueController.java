@@ -17,41 +17,24 @@ public class QueueController {
 	QueueService queueService;
 	StoreService storeService;
 
-	@RequestMapping("/test/queue")
-	public String test() {
-		return "test/queue";
-	}
-
-	@RequestMapping("/test/queue/list")
-	public String testList(Model model) {
-		model.addAttribute("queueLogList", queueService.list());
-		return "test/queue/list";
-	}
-	
-	@RequestMapping("/test/queue/get/{qlog_id}")
-	public String testGet(Model model, @PathVariable("qlog_id") int qlog_id) {
-		model.addAttribute("queueLog", queueService.get(qlog_id));
-		return "test/queue/get";
-	}
-	  // modal check
+	// modal check
 	@RequestMapping("checkModal.do")
-	public String checkType(Model model){
-		if(storeService.getRest()!=0){
-			model.addAttribute("restCnt",storeService.getRest());			
-			return  "restModal";
+	public String checkType(Model model) {
+		if (storeService.getRest() != 0) {
+			model.addAttribute("restCnt", storeService.getRest());
+			return "restModal";
 		}
-		model.addAttribute("waitCnt",storeService.getWaiting());			
+		model.addAttribute("waitCnt", storeService.getWaiting());
 		return "waitModal";
 	}
 
 	@RequestMapping("waitModal")
-	public String waitModal(){
-		return "main/waitModal";
+	public String waitModal() {
+		return "waitModal";
 	}
-		
-		@RequestMapping("restModal")
-		public String restModal(){
-			return "main/restModal";
-		}
-	
+
+	@RequestMapping("restModal")
+	public String restModal() {
+		return "restModal";
+	}
 }

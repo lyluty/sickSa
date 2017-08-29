@@ -7,28 +7,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
-<script type="text/javascript">
-  function ProductList() {
-    document.f.action = "productL";
-    document.f.method = "post";
-    document.f.submit();
-  }
-
-  function Jumun() {
-    document.f.action = "";
-    document.f.method = "post";
-    document.f.submit();
-  }
-  function Cart() {
-    document.f.action = "product_cart";
-    document.f.method = "post";
-    document.f.submit();
-  }
-  function back() {
-    history.back();
-  }
-</script>
-
 <title>Insert title here</title>
 </head>
 <body>
@@ -41,12 +19,6 @@
   <button onclick="orderNow(${product.pdt_id})">주문하기</button>
   <button onclick="addToCart(${product.pdt_id})">장바구니 담기</button>
   <button onclick="back()">목록</button>
-  <!--
-  <input type="button" onClick="Jumun();" value="주문 하기" />
-  <input type="button" onClick="Cart();" value="장바구니 담기" style="visibility: hidden;" />
-  <input type="button" onClick="Cart();" value="장바구니 담기" />
-  <input type="button" onClick="ProductList();" value="목록" />
-  -->
 </body>
 
 </html>

@@ -14,5 +14,4 @@
 <script type="text/javascript" src="include/js/jquery.vide.js"></script>
 <script type="text/javascript" src="include/js/simple.parallax.js"></script>
 <script type="text/javascript" src="include/js/custom.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbBpiB3FIaYAuD1pvRGB_1rr2QwHW-Eb4&v=3.exp"></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-576b8f979487378e"></script>

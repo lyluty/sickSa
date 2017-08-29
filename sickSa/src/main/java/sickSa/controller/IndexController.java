@@ -8,7 +8,7 @@ public class IndexController {
 
 	@RequestMapping("mainIndex")
 	public String mainIndex() {
-		return "main/mainIndex";
+		return "mainIndex";
 	}
 	
 }
