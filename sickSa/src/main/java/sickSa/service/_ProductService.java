@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import sickSa.domain.Order;
 import sickSa.domain.OrderDetail;
+import sickSa.domain.ProductIngredients;
 import sickSa.domain._Product;
 import sickSa.domain._ProductCategory;
 import sickSa.mapper._ProductDao;
@@ -47,4 +48,5 @@ public class _ProductService {
 	public _Product getProduct(int productId) {
 		return productDao.selectProductByProductId(productId);
 	}
+	
 }

@@ -1,7 +1,11 @@
 package sickSa.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +18,7 @@ import sickSa.domain.ProductIngredients;
 import sickSa.mapper.IngredientCategoriesMapper;
 import sickSa.mapper.IngredientDetailsMapper;
 import sickSa.mapper.IngredientsMapper;
+import sickSa.mapper.ProductIngredientMapper;
 
 @Service
 public class IngredientServiceImpl implements IngredientService{
@@ -24,6 +29,8 @@ public class IngredientServiceImpl implements IngredientService{
 	private IngredientDetailsMapper ingredientDetailsMapper;
 	@Autowired
 	private IngredientCategoriesMapper ingredientCategoriesMapper;
+	@Autowired
+	private ProductIngredientMapper productIngredientMapper;
 	
 	/*ingredients, details, categories mapper setter*/
 	public void setIngredientsMapper(IngredientsMapper ingredientsMapper) {
@@ -40,6 +47,10 @@ public class IngredientServiceImpl implements IngredientService{
 		this.ingredientCategoriesMapper = ingredientCategoriesMapper;
 	}
 	
+	public void setProductIngredientMapper(ProductIngredientMapper productIngredientMapper) {
+		this.productIngredientMapper = productIngredientMapper;
+	}
+
 	//모든 재료 카테고리별 모든 재료 리스트를 불러온다
 	@Override
 	public @ResponseBody ArrayList<Ingredients> loadDefaultList(Integer IGCT_ID) {
@@ -110,13 +121,19 @@ public class IngredientServiceImpl implements IngredientService{
 	}
 	//재료를 출고하면서 출고일시 기록과 재고의 변경을 한다 
 	@Override
-	public Integer changeStock(
-			ProductIngredients productIngredients,Integer ing_id) {
-		ingredientDetailsMapper
-					.changeIgctOut(
-						(ingredientDetailsMapper
-								.selectIngDetailById(ing_id)));
-		return ingredientsMapper.changeStock(productIngredients);
+	public Integer changeStock(Integer pdt_id) {
+		ProductIngredients pdig = productIngredientMapper.passAmount(pdt_id);
+		Map<Integer, Integer> pdigMap = pdig.getPdig_amount();
+		
+		Set<Integer> ingIdSet = pdigMap.keySet();
+		
+		for (Integer ingId : ingIdSet) {
+			ingredientDetailsMapper
+						.changeIgctOut(
+								(ingredientDetailsMapper
+										.selectIngDetailById(ingId)));
+		}
+		return ingredientsMapper.changeStock(pdig);
 	}
 	//재료를 삭제한다
 	@Override

@@ -1,5 +1,6 @@
 package sickSa.mapper;
 
+
 import sickSa.domain.ProductIngredients;
 
 public interface ProductIngredientMapper {

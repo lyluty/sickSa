@@ -13,8 +13,8 @@
 	<select 
 		id="passAmount" 
 		parameterType="int" 
-		resultMap="pdig">
-		SELECT pdt_id,ing_id,pdig_amount
+		resultType="sickSa.domain.ProductIngredients">
+		SELECT pdt_id,pdig_amount
 		FROM product_ingredients
 		WHERE pdt_id=#{pdt_id}
 	</select>
