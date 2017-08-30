@@ -2,7 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="main-container single-member">
+<script src='include/js/order.js'></script>
+
+<div id="pddt" class="main-container single-member">
 	<div class="inner-banner parallax" data-parallax-speed="5" style="background-image: include/images/project-slide2.jpg;">
 		<div class="content-holder">
 			<h3 class="content-title">${product.pdt_name}</h3>
@@ -18,9 +20,7 @@
 					</ul>
 				</div>
 				<ul class="bottom-nav">
-					<li><button onclick="orderNow(${product.pdt_id})">주문하기</button></li>
 					<li><button onclick="addToCart(${product.pdt_id})">장바구니 담기</button></li>
-					<li><button onclick="back()">목록</button></li>
 				</ul>
 			</div>
 			<div class="content-holder">
