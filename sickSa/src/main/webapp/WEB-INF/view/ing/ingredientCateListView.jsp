@@ -1,16 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!-- font start -->
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+</style>
+<!-- font end -->
+
+
 <script src='include/js/ingredient.js'></script>
 <div id="igctListForm" class="panel">
-	<h3 class="content-title">Ingredient Category</h3>
+	<h1 class="content-title" style ="font-family:hanna; font-weight: 100;">재료 종류</h1>
 	<!-- service list start -->
 	<ul id="igctList" class="service-list">
 		<c:forEach var="igct" items="${ingredientCategoriesList}">
-				<!-- 얘가 토글되야됨. -->
 			<li>
 				<div class="panel">
 					<div class="panel-heading">
-						<div class="service-box" onclick="ing_list_load(${igct.igct_id})">
+						<div style ="font-size:4em; font-family:hanna;"class="service-box" onclick="ing_list_load(${igct.igct_id})">
 							<!-- /SICKSA/ingList?igct_id=${igct.igct_id} -->
 							${igct.igct_name}
 						</div>
