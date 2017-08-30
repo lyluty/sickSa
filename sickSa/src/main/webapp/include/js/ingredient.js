@@ -50,10 +50,10 @@ function igct_list_load() {
 
 function ing_list_load(i){
 	alert(i);
+	$('#ingList' + i).toggle();
 	$.ajax({
 		url : 'ingList/'+i,
 		type : 'GET',
-		data : Number,
 		dataType : 'html',
 		success : function(data) {
 			$("div#ingList"+i).html(data);
@@ -85,15 +85,12 @@ function ing_insert_action(){
 	document.getElementById("ingAddForm").submit();
 }
 
+
 // 재료카테고리 이벤트처리
 $('.panel-heading h6').on('click',function(e){
 	$(this).parent().parent().next().fadeToggle();
 });
 
-// 카테고리 토글 처리
-$('.panel-heading ingList').on('click',function(e){
-	$(this).parent().parnet().fadeToggle();
-});
 
 
 

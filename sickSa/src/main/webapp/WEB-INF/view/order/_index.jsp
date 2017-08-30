@@ -9,6 +9,7 @@
 <jsp:include page="../common/include-head.jsp" flush="false" />
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <!-- head end -->
+
 </head>
 <body>
   <div class="animsition">
@@ -53,6 +54,11 @@
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
   <script src='include/js/order.js'></script>
+  <script type="text/javascript">
+	$(window).load(function() {
+		showProductList(1);
+	});
+</script>
   <!-- tail end -->
 </body>
 </html>

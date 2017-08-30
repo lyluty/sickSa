@@ -6,16 +6,17 @@
 	<!-- service list start -->
 	<ul id="igctList" class="service-list">
 		<c:forEach var="igct" items="${ingredientCategoriesList}">
+				<!-- 얘가 토글되야됨. -->
 			<li>
 				<div class="panel">
 					<div class="panel-heading">
-						<div class="service-box">
+						<div class="service-box" onclick="ing_list_load(${igct.igct_id})">
 							<!-- /SICKSA/ingList?igct_id=${igct.igct_id} -->
-							<a href="javascript:ing_list_load(${igct.igct_id});">${igct.igct_name}</a>
+							${igct.igct_name}
 						</div>
 					</div>
 					<!-- Category List Slide start -->
-					<div id="ingList${igct.igct_id}"></div>
+					<div id="ingList${igct.igct_id}" hidden="true"></div>
 					<!-- Category List Slide end -->
 				</div>
 			</li>
