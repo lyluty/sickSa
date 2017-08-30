@@ -1,9 +1,16 @@
 $(document).ready(function() {
 	$("#toOrder").click(function() {
 
-		 $("#restModal").modal('show')
-		 
+	
 	});
+});
+
+$('#mainModal').on('show.bs.modal', function (e) {
+    var loadurl = $(e.relatedTarget).data('checkModal.do');
+    $(this).find('.modal-header').load(loadurl);
+    $(this).find('.modal-body').load(loadurl);
+
+    $(this).find('.modal-footer').load(loadurl);
 });
 
 /*

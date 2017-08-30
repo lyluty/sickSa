@@ -29,11 +29,56 @@
 <link href="include/css/main.css" rel="stylesheet" type="text/css">
 <script src="include/js/modernizr-custom.js"></script>
 <script src="include/js/jquery-2.2.2.min.js"></script>
+
+<!--  
 <script src="include/js/mainModal.js"></script>
+-->
+
+<script>
+
+$(document).ready(function() {
+	$("#toOrder").click(function() {
+
+		$('#mainModal').modal('show')
+	});
+});
+
+
+
+
+
+function loadContents(){
+	$("#mainModal").on('show.bs.modal', function (e) {
+	    var loadurl = $(e.relatedTarget).data("checkModal");
+	    $(this).find('.modal-header').load(loadurl);
+	    $(this).find('.modal-body').load(loadurl);
+
+	    $(this).find('.modal-footer').load(loadurl);
+	});
+}
+
+function checkM(){
+	var type = $('#type').val();
+	if (type == 'order') {
+		var rest=$(restCnt).val();
+		alert(rest);
+	} else {
+		var wait=$(waitCnt).val();
+		alert(wait);
+	}
+
+	
+	
+	
+	
+}
+</script>
+
+
 
 </head>
 <body>
-
+<input id="type" type="hidden" value="${type}"/>
 	<!-- hero-container start -->
 	<div class="hero-container">
 
@@ -112,35 +157,11 @@
 		<div class="content-holder">
 
 
-			<button class="btn btn-default"   id="toOrder"
+			<button class="btn btn-default"    id="toOrder" data-toggle="modal" data-target="#mainModal"
 				style="display: block; margin: 0 auto;">to Order</button>
-
-			<!-- Modal  start-->
-			<div class="modal"  id="restModal" role="dialog" tabindex="-1"   aria-labelledby="restModal" aria-hidden="true">
-				<div class="modal-dialog">
-
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title"></h4>
-						</div>
-						<div class="modal-body">
-					
-						</div>
-
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Yes</button>
-						</div>
-					</div>
-					<!-- modal content  end-->
-
-				</div>
-				<!-- /.modal-dialog -->
-			</div>
-			<!-- /.modal-content -->
+				
+				<button class="btn btn-default"   onclick="checkM()"
+				style="display: block; margin: 0 auto;">to Check</button>
 
 
 
