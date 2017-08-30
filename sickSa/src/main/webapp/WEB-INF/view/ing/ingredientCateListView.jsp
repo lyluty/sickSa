@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<!-- font start -->
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 </style>
-
+<!-- font end -->
 
 
 <script src='include/js/ingredient.js'></script>
 <div id="igctListForm" class="panel">
-	<h1 class="content-title" style ="font-family:hanna; font-weight: 100;">재료 종류 리스트</h1>
+	<h1 class="content-title" style ="font-family:hanna; font-weight: 100;">재료 종류</h1>
 	<!-- service list start -->
 	<ul id="igctList" class="service-list">
 		<c:forEach var="igct" items="${ingredientCategoriesList}">
