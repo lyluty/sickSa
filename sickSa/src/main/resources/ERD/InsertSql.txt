@@ -127,7 +127,7 @@ values(13,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(14, 
-'새우튀김덮밥', 8000, 'include/images/menu/donburi/fried_prawn_rice.jpg', 
+'새위튀김덮밥', 8000, 'include/images/menu/donburi/fried_prawn_rice.jpg', 
 'include/images/menu/donburi/fried_prawn_rice.jpg', 
 '고소하고 담백한 새우튀김을 
 특제 간장소스로 맛을 낸 
@@ -170,14 +170,14 @@ values(19,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(20, 
-'얼큰해물짬뽕', 7000, 'include/images/menu/kind of noodle/hot_seafood_jjamppong', 
+'얼큰해물짬뽕', 7000, 'include/images/menu/kind of noodle/hot_seafood_jjamppong.jpg', 
 'include/images/menu/kind of noodle/hot_seafood_jjamppong.jpg', 
 '얼큰하고 진한 해물맛의 붉은 
 국물이 매력적인 우동', 2);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(21, 
-'사누끼우동', 7500, 'include/images/menu/kind of noodle/sanukki_udon', 
+'사누끼우동', 7500, 'include/images/menu/kind of noodle/sanukki_udon.jpg', 
 'include/images/menu/kind of noodle/sanukki_udon.jpg', 
 '감칠맛나는 일본 정통 
 우동소스에 쫄깃한
@@ -188,7 +188,7 @@ values(21,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(22, 
-'야채튀김우동', 7000, 'include/images/menu/kind of noodle/vegetables_fried_udon', 
+'야채튀김우동', 7000, 'include/images/menu/kind of noodle/vegetables_fried_udon.jpg', 
 'include/images/menu/kind of noodle/vegetables_fried_udon.jpg', 
 '일본 정통우동에 고소한
 야채튀김을 올려 감칠맛을
@@ -196,7 +196,7 @@ values(22,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(23, 
-'냉우동', 7000, 'include/images/menu/kind of noodle/iced_udon', 
+'냉우동', 7000, 'include/images/menu/kind of noodle/iced_udon.jpg', 
 'include/images/menu/kind of noodle/iced_udon.jpg', 
 '살얼음이 동동 뜬 시원한
 메밀육수에 쫄깃한 면이
@@ -204,14 +204,14 @@ values(23,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(24, 
-'냉모밀', 7000, 'include/images/menu/kind of noodle/iced_soba', 
+'냉모밀', 7000, 'include/images/menu/kind of noodle/iced_soba.jpg', 
 'include/images/menu/kind of noodle/iced_soba.jpg', 
 '살얼음이 동동 뜬 시원한 
 저칼로리 영양식 메밀소바', 2);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(25, 
-'나가사키짬뽕', 7500, 'include/images/menu/kind of noodle/nagassaki_jjamppong', 
+'나가사키짬뽕', 7500, 'include/images/menu/kind of noodle/nagassaki_jjamppong.jpg', 
 'include/images/menu/kind of noodle/nagassaki_jjamppong.jpg', 
 '정성껏 우린 진한 사골육수에
 해물과 채소를 듬뿍넣어
@@ -220,7 +220,7 @@ values(25,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(26, 
-'해물야끼우동', 8000, 'include/images/menu/kind of noodle/seafood_yaki_udon', 
+'해물야끼우동', 8000, 'include/images/menu/kind of noodle/seafood_yaki_udon.jpg', 
 'include/images/menu/kind of noodle/seafood_yaki_udon.jpg', 
 '새우,오징어,홍합,조개살등의
 각종해산물과 신선한 야채에
@@ -230,7 +230,7 @@ values(26,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(27, 
-'꼬치어묵우동', 7500, 'include/images/menu/kind of noodle/stick_fishcake_udon', 
+'꼬치어묵우동', 7500, 'include/images/menu/kind of noodle/stick_fishcake_udon.jpg', 
 'include/images/menu/kind of noodle/stick_fishcake_udon.jpg', 
 '진한 사누끼 우동장국과
 다양한 어묵과 함께 
@@ -238,7 +238,7 @@ values(27,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(28, 
-'김치어묵우동', 7500, 'include/images/menu/kind of noodle/kimchi_fishcake_udon', 
+'김치어묵우동', 7500, 'include/images/menu/kind of noodle/kimchi_fishcake_udon.jpg', 
 'include/images/menu/kind of noodle/kimchi_fishcake_udon.jpg', 
 '진한 사누끼 우동장국과
 숙성김치의 맛을 다양한 어묵과
@@ -246,7 +246,7 @@ values(28,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(29, 
-'냉비빔(모밀/우동)', 7000, 'include/images/menu/kind of noodle/iced_bibim(soba or udon)', 
+'냉비빔(모밀/우동)', 7000, 'include/images/menu/kind of noodle/iced_bibim(soba or udon).jpg', 
 'include/images/menu/kind of noodle/iced_bibim(soba or udon).jpg', 
 '시원하고 매콤한 비빔장과
 야채가 쫄깃한 면과
@@ -254,7 +254,7 @@ values(29,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(30, 
-'돈가스 김치나베우동', 8000, 'include/images/menu/kind of noodle/porkcutlet_kimchi_nabe_udon', 
+'돈가스 김치나베우동', 8000, 'include/images/menu/kind of noodle/porkcutlet_kimchi_nabe_udon.jpg', 
 'include/images/menu/kind of noodle/porkcutlet_kimchi_nabe_udon.jpg', 
 '부드러운 돈가스와 
 얼큰한 국물의 
@@ -262,13 +262,13 @@ values(30,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(31, 
-'열무냉모밀', 7000, 'include/images/menu/kind of noodle/yulmu_iced_soba', 
+'열무냉모밀', 7000, 'include/images/menu/kind of noodle/yulmu_iced_soba.jpg', 
 'include/images/menu/kind of noodle/yulmu_iced_soba.jpg', 
 '여름철 가장 맛있는 열무를 살얼음 가득한 냉모밀과 함께 즐길 수 있는 여름 특별 메뉴', 2);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(32, 
-'후리가케', 3000, 'include/images/menu/onigiri/furikake', 
+'후리가케', 3000, 'include/images/menu/onigiri/furikake.jpg', 
 'include/images/menu/onigiri/furikake.jpg', 
 '가다랑어 맛이 나는
 일본식 깨와 김이 어우러진
@@ -276,21 +276,21 @@ values(32,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(33, 
-'소불고기', 3000, 'include/images/menu/onigiri/bulgogi', 
+'소불고기', 3000, 'include/images/menu/onigiri/bulgogi.jpg', 
 'include/images/menu/onigiri/bulgogi.jpg', 
 '한국인에게 가장 친숙한
 소불고기 오니기리', 3);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(34, 
-'보쌈김치', 3000, 'include/images/menu/onigiri/bossam', 
+'보쌈김치', 3000, 'include/images/menu/onigiri/bossam.jpg', 
 'include/images/menu/onigiri/bossam.jpg', 
 '상큼하고 아삭한 보쌈 무를 넣은
 개운한 오니기리', 3);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(35, 
-'참치샐러드', 3000, 'include/images/menu/onigiri/tuna_salad', 
+'참치샐러드', 3000, 'include/images/menu/onigiri/tuna_salad.jpg', 
 'include/images/menu/onigiri/tuna_salad.jpg', 
 '기름을 제거한 담백한 참치에
 피클과 마요네즈를 함께 버무려
@@ -298,14 +298,14 @@ values(35,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(36, 
-'커리치킨', 3000, 'include/images/menu/onigiri/curry_chicken', 
+'커리치킨', 3000, 'include/images/menu/onigiri/curry_chicken.jpg', 
 'include/images/menu/onigiri/curry_chicken.jpg', 
 '고소한 치킨 카라아게에 달콤한
 카레소스를 버무린 오니기리', 3);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(37, 
-'김치참치', 3000, 'include/images/menu/onigiri/kimchi_tuna', 
+'김치참치', 3000, 'include/images/menu/onigiri/kimchi_tuna.jpg', 
 'include/images/menu/onigiri/kimchi_tuna.jpg', 
 '매콤한 소스에 김치와
 참치를 넣고 볶아
@@ -314,7 +314,7 @@ values(37,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(38, 
-'김치알밥', 3000, 'include/images/menu/onigiri/kimchi_egg', 
+'김치알밥', 3000, 'include/images/menu/onigiri/kimchi_egg.jpg', 
 'include/images/menu/onigiri/kimchi_egg.jpg', 
 '개운한 김치볶음과 
 톡톡 터지는
@@ -323,7 +323,7 @@ values(38,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(39, 
-'떡갈비', 3000, 'include/images/menu/onigiri/galbi', 
+'떡갈비', 3000, 'include/images/menu/onigiri/galbi.jpg', 
 'include/images/menu/onigiri/galbi.jpg', 
 '맛있는 떡갈비를 
 간장소스에 재워
@@ -331,7 +331,7 @@ values(39,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(40, 
-'달콤숯닭', 3000, 'include/images/menu/onigiri/sweet_chicken', 
+'달콤숯닭', 3000, 'include/images/menu/onigiri/sweet_chicken.jpg', 
 'include/images/menu/onigiri/sweet_chicken.jpg', 
 '훈제된 닭고기를
 데리야끼 소스에 재워
@@ -339,7 +339,7 @@ values(40,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(41, 
-'훈제핫닭', 3000, 'include/images/menu/onigiri/grilled_hot_chicken', 
+'훈제핫닭', 3000, 'include/images/menu/onigiri/grilled_hot_chicken.jpg', 
 'include/images/menu/onigiri/grilled_hot_chicken.jpg', 
 '훈제된 닭고기를 
 불닭소스에 재워
@@ -347,7 +347,7 @@ values(41,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(42, 
-'불장난오징어', 3000, 'include/images/menu/onigiri/hot_squid', 
+'불장난오징어', 3000, 'include/images/menu/onigiri/hot_squid.jpg', 
 'include/images/menu/onigiri/hot_squid.jpg', 
 '쫄깃한 오징어와 상큼한
 오이를 고춧가루양념에
@@ -355,7 +355,7 @@ values(42,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(43, 
-'고소한 멸치', 3000, 'include/images/menu/onigiri/tasty_anchovy', 
+'고소한 멸치', 3000, 'include/images/menu/onigiri/tasty_anchovy.jpg', 
 'include/images/menu/onigiri/tasty_anchovy.jpg', 
 '오니기리의 원조격인 멸치를
 고소하고 바삭하게 볶아
@@ -364,7 +364,7 @@ values(43,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(44, 
-'게살샐러드', 3000, 'include/images/menu/onigiri/crab_salad', 
+'게살샐러드', 3000, 'include/images/menu/onigiri/crab_salad.jpg', 
 'include/images/menu/onigiri/crab_salad.jpg', 
 '기름을 제거한 담백한 게살에
 피클과 마요네즈를 버무려
@@ -372,14 +372,14 @@ values(44,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(45, 
-'구운스팸 오니기리', 3000, 'include/images/menu/onigiri/grilled_spam', 
+'구운스팸 오니기리', 3000, 'include/images/menu/onigiri/grilled_spam.jpg', 
 'include/images/menu/onigiri/grilled_spam.jpg', 
 '스팸을 사용한 짭쪼름하고
 구수한 오니기리', 3);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(46, 
-'매운스팸 오니기리', 3000, 'include/images/menu/onigiri/spicy_spam', 
+'매운스팸 오니기리', 3000, 'include/images/menu/onigiri/spicy_spam.jpg', 
 'include/images/menu/onigiri/spicy_spam.jpg', 
 '훈제된 닭고기를
 데리야끼 소스에 재워
@@ -387,7 +387,7 @@ values(46,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(47, 
-'힘쎈장어 오니기리', 3000, 'include/images/menu/onigiri/strong_eel', 
+'힘쎈장어 오니기리', 3000, 'include/images/menu/onigiri/strong_eel.jpg', 
 'include/images/menu/onigiri/strong_eel.jpg', 
 '훈제된 닭고기를
 데리야끼 소스에 재워
@@ -395,26 +395,26 @@ values(47,
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(48, 
-'열무비빔규동', 7500, 'include/images/menu/new_menu/yulmu_bibim_gyudon', 
+'열무비빔규동', 7500, 'include/images/menu/new_menu/yulmu_bibim_gyudon.jpg', 
 'include/images/menu/new_menu/yulmu_bibim_gyudon.jpg', 
 '여름철 가장 맛있는 열무를 규동과 함께 즐길 수 있는 여름 특별 메뉴', 4);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(49, 
-'열무냉모밀', 7000, 'include/images/menu/new_menu/yulmu_iced_soba', 
+'열무냉모밀', 7000, 'include/images/menu/new_menu/yulmu_iced_soba.jpg', 
 'include/images/menu/new_menu/yulmu_iced_soba.jpg', 
 '여름철 가장 맛있는 열무를 살얼음 가득한 냉모밀과 함께 즐길 수 있는 여름 특별 메뉴', 4);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(50, 
-'컵밥', 4000, 'include/images/menu/cup_bob/cup_bob_main', 
+'컵밥', 4000, 'include/images/menu/cup_bob/cup_bob_main.jpg', 
 'include/images/menu/cup_bob/cup_bob_main.jpg', 
 '(오니한컵/달콤한컵,화끈한컵,스팸한컵) 맛있는 오니기리 3가지를 동시에 맛볼수 있는
 신개념 휴대용 컵밥', 5);
 
 insert into products(pdt_id, pdt_name, pdt_price, pdt_imgsrc_l, pdt_imgsrc_s, pdt_description, pdct_id)
 values(51, 
-'세트메뉴', 11000, 'include/images/menu/set_menu/set_main', 
+'세트메뉴', 11000, 'include/images/menu/set_menu/set_main.jpg', 
 'include/images/menu/set_menu/set_main.jpg', 
 '가족 연인과 함꼐 나눠먹는 즐거움(규동(M)+오니기리2개(참치샐러드,고소한멸치)+사누끼우동', 6);
  
