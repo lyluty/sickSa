@@ -26,7 +26,7 @@
 							<div class="service-icon">
 								<i class="ion ion-android-color-palette"></i>
 							</div>
-							<h3 style ="font-family:hanna; font-weight:100; font-size:35px;">${ing.ing_name}</h3>
+							<h3 style ="font-family:hanna; font-weight:100; font-size:35px; line-height:150%;">${ing.ing_name}</h3>
 						</div>
 					</div>
 					<div class="panel-body">

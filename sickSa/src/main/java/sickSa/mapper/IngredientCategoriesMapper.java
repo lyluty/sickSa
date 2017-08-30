@@ -2,7 +2,7 @@ package sickSa.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import sickSa.domain.IngredientCategories;
 
@@ -31,4 +31,5 @@ public interface IngredientCategoriesMapper {
 	// 카테고리 수정
 	public Integer updateIngredientCategories(IngredientCategories ingredientCategories);
 	
+	public IngredientCategories selectIngredientCategoryById(int igct_id);
 }

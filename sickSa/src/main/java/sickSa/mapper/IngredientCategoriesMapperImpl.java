@@ -49,4 +49,9 @@ public class IngredientCategoriesMapperImpl implements IngredientCategoriesMappe
 		
 		return sqlSession.update("updateIngredientCategories",ingredientCategories);
 	}
+
+	@Override
+	public IngredientCategories selectIngredientCategoryById(int igct_id) {
+		return sqlSession.selectOne("selectIngredientCategoryById", igct_id);
+	}
 }

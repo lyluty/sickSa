@@ -50,7 +50,6 @@
 	
 	<select 
 		id="cateIngList" 
-		parameterType="java.lang.Integer" 
 		resultMap="ingredients">
 		SELECT 
 			ing_id,ing_name,ing_stock,ing_measure,igdt_in,igdt_out,igdt_price,igdt_contact,igct_id,igct_name
@@ -61,7 +60,7 @@
 		NATURAL JOIN 
 			ingredient_categories igct
 		WHERE 
-			igct.igct_name = #{igct_name};
+			igct.igct_name = #{igct_name}
 	</select>
 	
 	<select 
