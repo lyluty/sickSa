@@ -20,7 +20,12 @@
 <script src='include/js/ingredient.js'></script>
 
 <div id="ingListForm" class="panel">
-	<h3 class="content-title">Ingredient</h3>
+	
+	<!--  
+	<span style = " font-size:1.5em;  color: green;">
+	이 글자는 Span에 스타일(style)로 속성을 주었다
+	</span>
+	-->
 	
 	<!-- Ingredient List Slide  start -->
 	<ul class="sub-service-list">
@@ -32,11 +37,11 @@
 							<div class="service-num">${ing.ing_id}</div>
 							<div class="service-icon"><i class="ion ion-android-color-palette"></i>
 							</div>
-							<h6>${ing.ing_name}</h6>
+							<h3>${ing.ing_name}</h3>
 						</div>
 					</div>
 					<div class="panel-body">
-						<p>재고: ${ing.ing_stock}<br/>
+						<p style="font-size:15px; color: green;">재고: ${ing.ing_stock}<br/>
 						단가: ${ing.ingredientDetails.igdt_price}</p>
 					</div>
 				</div>

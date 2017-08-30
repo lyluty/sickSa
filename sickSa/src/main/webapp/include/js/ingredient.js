@@ -87,7 +87,7 @@ function ing_insert_action(){
 
 
 // 재료카테고리 이벤트처리
-$('.panel-heading h6').on('click',function(e){
+$('.panel-heading h3').on('click',function(e){
 	$(this).parent().parent().next().fadeToggle();
 });
 

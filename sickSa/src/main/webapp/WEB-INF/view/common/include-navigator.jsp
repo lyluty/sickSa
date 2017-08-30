@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+</style>
 
 <button class="action action--open" aria-label="Open Menu">
   <span class="icon icon--menu"></span>
 </button>
-<nav id="ml-menu" class="menu">
+<nav style="font-size:30px; font-family:hanna;" id="ml-menu" class="menu">
   <button class="action action--close" aria-label="Close Menu">
     <span class="icon icon--cross"></span>
   </button>
   <div class="menu__wrap">
     <ul data-menu="main" class="menu__level">
       <li class="menu__item"><a class="menu__link menu__link--current" data-submenu="submenu-1" href="#">Home</a></li>
-      <li class="menu__item"><a class="menu__link" data-submenu="submenu-2" href="#">About</a></li>
-      <li class="menu__item"><a class="menu__link" data-submenu="submenu-3" href="#">Services</a></li>
-      <li class="menu__item"><a class="menu__link" href="portfolio.html">Portfolio</a></li>
-      <li class="menu__item"><a class="menu__link" href="blog.html">Blog</a></li>
-      <li class="menu__item"><a class="menu__link" href="testimonials.html">Testimonials</a></li>
-      <li class="menu__item"><a class="menu__link" href="ingredients">재고 현황</a></li>
-      <li class="menu__item"><a class="menu__link" href="servingState">서빙 현황</a></li>
-      <li class="menu__item"><a class="menu__link" data-submenu="submenu-5" href="#">매출관리</a></li>
-
-
-      <li class="menu__item"><a class="menu__link" data-submenu="submenu-4" href="#">Pages</a></li>
-
+      <li class="menu__item"><a class="menu__link" href="ingredients" style="font-weight: 100;">재고 현황</a></li>
+      <li class="menu__item"><a class="menu__link" href="servingState" style="font-weight: 100;">서빙 현황</a></li>
+      <li class="menu__item"><a class="menu__link" data-submenu="submenu-5" href="#" style="font-weight: 100;">매출관리</a></li>
     </ul>
     <!-- Submenu 1 -->
     <ul data-menu="submenu-1" class="menu__level">
@@ -67,9 +61,9 @@
     </ul>
     
     <!-- Submenu 5: 매출관리 -->
-    <ul data-menu="submenu-5" class="menu__level">
-      <li class="menu__item"><a class="menu__link" href="salesViewByTimePeriod">기간별 매출조회</a></li>
-      <li class="menu__item"><a class="menu__link" href="salesViewByProduct">상품별 매출조회</a></li>
+    <ul data-menu="submenu-5" class="menu__level" style ="font-family:hanna; font-weight: 100;">
+      <li class="menu__item"><a class="menu__link" href="salesViewByTimePeriod"style="font-weight:100;">기간별 매출조회</a></li>
+      <li class="menu__item"><a class="menu__link" href="salesViewByProduct"style="font-weight:100;">상품별 매출조회</a></li>
     </ul>
   </div>
 </nav>
