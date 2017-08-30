@@ -13,11 +13,11 @@ public class StoreService {
 	StoreDataDao storeDataDao;
 	
 	/* Method */
-	public boolean checkPin(int pin) {
+	public boolean checkPin(String pin) {
 		return pin == getAdminPin();
 	}
 	
-	public int getAdminPin() {
+	public String getAdminPin() {
 		return storeDataDao.selectAdminPin();
 	}
 	
@@ -29,7 +29,7 @@ public class StoreService {
 		return storeDataDao.selectWaiting();
 	}
 	
-	public int setAdminPin(int adminPin) {
+	public String setAdminPin(String adminPin) {
 		return storeDataDao.updateAdminPin(adminPin);
 	}
 	

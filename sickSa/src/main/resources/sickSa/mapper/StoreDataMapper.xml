@@ -5,6 +5,7 @@
 
 <mapper namespace="sickSa.mapper.StoreDataDao">
 
+<!-- 
 	<select id="select" resultType="sickSa.domain.StoreData">
 		SELECT
 			STDT_ADMIN_PIN,
@@ -15,7 +16,7 @@
 			STORE_DATA
 	</select>
 
-	<update id="update" parameterType="sickSa.domain.Order">
+	<update id="update" parameterType="sickSa.domain.StoreData">
 		UPDATE STORE_DATA
 		SET
 			STDT_ADMIN_PIN = ${stdt_admin_pin},
@@ -23,5 +24,52 @@
 			STDT_REST = ${stdt_rest},
 			STDT_WAITING = ${stdt_waiting}
 	</update>
+	
+	 -->
+	 
+	 <select id="selectAdminPin" resultType="String">
+		SELECT
+			STDT_ADMIN_PIN
+			
+		FROM
+			STORE_DATA
+	</select>
+	
+	 <select id="selectRest" resultType="int">
+		SELECT
+			STDT_REST
+			
+		FROM
+			STORE_DATA
+	</select>
+	
+	 <select id="selectWaiting" resultType="int">
+		SELECT
+			STDT_WAITING
+			
+		FROM
+			STORE_DATA
+	</select>
+	
+	<update id="updateAdminPin" parameterType="String">
+		UPDATE STORE_DATA
+		SET
+			STDT_ADMIN_PIN = ${stdt_admin_pin}
+	</update>
+	
+		<update id="updateRest" parameterType="int">
+		UPDATE STORE_DATA
+		SET
+			STDT_REST = ${stdt_rest}
+	</update>
+	
+		<update id="updateWaiting" parameterType="int">
+		UPDATE STORE_DATA
+		SET
+			STDT_WAITING = ${stdt_waiting}
+	</update>
+	
+	
+	 
 
 </mapper>
