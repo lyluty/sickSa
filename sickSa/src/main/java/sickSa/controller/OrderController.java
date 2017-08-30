@@ -77,6 +77,20 @@ public class OrderController {
 		model.addAttribute("product", product);
 		return "order/productDetail";
 	}
+	
+	@RequestMapping("deleteProductFromCart")
+	@ResponseBody
+	public List<OrderDetail> deleteProductFromCart(HttpSession session, @RequestParam int pId) {
+		@SuppressWarnings("unchecked")
+		List<OrderDetail> sCart = (List<OrderDetail>) session.getAttribute("cart");
+		for (OrderDetail orderDetail : sCart) {
+			if (orderDetail.getPdt_id() == pId) {
+				sCart.remove(orderDetail);
+				break;
+			}
+		}
+		return sCart.size() == 0 ? null : sCart;
+	}
 
 	@RequestMapping("choicePaymentMethod.ajax")
 	public String choicePaymentMethodAjax() {

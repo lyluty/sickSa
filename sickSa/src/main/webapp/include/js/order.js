@@ -25,11 +25,12 @@ function addToCart(productId) {
     $('#content').html(data);
   });
 }
-function choicePaymentMethod() {
-  $.post('choicePaymentMethod.ajax', function(data) {
-    $('#content').html(data);
-  });
-}
+//function choicePaymentMethod() {
+//  $.post('choicePaymentMethod.ajax', function(data) {
+//    $('#content').html(data);
+//  });
+//}
+
 function payNow(paymentMethod) {
   $.post('payNow.ajax', {
     paymentMethod : paymentMethod
