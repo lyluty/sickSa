@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import sickSa.domain.Order;
 import sickSa.domain.OrderDetail;
 import sickSa.domain.Product;
 import sickSa.service.OrderService;
@@ -97,13 +98,23 @@ public class OrderController {
 		return "order/choicePaymentMethod";
 	}
 
-	@RequestMapping("payNow.ajax")
-	@ResponseBody
-	@SuppressWarnings("unchecked")
-	public String payNowAjax(HttpSession session, @RequestParam String paymentMethod) {
+	@RequestMapping("payNow")
+	public String payNowAjax(HttpSession session, Model model, @RequestParam String paymentMethod) {
+		System.out.println(paymentMethod);
+		@SuppressWarnings("unchecked")
 		List<OrderDetail> sCart = (List<OrderDetail>) session.getAttribute("cart");
-		orderService.createOrder(sCart, paymentMethod);
+		Order order = orderService.createOrder(sCart, paymentMethod);
 		session.removeAttribute("cart");
-		return "testProduct";
+		model.addAttribute("order", order);
+		return "order/result";
+	}
+	
+	@RequestMapping("setOrdtAmount")
+	@ResponseBody
+	public void setOrdtAmount(HttpSession session, @RequestParam int pId, @RequestParam int amount) {
+		@SuppressWarnings("unchecked")
+		List<OrderDetail> sCart = (List<OrderDetail>) session.getAttribute("cart");
+		List<OrderDetail> cart = orderService.setOrdtAmount(sCart, pId, amount);
+		session.setAttribute("cart", cart);
 	}
 }

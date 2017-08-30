@@ -101,6 +101,12 @@
         maxValue = parseInt($(this).attr('max'));
         valueCurrent = parseInt($(this).val());
         name = $(this).attr('name');
+        // 컨트롤러로 수량 변경 요청
+        $.post('setOrdtAmount', {pId : name, amount : valueCurrent});
+        // 가격 변경
+        price = $('#price' + name).text();
+        subtotal = price * valueCurrent;
+        $('#subtotal' + name).text(subtotal);
         if (valueCurrent >= minValue) {
           $(".button-number[data-type='minus'][data-field='" + name + "']")
               .removeAttr('disabled')
@@ -130,9 +136,11 @@
     if (paymentMethod == 'card') {
       $('#cardBtn').attr('value', 'selected');
       $('#cashBtn').attr('value', 'unselected');
+      $('#paymentMethod').val('카드');
     } else {
       $('#cardBtn').attr('value', 'unselected');
       $('#cashBtn').attr('value', 'selected');
+      $('#paymentMethod').val('현금');
     }
   }
 </script>
@@ -140,11 +148,11 @@
   <table id="cartTable" class="table table-striped" style="margin: auto; text-align: center">
     <thead>
       <tr>
-        <th>이미지</th>
-        <th>상품명</th>
-        <th>단가</th>
-        <th>수량</th>
-        <th>금액</th>
+        <th width="10%">이미지</th>
+        <th width="35%">상품명</th>
+        <th width="15%">단가</th>
+        <th width="15%">수량</th>
+        <th width="15%">금액</th>
       </tr>
     </thead>
     <tbody>
@@ -152,22 +160,22 @@
         <c:set var="product" value="${orderDetail.product}"></c:set>
         <c:set var="pId" value="${product.pdt_id}"></c:set>
         <tr>
-          <th width="10%"><img src="${product.pdt_imgsrc_s}" /></th>
-          <th width="35%">${product.pdt_name}</th>
-          <th width="15%">${product.pdt_price}</th>
-          <th width="15%"><div class="input-group">
+          <th><img src="${product.pdt_imgsrc_s}" /></th>
+          <th>${product.pdt_name}</th>
+          <th id="price${pId}">${product.pdt_price}</th>
+          <th><div class="input-group">
               <span class="input-group-btn">
-                <button type="button" class="button button-danger button-number" data-type="minus" data-field="quant[${pId}]">
+                <button type="button" class="button button-danger button-number" data-type="minus" data-field="${pId}">
                   <span class="glyphicon glyphicon-minus"></span>
                 </button>
-              </span> <input type="text" name="quant[${pId}]" class="form-control input input-number" value="${orderDetail.ordt_amount}" min="1" max="100" disabled="disabled"> <span class="input-group-btn">
-                <button type="button" class="button button-success button-number" data-type="plus" data-field="quant[${pId}]">
+              </span> <input type="text" name="${pId}" class="form-control input input-number" value="${orderDetail.ordt_amount}" min="1" max="100" disabled="disabled"> <span class="input-group-btn">
+                <button type="button" class="button button-success button-number" data-type="plus" data-field="${pId}">
                   <span class="glyphicon glyphicon-plus"></span>
                 </button>
               </span>
             </div></th>
-          <th width="15%">${product.pdt_price * orderDetail.ordt_amount}</th>
-          <td width="15%"><button class="myBtn" onclick="deleteProduct(this, ${pId})">삭제</button></td>
+          <th id="subtotal${pId}" width="15%">${product.pdt_price * orderDetail.ordt_amount}</th>
+          <td><button class="myBtn" onclick="deleteProduct(this, ${pId})">삭제</button></td>
         </tr>
       </c:forEach>
     </tbody>
@@ -177,5 +185,8 @@
 <div id="footer">
   <button id="cashBtn" class="button" onclick="choicePaymentMethod('cash')" value="unselected">현금</button>
   <button id="cardBtn" class="button" onclick="choicePaymentMethod('card')" value="unselected">카드</button>
-  <button id="orderBtn" class="myBtn" onclick="choicePaymentMethod()" style="float: right;">결제하기</button>
+  <button id="payBtn" class="myBtn" onclick="payNow()" style="float: right;">결제하기</button>
+  <form id="payF" method="POST" action="payNow">
+    <input id="paymentMethod" name="paymentMethod" type="hidden" />
+  </form>
 </div>
