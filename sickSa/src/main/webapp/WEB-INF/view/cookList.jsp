@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<h4 class="content-title">서빙도해요</h4>
+<h4 class="content-title">조리한다음</h4>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -16,7 +16,7 @@
   <tbody>
     <c:forEach var="order" items="${orderList}">
       <c:forEach var="orderDetail" items="${order.orderDetailList}">
-        <tr onclick="javascript:setState(${order.ord_id}, ${orderDetail.pdt_id}, 'S')">
+        <tr onclick="javascript:setState(${order.ord_id}, ${orderDetail.pdt_id}, 'C')">
           <td>${order.ord_id}</td>
           <td>${orderDetail.pdt_id}</td>
           <td>${orderDetail.ordt_amount}</td>
