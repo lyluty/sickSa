@@ -51,7 +51,6 @@ $(document).ready(function() {
 //	$('div.project-heading a').unbind('click');
 	$('div.project-heading a').on('click', function(e) {
 		var i = $(e.target).attr('id');
-		alert(i);
 //		$('div.modal').dialog({
 //			modal: true,
 //			buttons: {
