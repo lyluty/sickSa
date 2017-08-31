@@ -7,9 +7,9 @@ function showProductList(categoryId) {
   }, function(data) {
     $('#content').html(data);
   });
-//  $.get('_productList?cateNo=' + categoryId, function(data) {
-//    $('#content').html(data);
-//  });
+// $.get('_productList?cateNo=' + categoryId, function(data) {
+// $('#content').html(data);
+// });
 }
 function orderNow(productId) {
   $.post('orderNow.ajax', {
@@ -25,19 +25,22 @@ function addToCart(productId) {
     $('#content').html(data);
   });
 }
-function choicePaymentMethod() {
-  $.post('choicePaymentMethod.ajax', function(data) {
-    $('#content').html(data);
-  });
-}
-function payNow(paymentMethod) {
-  $.post('payNow.ajax', {
-    paymentMethod : paymentMethod
-  }, function(data) {
-  });
+// function choicePaymentMethod() {
+// $.post('choicePaymentMethod.ajax', function(data) {
+// $('#content').html(data);
+// });
+// }
+
+function payNow() {
+  var paymentMethod = $('#paymentMethod').val();
+  alert(paymentMethod);
+  if (!paymentMethod) {
+    alert('먼저 결제수단을 선택해주세요');
+  } else {
+    payF.submit();
+  }
 }
 
-//modal jquery
 
 //$(function (i)    {
 //	alert(i);
@@ -74,4 +77,4 @@ function payNow(paymentMethod) {
 //	$('div.box-item img').modal({
 //		remote : 'productDetail/'+e
 //	});
-//});w
+//});
