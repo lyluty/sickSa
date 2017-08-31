@@ -3,6 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+	.menu__item {
+		font-size: 20px;
+        font-weight: bold;
+		font-family: hanna;
+	}
+</style>
 <!-- head start -->
 <jsp:include page="../common/include-head.jsp" flush="false" />
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

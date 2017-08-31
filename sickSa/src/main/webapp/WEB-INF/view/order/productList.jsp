@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 	h4 {
 		font-size: 20px;
         font-weight: bold;
@@ -32,7 +33,7 @@
 					<img src="${product.pdt_imgsrc_s}" width="250px" height="250px"/>
 				</div>
 				<div class="project-heading">
-					<h4>${product.pdt_name}<span>${product.pdt_price}원</span></h4> 
+					<h4>${product.pdt_name}<span>  ${product.pdt_price}원</span></h4> 
 					<a role="button" data-backdrop="static">
 					 <span id="${product.pdt_id}" class="btn btn-xs btn-success">상세보기</span>
 					</a>
