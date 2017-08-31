@@ -3,15 +3,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style>
+<style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-#addImg{
-	margin-top:0px;
-	margin-right:0px;
-	margin-bottom:25px;
-	margin-left:0px;
-}
-
 </style>
 <script src='include/js/ingredient.js'></script>
 
@@ -27,6 +20,5 @@
 			</p>
 		</div>
 	</c:forEach>
-	<!-- 재료 '카테고리'추가 버튼이었음;; -->
-	<li><img id="addImg" alt="plus" src="include/images/addButton.png" onclick="ing_insert_form();"/></li>
+	<li><img id="addImg" alt="plus"  src="include/images/addButton.png" onclick="ing_insert_form();"></li>
 </ul>

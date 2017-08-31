@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import sickSa.service.OrderService;
 import sickSa.service.SalesService;
 
 /*
@@ -16,11 +17,21 @@ public class SalesController {
 	
 	@Autowired
 	SalesService salesService;
+	@Autowired
+	OrderService orderService;
 
 	// 기간별 조회 페이지
 	@RequestMapping("salesViewByTimePeriod")
 	public String salesViewByTimePeriod() {
 		return "sales/salesViewByTimePeriod";
+	}
+	
+	// 상품별 조회 페이지
+	@RequestMapping("salesViewByProduct")
+	public String salesViewByProduct(Model model) {
+		model.addAttribute("bestSellerList", salesService.bestSellerList());
+		model.addAttribute("productCategoryList", salesService.productCategoryList());
+		return "sales/salesViewByProduct";
 	}
 	
 	// 기관별 조회결과 요청
@@ -36,9 +47,16 @@ public class SalesController {
 		return "sales/div/timePeriod";
 	}
 	
-	// 상품별 조회 페이지
-	@RequestMapping("salesViewByProduct")
-	public String salesViewByProduct() {
-		return "sales/salesViewByProduct";
+	// 상품 목록 요청
+	@RequestMapping("productList.ajax")
+	public String productListAjax(Model model, @RequestParam int categoryId) {
+		model.addAttribute("productList", orderService.productListByCategoryId(categoryId));
+		return "sales/div/productList";
+	}
+	
+	@RequestMapping("salesListByProductId.ajax")
+	public String salesListByProductIdAjax(Model model, @RequestParam int productId) {
+		model.addAttribute("orderList", salesService.salesListByProductId(productId));
+		return "sales/div/salesList";
 	}
 }

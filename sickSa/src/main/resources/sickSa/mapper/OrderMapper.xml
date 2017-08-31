@@ -24,6 +24,20 @@
     <result property="ordt_state" column="ORDT_STATE"/>
   </resultMap>
   
+  <resultMap id="bestSellerResultMap" type="hashmap">
+    <result javaType="int" property="pdt_id" column="PDT_ID"/>
+    <result javaType="int" property="salesVolume" column="COUNT(PDT_ID)"/>
+  </resultMap>
+  
+  <select id="selectOrderListBySalesVolume" resultMap="bestSellerResultMap">
+    select   PDT_ID,
+             COUNT(PDT_ID)
+    from     ORDER_DETAILS
+    group by PDT_ID
+    order by COUNT(PDT_ID) desc,
+             PDT_ID
+  </select>
+  
   <select id="selectOrderList" resultMap="orderResultMap">
     select * from ORDERS natural join ORDER_DETAILS
   </select>
@@ -75,6 +89,13 @@
 	  select ORDERS_ORD_ID_SEQ.nextval
 	  from   dual
 	</select>
+  
+  <select id="selectOrderListByProductId" resultMap="orderResultMap">
+    select        *
+    from          ORDER_DETAILS
+    natural join  ORDERS
+    where         PDT_ID = #{productId}
+  </select>
 
 <!--
 	<delete id="delete" parameterType="sickSa.domain.Order">
