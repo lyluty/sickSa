@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
 <head>
@@ -30,32 +31,29 @@
 <script src="include/js/modernizr-custom.js"></script>
 <script src="include/js/jquery-2.2.2.min.js"></script>
 
-<!--  
-<script src="include/js/mainModal.js"></script>
--->
+
+
+<!-- 
 
 <script>
-
-$(document).ready(function() {
-	$("#toOrder").click(function() {
-
-		$('#mainModal').modal('show')
-	});
-});
-
-
-
+$('.mainModal').on('show.bs.modal') {
+	  var modal = $('.mainModel');
+	  modal.find('.modal-body').load('<p>You are about to remove this entry. Are you sure?</p>');
+	}
+</script>
 
 
 function loadContents(){
 	$("#mainModal").on('show.bs.modal', function (e) {
 	    var loadurl = $(e.relatedTarget).data("checkModal");
-	    $(this).find('.modal-header').load(loadurl);
-	    $(this).find('.modal-body').load(loadurl);
+	    $(this).find('.modal-header').load(loadurl)
+	    $(this).find('.modal-body').load(loadurl)
 
-	    $(this).find('.modal-footer').load(loadurl);
+	    $(this).find('.modal-footer').load(loadurl)
 	});
 }
+
+
 
 function checkM(){
 	var type = $('#type').val();
@@ -66,19 +64,15 @@ function checkM(){
 		var wait=$(waitCnt).val();
 		alert(wait);
 	}
-
-	
-	
-	
-	
 }
-</script>
+-->
 
 
 
 </head>
 <body>
-<input id="type" type="hidden" value="${type}"/>
+
+
 	<!-- hero-container start -->
 	<div class="hero-container">
 
@@ -157,15 +151,57 @@ function checkM(){
 		<div class="content-holder">
 
 
-			<button class="btn btn-default"    id="toOrder" data-toggle="modal" data-target="#mainModal"
-				style="display: block; margin: 0 auto;">to Order</button>
-				
-				<button class="btn btn-default"   onclick="checkM()"
-				style="display: block; margin: 0 auto;">to Check</button>
+	
+<button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".orderModal" style=" margin: 0 auto;">
+Order</button>
+<button type="button" class="btn btn-default" data-toggle="modal" data-target=".restModal" style="margin: 0 auto;">
+Waiting</button>
 
 
+<div class="modal fade orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="orderModalLabel">대기현황</h4>
+      </div>
+      <div class="modal-body">
+       <p> 
+		 ${waitCnt}명 대기중입니다.</p>
+       <p> 대기 명단에 등록하시겠습니까?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="modal fade restModal" tabindex="-1" role="dialog" aria-labelledby="restModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="restModalLabel">좌석현황</h4>
+      </div>
+      <div class="modal-body">
+       <p>${restCnt}석 남았습니다.</p>
+       <p> 주문하시겠습니까?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
 		</div>
+		
+
+<!-- Small modal -->
+
+		
 
 	</div>
 

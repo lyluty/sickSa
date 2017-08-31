@@ -10,6 +10,8 @@ public interface StoreDataDao {
 	public int selectRest();
 
 	public int selectWaiting();
+	
+	public int selectCapacity();
 
 	public String updateAdminPin(String adminPin);
 

@@ -51,6 +51,14 @@
 			STORE_DATA
 	</select>
 	
+		 <select id="selectCapacity" resultType="int">
+		SELECT
+			STDT_CAPACITY
+			
+		FROM
+			STORE_DATA
+	</select>
+	
 	<update id="updateAdminPin" parameterType="String">
 		UPDATE STORE_DATA
 		SET

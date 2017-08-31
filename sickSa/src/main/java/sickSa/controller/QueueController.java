@@ -23,14 +23,17 @@ public class QueueController {
 	public String checkType(Model model) {
 		if (storeService.getRest() != 0) {
 			model.addAttribute("type", "order");
-			model.addAttribute("restCnt", storeService.getRest());
-			return "restModal";
+			model.addAttribute("restCnt", storeService.setRest());
+			System.out.println("1" + storeService.getRest());
+			return "mainIndex";
 		}
 		model.addAttribute("type", "waiting");
 		model.addAttribute("waitCnt", storeService.getWaiting());
-		return "waitModal";
+		System.out.println(storeService.getWaiting());
+		return "mainIndex";
 	}
 
+/*
 	@RequestMapping("waitModal")
 	public String waitModal() {
 		return "waitModal";
@@ -45,5 +48,6 @@ public class QueueController {
 	public String mainModal() {
 		return "mainModal";
 	}
+	*/
 
 }

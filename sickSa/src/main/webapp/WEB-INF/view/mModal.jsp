@@ -5,7 +5,7 @@
 <script src="include/js/mainModal.js"></script>
 
 <!-- Modal  start-->
-<div class="modal" id="mainModal" role="dialog" tabindex="-1">
+<div class="modal" id="mModal" role="dialog" tabindex="-1">
 	<div class="modal-dialog">
 
 		<!-- Modal content-->

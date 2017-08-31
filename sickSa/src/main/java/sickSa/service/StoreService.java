@@ -44,31 +44,48 @@ public class StoreService {
 		
 		List<Order> cookList =orderDao.selectOrderListByState('B');
 		List<Order> servingList = orderDao.selectOrderListByState('C');
-		int[] cntList={};			
+		int[] cntList={0,};			
 
 		for (Order cook : cookList) {
+			int index=0;
 			for (int i = 0; i < cntList.length; i++) {
-				if (cntList[i]== cook.getTbl_id()) {
+				if(cook.getTbl_id()==0){
+					break;
+				}
+				else if (cntList[i]== cook.getTbl_id()) {
 					break;
 				}else{
-					cntList[i]=cook.getTbl_id();
+					cntList[index]=cook.getTbl_id();
+					index++;
 				}
 			}
+			System.out.println("cook: "+index);
+		}
 			
 			for (Order serving : servingList) {
+				int index=0;
 				for (int i = 0; i < cntList.length; i++) {
-					if (cntList[i]== serving.getTbl_id()) {
+					if(serving.getTbl_id()==0){
+						break;
+					}
+					else if (cntList[i]== serving.getTbl_id()) {
 						break;
 					}else{
-						cntList[i]=serving.getTbl_id();
+						cntList[index]=serving.getTbl_id();
+						index++;
 					}
 				}
+				System.out.println("serv: "+index);
 			}
-		}		
-		return storeDataDao.updateRest(cntList.length);
+		int capacity=storeDataDao.selectCapacity();
+			
+		return storeDataDao.updateRest(capacity-cntList.length);
 	}
-	
+	// Progress / 
 	public int setWaiting() {
 		return storeDataDao.updateWaiting(queueLogDao.selectList().size());
 	}
+	
+	
+	
 }
