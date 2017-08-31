@@ -42,28 +42,11 @@ function payNow() {
 }
 
 $(document).ready(function() {
-//	$(".modal").on("hidden.bs.modal", function() {
-//		$(".col-sm-4").html("");
-//	});
 	$('body').on('hidden.bs.modal', '.modal', function(){ 
 		$(this).removeData('bs.modal'); 
 	});
-//	$('div.project-heading a').unbind('click');
 	$('div.project-heading a').on('click', function(e) {
 		var i = $(e.target).attr('id');
-//		$('div.modal').dialog({
-//			modal: true,
-//			buttons: {
-//		        Ok: function() {
-//		          $( this ).dialog( "close" );
-//		        }
-//		    },
-//			open: function(){
-//				$(this).load('productDetail/'+i);
-//			},
-//			height: 400,
-//			width: 400,
-//		});
 		$('div.modal').modal({
 			remote : 'productDetail/'+i
 		});

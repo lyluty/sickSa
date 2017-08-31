@@ -19,12 +19,6 @@
 				<div class="project-heading">
 					<h6>${product.pdt_name}</h6>
 					<p>${product.pdt_price}</p>
-					<%-- 
-					HTML Modal
-					<a data-toggle="modal" href="productDetail/+${product.pdt_id}" data-target="#myModal" role="button" data-backdrop="static">
-					 <span class="btn btn-xs btn-success">상세보기</span>
-					</a> 
-					--%>
 					<a role="button" data-backdrop="static">
 					 <span id="${product.pdt_id}" class="btn btn-xs btn-success">상세보기</span>
 					</a>
