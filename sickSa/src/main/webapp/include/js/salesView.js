@@ -1,3 +1,8 @@
+$(document).ready(function() {
+  showTimePeriod();
+  calendarInitFn();
+});
+
 var calendarInitFn = function() {
   $('#calendar').fullCalendar({
     customButtons : {
@@ -13,29 +18,25 @@ var calendarInitFn = function() {
       center : 'title',
       right : 'today'
     }, // hearder 노출 메뉴
-    
-    footer:{
-    	left : 'prev',
-    	center:'',
-    	right : 'next'
-    }, //footer 노출 메뉴
-    
+
+    footer : {
+      left : 'prev',
+      center : '',
+      right : 'next'
+    }, // footer 노출 메뉴
+
     height : "auto",
-    
+
     selectable : true,
     select : function(start, end, jsEvent, view) {
-      
+
       var dt_start = moment(start).format('YYYY-MM-DD');
       var dt_end = moment(end).format('YYYY-MM-DD');
       cf.startDate.value = dt_start;
       cf.endDate.value = dt_end;
     }
-})};
-
-$(document).ready(function() {
-  showTimePeriod();
-  calendarInitFn();
-});
+  })
+};
 
 function salesList() {
   var queryString = $("#cf").serialize();
