@@ -22,25 +22,22 @@ public class OrderService {
 	private ProductDao productDao;
 
 	/* 결제 완료 - 레코드 생성 */
-	public void createOrder(List<OrderDetail> sCart, String paymentMethod) {
+	public Order createOrder(List<OrderDetail> sCart, String paymentMethod) {
 		int orderId = orderDao.selectOrderSequence();
-		System.out.println("orderId: " + orderId);
 		int total = 0;
 		for (OrderDetail orderDetail : sCart) {
 			Product product = orderDetail.getProduct();
-			System.out.println("product: " + product);
 			total += product.getPdt_price();
 		}
-		System.out.println("total: " + total);
 		Order order = new Order(orderId, total, paymentMethod, sCart);
-		System.out.println("order : " + order);
 		orderDao.insertOrder(order);
 		for (OrderDetail orderDetail : sCart) {
 			orderDetail.setOrd_id(orderId);
 			orderDetail.setOrdt_amount(1);
-			System.out.println("orderDetail: " + orderDetail);
 			orderDao.insertOrderDetail(orderDetail);
 		}
+		order.setOrd_date(orderDao.selectOrderDate(orderId));
+		return order;
 	}
 
 	public void setOrder(Order order) {
@@ -62,17 +59,27 @@ public class OrderService {
 
 	public List<OrderDetail> addToCart(List<OrderDetail> sCart, Product product) {
 		List<OrderDetail> cart = sCart == null ? new ArrayList<OrderDetail>() : sCart;
+		for (OrderDetail orderDetail : cart) {
+			if (orderDetail.getPdt_id() == product.getPdt_id()) {
+				orderDetail.setOrdt_amount(orderDetail.getOrdt_amount() + 1);
+				return cart;
+			}
+		}
 		cart.add(new OrderDetail(product));
 		return cart;
 	}
 
-	public Order createOrder(List<OrderDetail> cart) {
-		Order order = new Order();
-		OrderDetail orderDetail = new OrderDetail();
-		return null;
-	}
-
 	public Product getProduct(int productId) {
 		return productDao.selectProductByProductId(productId);
+	}
+	
+	public List<OrderDetail> setOrdtAmount(List<OrderDetail> sCart, int pId, int amount) {
+		for (OrderDetail orderDetail : sCart) {
+			if (orderDetail.getPdt_id() == pId) {
+				orderDetail.setOrdt_amount(amount);
+				break;
+			}
+		}
+		return sCart;
 	}
 }

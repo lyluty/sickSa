@@ -31,7 +31,7 @@ public class IngredientsMapperImpl implements IngredientsMapper{
 	}
 	
 	@Override
-	public List<Ingredients> cateIngList(Integer IGCT_NAME) {
+	public List<Ingredients> cateIngList(String IGCT_NAME) {
 		return sqlSession.selectList("cateIngList", IGCT_NAME);
 	}
 

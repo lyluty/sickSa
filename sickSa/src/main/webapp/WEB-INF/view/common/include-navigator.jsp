@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
+<!-- font start -->
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+</style>
+<!-- font end -->
 <button class="action action--open" aria-label="Open Menu">
   <span class="icon icon--menu"></span>
 </button>

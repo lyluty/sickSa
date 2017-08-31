@@ -1082,7 +1082,7 @@ B: 주문완료 C: 조리완료 S: 서빙완료</description>
           <size>10</size>
           <notNull>false</notNull>
           <primaryKey>false</primaryKey>
-          <description></description>
+          <description>Progress / Complete / Canceled</description>
           <autoIncrement>false</autoIncrement>
           <defaultValue></defaultValue>
         </net.java.amateras.db.visual.model.ColumnModel>

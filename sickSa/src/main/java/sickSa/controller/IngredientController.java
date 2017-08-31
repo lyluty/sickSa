@@ -1,11 +1,14 @@
 package sickSa.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import sickSa.domain.IngredientCategories;
 import sickSa.domain.IngredientDetails;
@@ -74,5 +77,11 @@ public class IngredientController {
 		return "forward:/ingredients";
 	}
 	
+	@RequestMapping("testLoadList")
+	public String testLoadList(Model model, @RequestParam int igct_id) {
+		List<Ingredients> ingredientList = ingredientService.loadListIng(igct_id);
+		model.addAttribute("ingredientList", ingredientList);
+		return "ing/testLoadList";
+	}
 	
 }

@@ -19,12 +19,6 @@ $(document).ready(function() {
 	});
 });
 
-
-
-
-
-
-
 function showModal() {
 	  $.ajax({
 	    type : 'POST',

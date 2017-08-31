@@ -100,8 +100,10 @@ public class IngredientServiceImpl implements IngredientService{
 	
 	//재료 카테고리에 따른 재료를 리스트로 불러온다
 	@Override
-	public List<Ingredients> loadListIng(Integer IGCT_NAME) {
-		return ingredientsMapper.cateIngList(IGCT_NAME);
+	public List<Ingredients> loadListIng(Integer igct_id) {
+		IngredientCategories ingredientCategory = ingredientCategoriesMapper.selectIngredientCategoryById(igct_id);
+		System.out.println(ingredientCategory);
+		return ingredientsMapper.cateIngList(ingredientCategory.getIgct_name());
 	}
 	//재료를 추가한다
 	@Override
