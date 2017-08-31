@@ -41,40 +41,33 @@ function payNow() {
   }
 }
 
-
-//$(function (i)    {
-//	alert(i);
-//    $('div.box-item img').dialog({
-//        modal: true,
-//        open: function (){
-//            $(window).load('productDetail/'+i);
-//        },         
-//        height: 400,
-//        width: 400,
-//        title: 'Dynamically Loaded Page'
-//    });
-//});
-
-//$('div.project-heading button').on('click',function(e){
-//	alert($(e.target).attr('id'));
-//	var i = $(e.target).attr('id');
-//	
-//	$('div.box-item img#'+i).dialog({
-//		modal: true,
-//        open: function (){
-//        	window.open('productDetail/'+i,'재료 항목 추가',
-//        	'width=700, height=500, left=0, top=0, toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no');
-//            $('div.modal-body').load('productDetail/'+i);
-//        },        
-//        height: 400,
-//        width: 400,
-//        title: 'Dynamically Loaded Page'
-//    });
-//});
-
-//$('div.box-item img').on('click',function(e){
-//	alert(e);
-//	$('div.box-item img').modal({
-//		remote : 'productDetail/'+e
+$(document).ready(function() {
+//	$(".modal").on("hidden.bs.modal", function() {
+//		$(".col-sm-4").html("");
 //	});
-//});
+	$('body').on('hidden.bs.modal', '.modal', function(){ 
+		$(this).removeData('bs.modal'); 
+	});
+//	$('div.project-heading a').unbind('click');
+	$('div.project-heading a').on('click', function(e) {
+		var i = $(e.target).attr('id');
+//		$('div.modal').dialog({
+//			modal: true,
+//			buttons: {
+//		        Ok: function() {
+//		          $( this ).dialog( "close" );
+//		        }
+//		    },
+//			open: function(){
+//				$(this).load('productDetail/'+i);
+//			},
+//			height: 400,
+//			width: 400,
+//		});
+		$('div.modal').modal({
+			remote : 'productDetail/'+i
+		});
+	});
+});
+
+

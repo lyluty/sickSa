@@ -22,7 +22,7 @@ function igct_list_load() {
 	/*
 	 * $.get(); Load data from the server using a HTTP GET request.
 	 */
-
+	
 	$.ajax({
 		url : 'igctList',
 		type : 'POST',
@@ -49,8 +49,8 @@ function igct_list_load() {
 }
 
 function ing_list_load(i){
-	alert(i);
-	$('#ingList' + i).toggle();
+	$('.ingP').hide();
+	$('#ingList' + i).show();
 	$.ajax({
 		url : 'ingList/'+i,
 		type : 'GET',

@@ -18,7 +18,7 @@
 	<!-- Ingredient List Slide  start -->
 	<ul class="sub-service-list">
 		<c:forEach var="ing" items="${ingredientList}">
-			<li style ="font-family:hanna;">
+			<li style="font-family: hanna;">
 				<div class="panel">
 					<div class="panel-heading">
 						<div class="service-box">
@@ -26,24 +26,20 @@
 							<div class="service-icon">
 								<i class="ion ion-android-color-palette"></i>
 							</div>
-							<h3 style ="font-family:hanna; font-weight:100; font-size:35px; line-height:150%;">${ing.ing_name}</h3>
+							<h3
+								style="font-family: hanna; font-weight: 100; font-size: 35px; line-height: 150%;">${ing.ing_name}</h3>
 						</div>
 					</div>
 					<div class="panel-body">
 						<p style="font-size: 30px; color: green;">
-							${ing.ing_stock} 개의 재고가 남았으며<br /> 
+							${ing.ing_stock} 개의 재고가 남았으며<br />
 							${ing.ingredientDetails.igdt_price} 원 입니다.
 						</p>
 					</div>
 				</div>
 			</li>
 		</c:forEach>
-		<li><img id="addImg" alt="plus"
-			src="include/images/addButton.png" onclick="ing_insert_form();" /></li>
 	</ul>
-
 	<!-- Ingredient List Slide start -->
-
-
 </div>
 <!-- Category List Slide end -->

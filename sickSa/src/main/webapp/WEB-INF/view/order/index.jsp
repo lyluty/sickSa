@@ -59,7 +59,7 @@
 	$(window).load(function() {
 		showProductList(1);
 	});
-</script>
+  </script>
   <!-- tail end -->
 </body>
 </html>
