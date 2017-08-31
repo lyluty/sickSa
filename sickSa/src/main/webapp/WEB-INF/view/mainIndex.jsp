@@ -31,44 +31,6 @@
 <script src="include/js/modernizr-custom.js"></script>
 <script src="include/js/jquery-2.2.2.min.js"></script>
 
-
-
-<!-- 
-
-<script>
-$('.mainModal').on('show.bs.modal') {
-	  var modal = $('.mainModel');
-	  modal.find('.modal-body').load('<p>You are about to remove this entry. Are you sure?</p>');
-	}
-</script>
-
-
-function loadContents(){
-	$("#mainModal").on('show.bs.modal', function (e) {
-	    var loadurl = $(e.relatedTarget).data("checkModal");
-	    $(this).find('.modal-header').load(loadurl)
-	    $(this).find('.modal-body').load(loadurl)
-
-	    $(this).find('.modal-footer').load(loadurl)
-	});
-}
-
-
-
-function checkM(){
-	var type = $('#type').val();
-	if (type == 'order') {
-		var rest=$(restCnt).val();
-		alert(rest);
-	} else {
-		var wait=$(waitCnt).val();
-		alert(wait);
-	}
-}
--->
-
-
-
 </head>
 <body>
 
@@ -150,13 +112,13 @@ function checkM(){
 		<!-- Content Holder Start -->
 		<div class="content-holder">
 
-
+<div class="container"  style="display:block; margin:auto; width:auto; height:auto;">
 	
-<button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".orderModal" style=" margin: 0 auto;">
+<button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".orderModal"  style="display: inline-block; margin:auto;">
 Order</button>
-<button type="button" class="btn btn-default" data-toggle="modal" data-target=".restModal" style="margin: 0 auto;">
+<button type="button" class="btn btn-default" data-toggle="modal" data-target=".restModal"  style="display: inline-block; margin:auto;">
 Waiting</button>
-
+</div>
 
 <div class="modal fade orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
    <div class="modal-dialog">
@@ -166,9 +128,10 @@ Waiting</button>
         <h4 class="modal-title" id="orderModalLabel">대기현황</h4>
       </div>
       <div class="modal-body">
-       <p> 
-		 ${waitCnt}명 대기중입니다.</p>
-       <p> 대기 명단에 등록하시겠습니까?</p>
+      <h4> ${waitCnt}명 대기중입니다. </h4>
+      <h4>대기 명단에 등록하시겠습니까?</h4>
+		
+      
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -186,8 +149,8 @@ Waiting</button>
         <h4 class="modal-title" id="restModalLabel">좌석현황</h4>
       </div>
       <div class="modal-body">
-       <p>${restCnt}석 남았습니다.</p>
-       <p> 주문하시겠습니까?</p>
+       <h4>${restCnt}석 남았습니다.</h4>
+       <h4> 주문하시겠습니까?</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -198,11 +161,6 @@ Waiting</button>
 </div>
 		</div>
 		
-
-<!-- Small modal -->
-
-		
-
 	</div>
 
 
