@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<style>
+	h4 {
+		font-size: 20px;
+        font-weight: bold;
+        font-family: hanna;
+    }
+    h4 span {
+    	margin: 0px 0px 0px 0px;
+    	font-weight:lighter;
+    	font-family:hanna;
+    }
+    span {
+    	font-size: 15px;
+    } 
+</style>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src='include/js/order.js'></script>
 
@@ -17,12 +32,11 @@
 					<img src="${product.pdt_imgsrc_s}" width="250px" height="250px"/>
 				</div>
 				<div class="project-heading">
-					<h6>${product.pdt_name}</h6>
-					<p>${product.pdt_price}</p>
+					<h4>${product.pdt_name}<span>${product.pdt_price}원</span></h4> 
 					<a role="button" data-backdrop="static">
 					 <span id="${product.pdt_id}" class="btn btn-xs btn-success">상세보기</span>
 					</a>
-					<a href="javascript:addToCart(${product.pdt_id})">장바구니</a>
+					<span class="btn btn-xs btn-success" onclick="addToCart(${product.pdt_id})">장바구니</span>
 				</div>
 			</div>
 		</div>

@@ -42,9 +42,11 @@ function payNow() {
 }
 
 $(document).ready(function() {
+	
 	$('body').on('hidden.bs.modal', '.modal', function(){ 
 		$(this).removeData('bs.modal'); 
 	});
+	
 	$('div.project-heading a').on('click', function(e) {
 		var i = $(e.target).attr('id');
 		$('div.modal').modal({
