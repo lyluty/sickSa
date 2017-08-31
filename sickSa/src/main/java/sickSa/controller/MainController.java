@@ -1,9 +1,12 @@
 package sickSa.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import sickSa.service.StoreService;
 
@@ -22,9 +25,6 @@ public class MainController {
 		storeService.setRest();
 		storeService.setWaiting();
 		*/
-		
-		System.out.println("1" +storeService.getRest());
-		System.out.println("2"+storeService.getWaiting());
 	
 		model.addAttribute("restCnt", storeService.getRest());
 		model.addAttribute("waitCnt", storeService.getWaiting());
@@ -35,8 +35,16 @@ public class MainController {
 	@RequestMapping("login")
 	public String login(){
 		
-		return "login";
+		return "common/login";
 	}
+	@RequestMapping("matchPw")
+	public String matchPw(@RequestParam("pw_pin") String pw_pin){
+		if(storeService.checkPin(pw_pin)){			
+			return "sales/salesViewByTimePeriod";		//임시
+		}
+		return "common/login";
+	}
+	
 	
 }
 

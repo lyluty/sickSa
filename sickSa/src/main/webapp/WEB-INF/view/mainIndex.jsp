@@ -112,34 +112,15 @@
 		<!-- Content Holder Start -->
 		<div class="content-holder">
 
-<div class="container"  style="display:block; margin:auto; width:auto; height:auto;">
+
 	
-<button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".orderModal"  style="display: inline-block; margin:auto;">
+<button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".restModal"  style="display: inline-block; margin:auto auto auto 44% ;">
 Order</button>
-<button type="button" class="btn btn-default" data-toggle="modal" data-target=".restModal"  style="display: inline-block; margin:auto;">
+<button type="button" class="btn btn-default" data-toggle="modal" data-target=".waitModal"  style="display: inline-block; margin:auto;">
 Waiting</button>
 </div>
 
-<div class="modal fade orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="orderModalLabel">대기현황</h4>
-      </div>
-      <div class="modal-body">
-      <h4> ${waitCnt}명 대기중입니다. </h4>
-      <h4>대기 명단에 등록하시겠습니까?</h4>
-		
-      
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Yes</button>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- 모달1 -->
 
 <div class="modal fade restModal" tabindex="-1" role="dialog" aria-labelledby="restModalLabel" aria-hidden="true">
    <div class="modal-dialog">
@@ -148,20 +129,44 @@ Waiting</button>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="restModalLabel">좌석현황</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="text-align:center;">
        <h4>${restCnt}석 남았습니다.</h4>
        <h4> 주문하시겠습니까?</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Yes</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='vmMain' ">Yes</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- 모달2 -->
+
+<div class="modal fade waitModal" tabindex="-1" role="dialog" aria-labelledby="waitModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="orderModalLabel">대기현황</h4>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+      <h4> ${waitCnt}명 대기중입니다. </h4>
+      <h4>대기 명단에 등록하시겠습니까?</h4>
+		
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='#' ">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 		</div>
 		
-	</div>
+
 
 
 	<!-- 컨텐츠 영역 end -->

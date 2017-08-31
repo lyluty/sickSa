@@ -21,7 +21,7 @@ public class StoreService {
 	
 	/* Method */
 	public boolean checkPin(String pin) {
-		return pin == getAdminPin();
+		return pin.equals(getAdminPin()) ;
 	}
 	
 	public String getAdminPin() {
