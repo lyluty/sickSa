@@ -4,19 +4,17 @@
 <script src='include/js/order.js'></script>
 
 <div class="modal-header">
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		<span aria-hidden="true">&times;</span>
-	</button>
 	<h4 class="modal-title" id="myModalLabel">
-		${product.pdt_description}
+		${product.pdt_name}
 	</h4>
 </div>
 <div class="modal-body">
 	<div class="col-sm-4">
-		<input type="hidden" id="A" name="pdt_id" value="${product.pdt_id}" />
+		<%-- <input type="hidden" id="A" name="pdt_id" value="${product.pdt_id}" /> --%>
 		<ul class="det-list">
-			<li><span>상품 이름 :</span> ${product.pdt_name}</li>
+			<li><img src="${product.pdt_imgsrc_l}" ></li>
 			<li><span>상품 가격 : </span> ${product.pdt_price}</li>
+			<li><span>상품 설명 : </span> ${product.pdt_description}</li>
 		</ul>
 	</div>
 </div>
