@@ -41,11 +41,44 @@
       <!-- top start -->
       <jsp:include page="../common/include-vm_top.jsp" />
       <!-- top end -->
+      
+  
+
+      <h3 class="content-title" align="left" style="margin-bottom:50px;">Order Result</h3>
+    
       <div id="content" style="height: 80%; display: block; margin: 0 auto">
-      <h3>주문이 성공해서 나오는 페이지인데 디자인 좀 해주실분?</h3>
-      <h6>주문번호:${order.ord_id}</h6>
-      <h6>주문일시:${order.ord_date}</h6>
-      <h6>주문금액:${order.ord_total}</h6>
+         <h6 align="right">${order.ord_id}   : Order No.</h6>
+          <h6 align="right">${order.ord_date}   : Date.</h6>
+<table class="table table-striped" style="width:80%; margin: auto;">
+  <thead>
+    <tr>
+      <th>상품명</th>
+      <th>수량</th>
+      <th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <c:forEach var="order" items="${orderList}">
+      <c:forEach var="orderDetail" items="${orderDetailList}">
+      <tr>
+          <td>${orderDetail.pdt_id}</td>
+          <td>${orderDetail.ordt_amount}</td>
+          <td>${orderDetail.ordt_state}</td>
+        </tr>
+      </c:forEach>
+    </c:forEach>
+  </tbody>
+</table>
+      
+      
+      
+      
+      <div class="content-holder">
+      
+      
+      <h6 align="right">${order.ord_total} : Total Price</h6>
+      </div>
+      
       </div>
     </div>
     <!-- 컨텐츠 영역 end -->
