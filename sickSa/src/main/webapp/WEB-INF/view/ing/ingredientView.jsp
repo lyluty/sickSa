@@ -33,7 +33,7 @@
       <div class="main-container">
         <div 
         	class="inner-banner parallax" data-parallax-speed="5">
-          <h2>Ingredients Check</h2>
+          <h2>식사의 신선한 재료들~</h2>
         </div>
         
         <!-- Content Holder Start -->

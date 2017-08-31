@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
 <head>
@@ -29,10 +30,10 @@
 <link href="include/css/main.css" rel="stylesheet" type="text/css">
 <script src="include/js/modernizr-custom.js"></script>
 <script src="include/js/jquery-2.2.2.min.js"></script>
-<script src="include/js/mainModal.js"></script>
 
 </head>
 <body>
+
 
 	<!-- hero-container start -->
 	<div class="hero-container">
@@ -112,41 +113,60 @@
 		<div class="content-holder">
 
 
-			<button class="btn btn-default"   id="toOrder"
-				style="display: block; margin: 0 auto;">to Order</button>
+	
+<button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".restModal"  style="display: inline-block; margin:auto auto auto 44% ;">
+Order</button>
+<button type="button" class="btn btn-default" data-toggle="modal" data-target=".waitModal"  style="display: inline-block; margin:auto;">
+Waiting</button>
+</div>
 
-			<!-- Modal  start-->
-			<div class="modal"  id="restModal" role="dialog" tabindex="-1"   aria-labelledby="restModal" aria-hidden="true">
-				<div class="modal-dialog">
+<!-- 모달1 -->
 
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title"></h4>
-						</div>
-						<div class="modal-body">
-					
-						</div>
+<div class="modal fade restModal" tabindex="-1" role="dialog" aria-labelledby="restModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="restModalLabel">좌석현황</h4>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+       <h4>${restCnt}석 남았습니다.</h4>
+       <h4> 주문하시겠습니까?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='vmMain' ">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Yes</button>
-						</div>
-					</div>
-					<!-- modal content  end-->
+<!-- 모달2 -->
 
-				</div>
-				<!-- /.modal-dialog -->
-			</div>
-			<!-- /.modal-content -->
-
-
+<div class="modal fade waitModal" tabindex="-1" role="dialog" aria-labelledby="waitModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="orderModalLabel">대기현황</h4>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+      <h4> ${waitCnt}명 대기중입니다. </h4>
+      <h4>대기 명단에 등록하시겠습니까?</h4>
+		
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='#' ">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 		</div>
+		
 
-	</div>
 
 
 	<!-- 컨텐츠 영역 end -->
