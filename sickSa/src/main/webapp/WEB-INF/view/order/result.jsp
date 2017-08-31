@@ -9,7 +9,6 @@
 <jsp:include page="../common/include-head.jsp" flush="false" />
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <!-- head end -->
-
 </head>
 <body>
   <div class="animsition">
@@ -42,7 +41,12 @@
       <!-- top start -->
       <jsp:include page="../common/include-vm_top.jsp" />
       <!-- top end -->
-      <div id="content" style="height: 80%; display: block; margin: 0 auto"></div>
+      <div id="content" style="height: 80%; display: block; margin: 0 auto">
+      <h3>주문이 성공해서 나오는 페이지인데 디자인 좀 해주실분?</h3>
+      <h6>주문번호:${order.ord_id}</h6>
+      <h6>주문일시:${order.ord_date}</h6>
+      <h6>주문금액:${order.ord_total}</h6>
+      </div>
     </div>
     <!-- 컨텐츠 영역 end -->
 
@@ -53,13 +57,7 @@
 
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='include/js/order.js'></script>
-  <script type="text/javascript">
-	$(window).load(function() {
-		showProductList(1);
-	});
-</script>
   <!-- tail end -->
 </body>
 </html>
