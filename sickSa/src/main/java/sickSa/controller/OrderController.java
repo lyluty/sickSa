@@ -22,13 +22,7 @@ public class OrderController {
 
 	@Autowired
 	OrderService orderService;
-	
-	@RequestMapping("testP")
-	public String testP(Model model) {
-		model.addAttribute("productCategoryList", orderService.productCategoryList());
-		return "order/_index";
-	}
-	
+
 	@RequestMapping("_productList")
 	public String _productList(@RequestParam("cateNo") int categoryId, Model model) {
 		List<Product> productList = orderService.productListByCategoryId(categoryId);
@@ -78,7 +72,7 @@ public class OrderController {
 		model.addAttribute("product", product);
 		return "order/productDetail";
 	}
-	
+
 	@RequestMapping("deleteProductFromCart")
 	@ResponseBody
 	public List<OrderDetail> deleteProductFromCart(HttpSession session, @RequestParam int pId) {
@@ -108,7 +102,7 @@ public class OrderController {
 		model.addAttribute("order", order);
 		return "order/result";
 	}
-	
+
 	@RequestMapping("setOrdtAmount")
 	@ResponseBody
 	public void setOrdtAmount(HttpSession session, @RequestParam int pId, @RequestParam int amount) {

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import sickSa.domain.OrderDetail;
 import sickSa.domain.Order;
@@ -23,10 +24,15 @@ public interface OrderDao {
 
 	@Select("select ORD_DATE from ORDERS where ORD_ID = #{ord_id}")
 	Date selectOrderDate(int ord_id);
+	
+	Order selectOrderById(int ord_id);
 
 	int insertOrder(Order order);
 
 	int insertOrderDetail(OrderDetail orderDetail);
 
 	int updateOrder(Order order);
+	
+	@Update("update ORDER_DETAILS set ORDT_AMOUNT = #{ordt_amount}, ORDT_STATE = #{ordt_state} where ORD_ID = #{ord_id} and PDT_ID = #{pdt_id}")
+	int updateOrderDetail(OrderDetail orderDetail);
 }

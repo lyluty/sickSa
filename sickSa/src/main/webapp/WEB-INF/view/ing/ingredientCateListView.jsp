@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+
 <!-- font start -->
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
@@ -10,10 +12,13 @@
     }
     #ul {
         list-style: none;
-        font-style: italic;
         font-weight: bold;
+        font-family: hanna;
     }
     #ul #li {
+    	font-size: 45px;
+    	font-weight:100;
+    	font-family:hanna;
         float: left;
         margin: 0px 20px;
     }
@@ -37,6 +42,7 @@ function loadList(igct_id) {
 		<li id="li"><a href="javascript:loadList(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a></li>
 	</ul>
 	</c:forEach>
+	<img id="addImg" alt="plus" src="include/images/addButton.png" onclick="igct_insert_form();" />
 	<br/>
 	<div id="ingredientList"></div>
 

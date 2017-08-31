@@ -21,11 +21,18 @@
     <result property="ord_id" column="ORD_ID"/>
     <result property="ordt_amount" column="ORDT_AMOUNT"/>
     <result property="pdt_id" column="PDT_ID"/>
-    <result property="ordt_state" column="ORD_STATE"/>
+    <result property="ordt_state" column="ORDT_STATE"/>
   </resultMap>
   
   <select id="selectOrderList" resultMap="orderResultMap">
     select * from ORDERS natural join ORDER_DETAILS
+  </select>
+  
+  <select id="selectOrderById" resultMap="orderResultMap">
+    select       *
+    from         ORDERS
+    natural join ORDER_DETAILS
+    where        ORD_ID = #{ord_id}
   </select>
   
 	<select id="selectOrderListByDate" parameterType="hashmap" resultMap="orderResultMap">
