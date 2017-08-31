@@ -42,7 +42,7 @@ public class IngredientController {
 	}
 	
 	//defaultList
-	@RequestMapping("/ingList/{IGCT_ID}")
+	//@RequestMapping("/ingList/{IGCT_ID}")
 	public String loadIngList(Model model, @PathVariable Integer IGCT_ID) {
 		model.addAttribute("ingredientList", ingredientService.loadDefaultList(IGCT_ID));
 		return "ing/ingredientListView";
@@ -77,11 +77,11 @@ public class IngredientController {
 		return "forward:/ingredients";
 	}
 	
-	@RequestMapping("testLoadList")
+	@RequestMapping("/ingList")
 	public String testLoadList(Model model, @RequestParam int igct_id) {
 		List<Ingredients> ingredientList = ingredientService.loadListIng(igct_id);
 		model.addAttribute("ingredientList", ingredientList);
-		return "ing/testLoadList";
+		return "ing/ingListView";
 	}
 	
 }

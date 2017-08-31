@@ -40,6 +40,6 @@
 			</li>
 		</c:forEach>
 	</ul>
-	<!-- Ingredient List Slide start -->
+	<!-- Ingredient List Slide end -->
 </div>
 <!-- Category List Slide end -->
