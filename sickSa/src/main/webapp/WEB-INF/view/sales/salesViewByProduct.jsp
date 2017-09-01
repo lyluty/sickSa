@@ -36,20 +36,37 @@
 
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
+  function formatDate(date) {
+    var year = checkZero(date.getFullYear() + '');
+    var month = checkZero(date.getMonth() + 1 + '');
+    var day = checkZero(date.getDate() + '');
+    var hour = checkZero(date.getHours() + '');
+    var minutes = checkZero(date.getMinutes() + '');
+    var seconds = checkZero(date.getSeconds() + '');
+    return year + '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds;
+  }
+  function checkZero(data) {
+    if (data.length == 1) {
+      data = "0" + data;
+    }
+    return data;
+  }
   $(function() {
     $('#product-category-list select').change(function() {
       $('#sales-list table tbody').empty();
       var cId = $(this).val();
-
+      
       if (cId == '') {
         $('#product-list').hide();
         return;
       }
-
+      
+      var $select = $('#product-list select');
+      $select.empty();
+      $select.append('<option value="">상품 정보를 불러오는 중입니다</option');
       $.post('productListByCategoryId2.ajax', {
         'cId' : cId
       }, function(data) {
-        var $select = $('#product-list select');
         $select.empty();
         $select.append('<option value="">상품 선택</option>');
         $.each(data, function(index, value) {
@@ -60,15 +77,15 @@
       });
       $('#product-list').show();
     });
-
+    
     $('#product-list select').change(function() {
       var pId = $(this).val();
-
+      
       if (pId == '') {
         $('#sales-list table tbody').empty();
         return;
       }
-
+      
       $.post('orderListByProductId.ajax', {
         'pId' : pId
       }, function(orderList) {
@@ -76,15 +93,27 @@
         $tbody.empty();
         $.each(orderList, function(orderIndex, order) {
           $.each(order.orderDetailList, function(orderDetailIndex, orderDetail) {
-            $tbody.append('<tr>');
+            var product = orderDetail.product;
+            var date = new Date(order.ord_date);
+            $tbody.append(
+              '<tr>'
+              + '<th>' + order.ord_id + '</th>'
+              + '<td>' + product.pdt_name + '</td>'
+              + '<td>' + orderDetail.ordt_amount + '</td>'
+              + '<td>' + order.ord_total + '</td>'
+              + '<td>' + order.ord_payment_method + '</td>'
+              + '<td>' + formatDate(date) + '</td>'
+              + '</tr>');
+            
+            /* 이렇게 쓰면 제대로 동작을 안함
             $tbody.append('<th>' + order.ord_id + '</th>');
-            $tbody.append('<td>' + orderDetail.pdt_id + '</td>');
+            $tbody.append('<td>' + product.pdt_name + '</td>');
             $tbody.append('<td>' + orderDetail.ordt_amount + '</td>');
             $tbody.append('<td>' + order.ord_total + '</td>');
             $tbody.append('<td>' + order.ord_payment_method + '</td>');
-            $tbody.append('<td>' + order.ord_date + '</td>');
-            $tbody.append('<td>' + order.tbl_id + '</td>');
+            $tbody.append('<td>' + formatDate(date) + '</td>');
             $tbody.append('</tr>');
+             */
           });
         });
       });
@@ -127,10 +156,12 @@
               <!-- 베스트 셀러 영역 -->
               <div id="bestSeller" style="width: 100%; padding-bottom: 30%">
                 <h4 class="content-title">베스트셀러</h4>
-                <c:forEach var="product" items="${bestSellerList}" varStatus="varStatus">
+                <c:forEach var="bestSellerMap" items="${bestSellerMapList}" varStatus="varStatus">
+                  <c:set var="product" value="${bestSellerMap.product}" />
                   <div id="bestSeller-product" style="width: 23%; float: left; margin: 1%">
                     <h5 align="center">${varStatus.count}.&nbsp;${product.pdt_name}</h5>
                     <img src="${product.pdt_imgsrc_s}" />
+                    <h6 align="center">판매량:&nbsp;${bestSellerMap.salesVolume}</h6>
                   </div>
                 </c:forEach>
               </div>
@@ -140,6 +171,7 @@
 
               <!-- 카테고리, 상품 선택 -->
               <div id="product-selector" style="width: 100%">
+                <h4 class="content-title">상품별 매출 조회</h4>
                 <div id="product-category-list" style="width: 45%; float: left; margin: 2%">
                   <select name="designation" class="not_chosen" style="width: 100%">
                     <option value="">카테고리 선택</option>
@@ -167,15 +199,17 @@
                   <thead>
                     <tr>
                       <th>주문번호</th>
-                      <th>상품번호</th>
+                      <th>상품명</th>
                       <th>주문상품개수</th>
                       <th>금액</th>
                       <th>결제수단</th>
                       <th>결제일시</th>
-                      <th>테이블번호</th>
                     </tr>
                   </thead>
                   <tbody>
+                    <tr align="center">
+                      <th colspan="6">표시할 내용이 없습니다</th>
+                    </tr>
                   </tbody>
                 </table>
               </div>

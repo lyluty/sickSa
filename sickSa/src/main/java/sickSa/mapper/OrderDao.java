@@ -36,7 +36,7 @@ public interface OrderDao {
 	@Update("update ORDER_DETAILS set ORDT_AMOUNT = #{ordt_amount}, ORDT_STATE = #{ordt_state} where ORD_ID = #{ord_id} and PDT_ID = #{pdt_id}")
 	int updateOrderDetail(OrderDetail orderDetail);
 	
-	List<Map<String, Integer>> selectOrderListBySalesVolume();
+	List<Map<String, Object>> selectOrderMapListBySalesVolume();
 	
 	List<Order> selectOrderListByProductId(int productId);
 }

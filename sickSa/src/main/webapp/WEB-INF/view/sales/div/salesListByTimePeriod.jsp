@@ -4,7 +4,7 @@
 
 
 <div id="salesList">
-  <h3 class="content-title">매출 기록</h3>
+  <h3 class="content-title">기간별 매출 조회</h3>
   <button class="btn btn-default" onclick="showTimePeriod()" style="margin: auto 0;">&lt;&nbsp;조회기간 선택</button>
   <div>
     <c:choose>
@@ -17,25 +17,24 @@
           <thead>
             <tr>
               <th>주문번호</th>
-              <th>상품번호</th>
+              <th>상품명</th>
               <th>주문상품개수</th>
               <th>금액</th>
               <th>결제수단</th>
               <th>결제일시</th>
-              <th>테이블번호</th>
             </tr>
           </thead>
           <tbody>
-            <c:forEach var="order" items="${orderList}">
-              <c:forEach var="orderDetail" items="${order.orderDetailList}">
+            <c:forEach var="o" items="${orderList}">
+              <c:forEach var="od" items="${o.orderDetailList}">
+              <c:set var="p" value="${od.product}"></c:set>
                 <tr>
-                  <th>${order.ord_id}</th>
-                  <td>${orderDetail.pdt_id}</td>
-                  <td>${orderDetail.ordt_amount}</td>
-                  <td>${order.ord_total}</td>
-                  <td>${order.ord_payment_method}</td>
-                  <td>${order.ord_date}</td>
-                  <td>${order.tbl_id}</td>
+                  <th>${o.ord_id}</th>
+                  <td>${p.pdt_name}</td>
+                  <td>${od.ordt_amount}</td>
+                  <td>${o.ord_total}</td>
+                  <td>${o.ord_payment_method}</td>
+                  <td>${o.ord_date}</td>
                 </tr>
               </c:forEach>
             </c:forEach>

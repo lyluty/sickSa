@@ -34,7 +34,7 @@ public class SalesController {
 	// 상품별 조회 페이지
 	@RequestMapping("salesViewByProduct")
 	public String salesViewByProduct(Model model) {
-		model.addAttribute("bestSellerList", salesService.bestSellerList());
+		model.addAttribute("bestSellerMapList", salesService.bestSellerMapList());
 		model.addAttribute("productCategoryList", salesService.productCategoryList());
 		return "sales/salesViewByProduct";
 	}
@@ -52,12 +52,14 @@ public class SalesController {
 		return "sales/div/timePeriod";
 	}
 
+	// 이건뭐지
 	@RequestMapping("salesListByProductId.ajax")
 	public String salesListByProductIdAjax(Model model, @RequestParam int productId) {
 		model.addAttribute("orderList", salesService.salesListByProductId(productId));
 		return "sales/div/salesListByProduct";
 	}
 
+	// 여기
 	@RequestMapping("productListByCategoryId2.ajax")
 	@ResponseBody
 	public List<Product> productListByCategoryIdAjax(@RequestParam int cId) {
