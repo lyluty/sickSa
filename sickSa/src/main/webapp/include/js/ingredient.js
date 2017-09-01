@@ -87,7 +87,6 @@ $(document).ready(function() {
 	});
 
 	$("#create-igct").button().on("click", function() {
-		alert('들어왔어요');
 		$('div.modal').modal({
 			remote : 'igctInsertForm'
 		});
@@ -140,7 +139,6 @@ $(document).ready(function() {
 	});
 	
 	$("#create-ing").button().on("click", function() {
-		alert('들어왔어요');
 		$('div.modal').modal({
 			remote : 'ingInsertForm'
 		});
