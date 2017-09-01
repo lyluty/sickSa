@@ -1,41 +1,12 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <html>
 <head>
 <!-- head start -->
 <jsp:include page="common/include-head.jsp" flush="false" />
 <!-- head end -->
-<!-- jquery.min.js 경로 수정 필요 -->
-<script src='include/css/calendar/jquery.min.js'></script>
-<script type="text/javascript">
-  function cookList() {
-    $.post('cookList', function(data) {
-      $('#cookList').html(data);
-    });
-  }
-  function servingList() {
-    $.post('servingList', function(data) {
-      $('#servingList').html(data);
-    });
-  }
-  
-  $(document).ready(function() {
-    cookList();
-    servingList();
-  });
-  
-  function setState(ord_id, pdt_id, ordt_state) {
-    $.post('setServingState', {
-      'ord_id' : ord_id,
-      'pdt_id' : pdt_id,
-      'ordt_state' : ordt_state
-    });
-    cookList();
-    servingList();
-  }
-</script>
 </head>
 <body>
   <div class="animsition">
@@ -71,8 +42,33 @@
           <div class="content-holder">
             <div class="container" style="padding: auto; margin-bottom: 50px;">
 
-              <div id="cookList" style="float: left; width: 48%; margin: auto;"></div>
-              <div id="servingList" style="float: right; width: 48%; margin: auto;"></div>
+              <div id="cooking-list" style="float: left; width: 48%; margin: auto;">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>주문번호</th>
+                      <th>상품명</th>
+                      <th>수량</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <div id="serving-list" style="float: right; width: 48%; margin: auto;">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>주문번호</th>
+                      <th>상품명</th>
+                      <th>수량</th>
+                      <th>테이블번호</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
@@ -90,6 +86,7 @@
 
   <!-- tail start -->
   <jsp:include page="common/include-tail.jsp" flush="false" />
+  <script src='include/js/servingState.js'></script>
   <!-- tail end -->
 </body>
 </html>

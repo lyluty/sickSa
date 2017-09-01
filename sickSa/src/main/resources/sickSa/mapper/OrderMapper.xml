@@ -6,15 +6,15 @@
 <mapper namespace="sickSa.mapper.OrderDao">
 
   <!-- resultMap -->
-	<resultMap id="orderResultMap" type="sickSa.domain.Order">
-		<id property="ord_id" column="ORD_ID" />
-		<result property="ord_total" column="ORD_TOTAL" />
-		<result property="ord_payment_method" column="ORD_PAYMENT_METHOD" />
-		<result property="ord_date" column="ORD_DATE" />
-		<result property="tbl_id" column="TBL_ID" />
-		<collection property="orderDetailList" javaType="java.util.ArrayList"
-			resultMap="orderDetailResultMap" />
-	</resultMap>
+  <resultMap id="orderResultMap" type="sickSa.domain.Order">
+  	<id property="ord_id" column="ORD_ID" />
+  	<result property="ord_total" column="ORD_TOTAL" />
+  	<result property="ord_payment_method" column="ORD_PAYMENT_METHOD" />
+  	<result property="ord_date" column="ORD_DATE" />
+  	<result property="tbl_id" column="TBL_ID" />
+  	<collection property="orderDetailList" javaType="java.util.ArrayList"
+  		resultMap="orderDetailResultMap" />
+  </resultMap>
 
   <!-- resultMap -->
   <resultMap id="orderDetailResultMap" type="sickSa.domain.OrderDetail">
@@ -23,13 +23,13 @@
     <result property="pdt_id" column="PDT_ID"/>
     <result property="ordt_state" column="ORDT_STATE"/>
     <association property="product" javaType="sickSa.domain.Product">
-      <id property="pdt_id" column="pdt_id"/>
-      <result property="pdt_name" column="pdt_name"/>
-      <result property="pdt_price" column="pdt_price"/>
-      <result property="pdt_imgsrc_l" column="pdt_imgsrc_l"/>
-      <result property="pdt_imgsrc_s" column="pdt_imgsrc_s"/>
-      <result property="pdt_description" column="pdt_description"/>
-      <result property="pdct_id" column="pdct_id"/>
+      <id property="pdt_id" column="PDT_ID"/>
+      <result property="pdt_name" column="PDT_NAME"/>
+      <result property="pdt_price" column="PDT_PRICE"/>
+      <result property="pdt_imgsrc_l" column="PDT_IMGSRC_L"/>
+      <result property="pdt_imgsrc_s" column="PDT_IMGSRC_S"/>
+      <result property="pdt_description" column="PDT_DESCRIPTION"/>
+      <result property="pdct_id" column="PDCT_ID"/>
     </association>
   </resultMap>
   
@@ -64,16 +64,16 @@
     where         ORD_ID = #{ord_id}
   </select>
   
-	<select id="selectOrderListByDate" parameterType="hashmap" resultMap="orderResultMap">
-		select        *
-		from          ORDERS
-		natural join  ORDER_DETAILS
+  <select id="selectOrderListByDate" parameterType="hashmap" resultMap="orderResultMap">
+  	select        *
+  	from          ORDERS
+  	natural join  ORDER_DETAILS
     inner join    PRODUCTS
                   on ORDER_DETAILS.PDT_ID = PRODUCTS.PDT_ID
-		where         TO_DATE('${startDate}', 'YYYY/MM/DD') &lt;= ORD_DATE
-		              and ORD_DATE &lt; TO_DATE('${endDate}', 'YYYY/MM/DD')
+  	where         TO_DATE('${startDate}', 'YYYY/MM/DD') &lt;= ORD_DATE
+  	              and ORD_DATE &lt; TO_DATE('${endDate}', 'YYYY/MM/DD')
     order by      ORD_DATE desc
-	</select>
+  </select>
   
   <select id="selectOrderListByProductId" resultMap="orderResultMap">
     select        *
@@ -85,43 +85,38 @@
     order by      ORD_DATE desc
   </select>
 
-	<select id="selectOrderListByState" resultMap="orderResultMap">
-		select        *
-		from          ORDERS
-		natural join  ORDER_DETAILS
-		where     		ORDT_STATE = #{ordt_state}
-	</select>
-
-	<insert id="insertOrder" parameterType="sickSa.domain.Order">
-		insert into ORDERS(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD)
-		            values(#{ord_id}, #{ord_total}, #{ord_payment_method})
-	</insert>
-	
-	<insert id="insertOrderDetail" parameterType="sickSa.domain.OrderDetail">
+  <select id="selectOrderListByState" resultMap="orderResultMap">
+  	select        *
+  	from          ORDERS
+  	natural join  ORDER_DETAILS
+    inner join    PRODUCTS
+                  on ORDER_DETAILS.pdt_id = PRODUCTS.pdt_id
+    where     	  ORDT_STATE = #{ordt_state}
+    order by      ORD_DATE desc
+  </select>
+  
+  <insert id="insertOrder" parameterType="sickSa.domain.Order">
+  	insert into ORDERS(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD)
+  	            values(#{ord_id}, #{ord_total}, #{ord_payment_method})
+  </insert>
+  
+  <insert id="insertOrderDetail" parameterType="sickSa.domain.OrderDetail">
     insert into ORDER_DETAILS(ORD_ID, PDT_ID, ORDT_AMOUNT)
                 values(#{ord_id}, #{pdt_id}, #{ordt_amount})
-	</insert>
-	
-	<update id="updateOrder" parameterType="sickSa.domain.Order">
-		update  ORDERS
-		set		  ORD_TOTAL = #{ord_total},
+  </insert>
+  
+  <update id="updateOrder" parameterType="sickSa.domain.Order">
+  	update  ORDERS
+  	set		  ORD_TOTAL = #{ord_total},
             ORD_PAYMENT_METHOD = #{ord_payment_method},
-		        ORD_DATE = #{ord_date},
-		        TBL_ID = #{tbl_id}
-		where		ORD_ID = #{ord_id}
-	</update>
-	
-	<select id="selectOrderSequence" resultType="int">
-	  select ORDERS_ORD_ID_SEQ.nextval
-	  from   dual
-	</select>
-
-<!--
-	<delete id="delete" parameterType="sickSa.domain.Order">
-		delete ORDERS
-		where
-		ORD_ID=#{ord_id} and PDT_ID=#{pdt_id} and TBL_ID=#{tbl_id}
-	</delete>
--->
+  	        ORD_DATE = #{ord_date},
+  	        TBL_ID = #{tbl_id}
+  	where		ORD_ID = #{ord_id}
+  </update>
+  
+  <select id="selectOrderSequence" resultType="int">
+    select ORDERS_ORD_ID_SEQ.nextval
+    from   dual
+  </select>
 
 </mapper>
