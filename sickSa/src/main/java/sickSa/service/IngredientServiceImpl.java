@@ -53,7 +53,7 @@ public class IngredientServiceImpl implements IngredientService{
 
 	//모든 재료 카테고리별 모든 재료 리스트를 불러온다
 	@Override
-	public @ResponseBody ArrayList<Ingredients> loadDefaultList(Integer IGCT_ID) {
+	public ArrayList<Ingredients> loadDefaultList(Integer IGCT_ID) {
 		List<IngredientDetails> igdtList = 
 				ingredientDetailsMapper.selectIngDetailByCt(IGCT_ID);
 		List<Ingredients> ingList = ingredientsMapper.listIngredient();

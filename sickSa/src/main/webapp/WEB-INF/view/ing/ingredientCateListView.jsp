@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- font start -->
-<!-- <style>
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
     #body {
         margin: 30px 0px;
     }
@@ -15,9 +15,10 @@
     	text-align:center; 
     }
     .ul .li {
-    	font-size: 45px;
+    	font-size: 30px;
     	font-weight:100;
-    	font-family:hanna;
+    	font-family:Jeju-Gothic;
+    	font-weight: bold;
         float: left;
         margin: 0px 20px;
     } 
@@ -27,15 +28,19 @@
     	height: auto;
     	bottom:13px;
     }
-</style> -->
+    #h1{
+    	font-family:Jeju Gothic;
+    	font-weight: 100;
+    }
+</style>
 <!-- font end -->
 <!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src='include/js/ingredient.js'></script>
 <div id="igctListForm" class="panel">
-	<h1 class="content-title" style ="font-family:hanna; font-weight: 100;">재료 종류</h1>
+	<h1 class="content-title">재료 종류</h1>
 	<!-- service list start -->
-	<ul class="ul">
+	<ul class="ul" id="loadCategoryList">
 	<c:forEach var="ingredientCategory" items="${ingredientCategoriesList}">
 		<li class="li"><a href="javascript:ing_list_load(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a></li>
 	</c:forEach>
@@ -44,7 +49,6 @@
 		</a></li>
 	</ul> 
 	<div id="ingredientList"></div>
-	
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">

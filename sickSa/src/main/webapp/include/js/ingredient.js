@@ -8,7 +8,7 @@ function init_ui() {
 };
 
 /*****전역 로드시 실행******/
-$(window).load(function() {
+$(window).load(function(igct_id) {
 	init_ui();
 	igct_list_load();
 });
@@ -24,12 +24,16 @@ function igct_list_load() {
 	});	
 }
 
+
+// 재료 리스트를 불러온다.
 function ing_list_load(igct_id){
+	
+	
 	$.post('ingList', {igct_id : igct_id}, function(data) {
 		$('#ingredientList').html(data);
 	});
-//	$('.ingP').hide();
-//	$('#ingList' + i).show();
+	
+	
 //	$.ajax({
 //		url : 'ingList/'+i,
 //		type : 'GET',
@@ -41,10 +45,12 @@ function ing_list_load(igct_id){
 }
 
 
-// 재료카테고리 이벤트처리
-$('.panel-heading h3').on('click',function(e){
-	$(this).parent().parent().next().fadeToggle();
-});
+// 재료의 디테일을 toggle
+function ing_detail_load(ing_id){
+	$('#ingList'+ing_id).fadeToggle();
+}
+
+
 
 //add igct form modal 
 $(document).ready(function() {
@@ -144,5 +150,3 @@ $(document).ready(function() {
 		});
 	});
 });
-
-
