@@ -8,7 +8,7 @@ function init_ui() {
 };
 
 /*****전역 로드시 실행******/
-$(window).load(function() {
+$(window).load(function(igct_id) {
 	init_ui();
 	igct_list_load();
 });
@@ -25,11 +25,11 @@ function igct_list_load() {
 }
 
 function ing_list_load(igct_id){
+	$('.ingP').hide();
+	$('#ingList'+igct_id).show();
 	$.post('ingList', {igct_id : igct_id}, function(data) {
 		$('#ingredientList').html(data);
 	});
-//	$('.ingP').hide();
-//	$('#ingList' + i).show();
 //	$.ajax({
 //		url : 'ingList/'+i,
 //		type : 'GET',
