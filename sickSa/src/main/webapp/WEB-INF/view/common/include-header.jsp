@@ -4,7 +4,8 @@
 
 <header>
   <div class="header-upper">
-    <a class="logo" href="index.html"><img src="include/images/logo.png" alt="" /></a>
+ <a class="logo" href="mainIndex"><img src="include/images/logo2.png" alt="" /></a> 
+ <!--     <a class="logo" href="index.html"><img src="include/images/logo.png" alt="" /></a> -->
   </div>
   <div class="header-lower">
     <ul class="quick-contact">
