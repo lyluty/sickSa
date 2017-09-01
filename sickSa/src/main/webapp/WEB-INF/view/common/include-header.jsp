@@ -13,6 +13,6 @@
       <li><b>PHONE :</b> <a href="tel:#"><i class="ion ion-android-call visible-xs"></i><span>+91 9876 543 210</span></a></li>
       <li class="social-links"><b>GET SOCIAL :</b> <a href="#" target="_blank"><i class="ion ion-social-facebook"></i></a><a href="#" target="_blank"><i class="ion ion-social-twitter"></i></a><a href="#" target="_blank"><i class="ion ion-social-googleplus"></i></a><a href="#" target="_blank"><i class="ion ion-social-instagram"></i></a></li>
     </ul>
-    <p class="copyright">&copy; 2016. All right reserved.</p>
+    <p class="copyright">&copy; 2017. All right reserved.</p>
   </div>
 </header>
