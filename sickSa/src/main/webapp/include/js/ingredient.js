@@ -45,10 +45,6 @@ function ing_list_load(igct_id){
 }
 
 
-
-
-
-
 // 재료의 디테일을 toggle
 function ing_detail_load(ing_id){
 	$('#ingList'+ing_id).fadeToggle();

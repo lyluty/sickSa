@@ -14,6 +14,7 @@
 		<li>
 		<a href="javascript:ing_detail_load(${ingredient.ing_id})">${ingredient.ing_name}</a>
 		</li>
+		
 		<div id="ingList">
 			<p id="ingList${ingredient.ing_id}" class="ingP" style="font-size: 30px; color: green;" hidden="true">
 				${ingredient.ing_stock} 개의 재고가 남았으며<br />
