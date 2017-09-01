@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- font start -->
-<!-- <style>
+<style>
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
     #body {
         margin: 30px 0px;
@@ -27,7 +27,7 @@
     	height: auto;
     	bottom:13px;
     }
-</style> -->
+</style>
 <!-- font end -->
 <!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
