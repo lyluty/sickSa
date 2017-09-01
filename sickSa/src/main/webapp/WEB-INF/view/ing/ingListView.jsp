@@ -4,10 +4,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style type="text/css">
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 </style>
+<!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src='include/js/ingredient.js'></script>
-
 <br />
 <ul style="font-family: hanna; font-size: 30px; line-height: 200%;">
 	<c:forEach var="ingredient" items="${ingredientList}">
@@ -20,5 +20,8 @@
 			</p>
 		</div>
 	</c:forEach>
-	<li><img id="addImg" alt="plus"  src="include/images/addButton.png" onclick="ing_insert_form();"></li>
+	<li><a role="button" data-backdrop="static"> 
+			<span id="create-ing" class="btn btn-xs btn-success">추가하기</span>
+	</a></li>
 </ul>
+

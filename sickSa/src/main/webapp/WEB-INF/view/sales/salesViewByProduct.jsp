@@ -13,28 +13,83 @@
 #myUl #myLi {
   float: left; margin: 0px 20px;
 }
+
+#productCategoryList ul, .productCategoryList li {
+  margin: 0; padding: 0; font-size: 0; list-style: none;
+}
+
+#productCategoryList li {
+  width: auto; display: inline-block;
+}
+
+#productCategoryList a {
+  display: block; padding: 5px; margin: 0; text-decoration: none; min-width: 63px; font-size: 16px;
+}
+
+#productCategoryList ul {
+  width: 100%; margin-top: 5px; padding-bottom: 1px; border-top: 1px solid #002080; border-bottom: 1px solid #002080;
+}
 </style>
 <!-- head start -->
 <jsp:include page="../common/include-head.jsp" flush="false" />
 <!-- head end -->
+
+<script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-  function productList(categoryId) {
-    $.post('productList.ajax', {
-      'categoryId' : categoryId
-    }, function(data) {
-      $('#productList').html(data);
+  $(function() {
+    $('#product-category-list select').change(function() {
+      $('#sales-list table tbody').empty();
+      var cId = $(this).val();
+
+      if (cId == '') {
+        $('#product-list').hide();
+        return;
+      }
+
+      $.post('productListByCategoryId2.ajax', {
+        'cId' : cId
+      }, function(data) {
+        var $select = $('#product-list select');
+        $select.empty();
+        $select.append('<option value="">상품 선택</option>');
+        $.each(data, function(index, value) {
+          var pId = value.pdt_id;
+          var pName = value.pdt_name;
+          $select.append('<option value="'+pId+'">' + pName + '</option>');
+        });
+      });
+      $('#product-list').show();
     });
-  }
-  function salesListByProductId(productId) {
-    $.post('salesListByProductId.ajax', {
-      'productId' : productId
-    }, function(data) {
-      var $salesListDiv = $('.salesList[data-productId=' + productId + ']');
-      $salesListDiv.html(data);
-      $('.salesList').hide();
-      $salesListDiv.show();
+
+    $('#product-list select').change(function() {
+      var pId = $(this).val();
+
+      if (pId == '') {
+        $('#sales-list table tbody').empty();
+        return;
+      }
+
+      $.post('orderListByProductId.ajax', {
+        'pId' : pId
+      }, function(orderList) {
+        var $tbody = $('#sales-list table tbody');
+        $tbody.empty();
+        $.each(orderList, function(orderIndex, order) {
+          $.each(order.orderDetailList, function(orderDetailIndex, orderDetail) {
+            $tbody.append('<tr>');
+            $tbody.append('<th>' + order.ord_id + '</th>');
+            $tbody.append('<td>' + orderDetail.pdt_id + '</td>');
+            $tbody.append('<td>' + orderDetail.ordt_amount + '</td>');
+            $tbody.append('<td>' + order.ord_total + '</td>');
+            $tbody.append('<td>' + order.ord_payment_method + '</td>');
+            $tbody.append('<td>' + order.ord_date + '</td>');
+            $tbody.append('<td>' + order.tbl_id + '</td>');
+            $tbody.append('</tr>');
+          });
+        });
+      });
     });
-  }
+  });
 </script>
 </head>
 <body>
@@ -83,23 +138,48 @@
 
               <br />
 
-              <!-- 상품 카테고리 리스트 -->
-              <div id="productCategoryList" class="content-holder">
-                <h4 class="content-title">상품별 매출 조회</h4>
-                <ul id="myUl">
-                  <c:forEach var="productCategory" items="${productCategoryList}">
-                    <c:set var="categoryId" value="${productCategory.pdct_id}"></c:set>
-                    <c:set var="categoryName" value="${productCategory.pdct_name}"></c:set>
-                    <li id="myLi"><a href="javascript:productList(${categoryId})">${categoryName}</a></li>
-                  </c:forEach>
-                </ul>
+              <!-- 카테고리, 상품 선택 -->
+              <div id="product-selector" style="width: 100%">
+                <div id="product-category-list" style="width: 45%; float: left; margin: 2%">
+                  <select name="designation" class="not_chosen" style="width: 100%">
+                    <option value="">카테고리 선택</option>
+                    <c:forEach var="productCategory" items="${productCategoryList}">
+                      <c:set var="cId" value="${productCategory.pdct_id}" />
+                      <c:set var="cName" value="${productCategory.pdct_name}" />
+                      <option value="${cId}">${cName}</option>
+                    </c:forEach>
+                  </select>
+                </div>
+                <div id="product-list" style="width: 45%; float: left; margin: 2%" hidden="true">
+                  <select style="width: 100%">
+                    <option value="">카테고리 선택</option>
+                  </select>
+                </div>
               </div>
+              <!-- 카테고리, 상품 선택 -->
+
               <hr />
               <br />
-              <!-- 상품 카테고리 리스트 -->
-              <!-- 상품 리스트 -->
-              <div id="productList"></div>
-              <!-- 상품 리스트 -->
+
+              <!-- 매출 목록 -->
+              <div id="sales-list">
+                <table class="table table-striped" style="margin: auto 0;">
+                  <thead>
+                    <tr>
+                      <th>주문번호</th>
+                      <th>상품번호</th>
+                      <th>주문상품개수</th>
+                      <th>금액</th>
+                      <th>결제수단</th>
+                      <th>결제일시</th>
+                      <th>테이블번호</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 매출 목록 -->
 
             </div>
             <!-- 컨텐츠 영역 end -->
@@ -116,9 +196,7 @@
 
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
-  <script src='include/css/calendar/jquery.min.js'></script>
-  <script src='include/css/calendar/moment.min.js'></script>
-  <script src='include/css/calendar/fullcalendar.js'></script>
   <!-- tail end -->
+
 </body>
 </html>
