@@ -49,6 +49,5 @@
 </div>
 <!-- 컨텐츠 영역 end -->
 <!-- tail start -->
-<jsp:include page="../common/include-tail.jsp" flush="false" />
 
 <!-- tail end -->

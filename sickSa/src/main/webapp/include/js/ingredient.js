@@ -13,15 +13,7 @@ $(window).load(function() {
 	igct_list_load();
 });
 
-/*$('ul#igctList li').click(function(i){
-	alert("dd");
-	ing_list_load(i);
-});*/
-
 function igct_list_load() {
-	/*
-	 * $.get(); Load data from the server using a HTTP GET request.
-	 */
 	$.ajax({
 		url : 'igctList',
 		type : 'POST',
@@ -48,30 +40,6 @@ function ing_list_load(igct_id){
 //	});
 }
 
-//function igct_insert_form(){
-//	window.open(
-//			'igctInsertForm','재료 항목 추가',
-//			'width=700, height=500, left=0, top=0, toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no');
-//}
-//
-//function igct_insert_action(){
-//	document.getElementById("igctAddForm").action = 'igctInsertAction';
-//	document.getElementById("igctAddForm").method = 'POST';
-//	document.getElementById("igctAddForm").submit();
-//}
-//
-//function ing_insert_form(){
-//	window.open(
-//			'ingInsertForm','재료 항목 추가',
-//	'width=700, height=500, left=0, top=0, toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no');
-//}
-//
-//function ing_insert_action(){
-//	document.getElementById("ingAddForm").action = 'ingInsertAction';
-//	document.getElementById("ingAddForm").method = 'POST';
-//	document.getElementById("ingAddForm").submit();
-//}
-
 
 // 재료카테고리 이벤트처리
 $('.panel-heading h3').on('click',function(e){
@@ -80,6 +48,10 @@ $('.panel-heading h3').on('click',function(e){
 
 //add igct form modal 
 $(document).ready(function() {
+	$('body').on('hidden.bs.modal', '.modal', function(){ 
+		$(this).removeData('bs.modal'); 
+	});
+	
 	var dialog, form,
 	    igct_name = $( "#igct_name" ),
 	    allFields = $( [] ).add( igct_name );
@@ -124,6 +96,10 @@ $(document).ready(function() {
 
 //add ing form modal 
 $(document).ready(function() {
+	$('body').on('hidden.bs.modal', '.modal', function(){ 
+		$(this).removeData('bs.modal'); 
+	});
+	
 	var dialog, form,
 	igct_id = $( "#igct_id" ),
 	ing_id = $( "#ing_id" ),
