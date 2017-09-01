@@ -56,6 +56,7 @@ $(function() {
       }
       
       $tbody.empty();
+      
       $.each(data, function(i, o) {
         $.each(o.orderDetailList, function(i, od) {
           var p = od.product;

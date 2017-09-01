@@ -5,6 +5,8 @@
 
 <html>
 <head>
+<!-- head start -->
+<jsp:include page="../common/include-head.jsp" flush="false" />
 <style>
 #myUl {
   list-style: none; font-style: italic; font-weight: bold;
@@ -30,81 +32,7 @@
   width: 100%; margin-top: 5px; padding-bottom: 1px; border-top: 1px solid #002080; border-bottom: 1px solid #002080;
 }
 </style>
-<!-- head start -->
-<jsp:include page="../common/include-head.jsp" flush="false" />
 <!-- head end -->
-
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script>
-
-  $(function() {
-    $('#product-category-list select').change(function() {
-      $('#sales-list table tbody').empty();
-      var cId = $(this).val();
-      
-      if (cId == '') {
-        $('#product-list').hide();
-        return;
-      }
-      
-      var $select = $('#product-list select');
-      $select.empty();
-      $select.append('<option value="">상품 정보를 불러오는 중입니다</option');
-      $.post('productListByCategoryId2.ajax', {
-        'cId' : cId
-      }, function(data) {
-        $select.empty();
-        $select.append('<option value="">상품 선택</option>');
-        $.each(data, function(index, value) {
-          var pId = value.pdt_id;
-          var pName = value.pdt_name;
-          $select.append('<option value="'+pId+'">' + pName + '</option>');
-        });
-      });
-      $('#product-list').show();
-    });
-    
-    $('#product-list select').change(function() {
-      var pId = $(this).val();
-      
-      if (pId == '') {
-        $('#sales-list table tbody').empty();
-        return;
-      }
-      
-      $.post('orderListByProductId.ajax', {
-        'pId' : pId
-      }, function(orderList) {
-        var $tbody = $('#sales-list table tbody');
-        $tbody.empty();
-        $.each(orderList, function(orderIndex, order) {
-          $.each(order.orderDetailList, function(orderDetailIndex, orderDetail) {
-            var product = orderDetail.product;
-            $tbody.append(
-              '<tr>'
-              + '<th>' + order.ord_id + '</th>'
-              + '<td>' + product.pdt_name + '</td>'
-              + '<td>' + orderDetail.ordt_amount + '</td>'
-              + '<td>' + order.ord_total + '</td>'
-              + '<td>' + order.ord_payment_method + '</td>'
-              + '<td>' + formatDate(order.ord_date) + '</td>'
-              + '</tr>');
-            
-            /* 이렇게 쓰면 제대로 동작을 안함
-            $tbody.append('<th>' + order.ord_id + '</th>');
-            $tbody.append('<td>' + product.pdt_name + '</td>');
-            $tbody.append('<td>' + orderDetail.ordt_amount + '</td>');
-            $tbody.append('<td>' + order.ord_total + '</td>');
-            $tbody.append('<td>' + order.ord_payment_method + '</td>');
-            $tbody.append('<td>' + formatDate(date) + '</td>');
-            $tbody.append('</tr>');
-             */
-          });
-        });
-      });
-    });
-  });
-</script>
 </head>
 <body>
   <div class="animsition">
@@ -179,8 +107,8 @@
               <br />
 
               <!-- 매출 목록 -->
-              <div id="sales-list">
-                <table class="table table-striped" style="margin: auto 0;">
+              <div id="sales-list" hidden="true">
+                <table class="table table-striped" style="margin: 1% 0;">
                   <thead>
                     <tr>
                       <th>주문번호</th>
@@ -192,9 +120,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr align="center">
-                      <th colspan="6">표시할 내용이 없습니다</th>
-                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -216,6 +141,7 @@
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
   <script src='include/js/salesView.js'></script>
+  <script src='include/js/salesViewByProduct.js'></script>
   <!-- tail end -->
 
 </body>
