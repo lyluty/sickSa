@@ -98,8 +98,18 @@ public class OrderController {
 		@SuppressWarnings("unchecked")
 		List<OrderDetail> sCart = (List<OrderDetail>) session.getAttribute("cart");
 		Order order = orderService.createOrder(sCart, paymentMethod);
-		session.removeAttribute("cart");
-		model.addAttribute("order", order);
+		/*
+		for (OrderDetail orderDetail : sCart) {
+			if (orderDetail.getPdt_id() == ) {
+				sCart.remove(orderDetail);
+				break;
+			}
+			*/
+			session.removeAttribute("cart");
+			model.addAttribute("order", order);
+			model.addAttribute("orderDetailList", sCart);
+			
+		
 		return "order/result";
 	}
 
