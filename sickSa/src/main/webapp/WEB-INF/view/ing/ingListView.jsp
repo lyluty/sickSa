@@ -9,9 +9,11 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src='include/js/ingredient.js'></script>
 <br />
-<ul style="font-family: hanna; font-size: 30px; line-height: 200%;">
+<ul style="font-family: Jeju Gothic; font-size: 25px; line-height:160%;">
 	<c:forEach var="ingredient" items="${ingredientList}">
-		<li><a href="javascript:ing_detail_load(${ingredient.ing_id})">${ingredient.ing_name}</a></li>
+		<li>
+		<a href="javascript:ing_detail_load(${ingredient.ing_id})">${ingredient.ing_name}</a>
+		</li>
 		<div id="ingList">
 			<p id="ingList${ingredient.ing_id}" class="ingP" style="font-size: 30px; color: green;" hidden="true">
 				${ingredient.ing_stock} 개의 재고가 남았으며<br />

@@ -27,9 +27,13 @@ function igct_list_load() {
 
 // 재료 리스트를 불러온다.
 function ing_list_load(igct_id){
+	
+	
 	$.post('ingList', {igct_id : igct_id}, function(data) {
 		$('#ingredientList').html(data);
 	});
+	
+	
 //	$.ajax({
 //		url : 'ingList/'+i,
 //		type : 'GET',
@@ -40,11 +44,16 @@ function ing_list_load(igct_id){
 //	});
 }
 
-// 재료의 디테일을 show,hide
+
+
+
+
+
+// 재료의 디테일을 toggle
 function ing_detail_load(ing_id){
-	
 	$('#ingList'+ing_id).fadeToggle();
 }
+
 
 
 //add igct form modal 
