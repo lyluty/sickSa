@@ -39,17 +39,11 @@ public class SalesController {
 		return "sales/salesViewByProduct";
 	}
 
-	// 기관별 조회결과 요청
+	// 기간별 조회결과 요청
 	@RequestMapping("salesListByTimePeriod.ajax")
-	public String salesListAjax(Model model, @RequestParam String startDate, @RequestParam String endDate) {
-		model.addAttribute("orderList", salesService.list(startDate, endDate));
-		return "sales/div/salesListByTimePeriod";
-	}
-
-	// 기간선택 달력
-	@RequestMapping("showTimePeriod.ajax")
-	public String showTimePeriodAjax() {
-		return "sales/div/timePeriod";
+	@ResponseBody
+	public List<Order> salesListAjax(Model model, @RequestParam String startDate, @RequestParam String endDate) {
+		return salesService.list(startDate, endDate);
 	}
 
 	// 이건뭐지

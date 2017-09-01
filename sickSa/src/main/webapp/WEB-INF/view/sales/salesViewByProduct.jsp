@@ -36,21 +36,7 @@
 
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-  function formatDate(date) {
-    var year = checkZero(date.getFullYear() + '');
-    var month = checkZero(date.getMonth() + 1 + '');
-    var day = checkZero(date.getDate() + '');
-    var hour = checkZero(date.getHours() + '');
-    var minutes = checkZero(date.getMinutes() + '');
-    var seconds = checkZero(date.getSeconds() + '');
-    return year + '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds;
-  }
-  function checkZero(data) {
-    if (data.length == 1) {
-      data = "0" + data;
-    }
-    return data;
-  }
+
   $(function() {
     $('#product-category-list select').change(function() {
       $('#sales-list table tbody').empty();
@@ -94,7 +80,6 @@
         $.each(orderList, function(orderIndex, order) {
           $.each(order.orderDetailList, function(orderDetailIndex, orderDetail) {
             var product = orderDetail.product;
-            var date = new Date(order.ord_date);
             $tbody.append(
               '<tr>'
               + '<th>' + order.ord_id + '</th>'
@@ -102,7 +87,7 @@
               + '<td>' + orderDetail.ordt_amount + '</td>'
               + '<td>' + order.ord_total + '</td>'
               + '<td>' + order.ord_payment_method + '</td>'
-              + '<td>' + formatDate(date) + '</td>'
+              + '<td>' + formatDate(order.ord_date) + '</td>'
               + '</tr>');
             
             /* 이렇게 쓰면 제대로 동작을 안함
@@ -230,6 +215,7 @@
 
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
+  <script src='include/js/salesView.js'></script>
   <!-- tail end -->
 
 </body>

@@ -1,65 +1,19 @@
-$(document).ready(function() {
-  showTimePeriod();
-  calendarInitFn();
-});
-
-var calendarInitFn = function() {
-  $('#calendar').fullCalendar({
-    customButtons : {
-      EventButton : {
-        text : 'Add Event',
-        click : function(event, jsEvent, view) {
-          $('#modal_calendar').modal('show');
-        }
-      }
-    },
-    header : {
-      left : '',
-      center : 'title',
-      right : 'today'
-    }, // hearder 노출 메뉴
-
-    footer : {
-      left : 'prev',
-      center : '',
-      right : 'next'
-    }, // footer 노출 메뉴
-
-    height : "auto",
-
-    selectable : true,
-    select : function(start, end, jsEvent, view) {
-
-      var dt_start = moment(start).format('YYYY-MM-DD');
-      var dt_end = moment(end).format('YYYY-MM-DD');
-      cf.startDate.value = dt_start;
-      cf.endDate.value = dt_end;
-    }
-  })
-};
-
-function salesList() {
-  var queryString = $("#cf").serialize();
-
-  $.ajax({
-    type : 'post',
-    url : 'salesListByTimePeriod.ajax',
-    data : queryString,
-    dataType : 'html',
-    success : function(data) {
-      $("#content").html(data);
-    },
-  });
+function formatDate(intVal) {
+  var date = new Date(intVal);
+  
+  var year = checkZero(date.getFullYear() + '');
+  var month = checkZero(date.getMonth() + 1 + '');
+  var day = checkZero(date.getDate() + '');
+  var hour = checkZero(date.getHours() + '');
+  var minutes = checkZero(date.getMinutes() + '');
+  var seconds = checkZero(date.getSeconds() + '');
+  
+  return year + '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds;
 }
 
-function showTimePeriod() {
-  $.ajax({
-    type : 'POST',
-    url : 'showTimePeriod.ajax',
-    dataType : 'html',
-    success : function(data) {
-      $("#content").html(data);
-      calendarInitFn();
-    }
-  })
+function checkZero(data) {
+  if (data.length == 1) {
+    data = '0' + data;
+  }
+  return data;
 }

@@ -40,18 +40,55 @@
           <div class="content-holder">
 
             <!-- 컨텐츠 영역 start -->
-            <div id="content" class="container" style="margin-bottom: 100px;"  data-os-animation="fadeInUp" data-os-animation-delay="0s"></div>
-            <!-- 컨텐츠 영역 end -->
+            <!-- <div id="content" class="container" style="margin-bottom: 100px;" data-os-animation="fadeInUp" data-os-animation-delay="0s"> -->
+            <div id="content" style="margin-bottom: 100px;">
+              <!-- 달력 -->
+              <div id="content-calendar">
+                <div id='calendar' style="width: 50%; display: block; margin: 0 auto; vertical-align: middle;"></div>
+                <div id='calendar-foot'>
+                  <form id="cf" name="cf" method="POST">
+                    <input type="hidden" name="startDate" /> <input type="hidden" name="endDate" />
+                  </form>
+                  <button class="btn btn-default" style="display: block; margin: 0 auto; width: 100px;">조회</button>
+                </div>
+              </div>
+              <!-- 달력 -->
 
+              <!-- 매출 목록 -->
+              <div id="content-sales-list" hidden="true">
+                <h3 class="content-title">기간별 매출 조회</h3>
+                <button class="btn btn-default" style="margin: 2% 0;">&lt;&nbsp;조회기간 선택</button>
+                <div id="sales-list-table">
+                  <table class="table table-striped" style="margin: 1% 0;">
+                    <thead>
+                      <tr>
+                        <th>주문번호</th>
+                        <th>상품명</th>
+                        <th>주문상품개수</th>
+                        <th>금액</th>
+                        <th>결제수단</th>
+                        <th>결제일시</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- 매출 목록 -->
+
+            </div>
           </div>
+          <!-- 컨텐츠 영역 end -->
+
         </div>
       </div>
     </div>
-
-    <!-- footer start -->
-    <jsp:include page="../common/include-footer.jsp" flush="false" />
-    <!-- footer end -->
   </div>
+
+  <!-- footer start -->
+  <jsp:include page="../common/include-footer.jsp" flush="false" />
+  <!-- footer end -->
 
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
@@ -59,6 +96,7 @@
   <script src='include/css/calendar/moment.min.js'></script>
   <script src='include/css/calendar/fullcalendar.js'></script>
   <script src='include/js/salesView.js'></script>
+  <script src='include/js/salesViewByTimePeriod.js'></script>
   <script src='include/css/calendar/jquery.min.js'></script>
   <script src='include/css/calendar/moment.min.js'></script>
   <script src='include/css/calendar/fullcalendar.js'></script>
