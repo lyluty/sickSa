@@ -40,11 +40,18 @@
 		<jsp:include page="../common/include-header.jsp" flush="false" />
 		<!-- header end -->
 		<!-- 컨텐츠 영역 start -->
+		
+		 <div class="main-container-outer">
 		<div class="container" style="height: 80%">
 			<!-- top start -->
 			<jsp:include page="../common/include-vm_top.jsp" />
 			<!-- top end -->
+			<div class="content-holder">
+			
 			<div id="content" style="height: 80%; display: block; margin: 0 auto"></div>
+			</div>
+			
+		</div>
 		</div>
 		<!-- 컨텐츠 영역 end -->
 		<!-- footer start -->
