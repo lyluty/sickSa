@@ -92,14 +92,10 @@
 
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
-  <script src='include/css/calendar/jquery.min.js'></script>
-  <script src='include/css/calendar/moment.min.js'></script>
-  <script src='include/css/calendar/fullcalendar.js'></script>
   <script src='include/js/salesView.js'></script>
   <script src='include/js/salesViewByTimePeriod.js'></script>
-  <script src='include/css/calendar/jquery.min.js'></script>
-  <script src='include/css/calendar/moment.min.js'></script>
-  <script src='include/css/calendar/fullcalendar.js'></script>
+  <script src='include/calendar/moment.min.js'></script>
+  <script src='include/calendar/fullcalendar.js'></script>
   <!-- tail end -->
 </body>
 </html>
