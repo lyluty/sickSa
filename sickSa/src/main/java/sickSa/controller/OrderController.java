@@ -94,15 +94,14 @@ public class OrderController {
 
 	@RequestMapping("payNow")
 	public String payNowAjax(HttpSession session, Model model, @RequestParam String paymentMethod) {
-		System.out.println(paymentMethod);
 		@SuppressWarnings("unchecked")
 		List<OrderDetail> sCart = (List<OrderDetail>) session.getAttribute("cart");
 		Order order = orderService.createOrder(sCart, paymentMethod);
-			model.addAttribute("order", order);
-			model.addAttribute("orderDetailList", sCart);
-		
-			session.removeAttribute("cart");
-		
+		model.addAttribute("order", order);
+		model.addAttribute("orderDetailList", sCart);
+
+		session.removeAttribute("cart");
+
 		return "order/result";
 	}
 
