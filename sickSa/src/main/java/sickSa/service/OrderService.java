@@ -33,7 +33,6 @@ public class OrderService {
 		orderDao.insertOrder(order);
 		for (OrderDetail orderDetail : sCart) {
 			orderDetail.setOrd_id(orderId);
-			orderDetail.setOrdt_amount(1);
 			orderDao.insertOrderDetail(orderDetail);
 		}
 		order.setOrd_date(orderDao.selectOrderDate(orderId));

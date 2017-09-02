@@ -33,7 +33,6 @@ function addToCart(productId) {
 
 function payNow() {
   var paymentMethod = $('#paymentMethod').val();
-  alert(paymentMethod);
   if (!paymentMethod) {
     alert('먼저 결제수단을 선택해주세요');
   } else {

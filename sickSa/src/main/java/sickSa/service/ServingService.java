@@ -26,11 +26,7 @@ public class ServingService {
 		}
 	}
 	
-	public List<Order> cookList() {
-		return orderDao.selectOrderListByState('B');
-	}
-	
-	public List<Order> servingList() {
-		return orderDao.selectOrderListByState('C');
+	public List<Order> cookList(char ordt_state) {
+		return orderDao.selectOrderListByState(ordt_state);
 	}
 }
