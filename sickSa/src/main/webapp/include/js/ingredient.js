@@ -30,7 +30,7 @@ function ing_list_load(igct_id){
 	
 	
 	$.post('ingList', {igct_id : igct_id}, function(data) {
-		$('#ingredientList').html(data);
+		$('#ingredientList'+igct_id).html(data);
 	});
 	
 	
