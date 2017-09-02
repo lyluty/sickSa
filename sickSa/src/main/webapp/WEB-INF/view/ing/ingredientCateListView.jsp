@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- font start -->
+
+<!--  
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
     #body {
@@ -33,21 +35,44 @@
     	font-weight: 100;
     }
 </style>
+-->
 <!-- font end -->
 <!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src='include/js/ingredient.js'></script>
+
 <div id="igctListForm" class="panel">
 	<h1 class="content-title">재료 종류</h1>
 	<!-- service list start -->
-	<ul class="ul" id="loadCategoryList">
-	<c:forEach var="ingredientCategory" items="${ingredientCategoriesList}">
-		<li class="li"><a href="javascript:ing_list_load(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a></li>
-	</c:forEach>
-		<li><a role="button" data-backdrop="static"> 
-			<span id="create-igct" class="btn btn-xs btn-success">추가하기</span>
-		</a></li>
+	
+	
+	<ul class="service-list" id="loadCategoryList"><!-- ul class"ul"이었음. -->
+		<c:forEach var="ingredientCategory" items="${ingredientCategoriesList}">
+			<li> <!-- li class "li"였음. -->
+				<div class="panel">
+					<div class="panel-heading">
+						<!-- <a href="javascript:ing_list_load(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a> -->
+						<div>
+							<a href="javascript:ing_list_load(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a>
+						</div>
+					</div>
+					<!-- Category List Slide start -->
+					<div id="ingList${ingredientCategory.igct_id }" hidden="true"></div>
+					<!-- Category List Slide end -->
+				</div>
+			</li>
+		</c:forEach>
+		<li>
+			<a role="button" data-backdrop="static"> 
+				<span id="create-igct" class="btn btn-xs btn-success">추가하기</span>
+			</a>
+		</li>
 	</ul> 
+	
+	
+	
 	<div id="ingredientList"></div>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
