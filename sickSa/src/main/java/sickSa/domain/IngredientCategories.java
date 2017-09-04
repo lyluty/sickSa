@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class IngredientCategories {
 	private int igct_id;
+	
 	private String igct_name;
 	
 	public IngredientCategories() {

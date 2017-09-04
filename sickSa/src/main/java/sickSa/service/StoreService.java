@@ -16,12 +16,14 @@ public class StoreService {
 	/* Variable */
 	@Autowired
 	StoreDataDao storeDataDao;
+	@Autowired
 	OrderDao orderDao;
+	@Autowired
 	QueueLogDao queueLogDao; 
 	
 	/* Method */
 	public boolean checkPin(String pin) {
-		return pin.equals(getAdminPin()) ;
+		return pin.equals(getAdminPin());
 	}
 	
 	public String getAdminPin() {

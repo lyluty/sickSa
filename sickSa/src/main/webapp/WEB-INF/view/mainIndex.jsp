@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <!-- 메인용 HEAD start -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +22,6 @@
 <link href="include/css/tables.css" rel="stylesheet" type="text/css">
 <script src="include/js/modernizr-custom.js"></script>
 <script src="include/js/jquery-2.2.2.min.js"></script>
-
 </head>
 <body>
 
@@ -37,6 +34,11 @@
           <ul class="breadcrumb">
             <li><a href="mainIndex">Home</a></li>
             <li><a href="mainIndex">call clerk </a></li>
+          </ul>
+        </div>
+        <div class="top-bar" style="width: 100px; float: left;">
+          <ul class="breadcrumb">
+            <li><a href="login">Admin</a></li>
           </ul>
         </div>
       </div>
@@ -116,16 +118,14 @@
             <h1>${restCnt}석남았습니다</h1>
             <p>좌석을 먼저 선택해주세요</p>
             <ol class="store-table wrapper">
-              <li data-table-no="0" data-state="entrance" class="element"><h2></h2>
-                <i>&lt;- Entrance</i></li>
+              <li data-table-no="0" data-state="entrance" class="element"><h2></h2> <i>&lt;- Entrance</i></li>
               <c:forEach var="table" items="${tableList}" varStatus="varStatus">
                 <c:set var="count" value="${varStatus.count}" />
                 <c:if test="${table.tbl_is_empty == 'TRUE'}">
                   <li data-table-no="${count}" data-state="available" class="element"><h2>${count}</h2> <i></i></li>
                 </c:if>
                 <c:if test="${table.tbl_is_empty == 'FALSE'}">
-                  <li data-table-no="${count}" data-state="unavailable" class="element"><h2>${count}</h2>
-                    <i></i></li>
+                  <li data-table-no="${count}" data-state="unavailable" class="element"><h2>${count}</h2> <i></i></li>
                 </c:if>
               </c:forEach>
 
@@ -180,7 +180,6 @@
   <jsp:include page="common/include-tail.jsp" flush="false" />
   <script src="include/js/mainIndex.js"></script>
   <!-- tail end -->
-
 
 </body>
 </html>
