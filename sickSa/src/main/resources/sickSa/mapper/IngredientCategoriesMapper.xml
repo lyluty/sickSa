@@ -42,7 +42,7 @@ select * from INGREDIENT_CATEGORIES where IGCT_ID = #{igct_id}
 			SELECT igct_id_seq.nextval FROM DUAL
 		</selectKey>
 		INSERT INTO
-			ingredient_categories(igct_id, igct_name)
+			ingredient_categories
 		VALUES
 			(#{igct_id}, #{igct_name})
 	</insert>

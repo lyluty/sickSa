@@ -24,6 +24,11 @@
 								<li><span>Ingredients</span></li>
 							</ul>
 						</div>
+							<div class="top-bar" style="width:60px;float:right;">
+						<ul class="breadcrumb">
+						<li><a href="login">Admin</a></li>
+					</ul>
+				</div>
 					</div>
 				</div>
 				<div class="main-container">
@@ -43,7 +48,6 @@
 	</div>
 	<!-- tail start -->
 	<jsp:include page="../common/include-tail.jsp" flush="false" />
-	<!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src='include/js/ingredient.js'></script>
 	<!-- tail end -->

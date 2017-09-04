@@ -80,6 +80,4 @@ public class IngredientController {
 		return "forward:/ingredients";
 	}
 	
-	
-	
 }

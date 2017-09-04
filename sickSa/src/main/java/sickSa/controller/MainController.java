@@ -1,7 +1,7 @@
 package sickSa.controller;
 
-import javax.servlet.http.HttpServletRequest;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,24 +25,26 @@ public class MainController {
 		storeService.setRest();
 		storeService.setWaiting();
 		*/
-	
 		model.addAttribute("restCnt", storeService.getRest());
 		model.addAttribute("waitCnt", storeService.getWaiting());
-		
 		return "mainIndex";
 	}
 	
-	@RequestMapping("login")
-	public String login(){
-		
+	//로그인버튼 누르기
+	@RequestMapping("loginForm")
+	public String loginForm(){
 		return "common/login";
 	}
-	@RequestMapping("matchPw")
-	public String matchPw(@RequestParam("pw_pin") String pw_pin){
-		if(storeService.checkPin(pw_pin)){			
-			return "sales/salesViewByTimePeriod";		//임시
+	
+	//로그인 체크
+	@RequestMapping("loginAction")
+	public String loginAction(Session session, @RequestParam("pw_pin") String pw_pin){
+		if(storeService.checkPin(pw_pin)){	
+			System.out.println("true");
+			return "";
 		}
-		return "common/login";
+		System.out.println("false");
+		return "";
 	}
 	
 	
