@@ -12,6 +12,10 @@
 		<!-- nav end -->
 		<!-- header start -->
 		<jsp:include page="../common/include-header.jsp" flush="false" />
+		<script src="include/js/jquery-2.2.2.min.js"></script>
+		<script src='include/js/ingredient.js'></script>
+		<script type="text/javascript" src='include/js/admin.js'></script>
+		
 		<!-- header end -->
 		<!-- main-container start -->
 		<div class="main-container-outer">
@@ -26,7 +30,8 @@
 						</div>
 							<div class="top-bar" style="width:60px;float:right;">
 						<ul class="breadcrumb">
-						<li><a href="login">Admin</a></li>
+						<li id="adminB"><a href="login">Admin</a></li>
+						<li id="logoutB"><a href="logout">Logout</a></li>
 					</ul>
 				</div>
 					</div>
@@ -49,7 +54,8 @@
 	<!-- tail start -->
 	<jsp:include page="../common/include-tail.jsp" flush="false" />
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src='include/js/ingredient.js'></script>
+	
+
 	<!-- tail end -->
 </body>
 </html>
