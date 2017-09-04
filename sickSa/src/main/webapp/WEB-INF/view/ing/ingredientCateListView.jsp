@@ -2,15 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<<<<<<< HEAD
-<link href="include/css/ingredientStyle.css" rel="stylesheet" type="text/css">
-=======
 
 <link href="include/css/ingredientStyle.css" rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
-<script src='include/js/ingredient.js'></script>
 
->>>>>>> branch 'master' of https://github.com/lyluty/sickSa
 <div id="igctListForm" class="panel">
 	<h1 class="content-title" id ="ingHeader">재료 종류</h1>
 	<!-- service list start -->
@@ -44,10 +38,7 @@
 		</div>
 	</div> -->
 </div>
-<<<<<<< HEAD
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src='include/js/ingredient.js'></script>
-=======
->>>>>>> branch 'master' of https://github.com/lyluty/sickSa
 <!-- service list end -->
