@@ -16,7 +16,6 @@
 			<div class="panel">
 				<div class="panel-heading">
 					<div class="service-box">
-						<div class="service-num">${ingredient.ing_id}</div>
 						<div class="service-icon"><i class="ion ion-android-color-palette"></i></div>
 						<h3>${ingredient.ing_name}</h3>
 					</div>

@@ -55,7 +55,7 @@
 						<!-- <a href="javascript:ing_list_load(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a> -->
 						<div>
 							<a href="javascript:ing_list_load(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a>
-							<div id="ingredientList${ingredientCategory.igct_id }"></div>
+						<div id="ingredientList${ingredientCategory.igct_id }"></div>
 						</div>
 					</div>
 				</div>
