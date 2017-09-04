@@ -24,6 +24,11 @@
 								<li><span>Ingredients</span></li>
 							</ul>
 						</div>
+							<div class="top-bar" style="width:60px;float:right;">
+						<ul class="breadcrumb">
+						<li><a href="login">Admin</a></li>
+					</ul>
+				</div>
 					</div>
 				</div>
 				<div class="main-container">
