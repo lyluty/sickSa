@@ -7,7 +7,6 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src='include/js/ingredient.js'></script>
 <br />
-
 <ul class="sub-service-list">
 	<c:forEach var="ingredient" items="${ingredientList}">
 		<li>
@@ -29,7 +28,6 @@
 		</li>
 	</c:forEach>
 	<li>
-	
 	<a role="button" data-backdrop="static"> <span
 			id="create-ing" class="btn btn-xs btn-success">추가하기</span>
 	</a></li>
