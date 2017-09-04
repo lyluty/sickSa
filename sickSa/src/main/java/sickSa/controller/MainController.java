@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import sickSa.service.OrderService;
 import sickSa.service.StoreService;
 
 /*
@@ -18,6 +19,8 @@ public class MainController {
 
 	@Autowired
 	StoreService storeService;
+	@Autowired
+	OrderService orderService;
 
 	@RequestMapping("mainIndex")
 	public String mainIndex(Model model) {
@@ -25,8 +28,10 @@ public class MainController {
 		storeService.setRest();
 		storeService.setWaiting();
 		*/
-		model.addAttribute("restCnt", storeService.getRest());
-		model.addAttribute("waitCnt", storeService.getWaiting());
+//		model.addAttribute("restCnt", storeService.getRest());
+//		model.addAttribute("waitCnt", storeService.getWaiting());
+		model.addAttribute("restCnt", orderService.getRestTableCount());
+    model.addAttribute("tableList", orderService.tableList());
 		return "mainIndex";
 	}
 	
