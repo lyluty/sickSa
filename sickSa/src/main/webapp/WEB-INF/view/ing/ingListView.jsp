@@ -3,9 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style type="text/css">
-</style>
-<!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<link href="include/css/ingredientStyle.css" rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src='include/js/ingredient.js'></script>
 <br />
@@ -17,11 +15,11 @@
 				<div class="panel-heading">
 					<div class="service-box">
 						<div class="service-icon"><i class="ion ion-android-color-palette"></i></div>
-						<h3>${ingredient.ing_name}</h3>
+						<h3 id="ingListHeader">${ingredient.ing_name}</h3>
 					</div>
 				</div>
 				<div class="panel-body">
-					<p>
+					<p id="ingDetail">
 						재고 : ${ingredient.ing_stock}<br /> 단가 :
 						${ingredient.ingredientDetails.igdt_price}<br /> 거래연락처 :
 						${ingredient.ingredientDetails.igdt_contact}
@@ -30,7 +28,9 @@
 			</div>
 		</li>
 	</c:forEach>
-	<li><a role="button" data-backdrop="static"> <span
+	<li>
+	
+	<a role="button" data-backdrop="static"> <span
 			id="create-ing" class="btn btn-xs btn-success">추가하기</span>
 	</a></li>
 </ul>
