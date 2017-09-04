@@ -30,6 +30,15 @@ function ing_list_load(igct_id){
 	
 	$.post('ingList', {igct_id : igct_id}, function(data) {
 		$('#ingredientList'+igct_id).html(data);
+// 		var html = "";
+// 		$.each(data, function(index, value){
+// 			var id = value.ing_id;
+// 			var name = value.ing_name;
+// 			var stock = value.ing_stock;
+// 			var price = value.ingredientDetails.igdt_price;
+// 			var contact = value.ingredientDetails.ingdt_contact;
+// 		});
+// 		$('#ingredientList').after(html);
 	});
 	
 	

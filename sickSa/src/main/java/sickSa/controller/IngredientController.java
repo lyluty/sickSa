@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import sickSa.domain.IngredientCategories;
 import sickSa.domain.IngredientDetails;
@@ -35,17 +36,16 @@ public class IngredientController {
 	public String salesView() {
 		return "ing/ingredientView";
 	}
+	
 	@RequestMapping("/igctList")
 	public String loadIgctList(Model model){
 		model.addAttribute("ingredientCategoriesList", ingredientCategoriesMapper.ingredientCategoriesList());
 		return "ing/ingredientCateListView";
 	}
 	
-	//defaultList
-	//@RequestMapping("/ingList/{IGCT_ID}")
-	public String loadIngList(Model model, @PathVariable Integer IGCT_ID) {
-		model.addAttribute("ingredientList", ingredientService.loadDefaultList(IGCT_ID));
-		return "ing/ingredientListView";
+	@RequestMapping("/ingList")
+	public @ResponseBody List<Ingredients> loadIngList(@RequestParam int igct_id) {
+		return ingredientService.loadListIng(igct_id);
 	}
 
 	@RequestMapping("/igctInsertForm")
@@ -77,11 +77,6 @@ public class IngredientController {
 		return "forward:/ingredients";
 	}
 	
-	@RequestMapping("/ingList")
-	public String testLoadList(Model model, @RequestParam int igct_id) {
-		List<Ingredients> ingredientList = ingredientService.loadListIng(igct_id);
-		model.addAttribute("ingredientList", ingredientList);
-		return "ing/ingListView";
-	}
+	
 	
 }
