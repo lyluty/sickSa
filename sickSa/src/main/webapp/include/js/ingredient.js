@@ -28,18 +28,17 @@ function igct_list_load() {
 // 재료 리스트를 불러온다.
 function ing_list_load(igct_id){
 	
-	
 	$.post('ingList', {igct_id : igct_id}, function(data) {
-		var html = "";
-		$.each(data, function(index, value){
-			var id = value.ing_id;
-			var name = value.ing_name;
-			var stock = value.ing_stock;
-			var price = value.ingredientDetails.igdt_price;
-			var contact = value.ingredientDetails.ingdt_contact;
-			
-		});
-		$('#ingredientList').after(html);
+		$('#ingredientList'+igct_id).html(data);
+// 		var html = "";
+// 		$.each(data, function(index, value){
+// 			var id = value.ing_id;
+// 			var name = value.ing_name;
+// 			var stock = value.ing_stock;
+// 			var price = value.ingredientDetails.igdt_price;
+// 			var contact = value.ingredientDetails.ingdt_contact;
+// 		});
+// 		$('#ingredientList').after(html);
 	});
 	
 	
@@ -53,11 +52,11 @@ function ing_list_load(igct_id){
 //	});
 }
 
-
-// 재료의 디테일을 toggle
-function ing_detail_load(ing_id){
-	$('#ingList'+ing_id).fadeToggle();
-}
+// 재료의 디테일 정보를 불러온다.
+$('.panel-heading h3').on('click',function(){
+	alert('sipal');
+	$(this).parent().parent().next().toggle();
+});
 
 
 

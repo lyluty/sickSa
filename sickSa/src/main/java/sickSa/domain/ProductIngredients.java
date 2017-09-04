@@ -1,27 +1,28 @@
 package sickSa.domain;
 
-import java.util.Map;
+import javax.xml.bind.annotation.XmlRootElement;
 
-
+@XmlRootElement
 public class ProductIngredients {
 	
 	private int pdt_id;
-	//Map<ING_ID,PDIG_AMOUNT>
-	private Map<Integer, Integer> pdig_amount;
+	private int ing_id;
+	private int pdig_amount;
 	
 	public ProductIngredients() {}
-	
-	public ProductIngredients(int pdt_id, Map<Integer, Integer> pdig_amount) {
+
+	public ProductIngredients(int pdt_id, int ing_id, int pdig_amount) {
 		super();
 		this.pdt_id = pdt_id;
+		this.ing_id = ing_id;
 		this.pdig_amount = pdig_amount;
 	}
-
+	
 	@Override
 	public String toString() {
-		return pdt_id+":"+pdig_amount;
+		return pdt_id+":"+ing_id+":"+pdig_amount;
 	}
-
+	
 	public int getPdt_id() {
 		return pdt_id;
 	}
@@ -30,12 +31,19 @@ public class ProductIngredients {
 		this.pdt_id = pdt_id;
 	}
 
-	public Map<Integer, Integer> getPdig_amount() {
-		return pdig_amount;
+	public int getIng_id() {
+		return ing_id;
 	}
 
-	public void setPdig_amount(Map<Integer, Integer> pdig_amount) {
-		this.pdig_amount = pdig_amount;
+	public void setIng_id(int ing_id) {
+		this.ing_id = ing_id;
+	}
+
+	public int getPdig_amount() {
+		return pdig_amount;
 	}
 	
+	public void setPdig_amount(int pdig_amount) {
+		this.pdig_amount = pdig_amount;
+	}
 }

@@ -35,7 +35,7 @@ public interface IngredientService {
 	
 	
 	//재료를 출고하면서 출고일시 기록과 재고의 변경을 한다 
-	public Integer changeStock(Integer pdt_id);
+	public void changeStock(Integer pdt_id);
 	//재료를 삭제한다
 	public Integer expireStock(Integer ING_ID);
 	

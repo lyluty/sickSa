@@ -2,19 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sickSa.mapper.ProductIngredientMapper">
 	
-	<resultMap id="pdig" type="sickSa.domain.ProductIngredients">
+	<!-- <resultMap id="pdig" type="sickSa.domain.ProductIngredients">
 		<result column="pdt_id" property="pdt_id"/>
 		<association property="pdig_amount" javaType="java.util.Map">
 			<result property="key" column="ing_id"/>
 			<result property="value" column="pdig_amount"/>
 		</association>
-	</resultMap>
+	</resultMap> -->
 	
 	<select 
 		id="passAmount" 
 		parameterType="int" 
 		resultType="sickSa.domain.ProductIngredients">
-		SELECT pdt_id,pdig_amount
+		SELECT pdt_id,ing_id,pdig_amount
 		FROM product_ingredients
 		WHERE pdt_id=#{pdt_id}
 	</select>
