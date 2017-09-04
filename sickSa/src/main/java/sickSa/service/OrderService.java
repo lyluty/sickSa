@@ -10,8 +10,10 @@ import sickSa.domain.Order;
 import sickSa.domain.OrderDetail;
 import sickSa.domain.Product;
 import sickSa.domain.ProductCategory;
+import sickSa.domain.Table;
 import sickSa.mapper.OrderDao;
 import sickSa.mapper.ProductDao;
+import sickSa.mapper.TableDao;
 
 @Service
 public class OrderService {
@@ -20,6 +22,18 @@ public class OrderService {
 	private OrderDao orderDao;
 	@Autowired
 	private ProductDao productDao;
+	@Autowired
+	TableDao tableDao;
+
+	/* 전체 테이블리스트 */
+	public List<Table> tableList() {
+	  return tableDao.selectList();
+	}
+	
+	/* 잔여좌석 확인 */
+	public int getRestTableCount() {
+	  return tableDao.selectRestTableCount();
+	}
 
 	/* 결제 완료 - 레코드 생성 */
 	public Order createOrder(List<OrderDetail> sCart, String paymentMethod) {

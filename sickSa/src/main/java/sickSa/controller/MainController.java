@@ -1,7 +1,11 @@
 package sickSa.controller;
 
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
+=======
+>>>>>>> branch 'master' of https://github.com/lyluty/sickSa.git
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,21 +31,29 @@ public class MainController {
 		 /*
 		storeService.setRest();
 		storeService.setWaiting();
+<<<<<<< HEAD
+=======
+		*/
+>>>>>>> branch 'master' of https://github.com/lyluty/sickSa.git
 		model.addAttribute("restCnt", storeService.getRest());
 		model.addAttribute("waitCnt", storeService.getWaiting());
+<<<<<<< HEAD
 			*/
 		model.addAttribute("restCnt", orderService.getRestTableCount());
 	    model.addAttribute("tableList", orderService.tableList());
 		
+=======
+>>>>>>> branch 'master' of https://github.com/lyluty/sickSa.git
 		return "mainIndex";
 	}
 	
-	@RequestMapping("login")
-	public String login(){
-		
+	//로그인버튼 누르기
+	@RequestMapping("loginForm")
+	public String loginForm(){
 		return "common/login";
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping("logout")
 	public String logout(HttpSession session){
 		 session.setAttribute("loginStatus", false);
@@ -53,8 +65,17 @@ public class MainController {
 		 session.setAttribute("loginStatus", storeService.checkPin(pw_pin));
 		if(storeService.checkPin(pw_pin)){			
 			return "ing/ingredientView";		//임시
+=======
+	//로그인 체크
+	@RequestMapping("loginAction")
+	public String loginAction(Session session, @RequestParam("pw_pin") String pw_pin){
+		if(storeService.checkPin(pw_pin)){	
+			System.out.println("true");
+			return "";
+>>>>>>> branch 'master' of https://github.com/lyluty/sickSa.git
 		}
-		return "common/login";
+		System.out.println("false");
+		return "";
 	}
 	
 }

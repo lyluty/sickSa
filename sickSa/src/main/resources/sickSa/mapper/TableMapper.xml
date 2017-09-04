@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="sickSa.mapper.TableDao">
-
+<!-- 
 	<select id="selectList" resultType="sickSa.domain.Table">
 		SELECT
 			TBL_ID,
@@ -12,7 +12,7 @@
 		FROM
 			TABLES
 	</select>
-
+ -->
 	<select id="selectOne" parameterType="java.lang.Integer" resultType="sickSa.domain.Table">
 		SELECT
 			TBL_ID,

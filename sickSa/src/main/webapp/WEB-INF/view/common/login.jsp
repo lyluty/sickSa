@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<<<<<<< HEAD
 
 <html>
 <head>
@@ -60,22 +60,23 @@
 						</div>
 
 					</div>
+=======
+<div class="modal-header">
+	<h3 align="center">Login</h3>
+</div>
+<div class="modal-body">
+	<div class="row">
+		<div class="col-sm-7">
+			<form method="post" action="matchPw" id="pwForm">
+				<div class="form-group" style="margin: 50px auto; width: 60%">
+					<input type="text" name="pw_pin" value="" class="form-control" placeholder="Password" required />
+>>>>>>> branch 'master' of https://github.com/lyluty/sickSa.git
 				</div>
-			</div>
+			</form>
 		</div>
-
-
-		<!-- 컨텐츠 영역 end -->
-
-		<!-- footer start -->
-		<jsp:include page="include-footer.jsp" flush="false" />
-		<!-- footer end -->
 	</div>
-
-	<!-- tail start -->
-	<jsp:include page="include-tail.jsp" flush="false" />
-	<!-- tail end -->
-
-
-</body>
-</html>
+</div>
+<div class="modal-footer">
+	<span class="btn btn-xs btn-success" onclick="login_action();">Login</span>
+	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
