@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+@font-face {
+  font-family: 'Hanna';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.eot);
+  src: url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/hanna/v3/BM-HANNA.ttf) format('truetype');
+}
+#ingCateList {
+	font-family:hanna;
+	font-size:45px;
+}
+
+#ingDetail {
+	font-size:30px;
+	list-style: none;
+	font-weight: 400;
+	line-height:1.5em;
+	font-family: Hanna;
+}
+
+#ingListHeader {
+	font-family: Hanna;
+	font-weight: 100;
+}
+
+#ingHeader {
+	font-family:hanna;
+	font-weight: 100;
+}
+
+#categoryName{
+	float:left;
+	list-style:none;
+	margin:1px;
+}
+
+/* 기존 style.css의 클래스를 재정의 하였음. */
+.panel .panel-heading{ padding:20px 0px 20px 0px; cursor:pointer; position:relative;}
+
+.panel .panel-body{padding:0px; padding-top:0; margin-bottom:0px; display:none;}
+
+.service-box{width:100%; min-height:0px; position:relative;padding-top:0px;}
+
+ul.service-list li{width:100%; float:left; padding:10px 25px; border-bottom:solid 1px rgba(0,0,0,0.01);}
+
+

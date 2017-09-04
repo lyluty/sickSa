@@ -24,7 +24,6 @@ function igct_list_load() {
 	});	
 }
 
-
 // 재료 리스트를 불러온다.
 function ing_list_load(igct_id){
 	$.post('ingList', {igct_id : igct_id}, function(data) {
@@ -35,7 +34,6 @@ function ing_list_load(igct_id){
 
 // 재료의 디테일 정보를 불러온다.
 $('.panel-heading h3').on('click',function(){
-	alert('sipal');
 	$(this).parent().parent().next().toggle();
 });
 

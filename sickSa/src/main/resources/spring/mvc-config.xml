@@ -26,5 +26,6 @@
 	<mvc:resources mapping="include/images/**" location="/include/images/" />
 	<mvc:resources mapping="include/js/**.js" location="/include/js/" />
 	<mvc:resources mapping="include/video/**" location="/include/video/" />
+	<mvc:resources mapping="include/calendar/**" location="include/calendar/" />
 
 </beans>

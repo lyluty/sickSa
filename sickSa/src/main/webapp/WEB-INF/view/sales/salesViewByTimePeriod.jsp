@@ -6,7 +6,13 @@
 <head>
 <!-- head start -->
 <jsp:include page="../common/include-head.jsp" flush="false" />
-<link rel='stylesheet' href='include/css/calendar/fullcalendar.css' />
+ <script src='include/js/jquery-2.2.2.min.js'></script>
+<link rel='stylesheet' href='include/calendar/fullcalendar.css' />
+  <script src='include/calendar/moment.min.js'></script>
+  <script src='include/calendar/fullcalendar.js'></script>
+    <script src='include/js/salesView.js'></script>
+  <script src='include/js/salesViewByTimePeriod.js'></script>
+  
 
 <!-- head end -->
 </head>
@@ -92,10 +98,23 @@
 
   <!-- tail start -->
   <jsp:include page="../common/include-tail.jsp" flush="false" />
-  <script src='include/js/salesView.js'></script>
-  <script src='include/js/salesViewByTimePeriod.js'></script>
+
+
   <script src='include/calendar/moment.min.js'></script>
   <script src='include/calendar/fullcalendar.js'></script>
+
+   <script src='include/js/salesView.js'></script>
+  <script src='include/js/salesViewByTimePeriod.js'></script>
+  
+  
+<!--
+  <script src='include/calendar/moment.min.js'></script>
+  <script src='include/calendar/fullcalendar.js'></script>
+
+    <script src='include/js/salesView.js'></script>
+  <script src='include/js/salesViewByTimePeriod.js'></script>
+  
+  -->
   <!-- tail end -->
 </body>
 </html>
