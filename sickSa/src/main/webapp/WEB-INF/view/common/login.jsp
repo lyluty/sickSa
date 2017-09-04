@@ -6,7 +6,8 @@
 <html>
 <head>
 <jsp:include page="include-head.jsp" flush="false" />
-
+<script src="include/js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src='include/js/admin.js'></script>
 
 </head>
 <body>
