@@ -1,6 +1,8 @@
 package sickSa.mapper;
 
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,8 +14,8 @@ public class ProductIngredientMapperImpl implements ProductIngredientMapper{
 	private SqlSession sqlSession;
 	
 	@Override
-	public ProductIngredients passAmount(Integer PDT_ID) {
-		return sqlSession.selectOne("passAmount", PDT_ID);
+	public List<ProductIngredients> passAmount(Integer PDT_ID) {
+		return sqlSession.selectList("passAmount", PDT_ID);
 	}
 
 }

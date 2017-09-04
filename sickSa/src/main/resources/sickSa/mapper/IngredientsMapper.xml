@@ -33,13 +33,13 @@
 				/>
 	</resultMap>
 	
-	<resultMap id="PDIG" type="sickSa.domain.ProductIngredients">
+	<!-- <resultMap id="PDIG" type="sickSa.domain.ProductIngredients">
 		<result column="pdt_id" property="pdt_id"/>
 		<association property="pdig_amount" javaType="java.util.Map">
 			<result property="key" column="ing_id"/>
 			<result property="value" column="pdig_amount"/>
 		</association>
-	</resultMap>
+	</resultMap> -->
 	
 	<select 
 		id="listIngredient" 
@@ -108,23 +108,12 @@
   	</foreach>
   	Map을 사용할때 index는 key객체가 되고 항목은 value객체가 된다.
 	-->
-	
-	<!-- 수량을 변경 시키는 함수 아직 테스트 안해봄 -->
 	<update 
 		id="changeStock"
 		parameterType="sickSa.domain.ProductIngredients">
-		<bind name="ing_id" value="_parameter.getPDIG_AMOUNT()"/>
-		<bind name="PDIG_AMOUNT" value="_parameter."/>
 		UPDATE ingredients
-		<foreach item="item" index="index" collection="list">
-		SET ing_stock= (SELECT ing_stock
-		                FROM ingredients
-		                WHERE ing_id= #{item}) - #{index}
-		WHERE ing_id = #{item};
-		</foreach>
+		SET ing_stock= ing_stock - #{pdig_amount}
+		WHERE ing_id = #{ing_id}
 	</update>  
-	
-	
-	
 	
 </mapper>

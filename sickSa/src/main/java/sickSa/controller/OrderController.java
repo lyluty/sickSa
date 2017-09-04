@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import sickSa.domain.Order;
 import sickSa.domain.OrderDetail;
 import sickSa.domain.Product;
+import sickSa.service.IngredientService;
 import sickSa.service.OrderService;
 
 @Controller
@@ -22,6 +23,8 @@ public class OrderController {
 
 	@Autowired
 	OrderService orderService;
+	@Autowired
+	IngredientService ingredientService;
 
 	@RequestMapping("_productList")
 	public String _productList(@RequestParam("cateNo") int categoryId, Model model) {
@@ -99,9 +102,10 @@ public class OrderController {
 		Order order = orderService.createOrder(sCart, paymentMethod);
 		model.addAttribute("order", order);
 		model.addAttribute("orderDetailList", sCart);
-
+		for (OrderDetail orderDetail : sCart) {
+			ingredientService.changeStock(orderDetail.getPdt_id());
+		}
 		session.removeAttribute("cart");
-
 		return "order/result";
 	}
 

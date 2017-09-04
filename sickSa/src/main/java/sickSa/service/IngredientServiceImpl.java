@@ -123,19 +123,16 @@ public class IngredientServiceImpl implements IngredientService{
 	}
 	//재료를 출고하면서 출고일시 기록과 재고의 변경을 한다 
 	@Override
-	public Integer changeStock(Integer pdt_id) {
-		ProductIngredients pdig = productIngredientMapper.passAmount(pdt_id);
-		Map<Integer, Integer> pdigMap = pdig.getPdig_amount();
-		
-		Set<Integer> ingIdSet = pdigMap.keySet();
-		
-		for (Integer ingId : ingIdSet) {
-			ingredientDetailsMapper
-						.changeIgctOut(
-								(ingredientDetailsMapper
-										.selectIngDetailById(ingId)));
+	public void changeStock(Integer pdt_id) {
+		System.out.println(pdt_id);
+		List<ProductIngredients> pdigList = productIngredientMapper.passAmount(pdt_id);
+		System.out.println(pdigList);
+		for (ProductIngredients pdig : pdigList) {
+			ingredientDetailsMapper.changeIgctOut(
+					ingredientDetailsMapper.selectIngDetailById(pdig.getIng_id()));
+			ingredientsMapper.changeStock(pdig);
 		}
-		return ingredientsMapper.changeStock(pdig);
+		return;
 	}
 	//재료를 삭제한다
 	@Override
