@@ -11,7 +11,7 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<div id="ingCateList">
-							<a href="javascript:ing_list_load(${ingredientCategory.igct_id})">${ingredientCategory.igct_name}</a>
+							<a onclick="ing_list_load(${ingredientCategory.igct_id});">${ingredientCategory.igct_name}</a>
 							<div id="ingredientList${ingredientCategory.igct_id }" hidden="true"></div>
 						</div>
 					</div>
