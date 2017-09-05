@@ -38,8 +38,7 @@ $('.panel-heading h3').on('click',function(){
 	$(this).parent().parent().next().toggle();
 });
 
-$(document).on('click', '#addIgctAction', function(e) {
-	alert($('#igct_name').val());
+$(document).on('click', 'button#addIgctAction', function(e) {
 	//alert(document.igctForm.igct_name.value);
 	$.ajax({
 		url : 'igctInsertAction',
@@ -51,8 +50,7 @@ $(document).on('click', '#addIgctAction', function(e) {
 	}); 
 });
 
-$(document).on('click', '#addIngAction', function(e) {
-	alert($('#igct_name').val());
+$(document).on('click', 'button#addIngAction', function(e) {
 	//alert(document.igctForm.igct_name.value);
 	$.ajax({
 		url : 'ingInsertAction',
