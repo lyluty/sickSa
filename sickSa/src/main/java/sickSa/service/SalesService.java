@@ -1,6 +1,5 @@
 package sickSa.service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +44,9 @@ public class SalesService {
       int pId = (int) bestSellerMap.get("pdt_id");
       Product product = productDao.selectProductByProductId(pId);
       bestSellerMap.put("product", product);
+      bestSellerMap.put("salesVolume", orderDao.selectSalesVolumeByProductId(pId));
     }
+    System.out.println(bestSellerMapList);
     return bestSellerMapList;
   }
 

@@ -56,7 +56,7 @@ $(function() {
             + '<th>'+ o.ord_id + '</th>'
             + '<td>' + p.pdt_name + '</td>'
             + '<td>' + od.ordt_amount + '</td>'
-            + '<td>' + o.ord_total + '</td>'
+            + '<td>' + p.pdt_price * od.ordt_amount + '</td>'
             + '<td>' + o.ord_payment_method + '</td>'
             + '<td>' + formatDate(o.ord_date) + '</td>'
             + '</tr>');

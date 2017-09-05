@@ -41,7 +41,7 @@ public class OrderService {
 		int total = 0;
 		for (OrderDetail orderDetail : sCart) {
 			Product product = orderDetail.getProduct();
-			total += product.getPdt_price();
+			total += product.getPdt_price() * orderDetail.getOrdt_amount();
 		}
 		Order order = new Order(orderId, total, paymentMethod, tableNo, sCart);
 		orderDao.insertOrder(order);

@@ -455,60 +455,492 @@ insert into TABLES values (28, 'FALSE');
  * Table Name: ORDERS, ORDER_DETAILS
  */
 /*
-insert into ORDERS values (1,2,6,40000,'카드',sysdate,'B',1);
-insert into ORDERS values (2,1,2,14000,'카드',sysdate,'B',2);
-insert into ORDERS values (3,3,1,15200,'현금',sysdate,'C',3);
-insert into ORDERS values (5,1,4,32000,'카드',sysdate,'B',4);
-insert into ORDERS values (6,2,1,31700,'현금',sysdate,'C',5);
-insert into ORDERS values (7,1,4,7000,'현금',sysdate,'B',6);
-insert into ORDERS values (8,2,3,21000,'카드',sysdate,'S',7);
-insert into ORDERS values (9,1,5,52000,'카드',sysdate,'C',8);
-insert into ORDERS values (10,4, 1,15000,'현금',sysdate,'B',9);
-insert into ORDERS values (11,3,3,12700,'카드',sysdate,'B',10);
-Insert into ORDERS values(1, 32000, '카드', to_date('2017/08/01 11:45:36','YYYY/MM/DD HH24:MI:SS'), 'S', 4)
-Insert into ORDER_DETAILS values(1, 2, 4);
-Insert into ORDERS  values (2,14000,'카드',to_date('2017/08/01 11:49:36','YYYY/MM/DD HH24:MI:SS'),'S',3);
-Insert into ORDER_DETAILS values(2, 1, 2);
-Insert into ORDERS  values (3,8500,'카드',to_date('2017/08/01 11:51:06','YYYY/MM/DD HH24:MI:SS'),'S',7);
-Insert into ORDER_DETAILS values(3, 4, 1);
-Insert into ORDERS  values (4,16000,'현금',to_date('2017/08/01 11:57:51','YYYY/MM/DD HH24:MI:SS'),'S',12);
-Insert into ORDER_DETAILS values(4, 30, 2);
-Insert into ORDERS  values (5,22500,'카드',to_date('2017/08/01 11:49:56','YYYY/MM/DD HH24:MI:SS'),'S',5);
-Insert into ORDER_DETAILS values(5, 1, 3);
-Insert into ORDERS  values (6,22500,'카드',to_date('2017/08/01 12:03:56','YYYY/MM/DD HH24:MI:SS'),'S',4);
-Insert into ORDER_DETAILS values(6, 25, 3);
-Insert into ORDERS  values (7,31000,'현금',to_date('2017/08/01 12:13:45','YYYY/MM/DD HH24:MI:SS'),'S',2);
-Insert into ORDER_DETAILS values(7, 10, 1);
-Insert into ORDER_DETAILS values(7, 1, 3);
-Insert into ORDERS  values (8,35000,'카드',to_date('2017/08/01 12:16:59','YYYY/MM/DD HH24:MI:SS'),'S',3);
-Insert into ORDER_DETAILS values(8, 22, 5);
-Insert into ORDERS  values (9,8500,'현금',to_date('2017/08/01 12:18:34','YYYY/MM/DD HH24:MI:SS'),'S',9);
-Insert into ORDER_DETAILS values(9, 4, 1);
-Insert into ORDERS  values (10,8000,'카드',to_date('2017/08/01 12:48:24','YYYY/MM/DD HH24:MI:SS'),'S',5);
-Insert into ORDER_DETAILS values(10, 13, 1);
+--(ORD_ID, PDT_ID, ORD_PDT_AMOUNT, ORD_TOTAL, ORD_PAYMENT_METHOD, ORD_DATE, ORD_STATE, TBL_ID(1~30))
+--(주문번호, 상품번호, 주문상품수량, 가격, 결제수단, 주문일시, 주문상태, 테이블번호)
+--B: 주문완료, C:조리완료, S:서빙완료
+--주중(11:30~20:00), 주말(11:30~18:00)
 */
-Insert into ORDERS values(1, 32000, '카드', to_date('2017/08/01 11:45:36','YYYY/MM/DD HH24:MI:SS'), 4);
-Insert into ORDER_DETAILS values(1, 2, 4, 'B');
-Insert into ORDERS  values (2,14000,'카드',to_date('2017/08/02 11:49:36','YYYY/MM/DD HH24:MI:SS'),3);
-Insert into ORDER_DETAILS values(2, 1, 2, 'C');
-Insert into ORDERS  values (3,18500,'카드',to_date('2017/08/03 11:51:06','YYYY/MM/DD HH24:MI:SS'),7);
-Insert into ORDER_DETAILS values(3, 4, 1, 'S');
-Insert into ORDER_DETAILS values(3, 10, 1, 'C');
-Insert into ORDERS  values (4,16000,'현금',to_date('2017/08/04 11:57:51','YYYY/MM/DD HH24:MI:SS'),12);
-Insert into ORDER_DETAILS values(4, 30, 2, 'B');
-Insert into ORDERS  values (5,22500,'카드',to_date('2017/08/05 11:49:56','YYYY/MM/DD HH24:MI:SS'),5);
-Insert into ORDER_DETAILS values(5, 1, 3, 'C');
-Insert into ORDERS  values (6,22500,'카드',to_date('2017/08/06 12:03:56','YYYY/MM/DD HH24:MI:SS'),4);
-Insert into ORDER_DETAILS values(6, 25, 3, 'C');
-Insert into ORDERS  values (7,31000,'현금',to_date('2017/08/07 12:13:45','YYYY/MM/DD HH24:MI:SS'),2);
-Insert into ORDER_DETAILS values(7, 10, 1, 'S');
-Insert into ORDER_DETAILS values(7, 1, 3, 'C');
-Insert into ORDERS  values (8,35000,'카드',to_date('2017/08/08 12:16:59','YYYY/MM/DD HH24:MI:SS'),3);
-Insert into ORDER_DETAILS values(8, 22, 4, 'B');
-Insert into ORDERS  values (9,8500,'현금',to_date('2017/08/09 12:18:34','YYYY/MM/DD HH24:MI:SS'),9);
-Insert into ORDER_DETAILS values(9, 4, 1, 'B');
-Insert into ORDERS  values (10,8000,'카드',to_date('2017/08/10 12:48:24','YYYY/MM/DD HH24:MI:SS'),5);
-Insert into ORDER_DETAILS values(10, 13, 1, 'C');
+
+--08/01 화
+Insert into ORDERS values(1,32000,'카드', to_date('2017/08/01 11:45:36','YYYY/MM/DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(1,2,4,'S');
+--(ORD_ID, PDT_ID, ORDT_AMOUNT)
+
+Insert into ORDERS values (2,14000,'카드',to_date('2017/08/01 11:49:36','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(2,1,2,'S');
+
+Insert into ORDERS values (3,8500,'카드',to_date('2017/08/01 11:51:06','YYYY/MM/DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(3,4,1,'S');
+
+Insert into ORDERS values (4,16000,'현금',to_date('2017/08/01 11:57:51','YYYY/MM/DD HH24:MI:SS'),12);
+Insert into ORDER_DETAILS values(4,30,2,'S');
+
+Insert into ORDERS values (5,22500,'카드',to_date('2017/08/01 11:49:56','YYYY/MM/DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(5,1,3,'S');
+
+--08/02 수
+Insert into ORDERS values (6,22500,'카드',to_date('2017/08/02 12:03:56','YYYY/MM/DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(6,25,3,'S');
+
+Insert into ORDERS values (7,8500,'현금',to_date('2017/08/02 12:13:45','YYYY/MM/DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(7,10,1,'S');
+
+Insert into ORDERS values (8,35000,'카드',to_date('2017/08/02 12:16:59','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(8,22,5,'S');
+
+Insert into ORDERS values (9,8500,'현금',to_date('2017/08/02 12:18:34','YYYY/MM/DD HH24:MI:SS'),9);
+Insert into ORDER_DETAILS values(9,4,1,'S');
+
+Insert into ORDERS values (10,8000,'카드',to_date('2017/08/02 12:48:24','YYYY/MM/DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(10,13,1,'S');
+
+--08/03 목
+Insert into ORDERS values (11,7500,'현금',to_date('2017/08/03 15:29:49','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(11,19,1,'S');
+
+Insert into ORDERS values (12,30000,'현금',to_date('2017/08/03 16:41:51','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(12,19,4,'S');
+
+Insert into ORDERS values (13,24000,'카드',to_date('2017/08/03 18:17:07','YYYY/MM/DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(13,26,3,'S');
+
+Insert into ORDERS values (14,33000,'현금',to_date('2017/08/03 18:35:08','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(14,51,3,'S');
+
+Insert into ORDERS values (15,8500,'카드',to_date('2017/08/03 19:24:52','YYYY/MM/DD HH24:MI:SS'),21);
+Insert into ORDER_DETAILS values(15,4,1,'S');
+
+Insert into ORDERS values (16,45000,'카드',to_date('2017/08/03 19:46:19','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(16,11,5,'S');
+
+--08/04 금
+Insert into ORDERS values (17,21000,'카드',to_date('2017/08/04 12:13:31','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(17, 3, 2, 'S');
+Insert into ORDER_DETAILS values(17, 32, 2, 'S');
+
+Insert into ORDERS values (18,7000,'카드',to_date('2017/08/04 12:51:03','YYYY/MM/DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(18,1,1, 'S');
+
+Insert into ORDERS values (19,15000,'현금',to_date('2017/08/04 13:37:31','YYYY/MM/DD HH24:MI:SS'),13);
+Insert into ORDER_DETAILS values(19,7,2, 'S');
+
+Insert into ORDERS values (20,17000,'카드',to_date('2017/08/04 14:49:56','YYYY/MM/DD HH24:MI:SS'),25);
+Insert into ORDER_DETAILS values(20,10,2, 'S');
+
+Insert into ORDERS values (21,21000,'현금',to_date('2017/08/04 14:53:51','YYYY/MM/DD HH24:MI:SS'),14);
+Insert into ORDER_DETAILS values(21,24,3, 'S');
+
+--08/05 토
+Insert into ORDERS values (22,13000,'카드',to_date('2017/08/05 12:13:56','YYYY/MM/DD HH24:MI:SS'),12);
+Insert into ORDER_DETAILS values(22,1,1, 'S');
+Insert into ORDER_DETAILS values(22,39,2, 'S');
+
+Insert into ORDERS values (23,15000,'카드',to_date('2017/08/05 12:16:56','YYYY/MM/DD HH24:MI:SS'),23);
+Insert into ORDER_DETAILS values(23,21,2, 'S');
+
+Insert into ORDERS values (24,42000,'카드',to_date('2017/08/05 12:48:06','YYYY/MM/DD HH24:MI:SS'),9);
+Insert into ORDER_DETAILS values(24,12,3, 'S');
+Insert into ORDER_DETAILS values(24,46,5, 'S');
+
+Insert into ORDERS values (25,15000,'현금',to_date('2017/08/05 15:29:56','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(25,19,2, 'S');
+
+Insert into ORDERS values (26,28000,'현금',to_date('2017/08/05 16:41:56','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(26,15,4,'S');
+
+--08/06 일
+Insert into ORDERS values (27,21000,'카드',to_date('2017/08/06 12:17:56','YYYY/MM/DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(27,23,3,'S');
+
+Insert into ORDERS values (28,10000,'현금',to_date('2017/08/06 12:35:56','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(28,20,1,'S');
+Insert into ORDER_DETAILS values(28,42,1,'S');
+
+Insert into ORDERS values (29,21000,'카드',to_date('2017/08/06 13:13:31','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(29,3,2,'S');
+Insert into ORDER_DETAILS values(29,32,2,'S');
+
+Insert into ORDERS values (30,7000,'카드',to_date('2017/08/06 15:51:03','YYYY/MM/DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(30,1,1,'S');
+
+Insert into ORDERS values (31,15000,'현금',to_date('2017/08/06 16:37:31','YYYY/MM/DD HH24:MI:SS'),13);
+Insert into ORDER_DETAILS values(31,7,2,'S');
+
+--08/07 월
+Insert into ORDERS values (32,17000,'카드',to_date('2017/08/07 14:49:56','YYYY/MM/DD HH24:MI:SS'),25);
+Insert into ORDER_DETAILS values(32,10,2,'S');
+
+Insert into ORDERS values (33,21000,'현금',to_date('2017/08/07 14:53:51','YYYY/MM/DD HH24:MI:SS'),14);
+Insert into ORDER_DETAILS values(33,24,3,'S');
+
+Insert into ORDERS values (34,13000,'카드',to_date('2017/08/07 15:14:08','YYYY/MM/DD HH24:MI:SS'),12);
+Insert into ORDER_DETAILS values(34,1,1,'S');
+Insert into ORDER_DETAILS values(34,39,2,'S');
+
+Insert into ORDERS values (35,15000,'카드',to_date('2017/08/07 15:16:56','YYYY/MM/DD HH24:MI:SS'),23);
+Insert into ORDER_DETAILS values(35,21,2,'S');
+
+--08/08 화
+Insert into ORDERS values (36,42000,'카드',to_date('2017/08/08 15:48:06','YYYY/MM/DD HH24:MI:SS'),9);
+Insert into ORDER_DETAILS values(36,12,3,'S');
+Insert into ORDER_DETAILS values(36,46,5,'S');
+
+Insert into ORDERS values (37,15000,'현금',to_date('2017/08/08 16:29:47','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(37,19,2,'S');
+
+Insert into ORDERS values (38,28000,'현금',to_date('2017/08/08 16:41:22','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(38,15,4,'S');
+
+Insert into ORDERS values (39,21000,'카드',to_date('2017/08/08 18:17:08','YYYY/MM/DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(39,23,3,'S');
+
+--08/09 수
+Insert into ORDERS values (40,10000,'현금',to_date('2017/08/09 12:15:56','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(40,20,1,'S');
+Insert into ORDER_DETAILS values(40,42,1,'S');
+
+Insert into ORDERS values (41,21000,'카드',to_date('2017/08/09 13:17:08','YYYY/MM/DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(41,1,3,'S');
+
+Insert into ORDERS values (42,15500,'카드',to_date('2017/08/09 14:34:58','YYYY/MM/DD HH24:MI:SS'),10);
+Insert into ORDER_DETAILS values(42,9,1,'S');
+Insert into ORDER_DETAILS values(42,23,1,'S');
+
+Insert into ORDERS values (43,43000,'카드',to_date('2017/08/09 13:00:23','YYYY/MM/DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(43,34,5,'S');
+Insert into ORDER_DETAILS values(43,1,4,'S');
+
+--08/10 목
+Insert into ORDERS values (44,8000,'현금',to_date('2017/08/10 13:15:37','YYYY/MM/DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(44,17,1,'S');
+
+Insert into ORDERS values (45,22000,'카드',to_date('2017/08/10 13:45:51','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(45,51,2,'S');
+
+Insert into ORDERS values (46,11000,'카드',to_date('2017/08/10 14:02:25','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(46,51,1,'S');
+
+Insert into ORDERS values (47,11000,'카드',to_date('2017/08/10 14:52:21','YYYY/MM/DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(47,51,1,'S');
+
+--08/11 금
+Insert into ORDERS values (48,20000,'현금',to_date('2017/08/11 15:23:07','YYYY/MM/DD HH24:MI:SS'),26);
+Insert into ORDER_DETAILS values(48,40,2,'S');
+Insert into ORDER_DETAILS values(48,15,2,'S');
+
+Insert into ORDERS values (49,7500,'카드',to_date('2017/08/11 16:02:37','YYYY/MM/DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(49,17,1,'S');
+
+Insert into ORDERS values (50,66500,'카드',to_date('2017/08/11 18:33:21','YYYY/MM/DD HH24:MI:SS'),21);
+Insert into ORDER_DETAILS values(50,45,4,'S');
+Insert into ORDER_DETAILS values(50,21,3,'S');
+Insert into ORDER_DETAILS values(50,13,4,'S');
+
+Insert into ORDERS values (51,14000,'카드',to_date('2017/08/11 18:53:13','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(51,1,2,'S');
+
+--08/12 토
+insert into ORDERS values (52,24000,'카드',TO_DATE('2017-08-12 11:53:08', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(52,14,3,'S');
+
+insert into ORDERS values (53,11500,'카드',TO_DATE('2017-08-12 11:58:32', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(53,4,1,'S');
+Insert into ORDER_DETAILS values(53,33,1,'S');
+
+insert into ORDERS values (54,24000,'카드',TO_DATE('2017-08-12 12:07:08', 'YYYY-MM-DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(54,14,3,'S');
+
+insert into ORDERS values (55,32000,'카드',TO_DATE('2017-08-12 12:23:35', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(55,12,2,'S');
+Insert into ORDER_DETAILS values(55,24,2,'S');
+
+--08/13 일
+insert into ORDERS values (56,7500,'카드',TO_DATE('2017-08-13 12:53:00', 'YYYY-MM-DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(56,17,1,'S');
+
+insert into ORDERS values (57,22500,'카드',TO_DATE('2017-08-13 13:24:57', 'YYYY-MM-DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(57,19,3,'S');
+
+insert into ORDERS values (58,16000,'카드',TO_DATE('2017-08-13 13:43:23', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(58,14,2,'S');
+
+insert into ORDERS values (59,8000,'카드',TO_DATE('2017-08-13 14:01:11', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(59,50,2,'S');
+
+--08/14 월
+insert into ORDERS values (60,40000,'카드',TO_DATE('2017-08-14 14:53:06', 'YYYY-MM-DD HH24:MI:SS'),20);
+Insert into ORDER_DETAILS values(60,1,4,'S');
+Insert into ORDER_DETAILS values(60,32,4,'S');
+
+insert into ORDERS values (61,13000,'카드',TO_DATE('2017-08-14 15:23:48', 'YYYY-MM-DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(61,20,1,'S');
+Insert into ORDER_DETAILS values(61,47,2,'S');
+
+insert into ORDERS values (62,8000,'카드',TO_DATE('2017-08-14 15:51:03', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(62,30,1,'S');
+
+--08/15 화
+
+--08/16 수
+insert into ORDERS values (63,20000,'카드',TO_DATE('2017-08-16 16:23:08', 'YYYY-MM-DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(63,24,2,'S');
+Insert into ORDER_DETAILS values(63,39,2,'S');
+
+insert into ORDERS values (64,20000,'카드',TO_DATE('2017-08-16 16:57:28', 'YYYY-MM-DD HH24:MI:SS'),21);
+Insert into ORDER_DETAILS values(64,15,2,'S');
+Insert into ORDER_DETAILS values(64,44,2,'S');
+
+insert into ORDERS values (65,33000,'카드',TO_DATE('2017-08-16 16:23:01', 'YYYY-MM-DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(65,51,3,'S');
+
+--08/17 목
+insert into ORDERS values (66,12000,'카드',TO_DATE('2017-08-17 11:43:02', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(66,50,3,'S');
+
+insert into ORDERS values (67,4000,'현금',TO_DATE('2017-08-17 11:47:12', 'YYYY-MM-DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(67,50,1,'S');
+
+insert into ORDERS values (68,8000,'카드',TO_DATE('2017-08-17 11:54:17', 'YYYY-MM-DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(68,50,2,'S');
+
+insert into ORDERS values (69,4000,'카드',TO_DATE('2017-08-17 12:11:01', 'YYYY-MM-DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(69,50,1,'S');
+
+insert into ORDERS values (70,20000,'카드',TO_DATE('2017-08-17 12:23:41', 'YYYY-MM-DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(70,15,2,'S');
+Insert into ORDER_DETAILS values(70,42,2,'S');
+
+insert into ORDERS values (71,30000,'카드',TO_DATE('2017-08-17 12:47:12', 'YYYY-MM-DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(71,19,4,'S');
+
+insert into ORDERS values (72,17000,'현금',TO_DATE('2017-08-17 12:53:09', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(72,10,2,'S');
+
+insert into ORDERS values (73,54000,'카드',TO_DATE('2017-08-17 13:33:41', 'YYYY-MM-DD HH24:MI:SS'),21);
+Insert into ORDER_DETAILS values(73,1,6,'S');
+Insert into ORDER_DETAILS values(73,34,4,'S');
+
+--08/18 금
+insert into ORDERS values (74,8000,'현금',TO_DATE('2017-08-18 13:59:00', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(74,26,1,'S');
+
+insert into ORDERS values (75,16000,'카드',TO_DATE('2017-08-18 14:23:12', 'YYYY-MM-DD HH24:MI:SS'),17);
+Insert into ORDER_DETAILS values(75,30,2,'S');
+
+insert into ORDERS values (76,28000,'현금',TO_DATE('2017-08-18 14:53:32', 'YYYY-MM-DD HH24:MI:SS'),16);
+Insert into ORDER_DETAILS values(76,1,4,'S');
+
+insert into ORDERS values (77,22000,'카드',TO_DATE('2017-08-18 15:48:44', 'YYYY-MM-DD HH24:MI:SS'),12);
+Insert into ORDER_DETAILS values(77,51,2,'S');
+
+
+--08/19 토
+insert into ORDERS values (78,20000,'카드',TO_DATE('2017-08-19 15:41:01', 'YYYY-MM-DD HH24:MI:SS'),19);
+Insert into ORDER_DETAILS values(78,20,2,'S');
+Insert into ORDER_DETAILS values(78,42,2,'S');
+
+insert into ORDERS values (79,16000,'카드',TO_DATE('2017-08-19 17:13:01', 'YYYY-MM-DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(79,50,4,'S');
+
+
+--08/20 일
+insert into ORDERS values (80,22000,'카드',TO_DATE('2017-08-20 12:12:51', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(80,51,2,'S');
+
+insert into ORDERS values (81,10000,'현금',TO_DATE('2017-08-20 12:45:26', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(81,1,1,'S');
+Insert into ORDER_DETAILS values(81,42,1,'S');
+
+insert into ORDERS values (82,51,1,11000,'카드',TO_DATE('2017-08-20 13:22:20', 'YYYY-MM-DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(79,50,4,'S');
+
+insert into ORDERS values (83,21000,'카드',TO_DATE('2017-08-20 13:59:38', 'YYYY-MM-DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(83,27,2,'S');
+Insert into ORDER_DETAILS values(83,36,2,'S');
+
+insert into ORDERS values (84,14000,'카드',TO_DATE('2017-08-20 14:09:18', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(84,1,2,'S');
+
+
+--08/21 월
+insert into ORDERS values (85,14000,'카드',TO_DATE('2017-08-21 14:59:22', 'YYYY-MM-DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(85,31,2,'S');
+
+insert into ORDERS values (86,36000,'카드',TO_DATE('2017-08-21 15:13:13', 'YYYY-MM-DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(86,1,3,'S');
+Insert into ORDER_DETAILS values(86,27,2,'S');
+
+insert into ORDERS values (87,10500,'카드',TO_DATE('2017-08-21 16:12:38', 'YYYY-MM-DD HH24:MI:SS'),16);
+Insert into ORDER_DETAILS values(87,21,1,'S');
+Insert into ORDER_DETAILS values(87,38,1,'S');
+
+insert into ORDERS values (88,8500,'카드',TO_DATE('2017-08-21 16:57:17', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(88,10,1,'S');
+
+insert into ORDERS values (89,27000,'카드',TO_DATE('2017-08-21 17:15:43', 'YYYY-MM-DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(89,12,3,'S');
+
+--08/22 화
+insert into ORDERS values (90,70000,'카드',TO_DATE('2017-08-22 17:59:39', 'YYYY-MM-DD HH24:MI:SS'),20);
+Insert into ORDER_DETAILS values(90,13,5,'S');
+Insert into ORDER_DETAILS values(90,25,4,'S');
+
+insert into ORDERS values (91,7000,'현금',TO_DATE('2017-08-22 18:55:33', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(91,1,1,'S');
+
+insert into ORDERS values (92,31500,'카드',TO_DATE('2017-08-22 19:29:38', 'YYYY-MM-DD HH24:MI:SS'),27);
+Insert into ORDER_DETAILS values(92,21,3,'S');
+Insert into ORDER_DETAILS values(92,39,3,'S');
+
+--08/23 수
+insert into ORDERS values (93,13500,'카드',TO_DATE('2017-08-23 11:41:11', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(93,21,1,'S');
+Insert into ORDER_DETAILS values(93,32,2,'S');
+
+insert into ORDERS values (94,9000,'카드',TO_DATE('2017-08-23 12:21:33', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(94,40,3,'S');
+
+insert into ORDERS values (95,9000,'현금',TO_DATE('2017-08-23 12:43:04', 'YYYY-MM-DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(95,47,3,'S');
+
+insert into ORDERS values (96,9000,'카드',TO_DATE('2017-08-23 13:05:01', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(96,46,3,'S');
+
+insert into ORDERS values (97,18000,'카드',TO_DATE('2017-08-23 13:28:47', 'YYYY-MM-DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(97,45,3,'S');
+Insert into ORDER_DETAILS values(97,44,3,'S');
+
+insert into ORDERS values (98,9000,'현금',TO_DATE('2017-08-23 13:52:00', 'YYYY-MM-DD HH24:MI:SS'),12);
+Insert into ORDER_DETAILS values(98,44,3,'S');
+
+insert into ORDERS values (99,9000,'카드',TO_DATE('2017-08-23 14:19:52', 'YYYY-MM-DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(99,42,3,'S');
+
+--08/24 목
+insert into ORDERS values (100,9000,'카드',TO_DATE('2017-08-24 14:30:31', 'YYYY-MM-DD HH24:MI:SS'),16);
+Insert into ORDER_DETAILS values(100,40,3,'S');
+
+insert into ORDERS values (101,9000,'카드',TO_DATE('2017-08-24 14:30:59', 'YYYY-MM-DD HH24:MI:SS'),18);
+Insert into ORDER_DETAILS values(101,41,3,'S');
+
+insert into ORDERS values (102,9000,'카드',TO_DATE('2017-08-24 15:27:53', 'YYYY-MM-DD HH24:MI:SS'),14);
+Insert into ORDER_DETAILS values(102,42,3,'S');
+Insert into ORDER_DETAILS values(102,44,3,'S');
+
+insert into ORDERS values (103,15000,'현금',TO_DATE('2017-08-24 16:49:08', 'YYYY-MM-DD HH24:MI:SS'),13);
+Insert into ORDER_DETAILS values(103,5,2,'S');
+
+--08/25 금
+insert into ORDERS values (104,40500,'카드',TO_DATE('2017-08-25 17:44:12', 'YYYY-MM-DD HH24:MI:SS'),23);
+Insert into ORDER_DETAILS values(104,39,3,'S');
+Insert into ORDER_DETAILS values(104,21,4,'S');
+Insert into ORDER_DETAILS values(104,36,5,'S');
+
+insert into ORDERS values (105,12000,'현금',TO_DATE('2017-08-25 19:26:21', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(105,50,3,'S');
+
+--08/26 토
+insert into ORDERS values (106,32000,'카드',TO_DATE('2017-08-26 11:43:17', 'YYYY-MM-DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(106,2,4,'S');
+
+insert into ORDERS values (107,16000,'현금',TO_DATE('2017-08-26 11:52:01', 'YYYY-MM-DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(107,8,2,'S');
+
+insert into ORDERS values (108,22500,'카드',TO_DATE('2017-08-26 12:01:36', 'YYYY-MM-DD HH24:MI:SS'),13);
+Insert into ORDER_DETAILS values(108,6,3,'S');
+
+insert into ORDERS values (109,43500,'카드',TO_DATE('2017-08-26 12:23:27', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(109,7,3,'S');
+Insert into ORDER_DETAILS values(109,23,3,'S');
+
+insert into ORDERS values (110,8500,'현금',TO_DATE('2017-08-26 12:36:44', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(110,9,1,'S');
+
+--08/27 일
+insert into ORDERS values (111,14000,'카드',TO_DATE('2017-08-27 14:59:22', 'YYYY-MM-DD HH24:MI:SS'),7);
+Insert into ORDER_DETAILS values(111,31,2,'S');
+
+insert into ORDERS values (112,36000,'카드',TO_DATE('2017-08-27 15:13:13', 'YYYY-MM-DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(112,1,3,'S');
+Insert into ORDER_DETAILS values(112,27,2,'S');
+
+insert into ORDERS values (113,10500,'카드',TO_DATE('2017-08-27 16:12:38', 'YYYY-MM-DD HH24:MI:SS'),16);
+Insert into ORDER_DETAILS values(113,21,1,'S');
+Insert into ORDER_DETAILS values(113,38,1,'S');
+
+insert into ORDERS values (114,8500,'카드',TO_DATE('2017-08-27 16:57:17', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(114,10,1,'S');
+
+insert into ORDERS values (115,27000,'카드',TO_DATE('2017-08-27 17:15:43', 'YYYY-MM-DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(115,12,3,'S');
+
+--08/28 월
+insert into ORDERS values (116,7500,'카드',TO_DATE('2017-08-28 12:53:00', 'YYYY-MM-DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(116,17,1,'S');
+
+insert into ORDERS values (117,22500,'카드',TO_DATE('2017-08-28 13:24:57', 'YYYY-MM-DD HH24:MI:SS'),5);
+Insert into ORDER_DETAILS values(117,19,3,'S');
+
+insert into ORDERS values (118,16000,'카드',TO_DATE('2017-08-28 13:43:23', 'YYYY-MM-DD HH24:MI:SS'),4);
+Insert into ORDER_DETAILS values(118,14,2,'S');
+
+insert into ORDERS values (119,8000,'카드',TO_DATE('2017-08-28 14:01:11', 'YYYY-MM-DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(119,50,2,'S');
+
+--08/29 화
+Insert into ORDERS values (120,10000,'현금',to_date('2017/08/29 12:15:56','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(120,20,1,'S');
+Insert into ORDER_DETAILS values(120,42,1,'S');
+
+Insert into ORDERS values (121,21000,'카드',to_date('2017/08/29 13:17:08','YYYY/MM/DD HH24:MI:SS'),2);
+Insert into ORDER_DETAILS values(121,1,3,'S');
+
+Insert into ORDERS values (122,15500,'카드',to_date('2017/08/29 14:34:58','YYYY/MM/DD HH24:MI:SS'),10);
+Insert into ORDER_DETAILS values(122,9,1,'S');
+Insert into ORDER_DETAILS values(122,23,1,'S');
+
+Insert into ORDERS values (123,43000,'카드',to_date('2017/08/29 13:00:23','YYYY/MM/DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(123,34,5,'S');
+Insert into ORDER_DETAILS values(123,1,4,'S');
+
+--08/30 수
+Insert into ORDERS values (124,7500,'현금',to_date('2017/08/30 15:29:49','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(124,19,1,'S');
+
+Insert into ORDERS values (125,30000,'현금',to_date('2017/08/30 16:41:51','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(125,19,4,'S');
+
+Insert into ORDERS values (126,24000,'카드',to_date('2017/08/30 18:17:07','YYYY/MM/DD HH24:MI:SS'),11);
+Insert into ORDER_DETAILS values(126,26,3,'S');
+
+Insert into ORDERS values (127,33000,'현금',to_date('2017/08/30 18:35:08','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(127,51,3,'S');
+
+Insert into ORDERS values (128,8500,'카드',to_date('2017/08/30 19:24:52','YYYY/MM/DD HH24:MI:SS'),21);
+Insert into ORDER_DETAILS values(128,4,1,'S');
+
+Insert into ORDERS values (129,45000,'카드',to_date('2017/08/30 19:46:19','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(129,11,5,'S');
+
+--08/31 목
+
+Insert into ORDERS values (130,13000,'카드',to_date('2017/08/31 12:13:56','YYYY/MM/DD HH24:MI:SS'),12);
+Insert into ORDER_DETAILS values(130,1,1, 'S');
+Insert into ORDER_DETAILS values(130,39,2, 'S');
+
+Insert into ORDERS values (131,15000,'카드',to_date('2017/08/31 12:16:56','YYYY/MM/DD HH24:MI:SS'),23);
+Insert into ORDER_DETAILS values(131,21,2, 'B');
+
+Insert into ORDERS values (132,42000,'카드',to_date('2017/08/31 12:48:06','YYYY/MM/DD HH24:MI:SS'),9);
+Insert into ORDER_DETAILS values(132,12,3, 'C');
+Insert into ORDER_DETAILS values(132,46,5, 'C');
+
+Insert into ORDERS values (133,15000,'현금',to_date('2017/08/31 15:29:56','YYYY/MM/DD HH24:MI:SS'),3);
+Insert into ORDER_DETAILS values(133,19,2, 'B');
+
+Insert into ORDERS values (134,28000,'현금',to_date('2017/08/31 16:41:56','YYYY/MM/DD HH24:MI:SS'),1);
+Insert into ORDER_DETAILS values(134,15,4,'B');
+
 
 /*
  * Table Name: INGREDIENTS
