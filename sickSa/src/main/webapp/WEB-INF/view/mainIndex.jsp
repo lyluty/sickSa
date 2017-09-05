@@ -36,11 +36,6 @@
             <li><a href="mainIndex">call clerk </a></li>
           </ul>
         </div>
-        <div class="top-bar" style="width: 100px; float: left;">
-          <ul class="breadcrumb">
-            <li><a href="login">Admin</a></li>
-          </ul>
-        </div>
       </div>
     </div>
 

@@ -44,7 +44,7 @@
 				</div>
 				<div class="main-container">
 					<div class="inner-banner parallax" data-parallax-speed="5">
-						<h2>식사의 신선한 재료들~</h2>
+						<h2>식사의 신선한 재료들</h2>
 					</div>
 					<!-- Content Holder Start -->
 					<div id="contentHolder" class="content-holder"></div>
@@ -61,7 +61,23 @@
 	<jsp:include page="../common/include-tail.jsp" flush="false" />
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src='include/js/ingredient.js'></script>
+	<script type="text/javascript">
 	
+		$(document).on('click','#addIgctForm',
+				function(){
+					$('div#addIgctModal').modal('show');
+		});
+		
+		$(document).on('click','#addIngForm',
+				function(){
+					$('div#addIngModal').modal({
+						show: true,
+						remote: 'ingInsertForm'
+					});
+		});
+
+	
+	</script>
 
 	<!-- tail end -->
 </body>
