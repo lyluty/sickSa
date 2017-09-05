@@ -90,13 +90,8 @@
     }
   }
 </script>
-<<<<<<< HEAD
 <div style="margin-bottom: 10%; margin-top: 5%">
-=======
 
-
-<div style="margin-bottom: 10%">
->>>>>>> branch 'master' of https://github.com/lyluty/sickSa.git
   <table id="cartTable" class="table table-striped" style="margin: auto; text-align: center">
     <thead>
       <tr id="cart">
