@@ -97,8 +97,10 @@
 
 
 
-      <button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".restModal" style="display: inline-block; margin: auto auto auto 44%;">Order</button>
+      <button type="button" id="toOrder" class="btn btn-default" data-toggle="modal" data-target=".restModal" style="display: block; margin: auto;">Order</button>
+      <!-- 
       <button type="button" class="btn btn-default" data-toggle="modal" data-target=".waitModal" style="display: inline-block; margin: auto;">Waiting</button>
+       -->
     </div>
 
     <!-- 모달1 -->
@@ -137,12 +139,15 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Yes</button>
           </div>
+          <form id="tableF" action="vmMain" method="POST">
+            <input type="hidden" name="tableNo">
+          </form>
         </div>
       </div>
     </div>
 
     <!-- 모달2 -->
-    <!-- 이부분은 망해쓰요 -->
+    <!-- 이부분은 망해쓰요 -
     <div class="modal fade waitModal" tabindex="-1" role="dialog" aria-labelledby="waitModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -165,7 +170,7 @@
         </div>
       </div>
     </div>
-    <!-- 이부분은 망해쓰요 -->
+    - 이부분은 망해쓰요 -->
 
   </div>
 
