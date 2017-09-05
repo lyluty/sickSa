@@ -107,10 +107,12 @@ public class OrderController {
 		Order order = orderService.createOrder(sCart, tableNo, paymentMethod);
 		model.addAttribute("order", order);
 		model.addAttribute("orderDetailList", sCart);
+		model.addAttribute("productCategoryList", orderService.productCategoryList());
 		for (OrderDetail orderDetail : sCart) {
 			ingredientService.changeStock(orderDetail.getPdt_id());
 		}
 		session.removeAttribute("cart");
+
 		return "order/result";
 	}
 
