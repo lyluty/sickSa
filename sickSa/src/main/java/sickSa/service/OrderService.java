@@ -27,7 +27,7 @@ public class OrderService {
 
 	/* 전체 테이블리스트 */
 	public List<Table> tableList() {
-	  return tableDao.selectList();
+	  return tableDao.selectTableList();
 	}
 	
 	/* 잔여좌석 확인 */
@@ -36,19 +36,22 @@ public class OrderService {
 	}
 
 	/* 결제 완료 - 레코드 생성 */
-	public Order createOrder(List<OrderDetail> sCart, String paymentMethod) {
+	public Order createOrder(List<OrderDetail> sCart, int tableNo, String paymentMethod) {
 		int orderId = orderDao.selectOrderSequence();
 		int total = 0;
 		for (OrderDetail orderDetail : sCart) {
 			Product product = orderDetail.getProduct();
 			total += product.getPdt_price();
 		}
-		Order order = new Order(orderId, total, paymentMethod, sCart);
+		Order order = new Order(orderId, total, paymentMethod, tableNo, sCart);
 		orderDao.insertOrder(order);
 		for (OrderDetail orderDetail : sCart) {
 			orderDetail.setOrd_id(orderId);
 			orderDao.insertOrderDetail(orderDetail);
 		}
+		Table table = tableDao.selectTable(tableNo);
+		table.setTbl_is_empty("FALSE");
+		tableDao.updateTable(table);
 		order.setOrd_date(orderDao.selectOrderDate(orderId));
 		return order;
 	}

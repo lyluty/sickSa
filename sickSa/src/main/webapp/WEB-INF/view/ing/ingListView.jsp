@@ -26,12 +26,12 @@
 			</div>
 		</li>
 	</c:forEach>
-	<li id="listViewB">
+	
+</ul>
+<li id="listViewB">
 		<a role="button" data-backdrop="static"> 
 			<span id="create-ing" class="btn btn-xs btn-success" onclick="ing_insert_form();">추가하기</span>
 		</a>
 	</li>
-</ul>
-
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src='include/js/ingredient.js'></script>

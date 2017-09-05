@@ -1,3 +1,4 @@
+// 테이블 선택
 $('.store-table').on('click', 'li', function() {
   var state = $(this).attr('data-state');
   
@@ -11,14 +12,20 @@ $('.store-table').on('click', 'li', function() {
   }
 });
 
+// 테이블 선택 후 주문 진행
 $('.restModal .modal-footer .btn-primary').on('click', function() {
-  var tableNo = $('.store-table [data-state=selected').attr('data-table-no');
+  var tableNo = $('.store-table [data-state=selected]').attr('data-table-no');
   
   if (!tableNo) {
     alert('먼저 자리를 선택해주세요');
     return;
   }
   
-  alert(tableNo + '번 자리 선택');
-  location.href = 'vmMain';
+  tableF.tableNo.value = tableNo;
+  tableF.submit();
+});
+
+// 닫기버튼 눌렀을 때
+$('#toOrder').on('click', function() {
+  $('.store-table [data-state=selected]').attr('data-state', 'available');
 });

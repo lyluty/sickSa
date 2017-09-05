@@ -1,8 +1,6 @@
 package sickSa.controller;
 
-
 import javax.servlet.http.HttpSession;
-
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,21 +25,20 @@ public class MainController {
 
 	@RequestMapping("mainIndex")
 	public String mainIndex(Model model) {
-		 /*
-		storeService.setRest();
-		storeService.setWaiting();
-		model.addAttribute("restCnt", storeService.getRest());
-		model.addAttribute("waitCnt", storeService.getWaiting());
-		*/
+		/*
+		 * storeService.setRest(); storeService.setWaiting();
+		 * model.addAttribute("restCnt", storeService.getRest());
+		 * model.addAttribute("waitCnt", storeService.getWaiting());
+		 */
 		model.addAttribute("restCnt", orderService.getRestTableCount());
-	    model.addAttribute("tableList", orderService.tableList());
+		model.addAttribute("tableList", orderService.tableList());
 
 		return "mainIndex";
 	}
-	
-	//로그인버튼 누르기
+
+	// 로그인버튼 누르기
 	@RequestMapping("loginForm")
-	public String loginForm(){
+	public String loginForm() {
 		return "common/login";
 	}
 
@@ -63,11 +60,11 @@ public class MainController {
 		System.out.println( storeService.checkPin(pw_pin));
 		return "common/login";
 	}
-		
-	//로그인 체크
+
+	// 로그인 체크
 	@RequestMapping("loginAction")
-	public String loginAction(Session session, @RequestParam("pw_pin") String pw_pin){
-		if(storeService.checkPin(pw_pin)){	
+	public String loginAction(Session session, @RequestParam("pw_pin") String pw_pin) {
+		if (storeService.checkPin(pw_pin)) {
 			System.out.println("true");
 			return "";
 
@@ -75,6 +72,5 @@ public class MainController {
 		System.out.println("false");
 		return "";
 	}
-	
-}
 
+}

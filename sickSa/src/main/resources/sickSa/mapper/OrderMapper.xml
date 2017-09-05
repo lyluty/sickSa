@@ -96,8 +96,8 @@
   </select>
   
   <insert id="insertOrder" parameterType="sickSa.domain.Order">
-  	insert into ORDERS(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD)
-  	            values(#{ord_id}, #{ord_total}, #{ord_payment_method})
+  	insert into ORDERS(ORD_ID, ORD_TOTAL, ORD_PAYMENT_METHOD, TBL_ID)
+  	            values(#{ord_id}, #{ord_total}, #{ord_payment_method}, #{tbl_id})
   </insert>
   
   <insert id="insertOrderDetail" parameterType="sickSa.domain.OrderDetail">
