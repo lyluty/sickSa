@@ -422,16 +422,34 @@ values(51,
  * Table Name: TABLES
  */
 --(TBL_ID,TBL_IS_EMPTY)
-insert into TABLES values (1,'N');
-insert into TABLES values (2,'Y');
-insert into TABLES values (3,'N');
-insert into TABLES values (4,'N');
-insert into TABLES values (5, 'Y');
-insert into TABLES values (6, 'Y');
-insert into TABLES values (7, 'Y');
-insert into TABLES values (8, 'N');
-insert into TABLES values (9, 'Y');
-insert into TABLES values (10, 'N');
+insert into TABLES values (1,'TRUE');
+insert into TABLES values (2,'TRUE');
+insert into TABLES values (3,'FALSE');
+insert into TABLES values (4,'FALSE');
+insert into TABLES values (5, 'TRUE');
+insert into TABLES values (6, 'TRUE');
+insert into TABLES values (7, 'TRUE');
+insert into TABLES values (8, 'FALSE');
+insert into TABLES values (9, 'TRUE');
+insert into TABLES values (10, 'FALSE');
+insert into TABLES values (11, 'FALSE');
+insert into TABLES values (12, 'FALSE');
+insert into TABLES values (13, 'FALSE');
+insert into TABLES values (14, 'FALSE');
+insert into TABLES values (15, 'FALSE');
+insert into TABLES values (16, 'FALSE');
+insert into TABLES values (17, 'FALSE');
+insert into TABLES values (18, 'FALSE');
+insert into TABLES values (19, 'FALSE');
+insert into TABLES values (20, 'FALSE');
+insert into TABLES values (21, 'FALSE');
+insert into TABLES values (22, 'FALSE');
+insert into TABLES values (23, 'FALSE');
+insert into TABLES values (24, 'FALSE');
+insert into TABLES values (25, 'FALSE');
+insert into TABLES values (26, 'TRUE');
+insert into TABLES values (27, 'FALSE');
+insert into TABLES values (28, 'FALSE');
  
 /*
  * Table Name: ORDERS, ORDER_DETAILS

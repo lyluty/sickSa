@@ -7,6 +7,8 @@
 <head>
 <!-- head start -->
 <jsp:include page="../common/include-head.jsp" flush="false" />
+<script src="include/js/jquery-2.2.2.min.js"></script>
+
 <style>
 #myUl {
   list-style: none; font-style: italic; font-weight: bold;
@@ -50,10 +52,23 @@
           <div class="container">
             <div class="top-bar">
               <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="servingState">Home</a></li>
                 <li><span>sales </span></li>
               </ul>
             </div>
+            
+        	<div class="top-bar" style="width:60px;float:right;">
+				<ul class="breadcrumb">
+				<c:choose>
+					<c:when test="${loginStatus }">
+						<li id="logoutB" ><a href="logout">Logout</a></li>
+					</c:when>
+					<c:otherwise>
+						<li id="adminB"><a href="loginForm">Admin</a></li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
+			</div>
           </div>
         </div>
         <div class="main-container">

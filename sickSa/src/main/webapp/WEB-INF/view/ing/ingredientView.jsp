@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="kr">
 <head>
 <!-- head start -->
@@ -12,6 +13,9 @@
 		<!-- nav end -->
 		<!-- header start -->
 		<jsp:include page="../common/include-header.jsp" flush="false" />
+		<script src="include/js/jquery-2.2.2.min.js"></script>
+
+		
 		<!-- header end -->
 		<!-- main-container start -->
 		<div class="main-container-outer">
@@ -20,15 +24,22 @@
 					<div class="container">
 						<div class="top-bar">
 							<ul class="breadcrumb">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="servingState">Home</a></li>
 								<li><span>Ingredients</span></li>
 							</ul>
 						</div>
 							<div class="top-bar" style="width:60px;float:right;">
-						<ul class="breadcrumb">
-						<li><a href="login">Admin</a></li>
-					</ul>
-				</div>
+				<ul class="breadcrumb">
+				<c:choose>
+					<c:when test="${loginStatus }">
+						<li id="logoutB" ><a href="logout">Logout</a></li>
+					</c:when>
+					<c:otherwise>
+						<li id="adminB"><a href="loginForm">Admin</a></li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
+			</div>
 					</div>
 				</div>
 				<div class="main-container">
@@ -50,7 +61,6 @@
 	<jsp:include page="../common/include-tail.jsp" flush="false" />
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src='include/js/ingredient.js'></script>
-	
 	<script type="text/javascript">
 	
 		$(document).on('click','#addIgctForm',
@@ -68,6 +78,7 @@
 
 	
 	</script>
+
 	<!-- tail end -->
 </body>
 </html>

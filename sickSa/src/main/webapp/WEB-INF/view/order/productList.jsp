@@ -1,22 +1,8 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<style>
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-	h4 {
-		font-size: 20px;
-        font-weight: bold;
-        font-family: hanna;
-    }
-    h4 span {
-    	margin: 0px 0px 0px 0px;
-    	font-weight:lighter;
-    	font-family:hanna;
-    }
-    span {
-    	font-size: 15px;
-    } 
-</style>
+
+<link href="include/css/productList.css" rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src='include/js/order.js'></script>
 

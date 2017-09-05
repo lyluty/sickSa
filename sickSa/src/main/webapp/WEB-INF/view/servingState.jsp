@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 <html>
 <head>
 <!-- head start -->
 <jsp:include page="common/include-head.jsp" flush="false" />
+
 <!-- head end -->
 </head>
 <body>
@@ -26,10 +28,23 @@
           <div class="container">
             <div class="top-bar">
               <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="servingState">Home</a></li>
                 <li><span>Order State </span></li>
               </ul>
             </div>
+            
+          			<div class="top-bar" style="width:60px;float:right;">
+				<ul class="breadcrumb">
+				<c:choose>
+					<c:when test="${loginStatus }">
+						<li id="logoutB" ><a href="logout">Logout</a></li>
+					</c:when>
+					<c:otherwise>
+						<li id="adminB"><a href="loginForm">Admin</a></li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
+			</div>
           </div>
         </div>
         <div class="main-container">
@@ -83,6 +98,7 @@
     <jsp:include page="common/include-footer.jsp" flush="false" />
     <!-- footer end -->
   </div>
+
 
   <!-- tail start -->
   <jsp:include page="common/include-tail.jsp" flush="false" />

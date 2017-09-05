@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
 <head>
@@ -12,6 +12,8 @@
   <script src='include/calendar/fullcalendar.js'></script>
     <script src='include/js/salesView.js'></script>
   <script src='include/js/salesViewByTimePeriod.js'></script>
+  <script src="include/js/jquery-2.2.2.min.js"></script>
+
   
 
 <!-- head end -->
@@ -32,10 +34,23 @@
           <div class="container">
             <div class="top-bar">
               <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="servingState">Home</a></li>
                 <li><span>sales </span></li>
               </ul>
             </div>
+            
+            			<div class="top-bar" style="width:60px;float:right;">
+				<ul class="breadcrumb">
+				<c:choose>
+					<c:when test="${loginStatus }">
+						<li id="logoutB" ><a href="logout">Logout</a></li>
+					</c:when>
+					<c:otherwise>
+						<li id="adminB"><a href="loginForm">Admin</a></li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
+			</div>
           </div>
         </div>
         <div class="main-container">
