@@ -42,12 +42,12 @@
 							<h6 align="right"> Order No . ${order.ord_id}</h6>
 							<h6 align="right"> Date . <fmt:formatDate value="${order.ord_date}" pattern="yyyy.MM.dd" /></h6>
 							<table class="table table-striped"
-								style="margin: 50px auto;">
+								style="margin: 50px auto; padding: 30px;">
 								<thead>
 									<tr>
-										<th  align="center" style="width:40%"><h5>product</h5></th>
-										<th  align="center" style="width:30%"><h5>amount</h5></th>
-										<th  align="center" style="width:30%"><h5>price</h5></th>
+										<th><h5>product</h5></th>
+										<th><h5>amount</h5></th>
+										<th><h5>price</h5></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -56,26 +56,22 @@
 										<c:set var="product" value="${orderDetail.product}">
 										</c:set>
 										<tr>
-											<td><h6 align="center">${product.pdt_name}</h6></td>
-											<td><h6  align="center">${orderDetail.ordt_amount}</h6></td>
-											<td><h6  align="center">${product.pdt_price}</h6></td>
+											<td><h6 >${product.pdt_name}</h6></td>
+											<td><h6 >${orderDetail.ordt_amount}</h6></td>
+											<td><h6 >${product.pdt_price}</h6></td>
 										</tr>
 									</c:forEach>
 
 								</tbody>
 							</table>
-
-
 						</div>
-
-
 
 						<h6 align="right">Total Price:</h6>
 						<h3 align="right">${order.ord_total}</h3>
+						
+						<button type="button"class="btn btn-default" style="display: block; margin: 50px auto 100px auto;">확인</button>
 					</div>
 				</div>
-			
-
 		</div>
 
 		<!-- 컨텐츠 영역 end -->
