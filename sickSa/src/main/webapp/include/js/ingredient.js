@@ -47,9 +47,6 @@ $(document).on('click', '#addIgctAction', function(e) {
 		data : $('#igctForm').serialize(),
 		success : function(data) {
 			$(".modal").modal("hide");
-		},
-		error : function(data) {
-			alert('4');
 		}
 	}); 
 });
@@ -63,9 +60,6 @@ $(document).on('click', '#addIngAction', function(e) {
 		data : $('#ingForm').serialize(),
 		success : function(data) {
 			$(".modal").modal("hide");
-		},
-		error : function(data) {
-			alert('4');
 		}
 	}); 
 });

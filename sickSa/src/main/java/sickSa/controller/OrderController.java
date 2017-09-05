@@ -111,6 +111,8 @@ public class OrderController {
 		for (OrderDetail orderDetail : sCart) {
 			ingredientService.changeStock(orderDetail.getPdt_id());
 		}
+		System.out.println("주문한 카트");
+		System.out.println(sCart);
 		session.removeAttribute("cart");
 
 		return "order/result";
