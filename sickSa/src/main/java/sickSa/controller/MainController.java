@@ -2,7 +2,7 @@ package sickSa.controller;
 
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.Session;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,7 +61,7 @@ public class MainController {
 		return "common/login";
 	}
 
-	// 로그인 체크
+/*
 	@RequestMapping("loginAction")
 	public String loginAction(Session session, @RequestParam("pw_pin") String pw_pin) {
 		if (storeService.checkPin(pw_pin)) {
@@ -72,5 +72,6 @@ public class MainController {
 		System.out.println("false");
 		return "";
 	}
+*/
 
 }
