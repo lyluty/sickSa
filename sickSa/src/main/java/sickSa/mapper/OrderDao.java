@@ -37,6 +37,9 @@ public interface OrderDao {
   int updateOrderDetail(OrderDetail orderDetail);
 
   List<Map<String, Object>> selectOrderMapListBySalesVolume();
+  
+  @Select("select SUM(ORDT_AMOUNT) from ORDER_DETAILS where PDT_ID = #{productId}")
+  int selectSalesVolumeByProductId(int productId);
 
   List<Order> selectOrderListByProductId(int productId);
 }

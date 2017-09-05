@@ -90,9 +90,8 @@
     }
   }
 </script>
+<div style="margin-bottom: 10%; margin-top: 5%">
 
-
-<div style="margin-bottom: 10%">
   <table id="cartTable" class="table table-striped" style="margin: auto; text-align: center">
     <thead>
       <tr id="cart">
@@ -133,7 +132,7 @@
 <div id="footer">
   <button id="cashBtn" class="button" onclick="choicePaymentMethod('cash')" value="unselected">현금</button>
   <button id="cardBtn" class="button" onclick="choicePaymentMethod('card')" value="unselected">카드</button>
-  <button id="payBtn" class="myBtn" onclick="payNow()" style="float: right;">결제하기</button>
+  <button id="payBtn" class="myBtn" onclick="payNow()" style="float: right; height: 100%;">결제하기</button>
   <form id="payF" method="POST" action="payNow">
     <input id="paymentMethod" name="paymentMethod" type="hidden" />
   </form>

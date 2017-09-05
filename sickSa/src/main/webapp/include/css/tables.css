@@ -77,7 +77,7 @@ ol, li {
 [data-state="entrance"] {background-color: white; border: 0px;}
 [data-state="available"] {background-color: white;}
 [data-state="unavailable"] {background-color: gray;}
-[data-state="selected"] {background-color: blue;}
+[data-state="selected"] {background-color: #81DAF5;}
 
 @supports (display: grid){
 .wrapper {
