@@ -24,7 +24,7 @@
 					<div class="container">
 						<div class="top-bar">
 							<ul class="breadcrumb">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="servingState">Home</a></li>
 								<li><span>Ingredients</span></li>
 							</ul>
 						</div>
