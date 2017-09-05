@@ -41,7 +41,7 @@ $(document).on('click', '#addIgctAction', function(e) {
 	$.ajax({
 		url : 'igctInsertAction',
 		type : 'POST',
-		data : $('#igctForm').serialize(),
+		data : $('form#igctForm').serialize(),
 		success : function(data) {
 			$(".modal").modal("hide");
 		},
@@ -55,7 +55,7 @@ $(document).on('click', '#addIngAction', function(e) {
 	$.ajax({
 		url : 'ingInsertAction',
 		type : 'POST',
-		data : $('#ingForm').serialize(),
+		data : $('form#ingForm').serialize(),
 		success : function(data) {
 			$(".modal").modal("hide");
 		},
