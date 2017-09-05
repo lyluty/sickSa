@@ -8,12 +8,13 @@ public class IngredientCategories {
 	
 	private String igct_name;
 	
-	public IngredientCategories() {
-		// TODO Auto-generated constructor stub
-	}
+	public IngredientCategories() {}
 	
+	public IngredientCategories(String igct_name) {
+		this.igct_name = igct_name;
+	}
+
 	public IngredientCategories(int igct_id, String igct_name) {
-		super();
 		this.igct_id = igct_id;
 		this.igct_name = igct_name;
 	}

@@ -26,7 +26,7 @@
 			</div>
 		</li>
 	</c:forEach>
-	
+	<li><span id="addIngForm" class="btn btn-xs btn-success">Add</span></li>
 </ul>
 <li id="listViewB">
 		<a role="button" data-backdrop="static"> 
