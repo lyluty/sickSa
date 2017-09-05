@@ -69,7 +69,7 @@
 						<h6 align="right">Total Price:</h6>
 						<h3 align="right">${order.ord_total}</h3>
 						
-						<button type="button"class="btn btn-default" style="display: block; margin: 70px auto;">확인</button>
+						<button type="button"class="btn btn-default"  onclick="location.href='vmMain' " style="display: block; margin: 70px auto;">확인</button>
 					</div>
 				</div>
 		</div>
