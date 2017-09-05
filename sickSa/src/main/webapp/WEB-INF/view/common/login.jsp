@@ -8,7 +8,6 @@
 <head>
 <jsp:include page="include-head.jsp" flush="false" />
 <script src="include/js/jquery-2.2.2.min.js"></script>
-<script type="text/javascript" src='include/js/admin.js'></script>
 
 </head>
 <body>
@@ -32,59 +31,75 @@
 								<li><span>Login</span></li>
 							</ul>
 						</div>
+						<div class="top-bar" style="width: 60px; float: right;">
+							<ul class="breadcrumb">
+								<c:choose>
+									<c:when test="${loginStatus }">
+										<li id="logoutB"><a href="logout">Logout</a></li>
+									</c:when>
+									<c:otherwise>
+										<li id="adminB"><a href="loginForm">Admin</a></li>
+									</c:otherwise>
+								</c:choose>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-						<div class="main-container">
-							<div class="content-holder">
+				<div class="main-container">
+					<div class="content-holder">
 
-								<div class="container" align="center"
-									style="padding: 20%; display: block; margin: 0 auto;">
-
-
-									<form method="post" action="matchPw" id="pwForm">
-										<h4>Login</h4>
-										<div class="form-group" style="margin: 50px auto; width: 60%">
-											<input type="text" name="pw_pin" value=""
-												class="form-control" placeholder="Password" required />
-										</div>
-
-										<button class="btn btn-default"
-											style="display: block; margin: 0 auto;" type="submit">Login
-										</button>
-
-									</form>
-
-
+						<div class="container" align="center"
+							style="padding: 20%; display: block; margin: 0 auto;">
 
 
+							<form method="post" action="matchPw" id="pwForm">
+								<h4>Login</h4>
+								<div class="form-group" style="margin: 50px auto; width: 60%">
+									<input type="text" name="pw_pin" value="" class="form-control"
+										placeholder="Password" required />
 								</div>
-							</div>
+
+								<button class="btn btn-default"
+									style="display: block; margin: 0 auto;" type="submit">Login
+								</button>
+
+							</form>
+
+
+
+
 						</div>
 
 					</div>
 				</div>
-			</div>
-		</div>
 
-		<div class="modal-header">
-			<h3 align="center">Login</h3>
-		</div>
-		<div class="modal-body">
-			<div class="row">
-				<div class="col-sm-7">
-					<form method="post" action="matchPw" id="pwForm">
-						<div class="form-group" style="margin: 50px auto; width: 60%">
-							<input type="text" name="pw_pin" value="" class="form-control"
-								placeholder="Password" required />
-
-						</div>
-					</form>
+				<div class="modal-header">
+					<h3 align="center">Login</h3>
 				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-7">
+							<form method="post" action="matchPw" id="pwForm">
+								<div class="form-group" style="margin: 50px auto; width: 60%">
+									<input type="text" name="pw_pin" value="" class="form-control"
+										placeholder="Password" required />
+
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<span class="btn btn-xs btn-success" onclick="login_action();">Login</span>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+
 			</div>
 		</div>
-		<div class="modal-footer">
-			<span class="btn btn-xs btn-success" onclick="login_action();">Login</span>
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</div>
+
+
+
 
 
 

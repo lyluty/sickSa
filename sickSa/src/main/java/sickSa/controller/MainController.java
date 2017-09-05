@@ -47,16 +47,20 @@ public class MainController {
 
 	@RequestMapping("logout")
 	public String logout(HttpSession session){
-		 session.setAttribute("loginStatus", false);
-		return "common/login";
-	}
+		 session.setAttribute("loginStatus",false);
+		 System.out.println("logout...Now loginStatus: "+session.getAttribute("loginStatus"));
+		return "servingState";
+	} 
 
 	@RequestMapping("matchPw")
 	public String matchPw(HttpSession session,@RequestParam("pw_pin") String pw_pin){
-		 session.setAttribute("loginStatus", storeService.checkPin(pw_pin));
+		session.setAttribute("loginStatus", storeService.checkPin(pw_pin));
+		System.out.println("matching...Now loginStatus: "+session.getAttribute("loginStatus"));
 		if(storeService.checkPin(pw_pin)){			
+			System.out.println( storeService.checkPin(pw_pin));
 			return "ing/ingredientView";		//임시
 		}
+		System.out.println( storeService.checkPin(pw_pin));
 		return "common/login";
 	}
 		
