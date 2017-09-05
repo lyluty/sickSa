@@ -73,6 +73,8 @@
 
 					</div>
 				</div>
+				
+				<!--  
 
 				<div class="modal-header">
 					<h3 align="center">Login</h3>
@@ -94,15 +96,10 @@
 					<span class="btn btn-xs btn-success" onclick="login_action();">Login</span>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
-
+				-->
 			</div>
+			
 		</div>
-
-
-
-
-
-
 
 		<!-- 컨텐츠 영역 end -->
 
