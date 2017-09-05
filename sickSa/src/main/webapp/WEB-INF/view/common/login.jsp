@@ -56,7 +56,7 @@
 							<form method="post" action="matchPw" id="pwForm">
 								<h4>Login</h4>
 								<div class="form-group" style="margin: 50px auto; width: 60%">
-									<input type="text" name="pw_pin" value="" class="form-control"
+									<input type="password" name="pw_pin" value="" class="form-control"
 										placeholder="Password" required />
 								</div>
 
