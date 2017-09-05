@@ -38,8 +38,6 @@ $('.panel-heading h3').on('click',function(){
 });
 
 $(document).on('click', '#addIgctAction', function(e) {
-	alert($('#igct_name').val());
-	//alert(document.igctForm.igct_name.value);
 	$.ajax({
 		url : 'igctInsertAction',
 		type : 'POST',
@@ -54,8 +52,6 @@ $(document).on('click', '#addIgctAction', function(e) {
 });
 
 $(document).on('click', '#addIngAction', function(e) {
-	alert($('#igct_name').val());
-	//alert(document.igctForm.igct_name.value);
 	$.ajax({
 		url : 'ingInsertAction',
 		type : 'POST',
