@@ -58,7 +58,7 @@
 										<tr>
 											<td><h6 >${product.pdt_name}</h6></td>
 											<td><h6 >${orderDetail.ordt_amount}</h6></td>
-											<td><h6 >${product.pdt_price}</h6></td>
+											<td><h6 >${product.pdt_price * orderDetail.ordt_amount}</h6></td>
 										</tr>
 									</c:forEach>
 
