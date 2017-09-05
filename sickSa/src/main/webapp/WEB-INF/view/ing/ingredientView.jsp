@@ -4,6 +4,7 @@
 <head>
 <!-- head start -->
 <jsp:include page="../common/include-head.jsp" flush="false" />
+
 <!-- head end -->
 </head>
 <body>
@@ -62,21 +63,18 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src='include/js/ingredient.js'></script>
 	<script type="text/javascript">
+	$(document).on('click','#addIgctForm',
+			function(){
+				$('div#addIgctModal').modal('show');
+	});
 	
-		$(document).on('click','#addIgctForm',
-				function(){
-					$('div#addIgctModal').modal('show');
-		});
-		
-		$(document).on('click','#addIngForm',
-				function(){
-					$('div#addIngModal').modal({
-						show: true,
-						remote: 'ingInsertForm'
-					});
-		});
-
-	
+	$(document).on('click','#addIngForm',
+			function(){
+				$('div#addIngModal').modal({
+					show: true,
+					remote: 'ingInsertForm'
+				});
+	});
 	</script>
 
 	<!-- tail end -->

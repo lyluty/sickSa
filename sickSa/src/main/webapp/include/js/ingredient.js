@@ -13,6 +13,7 @@ $(window).load(function(igct_id) {
 	igct_list_load();
 });
 
+
 function igct_list_load() {
 	$.ajax({
 		url : 'igctList',
@@ -26,9 +27,9 @@ function igct_list_load() {
 
 // 재료 리스트를 불러온다.
 function ing_list_load(igct_id){
-	$.post('ingList', {igct_id : igct_id}, function(data) {
-			$('#ingredientList'+igct_id).html(data).toggle();
-			$('#ingredientList').hide();
+	$.post('ingList', {igct_id:igct_id}, function(data) {
+		$('#ingredientList'+igct_id).html(data).toggle();
+		$('#ingredientList').hide();
 	});
 }
 
@@ -38,10 +39,12 @@ $('.panel-heading h3').on('click',function(){
 });
 
 $(document).on('click', '#addIgctAction', function(e) {
+	alert($('#igct_name').val());
+	//alert(document.igctForm.igct_name.value);
 	$.ajax({
 		url : 'igctInsertAction',
 		type : 'POST',
-		data : $('form#igctForm').serialize(),
+		data : $('#igctForm').serialize(),
 		success : function(data) {
 			$(".modal").modal("hide");
 		},
@@ -52,10 +55,12 @@ $(document).on('click', '#addIgctAction', function(e) {
 });
 
 $(document).on('click', '#addIngAction', function(e) {
+	alert($('#igct_name').val());
+	//alert(document.igctForm.igct_name.value);
 	$.ajax({
 		url : 'ingInsertAction',
 		type : 'POST',
-		data : $('form#ingForm').serialize(),
+		data : $('#ingForm').serialize(),
 		success : function(data) {
 			$(".modal").modal("hide");
 		},
@@ -64,27 +69,6 @@ $(document).on('click', '#addIngAction', function(e) {
 		}
 	}); 
 });
-
-
-//$(window).load(function(e) {
-//	
-//	$('#addIgctAction').on('submit', function(e) {
-//		alert('2');
-//		e.preventDefaulut();
-//		$.ajax({
-//			url : '/igctInsertAction',
-//			type : 'POST',
-//			data : $('#igctForm').serialize(),
-//			success : function(data) {
-//				alert('3');
-//			},
-//			error : function(data) {
-//				alert('4');
-//			}
-//		}); 
-//		//$.post('/igctInsertAction', $('#igctForm').serialize());
-//	});
-//});
 
 /*
 function igct_insert_form(){
