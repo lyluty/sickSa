@@ -18,7 +18,7 @@
 
   <div class="menu__wrap">
     <ul data-menu="main" class="menu__level">
-      <li class="menu__item"><a class="menu__link menu__link--current" data-submenu="submenu-1" href="#">Home</a></li>
+      
       <li class="menu__item"><a class="menu__link" href="servingState" style="font-weight: 100;">서빙 현황</a></li>
       <c:if test="${loginStatus}">
 		<li id="adminM1"  class="menu__item"><a class="menu__link" href="ingredients" style="font-weight: 100;">재고 현황</a></li>
@@ -30,6 +30,7 @@
     
     <!-- Submenu 2 -->
     <ul data-menu="submenu-2" class="menu__level">
+    <li class="menu__item"><a class="menu__link menu__link--current" data-submenu="submenu-1" href="#">Home</a></li>
       <li class="menu__item"><a class="menu__link menu__link--current" href="index.html">Sl  ider</a></li>
       <li class="menu__item"><a class="menu__link" href="index2.html">Image</a></li>
       <li class="menu__item"><a class="menu__link" href="index3.html">Video</a></li>
